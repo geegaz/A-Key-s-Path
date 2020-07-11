@@ -31,10 +31,14 @@ __meta__ = {
 }
 
 [node name="Area2D" type="Area2D" parent="."]
-monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 2 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 0, 4.17233e-07 )
+scale = Vector2( 0.8, 0.8 )
 [connection signal="gui_input" from="Control" to="." method="_on_Control_gui_input"]
 [connection signal="mouse_entered" from="Control" to="." method="_on_Control_mouse_entered"]
 [connection signal="mouse_exited" from="Control" to="." method="_on_Control_mouse_exited"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

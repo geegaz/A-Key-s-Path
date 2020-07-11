@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blockout_tileset_terrain.png-c7bf1f6d22a2dc8fa7c1e7e366500eee.stex"
+path="res://.import/shooter3.png-e0c161d900c0493c4787cdbc5b7f161e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/blockout_tileset_terrain.png"
-dest_files=[ "res://.import/blockout_tileset_terrain.png-c7bf1f6d22a2dc8fa7c1e7e366500eee.stex" ]
+source_file="res://Assets/Sprites/shooter/shooter3.png"
+dest_files=[ "res://.import/shooter3.png-e0c161d900c0493c4787cdbc5b7f161e.stex" ]
 
 [params]
 

@@ -38,7 +38,6 @@ func _ready():
 			control_action = "ui_right"
 
 func _process(delta):
-	
 	if Input.is_action_pressed(control_action) or dragged or in_world:
 		if hover:
 			ControlSprite.frame = PRESSED_HOVER
@@ -58,7 +57,7 @@ func _process(delta):
 func _physics_process(delta):
 	valid_pos = true
 	if dragged:
-		position = get_global_mouse_position()
+		position = get_global_mouse_position().round()
 		if $Area2D.get_overlapping_bodies().size() > 0:
 			valid_pos = false
 
@@ -67,11 +66,12 @@ func _on_start_drag():
 		dragged = true
 		Collider.disabled = true
 		emit_signal("place_in_world", self)
-		position = get_global_mouse_position()
+		position = get_global_mouse_position().round()
 	else:
 		in_world = false
 		Collider.disabled = true
 		emit_signal("retrieve_from_world", self)
+		hover = false
 
 func _on_stop_drag():
 	if dragged:
@@ -100,7 +100,9 @@ func _input(event):
 		if event.button_index == BUTTON_LEFT and !event.pressed:
 			emit_signal("stop_drag")
 
-
 func _on_VisibilityNotifier2D_screen_exited():
 	if in_world:
+		in_world = false
+		Collider.disabled = true
+		hover = false
 		emit_signal("retrieve_from_world", self)

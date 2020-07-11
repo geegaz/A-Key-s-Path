@@ -19,6 +19,10 @@ config/name="GMTK Jam 2020"
 run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Scenes/Global.tscn"
+
 [display]
 
 window/size/width=320
@@ -27,6 +31,14 @@ window/size/test_width=1024
 window/size/test_height=576
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
+
+[input]
+
+fullscreen={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777254,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [rendering]
 
