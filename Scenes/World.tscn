@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Assets/Tilesets/terrain_solid.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -17,13 +17,39 @@
 [ext_resource path="res://Assets/Sounds/Music/Metre - Circuit/Metre_-_10_-_Bunker.ogg" type="AudioStream" id=15]
 [ext_resource path="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Coin Total Win 2.wav" type="AudioStream" id=16]
 [ext_resource path="res://Scenes/Objects/End.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/Sprites/background_1.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Sprites/background_0.png" type="Texture" id=19]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
+[node name="Background0" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Background0"]
+margin_left = -128.0
+margin_right = 768.0
+margin_bottom = 130.0
+texture = ExtResource( 19 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.4, 0.8 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Background1"]
+margin_left = -128.0
+margin_right = 768.0
+margin_bottom = 256.0
+texture = ExtResource( 18 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Terrain" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
