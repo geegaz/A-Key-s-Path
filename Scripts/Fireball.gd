@@ -18,8 +18,14 @@ func _physics_process(delta):
 		$CollisionShape2D.disabled = true
 		$Sprite.visible = false
 		$CPUParticles2D.emitting = true
+	
+	if !alive and !$CPUParticles2D.emitting:
+		queue_free()
 		
 func init(dir: Vector2, speed: float):
 	self.dir = dir
 	self.speed = speed
 	self.rotation_degrees = rad2deg(dir.angle())-90
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()

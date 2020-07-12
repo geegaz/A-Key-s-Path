@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Themes/Main.tres" type="Theme" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Assets/Sprites/UI/back_arrow3.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Tilesets/terrain_solid.tres" type="TileSet" id=9]
 [ext_resource path="res://Assets/Sprites/player-Sheet.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/background_1.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites/background_0.png" type="Texture" id=12]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 10 )
@@ -62,15 +64,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="MainMenu"]
+[node name="Background" type="Node2D" parent="MainMenu"]
+
+[node name="Background0" type="TextureRect" parent="MainMenu/Background"]
 margin_right = 320.0
-margin_bottom = 184.0
-color = Color( 0.105882, 0.105882, 0.105882, 1 )
+margin_bottom = 256.0
+texture = ExtResource( 12 )
+stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="Node2D" parent="MainMenu"]
+[node name="Background1" type="TextureRect" parent="MainMenu/Background"]
+margin_right = 320.0
+margin_bottom = 256.0
+texture = ExtResource( 11 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TileMap" type="TileMap" parent="MainMenu/Background"]
 tile_set = ExtResource( 9 )
@@ -96,6 +108,10 @@ __meta__ = {
 margin_right = 320.0
 margin_bottom = 34.0
 custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 2
 text = "Out of Control(s)"
 align = 1
 uppercase = true
@@ -182,6 +198,9 @@ margin_bottom = 18.0
 margin_left = 127.0
 margin_right = 183.0
 margin_bottom = 12.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 1
 text = "Credits"
 
 [node name="Back" type="TextureButton" parent="Credits/VBoxContainer/MarginContainer"]
@@ -233,6 +252,7 @@ custom_constants/separation = 0
 [node name="Label" type="Label" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2/VBoxContainer"]
 margin_right = 184.0
 margin_bottom = 12.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Code, Design & Graphics"
 align = 1
 
@@ -252,6 +272,7 @@ margin_bottom = 122.0
 [node name="Label" type="Label" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2/VBoxContainer2"]
 margin_right = 184.0
 margin_bottom = 12.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Fonts"
 align = 1
 
@@ -272,6 +293,7 @@ margin_bottom = 167.0
 [node name="Label" type="Label" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2/VBoxContainer3"]
 margin_right = 184.0
 margin_bottom = 12.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "SFX"
 align = 1
 
@@ -291,6 +313,7 @@ margin_bottom = 212.0
 [node name="Label" type="Label" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2/VBoxContainer4"]
 margin_right = 184.0
 margin_bottom = 12.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Music"
 align = 1
 

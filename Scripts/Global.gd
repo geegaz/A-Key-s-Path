@@ -2,6 +2,7 @@ extends Node
 
 var paused = false
 var Player: AnimationPlayer
+var tuto_state = 0
 
 func _ready():
 	$HUD/Pause.hide()

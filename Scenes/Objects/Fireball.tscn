@@ -49,3 +49,6 @@ initial_velocity = 40.0
 scale_amount = 2.0
 scale_amount_random = 1.0
 color = Color( 0.501961, 0.00784314, 0.215686, 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

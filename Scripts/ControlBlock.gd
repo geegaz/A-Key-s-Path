@@ -76,12 +76,9 @@ func _physics_process(delta):
 func _on_start_drag():
 	drag_time = 0.0
 	dragged = true
-	if not in_world:
-		Collider.disabled = true
-		emit_signal("place_in_world", self)
-		position = get_global_mouse_position().round()
-	else:
-		emit_signal("retrieve_from_world", self)
+	Collider.disabled = true
+	emit_signal("place_in_world", self)
+	position = get_global_mouse_position().round()
 
 func _on_stop_drag():
 	dragged = false
@@ -111,6 +108,6 @@ func _on_Control_gui_input(event):
 
 func _input(event):
 	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT and !event.pressed:
+		if event.button_index == BUTTON_LEFT and !event.pressed and dragged:
 			emit_signal("stop_drag")
 

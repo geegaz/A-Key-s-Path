@@ -20,18 +20,31 @@ func _ready():
 	
 	Checkpoints = $Checkpoints.get_children()
 	current_checkpoint = $StartPoint
+	Player.position = current_checkpoint.position
 	
 	ControlJump = $ScreenPos/ControlJump
 	ControlLeft = $ScreenPos/ControlLeft
 	ControlRight = $ScreenPos/ControlRight
+	
+	if Global.tuto_state == 0:
+		$ScreenPos/Tuto0.show()
+
+func _process(delta):
+	if Global.tuto_state == 0 and (Input.is_action_just_pressed("right") or Input.is_action_just_pressed("left")):
+		Global.tuto_state = 1
+		$ScreenPos/Tuto0.hide()
+		$ScreenPos/Tuto1.show()
+	elif Global.tuto_state == 1 and Input.is_action_just_pressed("jump"):
+		Global.tuto_state = 2
+		$ScreenPos/Tuto1.hide()
+		$ScreenPos/Tuto2.show()
 
 func set_camera_limits():
-	var map_limits = $Terrain.get_used_rect()
-	var map_cellsize = $Terrain.cell_size
-	WorldCamera.limit_left = map_limits.position.x * map_cellsize.x
-	WorldCamera.limit_right = map_limits.end.x * map_cellsize.x
-	WorldCamera.limit_top = map_limits.position.y * map_cellsize.y
-	WorldCamera.limit_bottom = map_limits.end.y * map_cellsize.y
+	var map_limits = $CameraLimits.get_global_rect()
+	WorldCamera.limit_left = map_limits.position.x
+	WorldCamera.limit_right = map_limits.end.x
+	WorldCamera.limit_top = map_limits.position.y
+	WorldCamera.limit_bottom = map_limits.end.y
 
 func reparent(child: Node, new_parent: Node):
 	var old_parent = child.get_parent()
@@ -39,6 +52,11 @@ func reparent(child: Node, new_parent: Node):
 	new_parent.add_child(child)
 
 func _on_Control_place_in_world(node):
+	if Global.tuto_state == 2:
+		Global.tuto_state = 3
+		$ScreenPos/Tuto2.hide()
+		$ScreenPos/Tuto3.show()
+	
 	reparent(node, self)
 	match node.control_type:
 		Controls.JUMP:
@@ -49,6 +67,10 @@ func _on_Control_place_in_world(node):
 			Player.right_control = false
 
 func _on_Control_retrieve_from_world(node):
+	if Global.tuto_state == 3:
+		Global.tuto_state = 4
+		$ScreenPos/Tuto3.hide()
+		
 	reparent(node, $ScreenPos)
 	node.retrieve()
 	
@@ -65,7 +87,7 @@ func _on_Control_retrieve_from_world(node):
 			Player.right_control = true
 			target_pos = $ScreenPos/ControlRightPos.position
 	tween.interpolate_property(node, "position",
-		node.global_position,
+		get_viewport().get_mouse_position(),
 		target_pos,
 		0.2,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
