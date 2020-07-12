@@ -2,7 +2,7 @@ extends Node2D
 
 enum Controls {JUMP, LEFT, RIGHT}
 
-var current_checkpoint: Vector2
+var current_checkpoint: Node
 
 var Player: KinematicBody2D
 var WorldCamera: Camera2D
@@ -19,14 +19,11 @@ func _ready():
 	set_camera_limits()
 	
 	Checkpoints = $Checkpoints.get_children()
-	current_checkpoint = Player.position
+	current_checkpoint = $StartPoint
 	
 	ControlJump = $ScreenPos/ControlJump
 	ControlLeft = $ScreenPos/ControlLeft
 	ControlRight = $ScreenPos/ControlRight
-	
-func _process(delta):
-	pass
 
 func set_camera_limits():
 	var map_limits = $Terrain.get_used_rect()
@@ -75,8 +72,9 @@ func _on_Control_retrieve_from_world(node):
 
 func _on_Player_checkpoint(node):
 	var index = Checkpoints.find(node)
-	if index >= 0:
-		current_checkpoint = node.position
+	if index >= 0 and current_checkpoint != node:
+		$Sounds/Checkpoint.play()
+		current_checkpoint = node
 		for i in range(Checkpoints.size()):
 			if i != index:
 				Checkpoints[i].get_node("Player").play("flag_down")
@@ -84,7 +82,7 @@ func _on_Player_checkpoint(node):
 		node.get_node("Particle").emitting = true
 
 func _on_Player_respawn():
-	Player.position = current_checkpoint
+	Player.position = current_checkpoint.position
 
 func _on_RetrieveJump_pressed():
 	_on_Control_retrieve_from_world(ControlJump)

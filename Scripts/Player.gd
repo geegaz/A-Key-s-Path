@@ -41,6 +41,10 @@ func _process(delta):
 		if jump_control and Input.is_action_just_pressed("jump") and air_time < coyote_time:
 			velocity.y -= jump_force
 			target_gravity = gravity
+			randomize()
+			$Sounds/Jump.pitch_scale = (randf()*0.8+0.6)
+			$Sounds/Jump.play()
+			
 		if Input.is_action_just_released("jump") or velocity.y >= 0:
 			target_gravity = gravity_strong
 	else:
@@ -57,16 +61,20 @@ func _process(delta):
 		if !(state == RUNNING) and abs(direction) > 0.0:
 			Animator.play("run")
 			state = RUNNING
+			$Sounds/Running.play()
 		elif !(state == IDLE) and abs(direction) <= 0.0:
 			Animator.play("idle")
 			state = IDLE
+			$Sounds/Running.stop()
 	else:
 		if !(state == FALLING) and velocity.y > 0.0:
 			Animator.play("fall")
 			state = FALLING
+			$Sounds/Running.stop()
 		elif !(state == JUMPING) and velocity.y <= 0.0:
 			Animator.play("jump")
 			state = JUMPING
+			$Sounds/Running.stop()
 
 func _physics_process(delta):
 	velocity.y += target_gravity
@@ -94,6 +102,7 @@ func respawn():
 	$Effector/EffectorCollider.disabled = false
 	
 	velocity = Vector2(0.0, -100.0)
+	$Sounds/Respawn.play()
 	emit_signal("respawn")
 
 func _on_AnimationPlayer_animation_finished(anim_name):
@@ -102,15 +111,13 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 func _on_Effector_body_entered(body):
 	if body.get_collision_layer_bit(1):
-		print("death")
+		$Sounds/Death.play()
 		call_deferred("death")
 	elif body.get_collision_layer_bit(2):
-		print("checkpoint")
 		emit_signal("checkpoint", body)
 	elif body.get_collision_layer_bit(3):
-		print("win")
+		Global.goto_scene("res://Scenes/Finish.tscn")
 	else:
-		print("death")
 		call_deferred("death")
 
 func _on_DeathTimer_timeout():

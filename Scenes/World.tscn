@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/Tilesets/terrain_solid.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -14,8 +14,11 @@
 [ext_resource path="res://Assets/Tilesets/spikes.tres" type="TileSet" id=12]
 [ext_resource path="res://Assets/Tilesets/anti_control.tres" type="TileSet" id=13]
 [ext_resource path="res://Scenes/Objects/Checkpoint.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/Sounds/Music/Metre - Circuit/Metre_-_10_-_Bunker.ogg" type="AudioStream" id=15]
+[ext_resource path="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Coin Total Win 2.wav" type="AudioStream" id=16]
+[ext_resource path="res://Scenes/Objects/End.tscn" type="PackedScene" id=17]
 
-[node name="Node2D" type="Node2D"]
+[node name="World" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -48,6 +51,9 @@ tile_data = PoolIntArray( 589838, 0, 0, 589839, 0, 0, 589840, 0, 0 )
 position = Vector2( 24, 120 )
 direction = 1
 speed = 100.0
+
+[node name="StartPoint" type="Position2D" parent="."]
+position = Vector2( 72, 152 )
 
 [node name="Checkpoints" type="Node2D" parent="."]
 
@@ -117,7 +123,7 @@ position = Vector2( 136, 168 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 72, 152 )
 max_speed = 120.0
-jump_force = 128.0
+jump_force = 130.0
 gravity = 4.0
 gravity_strong = 8.0
 accel = 0.3
@@ -132,18 +138,21 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 script = ExtResource( 9 )
 
-[node name="HUD" type="CanvasLayer" parent="."]
-layer = 2
-
-[node name="Control" type="Control" parent="HUD"]
-visible = false
-margin_right = 320.0
-margin_bottom = 196.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Tween" type="Tween" parent="."]
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 15 )
+autoplay = true
+bus = "Music"
+
+[node name="Checkpoint" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 16 )
+bus = "SFX"
+
+[node name="End" parent="." instance=ExtResource( 17 )]
+position = Vector2( 168, 96 )
 [connection signal="pressed" from="ScreenPos/ControlJumpPos/RetrieveJump" to="." method="_on_RetrieveJump_pressed"]
 [connection signal="pressed" from="ScreenPos/ControlLeftPos/RetrieveLeft" to="." method="_on_RetrieveLeft_pressed"]
 [connection signal="pressed" from="ScreenPos/ControlRightPos/RetrieveRight" to="." method="_on_RetrieveRight_pressed"]

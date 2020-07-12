@@ -10,8 +10,6 @@ extends Node2D
 func _ready():
 	$Credits.hide()
 
-
-
 func _on_Back_pressed():
 	$Credits.hide()
 
@@ -19,7 +17,7 @@ func _on_Credits_pressed():
 	$Credits.show()
 
 func _on_Start_pressed():
-	get_tree().change_scene("res://Scenes/World.tscn")
+	Global.goto_scene("res://Scenes/World.tscn")
 
 func _on_Quit_pressed():
 	get_tree().quit()

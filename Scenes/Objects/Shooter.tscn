@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Sprites/shooter/shooter-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Shooter.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Objects/Effect.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Fireball.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "glint_down"
@@ -21,7 +22,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 1 ), Vector2( 0, 2 ), Vector2( 0, 3 ), Vector2( 0, 4 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "glint_left"
 length = 2.0
 loop = true
@@ -38,7 +39,7 @@ tracks/0/keys = {
 "values": [ Vector2( 3, 0 ), Vector2( 3, 1 ), Vector2( 3, 2 ), Vector2( 3, 3 ), Vector2( 3, 4 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "glint_right"
 length = 2.0
 loop = true
@@ -55,8 +56,7 @@ tracks/0/keys = {
 "values": [ Vector2( 2, 0 ), Vector2( 2, 1 ), Vector2( 2, 2 ), Vector2( 2, 3 ), Vector2( 2, 4 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "glint_up"
+[sub_resource type="Animation" id=4]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -83,9 +83,9 @@ frame = 17
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/glint_down = SubResource( 1 )
-anims/glint_left = SubResource( 3 )
-anims/glint_right = SubResource( 4 )
-anims/glint_up = SubResource( 2 )
+anims/glint_left = SubResource( 2 )
+anims/glint_right = SubResource( 3 )
+anims/glint_up = SubResource( 4 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 position = Vector2( 0, -8.34465e-07 )
@@ -94,6 +94,11 @@ position = Vector2( 0, -8.34465e-07 )
 autostart = true
 
 [node name="Effect" parent="." instance=ExtResource( 3 )]
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+max_distance = 200.0
+bus = "SFX"
 [connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

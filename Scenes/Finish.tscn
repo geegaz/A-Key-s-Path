@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Themes/Main.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Fonts/title_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/Fonts/small_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scripts/Finish.gd" type="Script" id=4]
+
+[node name="Finish" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 320.0
+margin_bottom = 184.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+margin_right = 320.0
+margin_bottom = 184.0
+color = Color( 0.105882, 0.105882, 0.105882, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+margin_right = 320.0
+margin_bottom = 176.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/VBoxContainer"]
+margin_right = 320.0
+margin_bottom = 154.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/CenterContainer"]
+margin_left = 7.0
+margin_top = 51.0
+margin_right = 313.0
+margin_bottom = 102.0
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/CenterContainer/VBoxContainer"]
+margin_right = 306.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 2 )
+text = "Thanks for playing"
+align = 1
+
+[node name="Label2" type="Label" parent="Control/VBoxContainer/CenterContainer/VBoxContainer"]
+margin_top = 38.0
+margin_right = 306.0
+margin_bottom = 51.0
+custom_fonts/font = ExtResource( 3 )
+text = "- Geegaz -"
+align = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer"]
+margin_top = 158.0
+margin_right = 320.0
+margin_bottom = 176.166
+custom_constants/margin_bottom = 0
+
+[node name="CenterContainer2" type="CenterContainer" parent="Control/VBoxContainer/MarginContainer"]
+margin_right = 320.0
+margin_bottom = 18.1655
+
+[node name="BackToMenu" type="Button" parent="Control/VBoxContainer/MarginContainer/CenterContainer2"]
+margin_left = 108.0
+margin_right = 210.627
+margin_bottom = 18.1655
+size_flags_horizontal = 0
+text = "Back to Menu"
+[connection signal="pressed" from="Control/VBoxContainer/MarginContainer/CenterContainer2/BackToMenu" to="." method="_on_BackToMenu_pressed"]

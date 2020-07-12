@@ -81,7 +81,7 @@ tile_data = PoolIntArray( 327680, 3, 0, 327698, 3, 0, 327699, 0, 1, 327700, 0, 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="MainMenu/Background"]
 position = Vector2( 72, 128 )
 frames = SubResource( 9 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="MainMenuContainer" type="VBoxContainer" parent="MainMenu"]
@@ -142,7 +142,6 @@ margin_bottom = 18.1655
 text = "Quit"
 
 [node name="Credits" type="Control" parent="."]
-visible = false
 margin_right = 320.0
 margin_bottom = 184.0
 theme = ExtResource( 2 )
@@ -209,27 +208,33 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="Credits/VBoxContainer/ScrollContainer"]
-margin_right = 320.0
-margin_bottom = 157.0
+margin_right = 308.0
+margin_bottom = 248.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer"]
-margin_left = 68.0
-margin_top = 35.0
-margin_right = 252.0
-margin_bottom = 121.0
+margin_left = 62.0
+margin_right = 246.0
+margin_bottom = 248.0
 custom_constants/separation = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2"]
 margin_right = 184.0
-margin_bottom = 25.0
+margin_bottom = 20.0
+custom_constants/margin_top = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2"]
+margin_top = 36.0
+margin_right = 184.0
+margin_bottom = 61.0
 custom_constants/separation = 0
 
 [node name="Label" type="Label" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2/VBoxContainer"]
 margin_right = 184.0
 margin_bottom = 12.0
 text = "Code, Design & Graphics"
+align = 1
 
 [node name="Label2" type="Label" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2/VBoxContainer"]
 margin_top = 12.0
@@ -240,9 +245,9 @@ text = "Geegaz"
 align = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2"]
-margin_top = 41.0
+margin_top = 77.0
 margin_right = 184.0
-margin_bottom = 86.0
+margin_bottom = 122.0
 
 [node name="Label" type="Label" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2/VBoxContainer2"]
 margin_right = 184.0
@@ -258,6 +263,50 @@ custom_fonts/font = ExtResource( 5 )
 text = "Joystix by Raymond Larabie
 BitPotion by JoebRogers"
 align = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2"]
+margin_top = 138.0
+margin_right = 184.0
+margin_bottom = 167.0
+
+[node name="Label" type="Label" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2/VBoxContainer3"]
+margin_right = 184.0
+margin_bottom = 12.0
+text = "SFX"
+align = 1
+
+[node name="Label2" type="Label" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2/VBoxContainer3"]
+margin_top = 16.0
+margin_right = 184.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 5 )
+text = "Platformer SFX by David Stearns"
+align = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2"]
+margin_top = 183.0
+margin_right = 184.0
+margin_bottom = 212.0
+
+[node name="Label" type="Label" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2/VBoxContainer4"]
+margin_right = 184.0
+margin_bottom = 12.0
+text = "Music"
+align = 1
+
+[node name="Label2" type="Label" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2/VBoxContainer4"]
+margin_top = 16.0
+margin_right = 184.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 5 )
+text = "Bunker by Metre"
+align = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2"]
+margin_top = 228.0
+margin_right = 184.0
+margin_bottom = 248.0
+custom_constants/margin_top = 20
 [connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer2/Quit" to="." method="_on_Quit_pressed"]

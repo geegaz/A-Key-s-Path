@@ -23,6 +23,8 @@ func _on_Timer_timeout():
 		$Effect/Player.stop()
 		$Effect/Player.play("shoot_effect")
 		
+		$Sound.play()
+		
 		var new_fireball = fireball.instance()
 		new_fireball.init(vec_dirs[direction], speed)
 		new_fireball.position = self.position
