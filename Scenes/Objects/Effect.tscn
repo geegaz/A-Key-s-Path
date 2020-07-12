@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Sprites/effects/shooter_smoke.png" type="Texture" id=1]
+
+
+[sub_resource type="Animation" id=1]
+resource_name = "shoot_effect"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[node name="Effect" type="Sprite"]
+texture = ExtResource( 1 )
+hframes = 8
+frame = 7
+
+[node name="Player" type="AnimationPlayer" parent="."]
+anims/shoot_effect = SubResource( 1 )

@@ -2,14 +2,28 @@ extends Node2D
 
 enum Controls {JUMP, LEFT, RIGHT}
 
+var current_checkpoint: Vector2
+
 var Player: KinematicBody2D
 var WorldCamera: Camera2D
+var Checkpoints: Array
+
+var ControlJump
+var ControlLeft
+var ControlRight
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Player = $Player
 	WorldCamera = $Player/Camera2D
 	set_camera_limits()
+	
+	Checkpoints = $Checkpoints.get_children()
+	current_checkpoint = Player.position
+	
+	ControlJump = $ScreenPos/ControlJump
+	ControlLeft = $ScreenPos/ControlLeft
+	ControlRight = $ScreenPos/ControlRight
 	
 func _process(delta):
 	pass
@@ -28,9 +42,6 @@ func reparent(child: Node, new_parent: Node):
 	new_parent.add_child(child)
 
 func _on_Control_place_in_world(node):
-	print("place")
-	print(node)
-	print(node.get_parent())
 	reparent(node, self)
 	match node.control_type:
 		Controls.JUMP:
@@ -41,17 +52,45 @@ func _on_Control_place_in_world(node):
 			Player.right_control = false
 
 func _on_Control_retrieve_from_world(node):
-	print("retrieve")
-	print(node)
-	print(node.get_parent())
 	reparent(node, $ScreenPos)
+	node.retrieve()
+	
+	var tween = $Tween
+	var target_pos
 	match node.control_type:
 		Controls.JUMP:
 			Player.jump_control = true
-			node.position = $ScreenPos/ControlJumpPos.position
+			target_pos = $ScreenPos/ControlJumpPos.position
 		Controls.LEFT:
 			Player.left_control = true
-			node.position = $ScreenPos/ControlLeftPos.position
+			target_pos = $ScreenPos/ControlLeftPos.position
 		Controls.RIGHT:
 			Player.right_control = true
-			node.position = $ScreenPos/ControlRightPos.position
+			target_pos = $ScreenPos/ControlRightPos.position
+	tween.interpolate_property(node, "position",
+		node.global_position,
+		target_pos,
+		0.2,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween.start()
+
+func _on_Player_checkpoint(node):
+	var index = Checkpoints.find(node)
+	if index >= 0:
+		current_checkpoint = node.position
+		for i in range(Checkpoints.size()):
+			if i != index:
+				Checkpoints[i].get_node("Player").play("flag_down")
+		node.get_node("Player").play("flag_up")
+		node.get_node("Particle").emitting = true
+
+func _on_Player_respawn():
+	Player.position = current_checkpoint
+
+func _on_RetrieveJump_pressed():
+	_on_Control_retrieve_from_world(ControlJump)
+
+func _on_RetrieveLeft_pressed():
+	_on_Control_retrieve_from_world(ControlLeft)
+
+func _on_RetrieveRight_pressed():
+	_on_Control_retrieve_from_world(ControlRight)

@@ -8,13 +8,18 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Credits.hide()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
+func _on_Back_pressed():
+	$Credits.hide()
 
-func _on_Button_pressed():
+func _on_Credits_pressed():
+	$Credits.show()
+
+func _on_Start_pressed():
 	get_tree().change_scene("res://Scenes/World.tscn")
+
+func _on_Quit_pressed():
+	get_tree().quit()

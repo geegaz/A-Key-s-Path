@@ -12,6 +12,8 @@ enum {NORMAL, HOVER, PRESSED, PRESSED_HOVER}
 
 var hover = false
 var dragged = false
+var drag_time = 0.0
+var limit_drag_time = 0.2
 
 var valid_pos = true
 var in_world = false
@@ -31,11 +33,11 @@ func _ready():
 	
 	match control_type:
 		Controls.JUMP:
-			control_action = "ui_select"
+			control_action = "jump"
 		Controls.LEFT:
-			control_action = "ui_left"
+			control_action = "left"
 		Controls.RIGHT:
-			control_action = "ui_right"
+			control_action = "right"
 
 func _process(delta):
 	if Input.is_action_pressed(control_action) or dragged or in_world:
@@ -49,40 +51,52 @@ func _process(delta):
 		else:
 			ControlSprite.frame = NORMAL
 	
+	if Input.is_action_just_pressed(control_action) and in_world:
+		var tween = $Tween
+		tween.interpolate_property(ControlSprite, "modulate", 
+			Color(1.0, 0.0, 0.0),
+			Color(1.0, 1.0, 1.0),
+			0.5, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+		tween.start()
+	
+	
 	if not valid_pos:
-		ControlSprite.modulate = Color(1.0,1.0,1.0,0.5)
+		ControlSprite.modulate.a = 0.5
 	else:
-		ControlSprite.modulate = Color.white
+		ControlSprite.modulate.a = 1.0
 
 func _physics_process(delta):
 	valid_pos = true
 	if dragged:
+		drag_time += delta
 		position = get_global_mouse_position().round()
 		if $Area2D.get_overlapping_bodies().size() > 0:
 			valid_pos = false
 
 func _on_start_drag():
+	drag_time = 0.0
+	dragged = true
 	if not in_world:
-		dragged = true
 		Collider.disabled = true
 		emit_signal("place_in_world", self)
 		position = get_global_mouse_position().round()
 	else:
-		in_world = false
-		Collider.disabled = true
 		emit_signal("retrieve_from_world", self)
-		hover = false
 
 func _on_stop_drag():
-	if dragged:
-		dragged = false
-		if valid_pos:
-			in_world = true
-			Collider.disabled = false
-		else:
-			in_world = false
-			Collider.disabled = true
-			emit_signal("retrieve_from_world", self)
+	dragged = false
+	if valid_pos and drag_time > limit_drag_time:
+		in_world = true
+		Collider.disabled = false
+	else:
+		emit_signal("retrieve_from_world", self)
+
+func retrieve():
+	in_world = false
+	Collider.disabled = true
+	hover = false
+	ControlSprite.modulate = Color(1.0, 1.0, 1.0)
+	
 
 func _on_Control_mouse_entered():
 	hover = true
@@ -100,9 +114,3 @@ func _input(event):
 		if event.button_index == BUTTON_LEFT and !event.pressed:
 			emit_signal("stop_drag")
 
-func _on_VisibilityNotifier2D_screen_exited():
-	if in_world:
-		in_world = false
-		Collider.disabled = true
-		hover = false
-		emit_signal("retrieve_from_world", self)
