@@ -26,10 +26,12 @@ func _input(event):
 			get_tree().quit()
 
 func goto_scene(path: String):
+# warning-ignore:return_value_discarded
 	Player.connect("animation_finished", self, "finish_goto_scene", [path])
 	Player.play("transition_hide")
 	
-func finish_goto_scene(anim, path: String):
+func finish_goto_scene(_anim, path: String):
+# warning-ignore:return_value_discarded
 	get_tree().change_scene(path)
 	Player.disconnect("animation_finished", self, "finish_goto_scene")
 	Player.play("transition_reveal")

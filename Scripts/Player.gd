@@ -4,6 +4,7 @@ signal checkpoint(node)
 signal respawn
 signal win
 
+enum Controls {JUMP, LEFT, RIGHT}
 enum {IDLE, RUNNING, JUMPING, FALLING}
 var state = IDLE
 
@@ -17,6 +18,7 @@ export var coyote_time = 0.1
 var left_control = true
 var right_control = true
 var jump_control = true
+
 var on_ground = false
 var alive = true
 
@@ -70,11 +72,10 @@ func _process(delta):
 		if !(state == FALLING) and velocity.y > 0.0:
 			Animator.play("fall")
 			state = FALLING
-			$Sounds/Running.stop()
 		elif !(state == JUMPING) and velocity.y <= 0.0:
 			Animator.play("jump")
 			state = JUMPING
-			$Sounds/Running.stop()
+		$Sounds/Running.stop()
 
 func _physics_process(delta):
 	velocity.y += target_gravity
@@ -100,9 +101,9 @@ func respawn():
 	alive = true
 	$Sprite.visible = true
 	$Effector/EffectorCollider.disabled = false
+	$Sounds/Respawn.play()
 	
 	velocity = Vector2(0.0, -100.0)
-	$Sounds/Respawn.play()
 	emit_signal("respawn")
 
 func _on_AnimationPlayer_animation_finished(anim_name):
@@ -116,9 +117,28 @@ func _on_Effector_body_entered(body):
 	elif body.get_collision_layer_bit(2):
 		emit_signal("checkpoint", body)
 	elif body.get_collision_layer_bit(3):
-		Global.goto_scene("res://Scenes/Finish.tscn")
+		emit_signal("win")
 	else:
 		call_deferred("death")
 
 func _on_DeathTimer_timeout():
 	respawn()
+
+
+func _on_ControlsUI_control_placed(control_type):
+	match control_type:
+		Controls.JUMP:
+			jump_control = false
+		Controls.LEFT:
+			left_control = false
+		Controls.RIGHT:
+			right_control = false
+
+func _on_ControlsUI_control_retrieved(control_type):
+	match control_type:
+		Controls.JUMP:
+			jump_control = true
+		Controls.LEFT:
+			left_control = true
+		Controls.RIGHT:
+			right_control = true

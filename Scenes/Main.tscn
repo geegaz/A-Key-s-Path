@@ -3,15 +3,16 @@
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Themes/Main.tres" type="Theme" id=2]
 [ext_resource path="res://Assets/Fonts/title_font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Assets/Sprites/UI/back_arrow1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/UI/back_arrow/back_arrow1.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Fonts/small_font.tres" type="DynamicFont" id=5]
-[ext_resource path="res://Assets/Sprites/UI/back_arrow2.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sprites/UI/back_arrow4.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Sprites/UI/back_arrow3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/UI/back_arrow/back_arrow2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/UI/back_arrow/back_arrow4.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/UI/back_arrow/back_arrow3.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Tilesets/terrain_solid.tres" type="TileSet" id=9]
-[ext_resource path="res://Assets/Sprites/player-Sheet.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/player_sitting-Sheet.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sprites/background_1.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sprites/background_0.png" type="Texture" id=12]
+
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 10 )
@@ -91,9 +92,9 @@ format = 1
 tile_data = PoolIntArray( 327680, 3, 0, 327698, 3, 0, 327699, 0, 1, 327700, 0, 3, 458751, 0, 1, 393216, 0, 3, 393234, 0, 196609, 393235, 0, 65538, 393236, 0, 65539, 524287, 0, 65537, 458752, 0, 65539, 458767, 1, 196609, 458768, 1, 196610, 458769, 1, 2, 458770, 2, 7, 458771, 0, 262144, 458772, 0, 65539, 589823, 0, 65537, 524288, 0, 262144, 524289, 0, 3, 524290, 3, 1, 524305, 1, 131073, 524306, 2, 4, 524307, 2, 2, 524308, 0, 65539, 655359, 0, 65537, 589824, 0, 262145, 589825, 2, 3, 589826, 1, 2, 589827, 1, 2, 589828, 1, 196611, 589842, 0, 65537, 589843, 0, 262146, 589844, 0, 65539, 720895, 0, 65537, 655360, 0, 65538, 655361, 0, 262147, 655362, 2, 6, 655363, 1, 65539, 655364, 3, 1, 655376, 3, 0, 655377, 0, 1, 655378, 0, 65538, 655379, 0, 262147, 655380, 0, 65539, 786431, 0, 131073, 720896, 0, 131074, 720897, 0, 65538, 720898, 2, 1, 720899, 2, 1, 720900, 0, 196611, 720912, 0, 196609, 720913, 0, 131074, 720914, 0, 131074, 720915, 0, 131074, 720916, 0, 131075 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="MainMenu/Background"]
-position = Vector2( 72, 128 )
+position = Vector2( 80, 144 )
 frames = SubResource( 9 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="MainMenuContainer" type="VBoxContainer" parent="MainMenu"]
@@ -158,6 +159,7 @@ margin_bottom = 18.1655
 text = "Quit"
 
 [node name="Credits" type="Control" parent="."]
+visible = false
 margin_right = 320.0
 margin_bottom = 184.0
 theme = ExtResource( 2 )
@@ -227,14 +229,14 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="Credits/VBoxContainer/ScrollContainer"]
-margin_right = 308.0
+margin_right = 320.0
 margin_bottom = 248.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer"]
-margin_left = 62.0
-margin_right = 246.0
+margin_left = 68.0
+margin_right = 252.0
 margin_bottom = 248.0
 custom_constants/separation = 16
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spacebar_place1.png-0a387887c85b048bfd8f083c292ed505.stex"
+path="res://.import/back_arrow1.png-1da949f9f0df93c0df8b40157dced66c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/spacebar_place1.png"
-dest_files=[ "res://.import/spacebar_place1.png-0a387887c85b048bfd8f083c292ed505.stex" ]
+source_file="res://Assets/Sprites/UI/back_arrow/back_arrow1.png"
+dest_files=[ "res://.import/back_arrow1.png-1da949f9f0df93c0df8b40157dced66c.stex" ]
 
 [params]
 

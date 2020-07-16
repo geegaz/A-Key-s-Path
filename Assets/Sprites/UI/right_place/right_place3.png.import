@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/key_place3.png-67f622cb3978f509ad800350f140f968.stex"
+path="res://.import/right_place3.png-7544773a489369b9a2bf9c51a826568a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/key_place3.png"
-dest_files=[ "res://.import/key_place3.png-67f622cb3978f509ad800350f140f968.stex" ]
+source_file="res://Assets/Sprites/UI/right_place/right_place3.png"
+dest_files=[ "res://.import/right_place3.png-7544773a489369b9a2bf9c51a826568a.stex" ]
 
 [params]
 
