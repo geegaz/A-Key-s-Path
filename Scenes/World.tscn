@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Tilesets/terrain_solid.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://Assets/Tilesets/spikes.tres" type="TileSet" id=12]
 [ext_resource path="res://Assets/Tilesets/anti_control.tres" type="TileSet" id=13]
 [ext_resource path="res://Scenes/Objects/World/Checkpoint.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Assets/Sounds/Music/Metre - Circuit/Metre_-_10_-_Bunker.ogg" type="AudioStream" id=15]
 [ext_resource path="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Coin Total Win 2.wav" type="AudioStream" id=16]
 [ext_resource path="res://Assets/Sprites/background_1.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Sprites/background_0.png" type="Texture" id=19]
@@ -23,7 +22,7 @@ light_mode = 2
 script = ExtResource( 4 )
 
 [node name="CameraLimits" type="ReferenceRect" parent="."]
-margin_right = 1488.0
+margin_right = 1472.0
 margin_bottom = 360.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -44,8 +43,6 @@ __meta__ = {
 [node name="Sounds" type="Node" parent="."]
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource( 15 )
-autoplay = true
 bus = "Music"
 
 [node name="Checkpoint" type="AudioStreamPlayer" parent="Sounds"]
@@ -60,7 +57,7 @@ motion_scale = Vector2( 0, 0 )
 [node name="TextureRect" type="TextureRect" parent="Background/Background0"]
 margin_left = -192.0
 margin_top = -128.0
-margin_right = 704.0
+margin_right = 1280.0
 margin_bottom = 128.0
 texture = ExtResource( 19 )
 stretch_mode = 2
@@ -72,9 +69,9 @@ __meta__ = {
 motion_scale = Vector2( 0.5, 0.5 )
 
 [node name="TextureRect" type="TextureRect" parent="Background/Background1"]
-margin_left = -192.0
+margin_left = -96.0
 margin_top = -64.0
-margin_right = 704.0
+margin_right = 1376.0
 margin_bottom = 192.0
 texture = ExtResource( 18 )
 stretch_mode = 2
@@ -112,16 +109,18 @@ tile_data = PoolIntArray( 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0
 position = Vector2( 472, 168 )
 
 [node name="Shooter2" parent="Hazards" instance=ExtResource( 11 )]
-position = Vector2( 672, 296 )
+position = Vector2( 664, 296 )
 
 [node name="Shooter3" parent="Hazards" instance=ExtResource( 11 )]
 position = Vector2( 760, 168 )
 rotation = 3.14159
+delay_offset = 0.5
 muted = true
 
 [node name="Shooter4" parent="Hazards" instance=ExtResource( 11 )]
 position = Vector2( 776, 168 )
 rotation = 3.14159
+delay_offset = 0.25
 
 [node name="Shooter5" parent="Hazards" instance=ExtResource( 11 )]
 position = Vector2( 792, 168 )
@@ -162,9 +161,9 @@ position = Vector2( 1080, 184 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 88, 16 )
 max_speed = 120.0
-jump_force = 134.0
+jump_force = 140.0
 gravity = 4.0
-gravity_strong = 8.0
+gravity_strong = 10.0
 accel = 0.3
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

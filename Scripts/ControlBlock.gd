@@ -8,7 +8,12 @@ signal retrieve_from_world(node)
 enum Controls {JUMP, LEFT, RIGHT}
 export(Controls) var control_type
 
-enum {NORMAL, HOVER, PRESSED, PRESSED_HOVER, WORLD, WORLD_HOVER}
+enum {
+	NORMAL, HOVER, 
+	PRESSED, PRESSED_HOVER, 
+	WORLD, WORLD_HOVER,
+	DRAGGED,  DRAGGED_HOVER
+}
 var TILESIZE = 16
 
 var hover = false
@@ -38,12 +43,17 @@ func _ready():
 	control_action = Actions[control_type]
 
 func _process(delta):
-	if in_world and !dragged:
+	if dragged:
+		if hover:
+			ControlSprite.frame = DRAGGED_HOVER
+		else:
+			ControlSprite.frame = DRAGGED
+	elif in_world:
 		if hover:
 			ControlSprite.frame = WORLD_HOVER
 		else:
 			ControlSprite.frame = WORLD
-	elif Input.is_action_pressed(control_action) or dragged:
+	elif Input.is_action_pressed(control_action):
 		if hover:
 			ControlSprite.frame = PRESSED_HOVER
 		else:

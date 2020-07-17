@@ -1,7 +1,7 @@
 extends Node2D
 
 export(float, 0.1, 10.0) var delay = 1.0
-export(float, 0.0, 10.0) var delay_offset = 1.0
+export(float, 0.0, 10.0) var delay_offset = 0.0
 export(float) var speed = 100.0
 export var muted = false
 
@@ -12,8 +12,11 @@ var fireball = preload("res://Scenes/Objects/Fireball.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Timer.wait_time = delay_offset
-
+	if delay_offset > 0.0:
+		$Timer.wait_time = delay_offset
+	else:
+		$Timer.wait_time = delay
+		
 func _on_Timer_timeout():
 	$Timer.wait_time = delay
 	if shooting:

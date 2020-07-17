@@ -59,7 +59,8 @@ shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-vframes = 6
+vframes = 4
+hframes = 2
 
 [node name="GridMask" type="Light2D" parent="."]
 position = Vector2( -1.90735e-06, 2.86102e-06 )

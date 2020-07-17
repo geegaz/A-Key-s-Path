@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=10 format=2]
+[gd_resource type="Theme" load_steps=15 format=2]
 
 [ext_resource path="res://Assets/Sprites/UI/theme-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Fonts/joystix.monospace.ttf" type="DynamicFontData" id=2]
@@ -48,6 +48,46 @@ margin_right = 3.25483
 margin_top = 3.08429
 margin_bottom = 3.08123
 
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 1 )
+region_rect = Rect2( 48, 16, 16, 16 )
+margin_left = 13.0962
+margin_right = 12.8287
+margin_top = 3.19769
+margin_bottom = 4.11239
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 1 )
+region_rect = Rect2( 64, 16, 16, 16 )
+margin_left = 12.8391
+margin_right = 12.8287
+margin_top = 3.19769
+margin_bottom = 4.11239
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 1 )
+region_rect = Rect2( 80, 16, 16, 16 )
+margin_left = 11.9396
+margin_right = 11.8006
+margin_top = 5.12537
+margin_bottom = 4.11239
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 1 )
+region_rect = Rect2( 16, 16, 16, 16 )
+margin_left = 11.04
+margin_right = 10.901
+margin_top = 2.16959
+margin_bottom = 2.18471
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 1 )
+region_rect = Rect2( 32, 16, 16, 16 )
+margin_left = 11.04
+margin_right = 10.901
+margin_top = 2.16959
+margin_bottom = 2.18471
+
 [resource]
 Button/colors/font_color = Color( 0, 0, 0, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
@@ -73,8 +113,8 @@ VScrollBar/icons/decrement = null
 VScrollBar/icons/decrement_highlight = null
 VScrollBar/icons/increment = null
 VScrollBar/icons/increment_highlight = null
-VScrollBar/styles/grabber = null
-VScrollBar/styles/grabber_highlight = null
-VScrollBar/styles/grabber_pressed = null
-VScrollBar/styles/scroll = null
-VScrollBar/styles/scroll_focus = null
+VScrollBar/styles/grabber = SubResource( 7 )
+VScrollBar/styles/grabber_highlight = SubResource( 8 )
+VScrollBar/styles/grabber_pressed = SubResource( 9 )
+VScrollBar/styles/scroll = SubResource( 10 )
+VScrollBar/styles/scroll_focus = SubResource( 11 )

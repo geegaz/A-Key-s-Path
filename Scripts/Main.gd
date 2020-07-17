@@ -2,13 +2,13 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Credits.hide()
+	$MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/Start.grab_focus()
 
 func _on_Back_pressed():
-	$Credits.hide()
+	$AnimationPlayer.play("credits_to_menu")
 
 func _on_Credits_pressed():
-	$Credits.show()
+	$AnimationPlayer.play("goto_credits")
 
 func _on_Start_pressed():
 	Global.goto_scene("res://Scenes/World.tscn")

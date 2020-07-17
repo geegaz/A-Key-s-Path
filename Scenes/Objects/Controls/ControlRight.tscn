@@ -10,7 +10,7 @@ extents = Vector2( 8, 8 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 7, 6 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 resource_name = "hide_grid"
 length = 0.2
 tracks/0/type = "value"
@@ -26,7 +26,7 @@ tracks/0/keys = {
 "values": [ 1.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=4]
 resource_name = "show_grid"
 length = 0.2
 tracks/0/type = "value"
@@ -59,7 +59,8 @@ shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-vframes = 6
+vframes = 4
+hframes = 2
 
 [node name="GridMask" type="Light2D" parent="."]
 position = Vector2( -1.90735e-06, 2.86102e-06 )
@@ -81,8 +82,8 @@ __meta__ = {
 }
 
 [node name="AnimationGrid" type="AnimationPlayer" parent="."]
-anims/hide_grid = SubResource( 7 )
-anims/show_grid = SubResource( 6 )
+anims/hide_grid = SubResource( 3 )
+anims/show_grid = SubResource( 4 )
 
 [node name="Tween" type="Tween" parent="."]
 [connection signal="gui_input" from="Control" to="." method="_on_Control_gui_input"]

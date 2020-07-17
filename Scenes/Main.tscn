@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Themes/Main.tres" type="Theme" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://Assets/Sprites/player_sitting-Sheet.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sprites/background_1.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sprites/background_0.png" type="Texture" id=12]
-
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 10 )
@@ -54,8 +53,223 @@ animations = [ {
 "speed": 10.0
 } ]
 
+[sub_resource type="Animation" id=11]
+resource_name = "credits_to_menu"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 480, 92 ), Vector2( 160, 92 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MainMenu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Credits:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "goto_credits"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 160, 92 ), Vector2( 480, 92 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MainMenu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Credits:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "goto_options"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 160, 92 ), Vector2( -160, 92 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MainMenu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Options:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "options_to_menu"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -160, 92 ), Vector2( 160, 88 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MainMenu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Options:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Background"]
+
+[node name="Background0" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+motion_scale = Vector2( 0, 0 )
+
+[node name="Background0" type="TextureRect" parent="Background/ParallaxBackground/Background0"]
+margin_left = -512.0
+margin_top = -128.0
+margin_right = 832.0
+margin_bottom = 128.0
+texture = ExtResource( 12 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background1" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.5 )
+
+[node name="Background1" type="TextureRect" parent="Background/ParallaxBackground/Background1"]
+margin_left = -416.0
+margin_top = -64.0
+margin_right = 736.0
+margin_bottom = 192.0
+texture = ExtResource( 11 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background2" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+
+[node name="ColorRect" type="ColorRect" parent="Background/ParallaxBackground/Background2"]
+margin_left = 320.0
+margin_right = 640.0
+margin_bottom = 184.0
+color = Color( 0.105882, 0.105882, 0.105882, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMap" type="TileMap" parent="Background"]
+tile_set = ExtResource( 9 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 196628, 0, 0, 196647, 0, 0, 262164, 0, 65536, 262183, 0, 65536, 327680, 3, 0, 327698, 3, 0, 327699, 0, 1, 327700, 0, 65539, 327718, 0, 196609, 327719, 0, 131075, 458751, 0, 1, 393216, 0, 3, 393234, 0, 196609, 393235, 0, 65538, 393236, 0, 65539, 393253, 1, 196609, 393254, 1, 2, 393255, 1, 3, 524287, 0, 65537, 458752, 0, 65539, 458767, 1, 196609, 458768, 1, 196610, 458769, 1, 2, 458770, 2, 7, 458771, 0, 262144, 458772, 0, 65538, 458773, 0, 196611, 458790, 1, 131073, 458791, 1, 131075, 589823, 0, 65537, 524288, 0, 262144, 524289, 0, 3, 524290, 3, 1, 524305, 1, 131073, 524306, 2, 4, 524307, 2, 2, 524308, 0, 65536, 524309, 1, 1, 524310, 1, 3, 524326, 0, 1, 524327, 0, 3, 655359, 0, 65537, 589824, 0, 262145, 589825, 2, 3, 589826, 1, 2, 589827, 1, 2, 589828, 1, 196611, 589842, 0, 65537, 589843, 0, 262146, 589844, 0, 65539, 589845, 1, 131073, 589846, 1, 131075, 589862, 0, 65537, 589863, 0, 65539, 720895, 0, 65537, 655360, 0, 65538, 655361, 0, 262147, 655362, 2, 6, 655363, 1, 65539, 655364, 3, 1, 655376, 3, 0, 655377, 0, 1, 655378, 0, 65538, 655379, 0, 262147, 655380, 0, 65538, 655381, 0, 3, 655397, 0, 1, 655398, 0, 65538, 655399, 0, 65539, 786431, 0, 131073, 720896, 0, 131074, 720897, 0, 65538, 720898, 2, 1, 720899, 2, 1, 720900, 0, 196611, 720912, 0, 196609, 720913, 0, 131074, 720914, 0, 131074, 720915, 0, 131074, 720916, 0, 131074, 720917, 0, 131074, 720918, 0, 196611, 720933, 0, 131073, 720934, 0, 131074, 720935, 0, 131075 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Background"]
+position = Vector2( 80, 144 )
+frames = SubResource( 9 )
+frame = 3
+playing = true
 
 [node name="MainMenu" type="Control" parent="."]
 margin_right = 320.0
@@ -64,38 +278,6 @@ theme = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Background" type="Node2D" parent="MainMenu"]
-
-[node name="Background0" type="TextureRect" parent="MainMenu/Background"]
-margin_right = 320.0
-margin_bottom = 256.0
-texture = ExtResource( 12 )
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Background1" type="TextureRect" parent="MainMenu/Background"]
-margin_right = 320.0
-margin_bottom = 256.0
-texture = ExtResource( 11 )
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TileMap" type="TileMap" parent="MainMenu/Background"]
-tile_set = ExtResource( 9 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( 327680, 3, 0, 327698, 3, 0, 327699, 0, 1, 327700, 0, 3, 458751, 0, 1, 393216, 0, 3, 393234, 0, 196609, 393235, 0, 65538, 393236, 0, 65539, 524287, 0, 65537, 458752, 0, 65539, 458767, 1, 196609, 458768, 1, 196610, 458769, 1, 2, 458770, 2, 7, 458771, 0, 262144, 458772, 0, 65539, 589823, 0, 65537, 524288, 0, 262144, 524289, 0, 3, 524290, 3, 1, 524305, 1, 131073, 524306, 2, 4, 524307, 2, 2, 524308, 0, 65539, 655359, 0, 65537, 589824, 0, 262145, 589825, 2, 3, 589826, 1, 2, 589827, 1, 2, 589828, 1, 196611, 589842, 0, 65537, 589843, 0, 262146, 589844, 0, 65539, 720895, 0, 65537, 655360, 0, 65538, 655361, 0, 262147, 655362, 2, 6, 655363, 1, 65539, 655364, 3, 1, 655376, 3, 0, 655377, 0, 1, 655378, 0, 65538, 655379, 0, 262147, 655380, 0, 65539, 786431, 0, 131073, 720896, 0, 131074, 720897, 0, 65538, 720898, 2, 1, 720899, 2, 1, 720900, 0, 196611, 720912, 0, 196609, 720913, 0, 131074, 720914, 0, 131074, 720915, 0, 131074, 720916, 0, 131075 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="MainMenu/Background"]
-position = Vector2( 80, 144 )
-frames = SubResource( 9 )
-frame = 2
-playing = true
 
 [node name="MainMenuContainer" type="VBoxContainer" parent="MainMenu"]
 margin_right = 320.0
@@ -124,20 +306,32 @@ margin_bottom = 92.0
 size_flags_horizontal = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MainMenuContainer/CenterContainer"]
-margin_left = 96.0
-margin_right = 224.0
+margin_left = 88.0
+margin_right = 232.0
 margin_bottom = 54.0
 
 [node name="Start" type="Button" parent="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer"]
-margin_right = 128.0
+margin_right = 144.0
 margin_bottom = 32.0
-rect_min_size = Vector2( 128, 32 )
+rect_min_size = Vector2( 144, 32 )
 text = "Start"
 
-[node name="Credits" type="Button" parent="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer"]
 margin_top = 36.0
-margin_right = 128.0
-margin_bottom = 54.1655
+margin_right = 144.0
+margin_bottom = 54.0
+
+[node name="Options" type="Button" parent="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+margin_right = 70.0
+margin_bottom = 18.1655
+size_flags_horizontal = 3
+text = "Options"
+
+[node name="Credits" type="Button" parent="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 74.0
+margin_right = 144.0
+margin_bottom = 18.1655
+size_flags_horizontal = 3
 text = "Credits"
 
 [node name="Container" type="Container" parent="MainMenu/MainMenuContainer"]
@@ -159,25 +353,17 @@ margin_bottom = 18.1655
 text = "Quit"
 
 [node name="Credits" type="Control" parent="."]
-visible = false
-margin_right = 320.0
+margin_left = 320.0
+margin_right = 640.0
 margin_bottom = 184.0
 theme = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="Credits"]
-margin_right = 320.0
-margin_bottom = 184.0
-color = Color( 0.105882, 0.105882, 0.105882, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="VBoxContainer" type="VBoxContainer" parent="Credits"]
 margin_right = 320.0
-margin_bottom = 184.0
+margin_bottom = 177.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -221,7 +407,7 @@ texture_focused = ExtResource( 6 )
 [node name="ScrollContainer" type="ScrollContainer" parent="Credits/VBoxContainer"]
 margin_top = 27.0
 margin_right = 320.0
-margin_bottom = 184.0
+margin_bottom = 177.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -229,14 +415,14 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="Credits/VBoxContainer/ScrollContainer"]
-margin_right = 320.0
+margin_right = 304.0
 margin_bottom = 248.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer"]
-margin_left = 68.0
-margin_right = 252.0
+margin_left = 60.0
+margin_right = 244.0
 margin_bottom = 248.0
 custom_constants/separation = 16
 
@@ -332,7 +518,24 @@ margin_top = 228.0
 margin_right = 184.0
 margin_bottom = 248.0
 custom_constants/margin_top = 20
+
+[node name="Options" type="Control" parent="."]
+margin_left = -320.0
+margin_bottom = 184.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 160, 92 )
+current = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/credits_to_menu = SubResource( 11 )
+anims/goto_credits = SubResource( 10 )
+anims/goto_options = SubResource( 12 )
+anims/options_to_menu = SubResource( 13 )
 [connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
-[connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/HBoxContainer/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer2/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="Credits/VBoxContainer/MarginContainer/Back" to="." method="_on_Back_pressed"]
