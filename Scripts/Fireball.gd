@@ -16,7 +16,7 @@ func _physics_process(delta):
 	if collision:
 		alive = false
 		$CollisionShape2D.disabled = true
-		$Sprite.visible = false
+		$AnimatedSprite.visible = false
 		$CPUParticles2D.emitting = true
 	
 	if !alive and !$CPUParticles2D.emitting:

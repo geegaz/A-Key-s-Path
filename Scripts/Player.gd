@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 signal checkpoint(node)
+signal die
 signal respawn
 signal win
 
@@ -43,9 +44,11 @@ func _process(delta):
 		if jump_control and Input.is_action_just_pressed("jump") and air_time < coyote_time:
 			velocity.y -= jump_force
 			target_gravity = gravity
+			
 			randomize()
 			$Sounds/Jump.pitch_scale = (randf()*0.8+0.6)
 			$Sounds/Jump.play()
+			create_jump_effect()
 			
 		if Input.is_action_just_released("jump") or velocity.y >= 0:
 			target_gravity = gravity_strong
@@ -90,12 +93,20 @@ func _physics_process(delta):
 	elif air_time < coyote_time:
 		air_time += delta
 
+func create_jump_effect():
+	var jump_effect = preload("res://Scenes/Objects/Effect.tscn").instance()
+	jump_effect.position = self.global_position
+	jump_effect.play("player_jump")
+	get_parent().add_child(jump_effect)
+
 func death():
 	alive = false
 	$Sprite.visible = false
 	$Effector/EffectorCollider.disabled = true
 	$DeathParticles.emitting = true
 	$DeathTimer.start()
+	
+	emit_signal("die")
 
 func respawn():
 	alive = true

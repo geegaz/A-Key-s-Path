@@ -27,7 +27,7 @@ Global="*res://Scenes/Global.tscn"
 
 window/size/width=320
 window/size/height=180
-window/size/test_width=1020
+window/size/test_width=1024
 window/size/test_height=576
 window/vsync/use_vsync=false
 window/stretch/mode="viewport"

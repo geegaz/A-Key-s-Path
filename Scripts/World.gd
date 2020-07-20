@@ -33,3 +33,6 @@ func _on_Player_respawn():
 
 func _on_Player_win():
 	Global.goto_scene("res://Scenes/Finish.tscn")
+
+func _on_Player_die():
+	$Player/Camera2D.shake(2.0, 0.5)

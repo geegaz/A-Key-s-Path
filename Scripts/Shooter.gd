@@ -7,7 +7,7 @@ export var muted = false
 
 var wait_time: float
 
-var shooting = true
+var shooting = false
 var fireball = preload("res://Scenes/Objects/Fireball.tscn")
 
 # Called when the node enters the scene tree for the first time.
@@ -20,8 +20,7 @@ func _ready():
 func _on_Timer_timeout():
 	$Timer.wait_time = delay
 	if shooting:
-		$Effect/Player.stop()
-		$Effect/Player.play("shoot_effect")
+		create_smoke_effect()
 		
 		if !muted:
 			$Sound.play()
@@ -30,7 +29,12 @@ func _on_Timer_timeout():
 		new_fireball.init(Vector2.UP.rotated(self.rotation), speed)
 		new_fireball.position = self.position
 		get_parent().add_child(new_fireball)
-		
+
+func create_smoke_effect():
+	var smoke_effect = preload("res://Scenes/Objects/Effect.tscn").instance()
+	smoke_effect.position = self.global_position
+	smoke_effect.play("shooter_smoke")
+	add_child(smoke_effect)
 
 func _on_VisibilityNotifier2D_screen_entered():
 	shooting = true

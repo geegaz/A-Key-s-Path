@@ -17,12 +17,16 @@ enum {
 var TILESIZE = 16
 
 var hover = false
+var valid_pos = true
+var in_world = false
 var dragged = false
 var drag_time = 0.0
 var limit_drag_time = 0.2
 
-var valid_pos = true
-var in_world = false
+var shaking = false
+var shake_amount: float
+var shake_time: float
+var elapsed_time: float
 
 var Actions = ["jump", "left", "right"]
 var control_action: String
@@ -41,6 +45,7 @@ func _ready():
 	connect("stop_drag", self, "_on_stop_drag")
 	
 	control_action = Actions[control_type]
+	randomize()
 
 func _process(delta):
 	if dragged:
@@ -67,16 +72,20 @@ func _process(delta):
 	if Input.is_action_just_pressed(control_action) and (dragged or in_world):
 		var tween = $Tween
 		tween.interpolate_property(ControlSprite, "modulate",
-			Color(1.5, 0.0, 0.0),
+			Color(1.2, 0.0, 0.0),
 			Color(1.0, 1.0, 1.0),
 			0.2
 		)
 		tween.start()
+		shake(2, 0.2)
 	
 	if not valid_pos:
 		ControlSprite.modulate.a = 0.5
 	else:
 		ControlSprite.modulate.a = 1.0
+	
+	if shaking:
+		_shake_process(delta)
 
 func _physics_process(delta):
 	valid_pos = true
@@ -89,6 +98,14 @@ func _physics_process(delta):
 			position += Vector2(8, 8)
 		if $Placement.get_overlapping_bodies().size() > 0:
 			valid_pos = false
+
+func _shake_process(delta):
+	if elapsed_time > shake_time:
+		shaking = false
+		ControlSprite.offset = Vector2.ZERO
+	else:
+		ControlSprite.offset =  Vector2(randf(), randf()) * shake_amount
+		elapsed_time += delta
 
 func _on_start_drag():
 	drag_time = 0.0
@@ -116,12 +133,17 @@ func toggle_grid(state):
 		animator.current_animation = "hide_grid"
 	animator.playback_active = true
 		
-
 func retrieve():
 	in_world = false
 	Collider.disabled = true
 	hover = false
 	ControlSprite.modulate = Color(1.0, 1.0, 1.0)
+
+func shake(amount: float, time: float):
+	shake_amount = amount
+	shake_time = time
+	elapsed_time = 0.0
+	shaking = true
 
 func _on_Control_mouse_entered():
 	hover = true
