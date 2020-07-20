@@ -1,26 +1,32 @@
 *Welcome to the official repository for the game "Out of Control(s)". <br> Here, you can find all jam and post-jam releases in the [Releases](https://github.com/geegaz/GMTK_Jam_2020/releases) section of the repository, or browse the code.*
 
 
-# Out of Control(s)
+# A Key(s) Path
 **- By Geegaz -**
 
 <img src="https://img.itch.zone/aW1nLzM4NjM5MTEuZ2lm/original/bm3fwN.gif">
 
-### Build your way with your own controls.
-<p>With your 3 controls (Left, Right, Jump) available at the bottom of the screen, you can <strong>drag them in the world to use them as platforms</strong>. But don't use too many, or you could run out of controls !</p>
-<p>Because as soon as one is placed, you <strong>can't use it for movement</strong>. It will be locked until you retrieve the control from the world.<br></p>
+*previously "Out of Control(s)"*
+
+### Build your way with your own keys.
+
+With your 3 movement keys (Left, Right, Jump) available at the bottom of the screen, you can **drag them in the world to use them as platforms**. But don't use too many, or you could run out of movement options !
+
+Because as soon as one is placed, you **can't use it for movement**. It will be locked until you retrieve the key from the world.
+
+*This game was created as part of the GMTK Game Jam 2020. The theme was "Out of Control" - I took it as "you run out of controls" !*
 
 ### Controls
 
 The game plays with a mouse and keyboard.
 
 <ul>
-    <li><strong>Move:</strong> Left and Right arrow / A and D</li>
-    <li><strong>Jump:</strong> Up arrow / Space</li>
+    <li><strong>Move:</strong> Left and Right arrow / A and D / Q and D</li>
+    <li><strong>Jump:</strong> Up arrow / W / Z / Space</li>
 </ul>
 <ul>
-    <li><strong>Place Control:</strong> Drag & drop the control from the bar</li>
-    <li><strong>Retrieve Control:</strong> Click the control in world or the empty slot in the bar</li>
+    <li><strong>Place Key:</strong> Drag & drop the key from the bar</li>
+    <li><strong>Retrieve Key:</strong> Click the key in the world or <strong>the empty slot in the bar</strong></li>
 </ul>
 <ul>
     <li><strong>Pause / Quit:</strong> Escape</li>
