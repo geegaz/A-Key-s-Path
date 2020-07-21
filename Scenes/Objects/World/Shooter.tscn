@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Sprites/shooter/shooter_static.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Shooter.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/Objects/Effect.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Fireball.wav" type="AudioStream" id=4]
 
 [node name="Shooter" type="Node2D"]
@@ -16,8 +15,6 @@ position = Vector2( 0, -8.34465e-07 )
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
-
-[node name="Effect" parent="." instance=ExtResource( 3 )]
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )

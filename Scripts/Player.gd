@@ -34,7 +34,7 @@ func _ready():
 	Animator = $AnimationPlayer
 	target_gravity = gravity_strong
 
-func _process(delta):
+func _process(_delta):
 	var direction = 0.0
 	if alive:
 		if left_control and Input.is_action_pressed("left"):

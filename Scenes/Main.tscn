@@ -60,48 +60,47 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 17 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 17 )
 region = Rect2( 16, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 17 )
 region = Rect2( 32, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 17 )
 region = Rect2( 48, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 17 )
 region = Rect2( 64, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 17 )
 region = Rect2( 80, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 17 )
 region = Rect2( 96, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 17 )
 region = Rect2( 112, 0, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=22]
+[sub_resource type="SpriteFrames" id=18]
 animations = [ {
-"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
 "loop": true,
 "name": "default",
 "speed": 10.0
 } ]
 
-[sub_resource type="Animation" id=10]
-resource_name = "credits_to_menu"
+[sub_resource type="Animation" id=19]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:position")
@@ -140,7 +139,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=20]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:position")
@@ -179,8 +178,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=12]
-resource_name = "goto_options"
+[sub_resource type="Animation" id=21]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:position")
@@ -219,8 +217,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=13]
-resource_name = "options_to_menu"
+[sub_resource type="Animation" id=22]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:position")
@@ -326,12 +323,13 @@ tile_data = PoolIntArray( 131092, 3, 1, 262124, 3, 0, 196628, 0, 0, 196647, 0, 1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Background"]
 position = Vector2( 80, 144 )
 frames = SubResource( 9 )
-frame = 7
+frame = 4
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Background"]
 position = Vector2( 264, 104 )
-frames = SubResource( 22 )
+frames = SubResource( 18 )
+frame = 5
 playing = true
 
 [node name="MainMenu" type="Control" parent="."]
@@ -351,7 +349,7 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="MainMenu/MainMenuContainer"]
-margin_right = 325.0
+margin_right = 320.0
 margin_bottom = 34.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -364,13 +362,13 @@ uppercase = true
 
 [node name="CenterContainer" type="CenterContainer" parent="MainMenu/MainMenuContainer"]
 margin_top = 38.0
-margin_right = 325.0
+margin_right = 320.0
 margin_bottom = 92.0
 size_flags_horizontal = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MainMenuContainer/CenterContainer"]
-margin_left = 90.0
-margin_right = 234.0
+margin_left = 88.0
+margin_right = 232.0
 margin_bottom = 54.0
 
 [node name="Start" type="Button" parent="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer"]
@@ -399,19 +397,19 @@ text = "Credits"
 
 [node name="Container" type="Container" parent="MainMenu/MainMenuContainer"]
 margin_top = 96.0
-margin_right = 325.0
+margin_right = 320.0
 margin_bottom = 154.0
 size_flags_vertical = 3
 
 [node name="CenterContainer2" type="CenterContainer" parent="MainMenu/MainMenuContainer"]
 margin_top = 158.0
-margin_right = 325.0
+margin_right = 320.0
 margin_bottom = 176.166
 size_flags_horizontal = 3
 
 [node name="Quit" type="Button" parent="MainMenu/MainMenuContainer/CenterContainer2"]
-margin_left = 143.0
-margin_right = 181.627
+margin_left = 140.0
+margin_right = 178.627
 margin_bottom = 18.1655
 text = "Quit"
 
@@ -749,10 +747,10 @@ position = Vector2( 160, 92 )
 current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/credits_to_menu = SubResource( 10 )
-anims/goto_credits = SubResource( 11 )
-anims/goto_options = SubResource( 12 )
-anims/options_to_menu = SubResource( 13 )
+anims/credits_to_menu = SubResource( 19 )
+anims/goto_credits = SubResource( 20 )
+anims/goto_options = SubResource( 21 )
+anims/options_to_menu = SubResource( 22 )
 [connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/HBoxContainer/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/HBoxContainer/Credits" to="." method="_on_Credits_pressed"]

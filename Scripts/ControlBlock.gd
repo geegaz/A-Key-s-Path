@@ -41,7 +41,9 @@ func _ready():
 	Collider = $Collider
 	GridMask = $GridMask
 	
+# warning-ignore:return_value_discarded
 	connect("start_drag", self, "_on_start_drag")
+# warning-ignore:return_value_discarded
 	connect("stop_drag", self, "_on_stop_drag")
 	
 	control_action = Actions[control_type]

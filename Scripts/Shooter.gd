@@ -32,7 +32,6 @@ func _on_Timer_timeout():
 
 func create_smoke_effect():
 	var smoke_effect = preload("res://Scenes/Objects/Effect.tscn").instance()
-	smoke_effect.position = self.global_position
 	smoke_effect.play("shooter_smoke")
 	add_child(smoke_effect)
 

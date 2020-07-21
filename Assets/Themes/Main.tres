@@ -51,9 +51,9 @@ margin_right = 3.25483
 margin_top = 3.08429
 margin_bottom = 3.08123
 
-[sub_resource type="StyleBoxEmpty" id=13]
+[sub_resource type="StyleBoxEmpty" id=7]
 
-[sub_resource type="StyleBoxTexture" id=12]
+[sub_resource type="StyleBoxTexture" id=8]
 texture = ExtResource( 1 )
 region_rect = Rect2( 16, 32, 16, 16 )
 margin_left = 2.06745
@@ -61,7 +61,7 @@ margin_right = 2.06389
 margin_top = 5.06342
 margin_bottom = 4.98402
 
-[sub_resource type="StyleBoxTexture" id=7]
+[sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 1 )
 region_rect = Rect2( 48, 16, 16, 16 )
 margin_left = 13.0962
@@ -69,7 +69,7 @@ margin_right = 12.8287
 margin_top = 3.19769
 margin_bottom = 4.11239
 
-[sub_resource type="StyleBoxTexture" id=8]
+[sub_resource type="StyleBoxTexture" id=10]
 texture = ExtResource( 1 )
 region_rect = Rect2( 64, 16, 16, 16 )
 margin_left = 12.8391
@@ -77,7 +77,7 @@ margin_right = 12.8287
 margin_top = 3.19769
 margin_bottom = 4.11239
 
-[sub_resource type="StyleBoxTexture" id=9]
+[sub_resource type="StyleBoxTexture" id=11]
 texture = ExtResource( 1 )
 region_rect = Rect2( 80, 16, 16, 16 )
 margin_left = 11.9396
@@ -85,7 +85,7 @@ margin_right = 11.8006
 margin_top = 5.12537
 margin_bottom = 4.11239
 
-[sub_resource type="StyleBoxTexture" id=10]
+[sub_resource type="StyleBoxTexture" id=12]
 texture = ExtResource( 1 )
 region_rect = Rect2( 16, 16, 16, 16 )
 margin_left = 11.04
@@ -93,7 +93,7 @@ margin_right = 10.901
 margin_top = 2.16959
 margin_bottom = 2.18471
 
-[sub_resource type="StyleBoxTexture" id=11]
+[sub_resource type="StyleBoxTexture" id=13]
 texture = ExtResource( 1 )
 region_rect = Rect2( 32, 16, 16, 16 )
 margin_left = 11.04
@@ -117,8 +117,8 @@ HSlider/icons/grabber = ExtResource( 4 )
 HSlider/icons/grabber_disabled = ExtResource( 5 )
 HSlider/icons/grabber_highlight = ExtResource( 6 )
 HSlider/icons/tick = null
-HSlider/styles/grabber_area = SubResource( 13 )
-HSlider/styles/slider = SubResource( 12 )
+HSlider/styles/grabber_area = SubResource( 7 )
+HSlider/styles/slider = SubResource( 8 )
 Label/colors/font_color = Color( 1, 1, 1, 1 )
 Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
 Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
@@ -132,8 +132,8 @@ VScrollBar/icons/decrement = null
 VScrollBar/icons/decrement_highlight = null
 VScrollBar/icons/increment = null
 VScrollBar/icons/increment_highlight = null
-VScrollBar/styles/grabber = SubResource( 7 )
-VScrollBar/styles/grabber_highlight = SubResource( 8 )
-VScrollBar/styles/grabber_pressed = SubResource( 9 )
-VScrollBar/styles/scroll = SubResource( 10 )
-VScrollBar/styles/scroll_focus = SubResource( 11 )
+VScrollBar/styles/grabber = SubResource( 9 )
+VScrollBar/styles/grabber_highlight = SubResource( 10 )
+VScrollBar/styles/grabber_pressed = SubResource( 11 )
+VScrollBar/styles/scroll = SubResource( 12 )
+VScrollBar/styles/scroll_focus = SubResource( 13 )
