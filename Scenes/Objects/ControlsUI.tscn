@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Scripts/ControlsUI.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Objects/ControlsUI.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Objects/Controls/ControlRight.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Sprites/UI/controls/space_place/spacebar_place1.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/UI/controls/space_place/spacebar_place3.png" type="Texture" id=4]
@@ -14,6 +14,9 @@
 [ext_resource path="res://Assets/Sprites/UI/controls/left_place/left_place1.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/Objects/Controls/ControlJump.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Objects/Controls/ControlLeft.tscn" type="PackedScene" id=14]
+
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 160, 8 )

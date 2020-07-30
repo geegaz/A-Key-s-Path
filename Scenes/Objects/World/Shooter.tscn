@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Sprites/shooter/shooter_static.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/Shooter.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Objects/World/Shooter.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Fireball.wav" type="AudioStream" id=4]
+
 
 [node name="Shooter" type="Node2D"]
 script = ExtResource( 2 )

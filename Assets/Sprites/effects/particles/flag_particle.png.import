@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hand-Sheet.png-51302c3d37ae4ab7b2ae86771cc723e0.stex"
+path="res://.import/flag_particle.png-31be7f4789888d0628228140c2621555.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/hand-Sheet.png"
-dest_files=[ "res://.import/hand-Sheet.png-51302c3d37ae4ab7b2ae86771cc723e0.stex" ]
+source_file="res://Assets/Sprites/effects/particles/flag_particle.png"
+dest_files=[ "res://.import/flag_particle.png-31be7f4789888d0628228140c2621555.stex" ]
 
 [params]
 

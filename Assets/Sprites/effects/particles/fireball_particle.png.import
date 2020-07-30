@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flag_particle.png-9475a9ed3700eec3ab8aec5fbf8ae5d7.stex"
+path="res://.import/fireball_particle.png-2601d426bbe5794c844965ae34c7c8fd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/effects/flag_particle.png"
-dest_files=[ "res://.import/flag_particle.png-9475a9ed3700eec3ab8aec5fbf8ae5d7.stex" ]
+source_file="res://Assets/Sprites/effects/particles/fireball_particle.png"
+dest_files=[ "res://.import/fireball_particle.png-2601d426bbe5794c844965ae34c7c8fd.stex" ]
 
 [params]
 

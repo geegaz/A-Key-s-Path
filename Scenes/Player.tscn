@@ -2,12 +2,13 @@
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/player/player-Sheet.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Sprites/effects/player_death_particle.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/effects/particles/player_death_particle.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Extra Life.wav" type="AudioStream" id=4]
 [ext_resource path="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Explosion with Ricochet.wav" type="AudioStream" id=5]
 [ext_resource path="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Footstep 2.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Jump 1.wav" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Coin Total Win 2.wav" type="AudioStream" id=8]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 7 )

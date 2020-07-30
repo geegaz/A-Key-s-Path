@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/Objects/World/Shooter.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Objects/ControlsUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Objects/Shaker.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scripts/World.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/Worlds/World.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Tilesets/terrain_background.tres" type="TileSet" id=8]
 [ext_resource path="res://Assets/Tilesets/anti_control.tres" type="TileSet" id=9]
 [ext_resource path="res://Assets/Tilesets/terrain_solid.tres" type="TileSet" id=10]
@@ -40,6 +40,10 @@ stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ControlsLayer" type="CanvasLayer" parent="."]
+
+[node name="ControlsUI" parent="ControlsLayer" instance=ExtResource( 5 )]
 
 [node name="Background" type="ParallaxBackground" parent="."]
 
@@ -144,7 +148,7 @@ delay = 0.5
 [node name="StartPoint" type="Position2D" parent="."]
 position = Vector2( 88, -8 )
 
-[node name="Checkpoints" type="Node2D" parent="."]
+[node name="Checkpoints" type="Node" parent="."]
 
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource( 1 )]
 position = Vector2( 408, 88 )
@@ -157,6 +161,8 @@ position = Vector2( 856, 216 )
 
 [node name="Checkpoint4" parent="Checkpoints" instance=ExtResource( 1 )]
 position = Vector2( 1080, 184 )
+
+[node name="Sounds" type="Node" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 88, 16 )
@@ -176,13 +182,9 @@ editor_draw_drag_margin = true
 [node name="Shaker" parent="Player/Camera2D" instance=ExtResource( 6 )]
 
 [node name="Tween" type="Tween" parent="."]
-
-[node name="ControlsLayer" type="CanvasLayer" parent="."]
-
-[node name="ControlsUI" parent="ControlsLayer" instance=ExtResource( 5 )]
+[connection signal="control_placed" from="ControlsLayer/ControlsUI" to="Player" method="_on_ControlsUI_control_placed"]
+[connection signal="control_retrieved" from="ControlsLayer/ControlsUI" to="Player" method="_on_ControlsUI_control_retrieved"]
 [connection signal="checkpoint" from="Player" to="." method="_on_Player_checkpoint"]
 [connection signal="die" from="Player" to="." method="_on_Player_die"]
 [connection signal="respawn" from="Player" to="." method="_on_Player_respawn"]
 [connection signal="win" from="Player" to="." method="_on_Player_win"]
-[connection signal="control_placed" from="ControlsLayer/ControlsUI" to="Player" method="_on_ControlsUI_control_placed"]
-[connection signal="control_retrieved" from="ControlsLayer/ControlsUI" to="Player" method="_on_ControlsUI_control_retrieved"]
