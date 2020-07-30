@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 signal control_placed(control_type)
 signal control_retrieved(control_type)
@@ -28,7 +28,7 @@ func reparent(child: Node, new_parent: Node):
 	new_parent.add_child(child)
 
 func _on_Control_place_in_world(node):
-	reparent(node, get_parent())
+	reparent(node, get_parent().get_parent())
 	emit_signal("control_placed", node.control_type)
 
 func _on_Control_retrieve_from_world(node):

@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/ControlBlock.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sprites/UI/right.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/UI/controls/right.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/effects/light_mask.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Objects/Shaker.tscn" type="PackedScene" id=4]
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -43,7 +46,7 @@ tracks/0/keys = {
 }
 
 [node name="ControlRight" type="KinematicBody2D"]
-z_index = 2
+z_index = 1
 collision_mask = 0
 script = ExtResource( 1 )
 
@@ -86,6 +89,8 @@ anims/hide_grid = SubResource( 3 )
 anims/show_grid = SubResource( 4 )
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="Shaker" parent="." instance=ExtResource( 4 )]
 [connection signal="gui_input" from="Control" to="." method="_on_Control_gui_input"]
 [connection signal="mouse_entered" from="Control" to="." method="_on_Control_mouse_entered"]
 [connection signal="mouse_exited" from="Control" to="." method="_on_Control_mouse_exited"]

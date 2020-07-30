@@ -23,23 +23,20 @@ var dragged = false
 var drag_time = 0.0
 var limit_drag_time = 0.2
 
-var shaking = false
-var shake_amount: float
-var shake_time: float
-var elapsed_time: float
-
 var Actions = ["jump", "left", "right"]
 var control_action: String
 
 var ControlSprite: Sprite
 var Collider: CollisionShape2D
 var GridMask: Light2D
+var Shaker: Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ControlSprite = $Sprite
 	Collider = $Collider
 	GridMask = $GridMask
+	Shaker = $Shaker
 	
 # warning-ignore:return_value_discarded
 	connect("start_drag", self, "_on_start_drag")
@@ -79,15 +76,12 @@ func _process(delta):
 			0.2
 		)
 		tween.start()
-		shake(2, 0.2)
+		Shaker.shake(ControlSprite, "offset", 2.0, 0.2)
 	
 	if not valid_pos:
 		ControlSprite.modulate.a = 0.5
 	else:
 		ControlSprite.modulate.a = 1.0
-	
-	if shaking:
-		_shake_process(delta)
 
 func _physics_process(delta):
 	valid_pos = true
@@ -101,19 +95,12 @@ func _physics_process(delta):
 		if $Placement.get_overlapping_bodies().size() > 0:
 			valid_pos = false
 
-func _shake_process(delta):
-	if elapsed_time > shake_time:
-		shaking = false
-		ControlSprite.offset = Vector2.ZERO
-	else:
-		ControlSprite.offset =  Vector2(randf(), randf()) * shake_amount
-		elapsed_time += delta
-
 func _on_start_drag():
 	drag_time = 0.0
 	dragged = true
 	toggle_grid(true)
 	Collider.disabled = true
+	
 	emit_signal("place_in_world", self)
 	position = get_global_mouse_position().round()
 
@@ -140,12 +127,6 @@ func retrieve():
 	Collider.disabled = true
 	hover = false
 	ControlSprite.modulate = Color(1.0, 1.0, 1.0)
-
-func shake(amount: float, time: float):
-	shake_amount = amount
-	shake_time = time
-	elapsed_time = 0.0
-	shaking = true
 
 func _on_Control_mouse_entered():
 	hover = true

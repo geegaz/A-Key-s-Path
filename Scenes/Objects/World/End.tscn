@@ -6,7 +6,7 @@
 extents = Vector2( 12, 16 )
 
 [node name="End" type="StaticBody2D"]
-collision_layer = 8
+collision_layer = 24
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

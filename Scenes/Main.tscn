@@ -323,13 +323,13 @@ tile_data = PoolIntArray( 131092, 3, 1, 262124, 3, 0, 196628, 0, 0, 196647, 0, 1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Background"]
 position = Vector2( 80, 144 )
 frames = SubResource( 9 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Background"]
 position = Vector2( 264, 104 )
 frames = SubResource( 18 )
-frame = 5
+frame = 2
 playing = true
 
 [node name="MainMenu" type="Control" parent="."]
@@ -414,7 +414,6 @@ margin_bottom = 18.1655
 text = "Quit"
 
 [node name="Credits" type="Control" parent="."]
-visible = false
 margin_left = 320.0
 margin_right = 640.0
 margin_bottom = 184.0
@@ -487,14 +486,14 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="Credits/VBoxContainer/ScrollContainer"]
-margin_right = 320.0
+margin_right = 304.0
 margin_bottom = 248.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer"]
-margin_left = 68.0
-margin_right = 252.0
+margin_left = 60.0
+margin_right = 244.0
 margin_bottom = 248.0
 custom_constants/separation = 16
 
@@ -592,7 +591,6 @@ margin_bottom = 248.0
 custom_constants/margin_top = 20
 
 [node name="Options" type="Control" parent="."]
-visible = false
 margin_left = -320.0
 margin_bottom = 184.0
 theme = ExtResource( 2 )

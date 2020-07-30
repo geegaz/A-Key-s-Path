@@ -2,24 +2,27 @@
 
 [ext_resource path="res://Scripts/ControlsUI.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Objects/Controls/ControlRight.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Sprites/UI/space_place/spacebar_place1.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Sprites/UI/space_place/spacebar_place3.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sprites/UI/space_place/spacebar_place2.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sprites/UI/controls_background.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sprites/UI/right_place/right_place1.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Sprites/UI/right_place/right_place2.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Sprites/UI/right_place/right_place3.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Sprites/UI/left_place/left_place2.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Sprites/UI/left_place/left_place3.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Sprites/UI/left_place/left_place1.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sprites/UI/controls/space_place/spacebar_place1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/UI/controls/space_place/spacebar_place3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/UI/controls/space_place/spacebar_place2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/UI/controls/controls_background.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/UI/controls/right_place/right_place1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/UI/controls/right_place/right_place2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/UI/controls/right_place/right_place3.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/UI/controls/left_place/left_place2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/UI/controls/left_place/left_place3.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites/UI/controls/left_place/left_place1.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/Objects/Controls/ControlJump.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Objects/Controls/ControlLeft.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 160, 8 )
 
-[node name="ControlsUI" type="CanvasLayer"]
+[node name="ControlsUI" type="Control"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Tween" type="Tween" parent="."]
 
