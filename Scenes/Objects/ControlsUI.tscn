@@ -1,22 +1,20 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Objects/ControlsUI.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Objects/Controls/ControlRight.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Sprites/UI/controls/space_place/spacebar_place1.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Sprites/UI/controls/space_place/spacebar_place3.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sprites/UI/controls/space_place/spacebar_place2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/UI/controls/space/spacebar_place1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/UI/controls/space/spacebar_place3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/UI/controls/space/spacebar_place2.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/UI/controls/controls_background.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sprites/UI/controls/right_place/right_place1.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Sprites/UI/controls/right_place/right_place2.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Sprites/UI/controls/right_place/right_place3.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Sprites/UI/controls/left_place/left_place2.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Sprites/UI/controls/left_place/left_place3.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Sprites/UI/controls/left_place/left_place1.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sprites/UI/controls/right/right_place1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/UI/controls/right/right_place2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/UI/controls/right/right_place3.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/UI/controls/left/left_place2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/UI/controls/left/left_place3.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites/UI/controls/left/left_place1.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/Objects/Controls/ControlJump.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Objects/Controls/ControlLeft.tscn" type="PackedScene" id=14]
-
-
-
+[ext_resource path="res://Assets/Sprites/UI/controls/controls_background_top.png" type="Texture" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 160, 8 )
@@ -29,9 +27,26 @@ __meta__ = {
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="ControlsBar" type="Sprite" parent="."]
-position = Vector2( 160, 174 )
+[node name="BarBase" type="TextureRect" parent="."]
+margin_top = 158.0
+margin_right = 34.0
+margin_bottom = 190.0
+rect_scale = Vector2( 9.44, 1 )
 texture = ExtResource( 6 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BarSlots" type="NinePatchRect" parent="."]
+margin_left = 96.0
+margin_top = 158.0
+margin_right = 224.0
+margin_bottom = 190.0
+texture = ExtResource( 15 )
+patch_margin_left = 9
+patch_margin_top = 10
+patch_margin_right = 9
 
 [node name="ControlJumpPos" type="Position2D" parent="."]
 position = Vector2( 184, 170 )

@@ -46,7 +46,7 @@ func _ready():
 	control_action = Actions[control_type]
 	randomize()
 
-func _process(delta):
+func _process(_delta):
 	if dragged:
 		if hover:
 			ControlSprite.frame = DRAGGED_HOVER

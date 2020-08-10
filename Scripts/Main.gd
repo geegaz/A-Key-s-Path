@@ -20,7 +20,8 @@ func set_slider(slider: Node, label: Node, value: float):
 	label.text = str(value*100)
 
 func _on_Start_pressed():
-	Global.goto_level(Global.current_level_id)
+	Global.set_transition()
+	Global.goto_scene("res://Scenes/Worlds/World1.tscn")
 
 func _on_Quit_pressed():
 	get_tree().quit()

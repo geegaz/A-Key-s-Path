@@ -9,7 +9,6 @@
 [ext_resource path="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Jump 1.wav" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Coin Total Win 2.wav" type="AudioStream" id=8]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 7 )
 
@@ -86,6 +85,7 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -8 )
+z_index = 1
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 8

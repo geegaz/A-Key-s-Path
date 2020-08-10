@@ -1,6 +1,7 @@
 extends Node2D
 
-export(int) var next_level = 0
+export(int) var level_id = 0
+export(String, FILE, "*.tscn") var next_level
 
 var current_checkpoint: Node
 
@@ -41,7 +42,7 @@ func _on_Player_respawn():
 	Player.position = current_checkpoint.position
 
 func _on_Player_win():
-	Global.goto_level(next_level)
+	Global.goto_scene(next_level)
 
 func _on_Player_die():
 	$Player/Camera2D/Shaker.shake($Player/Camera2D, "offset", 2.0, 0.5)

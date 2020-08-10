@@ -1,9 +1,10 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Objects/Controls/ControlBlock.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sprites/UI/controls/right.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/UI/controls/right/right.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/effects/light_mask.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Objects/Shaker.tscn" type="PackedScene" id=4]
+
 
 
 

@@ -1,100 +1,125 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Assets/Fonts/title_font.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Assets/Sprites/background_0.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/flag/flag-Sheet.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/player/player_sitting-Sheet.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sprites/background_1.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Tilesets/terrain_background.tres" type="TileSet" id=6]
+[ext_resource path="res://Assets/Sprites/Worlds/World1/background_ground.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/Worlds/World1/tileset.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Tilesets/anti_control.tres" type="TileSet" id=7]
 [ext_resource path="res://Assets/Tilesets/spikes.tres" type="TileSet" id=8]
-[ext_resource path="res://Assets/Tilesets/terrain_solid.tres" type="TileSet" id=9]
-[ext_resource path="res://Assets/Sprites/UI/controls/right.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Tilesets/world1.tres" type="TileSet" id=9]
+[ext_resource path="res://Assets/Sprites/UI/controls/right/right.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sprites/UI/hand-Sheet.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sprites/effects/click_effect.png" type="Texture" id=12]
 
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 32, 32 )
+[sub_resource type="StreamTexture" id=1]
 
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 4 )
-region = Rect2( 32, 0, 32, 32 )
+[sub_resource type="TileSet" id=2]
+0/name = "terrain_tiles.png 0"
+0/texture = ExtResource( 6 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 128, 0, 64, 80 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 144, Vector2( 0, 1 ), 146, Vector2( 0, 2 ), 18, Vector2( 0, 3 ), 16, Vector2( 0, 4 ), 21299386, Vector2( 1, 0 ), 16777392, Vector2( 1, 1 ), 17039538, Vector2( 1, 2 ), 262194, Vector2( 1, 3 ), 48, Vector2( 1, 4 ), 21299386, Vector2( 2, 0 ), 20971704, Vector2( 2, 1 ), 21299386, Vector2( 2, 2 ), 327738, Vector2( 2, 3 ), 56, Vector2( 2, 4 ), 21299386, Vector2( 3, 0 ), 4194456, Vector2( 3, 1 ), 4259994, Vector2( 3, 2 ), 65562, Vector2( 3, 3 ), 24, Vector2( 3, 4 ), 21299386 ]
+0/autotile/icon_coordinate = Vector2( 0, 3 )
+0/autotile/tile_size = Vector2( 16, 16 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [ Vector3( 2, 1, 10 ) ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 4 )
-region = Rect2( 64, 0, 32, 32 )
+region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 4 )
-region = Rect2( 96, 0, 32, 32 )
+region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 4 )
-region = Rect2( 128, 0, 32, 32 )
+region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 4 )
-region = Rect2( 160, 0, 32, 32 )
+region = Rect2( 96, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 4 )
-region = Rect2( 192, 0, 32, 32 )
+region = Rect2( 128, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 4 )
+region = Rect2( 160, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 4 )
+region = Rect2( 192, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 4 )
 region = Rect2( 224, 0, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=9]
+[sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "default",
 "speed": 10.0
 } ]
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 3 )
-region = Rect2( 16, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 3 )
-region = Rect2( 32, 0, 16, 16 )
+region = Rect2( 0, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 3 )
-region = Rect2( 48, 0, 16, 16 )
+region = Rect2( 16, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 3 )
-region = Rect2( 64, 0, 16, 16 )
+region = Rect2( 32, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 3 )
-region = Rect2( 80, 0, 16, 16 )
+region = Rect2( 48, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 3 )
-region = Rect2( 96, 0, 16, 16 )
+region = Rect2( 64, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 3 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 3 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 3 )
 region = Rect2( 112, 0, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=18]
+[sub_resource type="SpriteFrames" id=20]
 animations = [ {
-"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
 "loop": true,
 "name": "default",
 "speed": 10.0
 } ]
 
-[sub_resource type="Animation" id=19]
-resource_name = "drag_and_drop"
+[sub_resource type="Animation" id=21]
 length = 3.0
 loop = true
 tracks/0/type = "value"
@@ -104,7 +129,7 @@ tracks/0/loop_wrap = false
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 1.1, 1.7 ),
+"times": PoolRealArray( 1.3, 1.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 96, 168 ), Vector2( 160, 120 ) ]
@@ -116,7 +141,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.5, 0.8, 1.9 ),
+"times": PoolRealArray( 0.5, 0.8, 2.1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 0 ]
@@ -152,12 +177,15 @@ tracks/3/keys = {
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextureRect" type="TextureRect" parent="Picture"]
 margin_top = -32.0
 margin_right = 320.0
 margin_bottom = 224.0
-texture = ExtResource( 2 )
+texture = SubResource( 1 )
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -175,7 +203,7 @@ __meta__ = {
 
 [node name="TileMap4" type="TileMap" parent="Picture"]
 position = Vector2( -8, 16 )
-tile_set = ExtResource( 6 )
+tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 65555, 0, 0, 131073, 0, 0, 131090, 0, 196609, 131091, 0, 65538, 131092, 0, 3, 196608, 0, 1, 196609, 0, 65539, 196627, 0, 65537, 196628, 0, 65539, 262144, 0, 131073, 262145, 0, 65539, 262163, 0, 65537, 262164, 0, 65539, 327681, 0, 65537, 327682, 0, 3, 327696, 0, 1, 327697, 0, 3, 327699, 0, 65537, 327700, 0, 65539, 458751, 0, 196609, 393216, 0, 2, 393217, 0, 65538, 393218, 0, 65538, 393219, 0, 196611, 393232, 0, 131073, 393233, 0, 262147, 393234, 0, 2, 393235, 0, 262145, 393236, 0, 65539, 458752, 0, 65537, 458753, 0, 262145, 458754, 0, 65539, 458769, 0, 65537, 458770, 0, 262147, 458771, 0, 65538, 458772, 0, 65539, 589823, 0, 1, 524288, 0, 131074, 524289, 0, 131074, 524290, 0, 65538, 524291, 0, 3, 524305, 0, 65537, 524306, 0, 65538, 524307, 0, 131074, 524308, 0, 65539, 655359, 0, 131072, 589826, 0, 131073, 589827, 0, 131074, 589828, 0, 3, 589841, 0, 65537, 589842, 0, 65539, 589844, 0, 65536, 655364, 0, 65537, 655365, 0, 3, 655367, 0, 0, 655376, 0, 196609, 655377, 0, 65538, 655378, 0, 65539, 655380, 0, 65536, 720899, 0, 1, 720900, 0, 65538, 720901, 0, 65538, 720902, 0, 2, 720903, 0, 131074, 720904, 0, 3, 720910, 0, 0, 720913, 0, 65537, 720914, 0, 65539, 720916, 0, 65536, 786434, 0, 1, 786435, 0, 65538, 786436, 0, 65538, 786437, 0, 65538, 786438, 0, 131075, 786440, 0, 65536, 786446, 0, 131073, 786447, 0, 2, 786448, 0, 2, 786449, 0, 65538, 786450, 0, 131075, 786452, 0, 65536, 851970, 0, 65537, 851971, 0, 65538, 851972, 0, 65538, 851973, 0, 131075, 851975, 0, 1, 851976, 0, 65539, 851979, 0, 1, 851980, 0, 3, 851983, 0, 131073, 851984, 0, 65538, 851985, 0, 65539, 851988, 0, 65536, 917506, 0, 131073, 917507, 0, 131074, 917508, 0, 131075, 917510, 0, 196609, 917511, 0, 65538, 917512, 0, 131074, 917513, 0, 3, 917515, 0, 65537, 917516, 0, 65538, 917517, 0, 3, 917520, 0, 131073, 917521, 0, 131075, 917524, 0, 65536, 983047, 0, 65536, 983049, 0, 131073, 983050, 0, 2, 983051, 0, 262146, 983052, 0, 65538, 983053, 0, 65538, 983054, 0, 3, 983060, 0, 65536, 1048583, 0, 65537, 1048584, 0, 3, 1048586, 0, 65537, 1048587, 0, 262144, 1048588, 0, 65538, 1048589, 0, 65538, 1048590, 0, 65539, 1048596, 0, 65536, 1179647, 0, 196609, 1114112, 0, 196610, 1114113, 0, 196610, 1114114, 0, 196610, 1114115, 0, 196610, 1114116, 0, 196610, 1114117, 0, 196610, 1114118, 0, 196610, 1114119, 0, 131074, 1114120, 0, 131074, 1114121, 0, 196610, 1114122, 0, 131074, 1114123, 0, 131074, 1114124, 0, 131074, 1114125, 0, 131074, 1114126, 0, 131074, 1114127, 0, 196610, 1114128, 0, 196610, 1114129, 0, 196610, 1114130, 0, 196610, 1114131, 0, 196610, 1114132, 0, 131075 )
@@ -184,7 +212,7 @@ tile_data = PoolIntArray( 65555, 0, 0, 131073, 0, 0, 131090, 0, 196609, 131091, 
 margin_top = 8.0
 margin_right = 320.0
 margin_bottom = 120.0
-color = Color( 0.11, 0.11, 0.11, 0.85 )
+color = Color( 0.109804, 0.109804, 0.109804, 0.85098 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -242,20 +270,20 @@ tile_data = PoolIntArray( 655364, 0, 0, 655365, 0, 0, 786446, 0, 0, 786447, 0, 0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Picture"]
 position = Vector2( 152, 192 )
-frames = SubResource( 9 )
-frame = 6
+frames = SubResource( 11 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Picture"]
 position = Vector2( 48, 136 )
-frames = SubResource( 18 )
+frames = SubResource( 20 )
+frame = 7
 playing = true
 
 [node name="HandAnim" type="Node" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="HandAnim"]
-autoplay = "drag_and_drop"
-anims/drag_and_drop = SubResource( 19 )
+anims/drag_and_drop = SubResource( 21 )
 
 [node name="ClickEffect" type="Sprite" parent="HandAnim"]
 position = Vector2( 93, 164 )
@@ -264,7 +292,7 @@ hframes = 8
 frame = 7
 
 [node name="HandSprite" type="Sprite" parent="HandAnim"]
-position = Vector2( 152.296, 125.778 )
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 96, 168 )
 texture = ExtResource( 11 )
 hframes = 2
-frame = 1

@@ -1,25 +1,27 @@
 extends Node
 
+signal change_scene_ready
+
 var paused = false
 
 enum {MASTER, SFX, MUSIC}
-enum {UP, DOWN}
 
-export(int) var current_level_id = 0
-export(Array, String, FILE, "*.tscn") var levels = []
+export(int) var max_unlocked_level = 0
 export(float, 0.0, 1.0) var sfx_volume
 export(float, 0.0, 1.0) var music_volume
 
+var TransitionPlayer: AnimationPlayer
 var Transitions: Array
-var Player: AnimationPlayer
+var current_transition = "down"
 
 func _ready():
 	$HUD/Pause.hide()
+	TransitionPlayer = $TransitionLayer/TransitionPlayer
 	Transitions = $TransitionLayer/Transitions.get_children()
-	Player = $AnimationPlayer
 	
 	set_volume(SFX, 0.5)
 	set_volume(MUSIC, 0.5)
+	set_transition()
 
 func _input(event):
 	if event.is_action_pressed("fullscreen"):
@@ -47,46 +49,35 @@ func set_volume(bus: int, volume_scale: float):
 			music_volume = volume_scale
 			AudioServer.set_bus_volume_db(MUSIC, volume)
 
-func goto_level(id: int):
-# warning-ignore:return_value_discarded
-	transition(0, 0.5, DOWN, "hide")
-	Player.connect("animation_finished", self, "finish_goto_level", [id])
-
-func finish_goto_level(anim_name:String, id: int):
-	if id == -1:
-		get_tree().change_scene("res://Scenes/Main.tscn")
-	elif id < levels.size():
-		get_tree().change_scene(levels[id])
-		current_level_id = id
-	else:
-		get_tree().change_scene(levels[-1])
-	transition(0, 0.5, DOWN, "reveal")
-	Player.disconnect("animation_finished", self, "finish_goto_level")
-	
-func transition(trans_id: int, time: float, direction: int, anim: String, flipped: bool = false):
-	# Setup the transition node
-	var transition
+func set_transition(id: int = 0, time: float = 1.0, direction: String = "down"):
 	for i in range(Transitions.size()):
-		if i == trans_id:
-			transition = Transitions[i]
-			transition.show()
-			transition.flip_v = flipped
+		if i == id:
+			Transitions[i].show()
 		else:
 			Transitions[i].hide()
 	
-	var Player = $AnimationPlayer
-	Player.playback_speed = 1/time
-	match direction:
-		UP:
-			Player.play(anim)
-		DOWN:
-			# If in the DOWN direction, need to invert the animations
-			match anim:
-				"reveal":
-					Player.play_backwards("hide")
-				"hide":
-					Player.play_backwards("reveal")
+	if time != 0.0:
+		TransitionPlayer.playback_speed = 1/time
 	
+	match direction:
+		"left","right","up","down":
+			current_transition = direction
+		_:
+			current_transition = "down"
+		
+		
+		
+
+func goto_scene(path: String = ""):
+# warning-ignore:return_value_discarded
+	
+	TransitionPlayer.play(current_transition)
+	yield(self, "change_scene_ready")
+	match path:
+		"menu","":
+			get_tree().change_scene("res://Scenes/Main.tscn")
+		_:
+			get_tree().change_scene(path)
 	
 func _on_Continue_pressed():
 	paused = false
@@ -97,4 +88,6 @@ func _on_BackToMenu_pressed():
 	paused = false
 	$HUD/Pause.hide()
 	Engine.time_scale = 1.0
-	goto_level(-1)
+	
+	set_transition()
+	goto_scene("menu")
