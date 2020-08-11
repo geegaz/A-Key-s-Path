@@ -26,18 +26,13 @@ var limit_drag_time = 0.2
 var Actions = ["jump", "left", "right"]
 var control_action: String
 
-var ControlSprite: Sprite
-var Collider: CollisionShape2D
-var GridMask: Light2D
-var Shaker: Node
+onready var ControlSprite: Sprite = $Sprite
+onready var Collider: CollisionShape2D = $Collider
+onready var GridMask: Light2D = $GridMask
+onready var Shaker: Node = $Shaker
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	ControlSprite = $Sprite
-	Collider = $Collider
-	GridMask = $GridMask
-	Shaker = $Shaker
-	
 # warning-ignore:return_value_discarded
 	connect("start_drag", self, "_on_start_drag")
 # warning-ignore:return_value_discarded

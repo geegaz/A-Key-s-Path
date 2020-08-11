@@ -5,22 +5,18 @@ signal control_retrieved(control_type)
 
 enum Controls {JUMP, LEFT, RIGHT}
 
-var ControlJump: KinematicBody2D
-var ControlLeft: KinematicBody2D
-var ControlRight: KinematicBody2D
+onready var ControlJump: KinematicBody2D = $ControlJump
+onready var ControlLeft: KinematicBody2D = $ControlLeft
+onready var ControlRight: KinematicBody2D = $ControlRight
 
-var ControlPos: Array
-
-func _ready():
-	ControlJump = $ControlJump
-	ControlLeft = $ControlLeft
-	ControlRight = $ControlRight
-	
-	ControlPos = [
+onready var ControlPos: Array = [
 		$ControlJumpPos,
 		$ControlLeftPos,
 		$ControlRightPos
 	]
+
+func _ready():
+	show()
 
 func reparent(child: Node, new_parent: Node):
 	var old_parent = child.get_parent()

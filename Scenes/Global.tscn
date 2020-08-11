@@ -35,7 +35,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "left"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Transitions:position")
@@ -64,7 +64,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=3]
 resource_name = "right"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Transitions:position")
@@ -93,7 +93,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "up"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Transitions:position")
@@ -132,9 +132,9 @@ layer = 3
 
 [node name="TransitionPlayer" type="AnimationPlayer" parent="TransitionLayer"]
 anims/down = SubResource( 1 )
-anims/left = SubResource( 3 )
-anims/right = SubResource( 6 )
-anims/up = SubResource( 5 )
+anims/left = SubResource( 2 )
+anims/right = SubResource( 3 )
+anims/up = SubResource( 4 )
 
 [node name="Transitions" type="Node2D" parent="TransitionLayer"]
 position = Vector2( 320, 224 )
@@ -156,6 +156,14 @@ position = Vector2( 160, -128 )
 texture = ExtResource( 6 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 320, 256 )
+
+[node name="Transition3" type="Sprite" parent="TransitionLayer/Transitions"]
+position = Vector2( 160, -128 )
+scale = Vector2( 5, 1 )
+texture = ExtResource( 6 )
+flip_v = true
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 256 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 layer = 2

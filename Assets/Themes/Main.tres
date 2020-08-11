@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=20 format=2]
+[gd_resource type="Theme" load_steps=26 format=2]
 
 [ext_resource path="res://Assets/Sprites/UI/theme-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Fonts/joystix.monospace.ttf" type="DynamicFontData" id=2]
@@ -6,6 +6,11 @@
 [ext_resource path="res://Assets/Sprites/UI/slider/slider1.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/UI/slider/slider3.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/UI/slider/slider2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Fonts/small_font.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Assets/Sprites/UI/CheckButton/checkbutton3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/UI/CheckButton/checkbutton2.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/UI/CheckButton/checkbutton1.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/UI/CheckButton/checkbutton4.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 10
@@ -50,6 +55,8 @@ margin_left = 3.3719
 margin_right = 3.25483
 margin_top = 3.08429
 margin_bottom = 3.08123
+
+[sub_resource type="StyleBoxEmpty" id=14]
 
 [sub_resource type="StyleBoxEmpty" id=7]
 
@@ -102,8 +109,9 @@ margin_top = 2.16959
 margin_bottom = 2.18471
 
 [resource]
+default_font = ExtResource( 7 )
 Button/colors/font_color = Color( 0, 0, 0, 1 )
-Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_disabled = Color( 1, 1, 1, 0.2 )
 Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
 Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
 Button/constants/hseparation = 2
@@ -113,6 +121,24 @@ Button/styles/focus = SubResource( 3 )
 Button/styles/hover = SubResource( 4 )
 Button/styles/normal = SubResource( 5 )
 Button/styles/pressed = SubResource( 6 )
+CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_disabled = Color( 1, 1, 1, 0.2 )
+CheckButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+CheckButton/constants/check_vadjust = 0
+CheckButton/constants/hseparation = 4
+CheckButton/fonts/font = null
+CheckButton/icons/off = ExtResource( 10 )
+CheckButton/icons/off_disabled = ExtResource( 9 )
+CheckButton/icons/on = ExtResource( 8 )
+CheckButton/icons/on_disabled = ExtResource( 11 )
+CheckButton/styles/disabled = null
+CheckButton/styles/focus = SubResource( 14 )
+CheckButton/styles/hover = null
+CheckButton/styles/hover_pressed = null
+CheckButton/styles/normal = null
+CheckButton/styles/pressed = null
 HSlider/icons/grabber = ExtResource( 4 )
 HSlider/icons/grabber_disabled = ExtResource( 5 )
 HSlider/icons/grabber_highlight = ExtResource( 6 )

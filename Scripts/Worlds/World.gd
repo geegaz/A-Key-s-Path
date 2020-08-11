@@ -5,19 +5,19 @@ export(String, FILE, "*.tscn") var next_level
 
 var current_checkpoint: Node
 
-var Player: KinematicBody2D
-var WorldCamera: Camera2D
-var Checkpoints: Array
+onready var Player: KinematicBody2D = $Player
+onready var WorldCamera: Camera2D = $Player/Camera2D
+onready var Shaker: Node = $Player/Camera2D/Shaker
+onready var CameraLimits: ReferenceRect = $CameraLimits
+onready var StartPoint: Position2D = $StartPoint
+onready var Checkpoints: Array = $Checkpoints.get_children()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Player = $Player
-	WorldCamera = $Player/Camera2D
-	set_camera_limits($CameraLimits)
-	$CameraLimits/TextureRect.rect_size = $CameraLimits.rect_size
+	set_camera_limits(CameraLimits)
+	CameraLimits.get_node("TextureRect").rect_size = CameraLimits.rect_size
 	
-	Checkpoints = $Checkpoints.get_children()
-	current_checkpoint = $StartPoint
+	current_checkpoint = StartPoint
 	Player.position = current_checkpoint.position
 
 func set_camera_limits(rect):
@@ -42,7 +42,8 @@ func _on_Player_respawn():
 	Player.position = current_checkpoint.position
 
 func _on_Player_win():
+	Global.set_transition(3)
 	Global.goto_scene(next_level)
 
 func _on_Player_die():
-	$Player/Camera2D/Shaker.shake($Player/Camera2D, "offset", 2.0, 0.5)
+	Shaker.shake(WorldCamera, "offset", 2.0, 0.5)

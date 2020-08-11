@@ -28,10 +28,9 @@ var target_speed = 0.0
 var target_gravity: float
 var air_time = 0.0
 
-var Animator: AnimationPlayer
+onready var Animator = $AnimationPlayer
 
 func _ready():
-	Animator = $AnimationPlayer
 	target_gravity = gravity_strong
 
 func _process(_delta):

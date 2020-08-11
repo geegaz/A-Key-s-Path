@@ -55,6 +55,9 @@ texture={
 "stream": false,
 "svg/scale": 1.0
 }
+image={
+
+}
 
 [input]
 

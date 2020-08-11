@@ -10,14 +10,12 @@ export(int) var max_unlocked_level = 0
 export(float, 0.0, 1.0) var sfx_volume
 export(float, 0.0, 1.0) var music_volume
 
-var TransitionPlayer: AnimationPlayer
-var Transitions: Array
+onready var TransitionPlayer: AnimationPlayer = $TransitionLayer/TransitionPlayer
+onready var Transitions: Array = $TransitionLayer/Transitions.get_children()
 var current_transition = "down"
 
 func _ready():
 	$HUD/Pause.hide()
-	TransitionPlayer = $TransitionLayer/TransitionPlayer
-	Transitions = $TransitionLayer/Transitions.get_children()
 	
 	set_volume(SFX, 0.5)
 	set_volume(MUSIC, 0.5)
@@ -64,8 +62,6 @@ func set_transition(id: int = 0, time: float = 1.0, direction: String = "down"):
 			current_transition = direction
 		_:
 			current_transition = "down"
-		
-		
 		
 
 func goto_scene(path: String = ""):

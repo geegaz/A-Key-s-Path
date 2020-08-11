@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Assets/Fonts/title_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Sprites/flag/flag-Sheet.png" type="Texture" id=3]
@@ -9,8 +9,6 @@
 [ext_resource path="res://Assets/Tilesets/spikes.tres" type="TileSet" id=8]
 [ext_resource path="res://Assets/Tilesets/world1.tres" type="TileSet" id=9]
 [ext_resource path="res://Assets/Sprites/UI/controls/right/right.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Sprites/UI/hand-Sheet.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Sprites/effects/click_effect.png" type="Texture" id=12]
 
 [sub_resource type="StreamTexture" id=1]
 
@@ -119,58 +117,6 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="Animation" id=21]
-length = 3.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("HandSprite:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = false
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 1.3, 1.9 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 96, 168 ), Vector2( 160, 120 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("HandSprite:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.5, 0.8, 2.1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("HandSprite:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.3, 2.4, 2.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("ClickEffect:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
-}
-
 [node name="TestWorld" type="Node2D"]
 
 [node name="Picture" type="Control" parent="."]
@@ -271,28 +217,11 @@ tile_data = PoolIntArray( 655364, 0, 0, 655365, 0, 0, 786446, 0, 0, 786447, 0, 0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Picture"]
 position = Vector2( 152, 192 )
 frames = SubResource( 11 )
-frame = 1
+frame = 5
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Picture"]
 position = Vector2( 48, 136 )
 frames = SubResource( 20 )
-frame = 7
+frame = 3
 playing = true
-
-[node name="HandAnim" type="Node" parent="."]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="HandAnim"]
-anims/drag_and_drop = SubResource( 21 )
-
-[node name="ClickEffect" type="Sprite" parent="HandAnim"]
-position = Vector2( 93, 164 )
-texture = ExtResource( 12 )
-hframes = 8
-frame = 7
-
-[node name="HandSprite" type="Sprite" parent="HandAnim"]
-modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 96, 168 )
-texture = ExtResource( 11 )
-hframes = 2

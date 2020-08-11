@@ -277,9 +277,9 @@ __meta__ = {
 
 [node name="TextureRect" type="TextureRect" parent="Background/ParallaxBackground/Background0"]
 margin_left = -160.0
-margin_top = -96.0
+margin_top = -128.0
 margin_right = 160.0
-margin_bottom = 160.0
+margin_bottom = 128.0
 texture = ExtResource( 12 )
 stretch_mode = 2
 __meta__ = {
@@ -290,10 +290,10 @@ __meta__ = {
 motion_scale = Vector2( 0.5, 0.5 )
 
 [node name="Background1" type="TextureRect" parent="Background/ParallaxBackground/Background1"]
-margin_left = -416.0
-margin_top = -64.0
-margin_right = 736.0
-margin_bottom = 192.0
+margin_left = -160.0
+margin_top = -96.0
+margin_right = 416.0
+margin_bottom = 160.0
 texture = ExtResource( 11 )
 stretch_mode = 2
 __meta__ = {
@@ -301,6 +301,12 @@ __meta__ = {
 }
 
 [node name="Background2" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+
+[node name="TileMap" type="TileMap" parent="Background/ParallaxBackground/Background2"]
+tile_set = ExtResource( 9 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 196608, 5, 1, 196609, 5, 3, 196628, 5, 0, 327679, 5, 1, 262144, 5, 65538, 262145, 5, 65538, 262146, 5, 3, 262160, 5, 196609, 262161, 5, 3, 262164, 5, 65536, 393195, 5, 196608, 393215, 5, 65537, 327680, 5, 262146, 327681, 5, 131074, 327682, 5, 65539, 327697, 5, 65537, 327698, 5, 3, 327700, 5, 65536, 458751, 5, 65537, 393216, 5, 65539, 393218, 5, 131073, 393219, 5, 3, 393233, 5, 65537, 393234, 5, 65538, 393235, 5, 2, 393236, 5, 65539, 393255, 5, 196608, 524287, 5, 65537, 458752, 5, 262147, 458753, 5, 3, 458755, 5, 65537, 458756, 5, 2, 458757, 5, 3, 458764, 5, 0, 458768, 5, 1, 458769, 5, 65538, 458770, 5, 65538, 458771, 5, 262145, 458772, 5, 65539, 589823, 5, 65537, 524288, 5, 65538, 524289, 5, 65538, 524290, 5, 2, 524291, 5, 65538, 524292, 5, 65538, 524293, 5, 65539, 524297, 5, 0, 524299, 5, 1, 524300, 5, 65538, 524301, 5, 2, 524302, 5, 196610, 524303, 5, 2, 524304, 5, 131074, 524305, 5, 262147, 524306, 5, 262144, 524307, 5, 65538, 524308, 5, 65539, 655359, 5, 65537, 589824, 5, 262145, 589825, 5, 65538, 589826, 5, 262147, 589827, 5, 262144, 589828, 5, 65538, 589829, 5, 131075, 589832, 5, 196609, 589833, 5, 65538, 589834, 5, 2, 589835, 5, 65538, 589836, 5, 65538, 589837, 5, 131075, 589839, 5, 65536, 589841, 5, 131073, 589842, 5, 65538, 589843, 5, 65538, 589844, 5, 65539, 720895, 5, 65537, 655360, 5, 65538, 655361, 5, 262147, 655362, 5, 262144, 655363, 5, 65538, 655364, 5, 131075, 655366, 5, 1, 655367, 5, 3, 655369, 5, 65537, 655370, 5, 65538, 655371, 5, 65538, 655372, 5, 65539, 655374, 5, 1, 655375, 5, 65539, 655378, 5, 65537, 655379, 5, 262144, 655380, 5, 65539, 786431, 5, 65537, 720896, 5, 65538, 720897, 5, 65538, 720898, 5, 65538, 720899, 5, 65539, 720901, 5, 1, 720902, 5, 65538, 720903, 5, 65538, 720904, 5, 2, 720905, 5, 65538, 720906, 5, 65538, 720907, 5, 262145, 720908, 5, 262146, 720909, 5, 2, 720910, 5, 65538, 720911, 5, 65538, 720912, 5, 2, 720913, 5, 2, 720914, 5, 65538, 720915, 5, 65538, 720916, 5, 65539, 851967, 5, 65537, 786432, 5, 65538, 786433, 5, 65538, 786434, 5, 262145, 786435, 5, 65538, 786436, 5, 2, 786437, 5, 65538, 786438, 5, 65538, 786439, 5, 65538, 786440, 5, 65538, 786441, 5, 65538, 786442, 5, 65538, 786443, 5, 65538, 786444, 5, 262146, 786445, 5, 65538, 786446, 5, 65538, 786447, 5, 65538, 786448, 5, 262145, 786449, 5, 262144, 786450, 5, 65538, 786451, 5, 65538, 786452, 5, 65539, 917503, 5, 131073, 851968, 5, 131074, 851969, 5, 131074, 851970, 5, 131074, 851971, 5, 131074, 851972, 5, 131074, 851973, 5, 131074, 851974, 5, 131074, 851975, 5, 131074, 851976, 5, 131074, 851977, 5, 131074, 851978, 5, 131074, 851979, 5, 131074, 851980, 5, 131074, 851981, 5, 131074, 851982, 5, 131074, 851983, 5, 131074, 851984, 5, 131074, 851985, 5, 131074, 851986, 5, 131074, 851987, 5, 131074, 851988, 5, 131075 )
 
 [node name="ColorRect" type="ColorRect" parent="Background/ParallaxBackground/Background2"]
 margin_left = 320.0
@@ -311,16 +317,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TileMap" type="TileMap" parent="Background/ParallaxBackground/Background2"]
-tile_set = ExtResource( 9 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( 196588, 5, 1, 196589, 5, 196611, 262123, 5, 1, 262124, 5, 65539, 262131, 5, 1, 262132, 5, 2, 262133, 5, 2, 262134, 5, 2, 262135, 5, 2, 262136, 5, 2, 262137, 5, 3, 196608, 5, 1, 196609, 5, 3, 196628, 5, 0, 327659, 5, 65537, 327660, 5, 65538, 327661, 5, 3, 327664, 5, 1, 327665, 5, 2, 327666, 5, 2, 327667, 5, 262147, 327668, 5, 65538, 327669, 5, 262144, 327670, 5, 262147, 327671, 5, 65538, 327672, 5, 262144, 327673, 5, 262145, 327674, 5, 2, 327675, 5, 3, 262144, 5, 65537, 262145, 5, 65538, 262146, 5, 3, 262160, 5, 196609, 262161, 5, 3, 262163, 5, 1, 262164, 5, 65539, 393195, 5, 65537, 393196, 5, 131074, 393197, 5, 131074, 393198, 5, 2, 393199, 5, 2, 393200, 5, 65538, 393201, 5, 262147, 393202, 5, 65538, 393203, 5, 65538, 393204, 5, 65538, 393205, 5, 65538, 393206, 5, 65538, 393207, 5, 65538, 393208, 5, 65538, 393209, 5, 65538, 393210, 5, 65538, 393211, 5, 65538, 393212, 5, 196611, 393215, 5, 1, 327680, 5, 65538, 327681, 5, 131074, 327682, 5, 65539, 327697, 5, 65537, 327698, 5, 196610, 327699, 5, 131074, 327700, 5, 65539, 458731, 5, 65536, 458734, 5, 131073, 458735, 5, 262144, 458736, 5, 131074, 458737, 5, 262144, 458738, 5, 65538, 458739, 5, 65538, 458740, 5, 65538, 458741, 5, 65538, 458742, 5, 65538, 458743, 5, 65538, 458744, 5, 262146, 458745, 5, 65538, 458746, 5, 262146, 458747, 5, 65539, 458750, 5, 1, 458751, 5, 131074, 393216, 5, 65539, 393218, 5, 131073, 393219, 5, 3, 393233, 5, 65536, 393236, 5, 65536, 393255, 5, 0, 524267, 5, 65536, 524271, 5, 65536, 524273, 5, 131073, 524274, 5, 65538, 524275, 5, 65538, 524276, 5, 262145, 524277, 5, 262146, 524278, 5, 65538, 524279, 5, 262145, 524280, 5, 262145, 524281, 5, 65538, 524282, 5, 262147, 524283, 5, 262145, 524284, 5, 2, 524285, 5, 2, 524286, 5, 65539, 458752, 5, 65537, 458753, 5, 3, 458755, 5, 65537, 458756, 5, 196611, 458768, 5, 1, 458769, 5, 65539, 458772, 5, 131072, 458791, 5, 65537, 458792, 5, 3, 589803, 5, 65536, 589806, 5, 1, 589807, 5, 131074, 589808, 5, 3, 589810, 5, 65537, 589811, 5, 65538, 589812, 5, 65538, 589813, 5, 65538, 589814, 5, 65538, 589815, 5, 131074, 589816, 5, 65538, 589817, 5, 262146, 589818, 5, 65538, 589819, 5, 131074, 589820, 5, 262146, 589821, 5, 65538, 589822, 5, 131075, 524288, 5, 131073, 524289, 5, 131074, 524290, 5, 2, 524291, 5, 65539, 524296, 5, 1, 524297, 5, 3, 524299, 5, 0, 524301, 5, 1, 524302, 5, 196610, 524303, 5, 2, 524304, 5, 131074, 524305, 5, 65539, 524327, 5, 131073, 524328, 5, 131075, 655339, 5, 131073, 655340, 5, 2, 655341, 5, 2, 655342, 5, 65539, 655344, 5, 131073, 655345, 5, 2, 655346, 5, 65538, 655347, 5, 65538, 655348, 5, 262145, 655349, 5, 65538, 655350, 5, 131075, 655352, 5, 65537, 655353, 5, 131074, 655354, 5, 131075, 655356, 5, 65537, 655357, 5, 131075, 589826, 5, 131073, 589827, 5, 65539, 589832, 5, 65537, 589833, 5, 65538, 589834, 5, 2, 589835, 5, 262145, 589836, 5, 2, 589837, 5, 131075, 589839, 5, 65536, 589841, 5, 131073, 589842, 5, 3, 720876, 5, 131073, 720877, 5, 65538, 720878, 5, 65538, 720879, 5, 3, 720881, 5, 65537, 720882, 5, 65538, 720883, 5, 131074, 720884, 5, 65538, 720885, 5, 65539, 720887, 5, 1, 720888, 5, 65539, 720891, 5, 1, 720892, 5, 131075, 655363, 5, 131073, 655364, 5, 3, 655366, 5, 1, 655367, 5, 2, 655368, 5, 65538, 655369, 5, 65538, 655370, 5, 65538, 655371, 5, 65538, 655372, 5, 65539, 655374, 5, 1, 655375, 5, 65539, 655378, 5, 65536, 655381, 5, 0, 655397, 5, 0, 786413, 5, 65537, 786414, 5, 262147, 786415, 5, 65539, 786417, 5, 65537, 786418, 5, 65539, 786420, 5, 131073, 786421, 5, 262144, 786422, 5, 2, 786423, 5, 262147, 786424, 5, 65538, 786425, 5, 3, 786427, 5, 65536, 720900, 5, 65537, 720901, 5, 2, 720902, 5, 65538, 720903, 5, 65538, 720904, 5, 65538, 720905, 5, 65538, 720906, 5, 65538, 720907, 5, 262145, 720908, 5, 262146, 720909, 5, 2, 720910, 5, 65538, 720911, 5, 65538, 720912, 5, 196610, 720913, 5, 196610, 720914, 5, 131075, 720917, 5, 131073, 720918, 5, 3, 720933, 5, 131072, 851949, 5, 131073, 851950, 5, 131074, 851951, 5, 131074, 851952, 5, 196610, 851953, 5, 131074, 851954, 5, 131075, 851957, 5, 131073, 851958, 5, 131074, 851959, 5, 131074, 851960, 5, 131074, 851961, 5, 131074, 851962, 5, 196610, 851963, 5, 131074, 851964, 5, 196610, 851965, 5, 196611, 786436, 5, 131073, 786437, 5, 131074, 786438, 5, 131074, 786439, 5, 131074, 786440, 5, 131074, 786441, 5, 131074, 786442, 5, 131074, 786443, 5, 131074, 786444, 5, 131074, 786445, 5, 131074, 786446, 5, 131074, 786447, 5, 131075, 786454, 5, 131072 )
-
 [node name="ColorRect2" type="ColorRect" parent="Background/ParallaxBackground/Background2"]
+margin_left = -320.0
+margin_bottom = 194.0
+color = Color( 0.105882, 0.105882, 0.105882, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="Background/ParallaxBackground/Background2"]
 margin_right = 320.0
 margin_bottom = 34.0
-color = Color( 0.109804, 0.109804, 0.109804, 0.85098 )
+color = Color( 0.105882, 0.105882, 0.105882, 0.498039 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -335,7 +343,7 @@ tile_data = PoolIntArray( 524269, 0, 1, 524270, 0, 3, 589804, 0, 196609, 589805,
 tile_set = ExtResource( 9 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 131092, 3, 1, 262124, 3, 0, 196628, 0, 0, 196647, 0, 1, 196648, 0, 3, 327659, 0, 2, 327660, 0, 3, 327661, 3, 1, 262164, 0, 65536, 262182, 3, 0, 262183, 0, 65537, 262184, 0, 65539, 393195, 2, 5, 393196, 2, 5, 393197, 1, 3, 393215, 3, 1, 327680, 3, 0, 327698, 3, 0, 327699, 0, 1, 327700, 0, 65539, 327717, 3, 1, 327718, 0, 196609, 327719, 0, 131074, 327720, 0, 131075, 458731, 2, 4, 458732, 2, 4, 458733, 1, 131075, 458751, 0, 1, 393216, 0, 3, 393234, 0, 196609, 393235, 0, 65538, 393236, 0, 65539, 393237, 3, 0, 393253, 1, 196609, 393254, 2, 5, 393255, 0, 131073, 393256, 1, 65538, 524267, 0, 131074, 524268, 0, 131075, 524285, 3, 1, 524287, 0, 65537, 458752, 0, 65539, 458767, 1, 196609, 458768, 1, 196610, 458769, 1, 2, 458770, 2, 7, 458771, 0, 262144, 458772, 0, 65538, 458773, 0, 3, 458790, 1, 65537, 458791, 2, 2, 458792, 1, 65538, 589820, 1, 1, 589821, 1, 3, 589823, 0, 65537, 524288, 0, 262144, 524289, 0, 3, 524290, 3, 1, 524305, 1, 131073, 524306, 2, 4, 524307, 2, 2, 524308, 2, 3, 524309, 2, 5, 524310, 1, 3, 524326, 0, 1, 524327, 0, 65538, 524328, 0, 65538, 655339, 0, 1, 655340, 0, 3, 655341, 3, 0, 655342, 4, 0, 655356, 1, 65537, 655357, 2, 7, 655358, 0, 2, 655359, 0, 65538, 589824, 0, 262145, 589825, 2, 3, 589826, 1, 2, 589827, 1, 2, 589828, 1, 196611, 589842, 0, 65537, 589843, 0, 262146, 589844, 2, 3, 589845, 2, 4, 589846, 1, 131075, 589861, 3, 0, 589862, 0, 65537, 589863, 0, 262145, 589864, 0, 65539, 720875, 0, 65537, 720876, 0, 65538, 720877, 0, 2, 720878, 0, 3, 720879, 3, 1, 720892, 1, 65537, 720893, 1, 262144, 720894, 0, 131073, 720895, 0, 262145, 655360, 0, 65538, 655361, 0, 262147, 655362, 2, 6, 655363, 1, 65539, 655364, 3, 1, 655376, 3, 0, 655377, 0, 1, 655378, 0, 65538, 655379, 0, 262147, 655380, 0, 65538, 655381, 0, 65539, 655382, 3, 1, 655397, 0, 1, 655398, 0, 65538, 655399, 0, 262145, 655400, 0, 65539, 786411, 0, 65537, 786412, 0, 65538, 786413, 0, 65538, 786414, 0, 262145, 786415, 0, 3, 786428, 1, 65537, 786429, 1, 65538, 786430, 2, 7, 786431, 0, 65538, 720896, 0, 65538, 720897, 0, 65538, 720898, 2, 1, 720899, 2, 1, 720900, 0, 3, 720912, 0, 1, 720913, 0, 65538, 720914, 0, 65538, 720915, 0, 65538, 720916, 0, 262144, 720917, 0, 262145, 720918, 0, 3, 720933, 0, 65537, 720934, 0, 65538, 720935, 0, 262144, 720936, 0, 65539, 851947, 0, 131073, 851948, 0, 131074, 851949, 0, 131074, 851950, 0, 131074, 851951, 0, 131075, 851964, 1, 131073, 851965, 1, 65538, 851966, 2, 7, 851967, 0, 131074, 786432, 0, 131074, 786433, 0, 131074, 786434, 0, 131074, 786435, 0, 131074, 786436, 0, 131075, 786448, 0, 131073, 786449, 0, 131074, 786450, 0, 131074, 786451, 0, 131074, 786452, 0, 131074, 786453, 0, 131074, 786454, 0, 131075, 786469, 0, 131073, 786470, 0, 131074, 786471, 0, 131074, 786472, 0, 131075 )
+tile_data = PoolIntArray( 131092, 8, 0, 131111, 8, 0, 262124, 8, 0, 196628, 0, 0, 196647, 0, 1, 196648, 0, 3, 327659, 0, 2, 327660, 0, 3, 327661, 9, 1, 262163, 8, 1, 262164, 0, 65536, 262182, 8, 0, 262183, 0, 65537, 262184, 0, 65539, 393195, 2, 5, 393196, 2, 5, 393197, 1, 3, 393215, 8, 1, 327680, 8, 0, 327698, 8, 0, 327699, 0, 1, 327700, 0, 65539, 327717, 9, 1, 327718, 0, 196609, 327719, 0, 131074, 327720, 0, 131075, 458731, 2, 4, 458732, 2, 4, 458733, 1, 131075, 458751, 0, 1, 393216, 0, 3, 393233, 9, 0, 393234, 0, 196609, 393235, 0, 65538, 393236, 0, 65539, 393237, 9, 0, 393253, 1, 196609, 393254, 2, 5, 393255, 0, 131073, 393256, 1, 65538, 524267, 0, 131074, 524268, 0, 131075, 524285, 3, 1, 524287, 0, 65537, 458752, 0, 65539, 458753, 8, 0, 458767, 1, 196609, 458768, 1, 196610, 458769, 1, 2, 458770, 2, 7, 458771, 0, 262144, 458772, 0, 65538, 458773, 0, 3, 458790, 1, 65537, 458791, 2, 2, 458792, 1, 65538, 589820, 1, 1, 589821, 1, 3, 589822, 8, 0, 589823, 0, 65537, 524288, 0, 262144, 524289, 0, 3, 524290, 9, 0, 524291, 9, 1, 524305, 1, 131073, 524306, 2, 4, 524307, 2, 2, 524308, 2, 3, 524309, 2, 5, 524310, 1, 3, 524326, 0, 1, 524327, 0, 65538, 524328, 0, 65538, 655339, 0, 1, 655340, 0, 3, 655341, 8, 0, 655342, 4, 0, 655356, 1, 65537, 655357, 2, 7, 655358, 0, 2, 655359, 0, 65538, 589824, 0, 262145, 589825, 2, 3, 589826, 1, 2, 589827, 1, 2, 589828, 1, 196611, 589842, 0, 65537, 589843, 0, 262146, 589844, 2, 3, 589845, 2, 4, 589846, 1, 131075, 589861, 8, 1, 589862, 0, 65537, 589863, 0, 262145, 589864, 0, 65539, 720875, 0, 65537, 720876, 0, 65538, 720877, 0, 2, 720878, 0, 3, 720879, 8, 1, 720892, 1, 65537, 720893, 1, 262144, 720894, 0, 131073, 720895, 0, 262145, 655360, 0, 65538, 655361, 0, 262147, 655362, 2, 6, 655363, 1, 65539, 655364, 8, 1, 655376, 3, 0, 655377, 0, 1, 655378, 0, 65538, 655379, 0, 262147, 655380, 0, 65538, 655381, 0, 65539, 655382, 8, 1, 655397, 0, 1, 655398, 0, 65538, 655399, 0, 262145, 655400, 0, 65539, 786411, 0, 65537, 786412, 0, 65538, 786413, 0, 65538, 786414, 0, 262145, 786415, 0, 3, 786428, 1, 65537, 786429, 1, 65538, 786430, 2, 7, 786431, 0, 65538, 720896, 0, 65538, 720897, 0, 65538, 720898, 2, 1, 720899, 2, 1, 720900, 0, 3, 720912, 0, 1, 720913, 0, 65538, 720914, 0, 65538, 720915, 0, 65538, 720916, 0, 262144, 720917, 0, 262145, 720918, 0, 3, 720933, 0, 65537, 720934, 0, 65538, 720935, 0, 262144, 720936, 0, 65539, 851947, 0, 131073, 851948, 0, 131074, 851949, 0, 131074, 851950, 0, 131074, 851951, 0, 131075, 851964, 1, 131073, 851965, 1, 65538, 851966, 2, 7, 851967, 0, 131074, 786432, 0, 131074, 786433, 0, 131074, 786434, 0, 131074, 786435, 0, 131074, 786436, 0, 131075, 786448, 0, 131073, 786449, 0, 131074, 786450, 0, 131074, 786451, 0, 131074, 786452, 0, 131074, 786453, 0, 131074, 786454, 0, 131075, 786469, 0, 131073, 786470, 0, 131074, 786471, 0, 131074, 786472, 0, 131075 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Background"]
 position = Vector2( 80, 144 )
@@ -429,6 +437,187 @@ margin_left = 140.0
 margin_right = 178.627
 margin_bottom = 18.1655
 text = "Quit"
+
+[node name="Options" type="Control" parent="."]
+margin_left = -320.0
+margin_bottom = 184.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Options"]
+margin_right = 320.0
+margin_bottom = 177.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Options/VBoxContainer2"]
+margin_right = 320.0
+margin_bottom = 23.0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/VBoxContainer2/MarginContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 315.0
+margin_bottom = 18.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Options/VBoxContainer2/MarginContainer/HBoxContainer"]
+margin_right = 16.0
+margin_bottom = 13.0
+custom_constants/margin_right = 16
+
+[node name="CenterContainer" type="CenterContainer" parent="Options/VBoxContainer2/MarginContainer/HBoxContainer"]
+margin_left = 20.0
+margin_right = 290.0
+margin_bottom = 13.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Options/VBoxContainer2/MarginContainer/HBoxContainer/CenterContainer"]
+margin_left = 107.0
+margin_right = 163.0
+margin_bottom = 12.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_y = 1
+text = "Options"
+
+[node name="OptionsBack" type="TextureButton" parent="Options/VBoxContainer2/MarginContainer/HBoxContainer"]
+margin_left = 294.0
+margin_right = 310.0
+margin_bottom = 13.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 15 )
+texture_disabled = ExtResource( 14 )
+
+[node name="CenterContainer" type="CenterContainer" parent="Options/VBoxContainer2"]
+margin_top = 27.0
+margin_right = 320.0
+margin_bottom = 159.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/VBoxContainer2/CenterContainer"]
+margin_left = 84.0
+margin_right = 236.0
+margin_bottom = 132.0
+custom_constants/separation = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer"]
+margin_right = 152.0
+margin_bottom = 10.0
+custom_constants/margin_top = 10
+
+[node name="Sound" type="VBoxContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer"]
+margin_top = 26.0
+margin_right = 152.0
+margin_bottom = 78.0
+
+[node name="Label" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound"]
+margin_right = 152.0
+margin_bottom = 12.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_y = 1
+text = "Sound"
+align = 1
+
+[node name="SFX" type="HBoxContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound"]
+margin_top = 16.0
+margin_right = 152.0
+margin_bottom = 32.0
+
+[node name="Label" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/SFX"]
+margin_top = 1.0
+margin_right = 24.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 5 )
+text = "SFX: "
+align = 2
+
+[node name="Number" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/SFX"]
+margin_left = 28.0
+margin_top = 1.0
+margin_right = 48.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 20, 0 )
+custom_fonts/font = ExtResource( 5 )
+text = "0"
+
+[node name="SFXSlider" type="HSlider" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/SFX"]
+margin_left = 52.0
+margin_right = 152.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 100, 0 )
+max_value = 1.0
+step = 0.01
+
+[node name="Music" type="HBoxContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound"]
+margin_top = 36.0
+margin_right = 152.0
+margin_bottom = 52.0
+
+[node name="Label" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/Music"]
+margin_top = 1.0
+margin_right = 24.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 5 )
+text = "Music:"
+align = 2
+
+[node name="Number" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/Music"]
+margin_left = 28.0
+margin_top = 1.0
+margin_right = 48.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 20, 0 )
+custom_fonts/font = ExtResource( 5 )
+text = "0"
+
+[node name="MusicSlider" type="HSlider" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/Music"]
+margin_left = 52.0
+margin_right = 152.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 100, 0 )
+max_value = 1.0
+step = 0.01
+
+[node name="Display" type="VBoxContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer"]
+margin_top = 94.0
+margin_right = 152.0
+margin_bottom = 132.0
+
+[node name="Label" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Display"]
+margin_right = 152.0
+margin_bottom = 12.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_y = 1
+text = "Display"
+align = 1
+
+[node name="Fullscreen" type="HBoxContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Display"]
+margin_top = 16.0
+margin_right = 152.0
+margin_bottom = 38.0
+
+[node name="FullscreenCheckButton" type="CheckButton" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Display/Fullscreen"]
+margin_right = 152.0
+margin_bottom = 22.1655
+rect_min_size = Vector2( 152, 0 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 0.2 )
+custom_colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Fullscreen"
+flat = true
 
 [node name="Credits" type="Control" parent="."]
 margin_left = 320.0
@@ -607,156 +796,6 @@ margin_right = 184.0
 margin_bottom = 248.0
 custom_constants/margin_top = 20
 
-[node name="Options" type="Control" parent="."]
-margin_left = -320.0
-margin_bottom = 184.0
-theme = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="Options"]
-margin_right = 320.0
-margin_bottom = 177.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MarginContainer" type="MarginContainer" parent="Options/VBoxContainer2"]
-margin_right = 320.0
-margin_bottom = 23.0
-custom_constants/margin_right = 5
-custom_constants/margin_top = 5
-custom_constants/margin_left = 5
-custom_constants/margin_bottom = 5
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Options/VBoxContainer2/MarginContainer"]
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 315.0
-margin_bottom = 18.0
-
-[node name="MarginContainer" type="MarginContainer" parent="Options/VBoxContainer2/MarginContainer/HBoxContainer"]
-margin_right = 16.0
-margin_bottom = 13.0
-custom_constants/margin_right = 16
-
-[node name="CenterContainer" type="CenterContainer" parent="Options/VBoxContainer2/MarginContainer/HBoxContainer"]
-margin_left = 20.0
-margin_right = 290.0
-margin_bottom = 13.0
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="Options/VBoxContainer2/MarginContainer/HBoxContainer/CenterContainer"]
-margin_left = 107.0
-margin_right = 163.0
-margin_bottom = 12.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_y = 1
-text = "Options"
-
-[node name="OptionsBack" type="TextureButton" parent="Options/VBoxContainer2/MarginContainer/HBoxContainer"]
-margin_left = 294.0
-margin_right = 310.0
-margin_bottom = 13.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture_normal = ExtResource( 16 )
-texture_pressed = ExtResource( 13 )
-texture_hover = ExtResource( 15 )
-texture_disabled = ExtResource( 14 )
-
-[node name="CenterContainer" type="CenterContainer" parent="Options/VBoxContainer2"]
-margin_top = 27.0
-margin_right = 320.0
-margin_bottom = 115.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Options/VBoxContainer2/CenterContainer"]
-margin_left = 84.0
-margin_right = 236.0
-margin_bottom = 88.0
-custom_constants/separation = 16
-
-[node name="MarginContainer" type="MarginContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer"]
-margin_right = 152.0
-margin_bottom = 20.0
-custom_constants/margin_top = 20
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer"]
-margin_top = 36.0
-margin_right = 152.0
-margin_bottom = 88.0
-
-[node name="Label" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/VBoxContainer"]
-margin_right = 152.0
-margin_bottom = 12.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_y = 1
-text = "Volume"
-align = 1
-
-[node name="SoundsSFX" type="HBoxContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/VBoxContainer"]
-margin_top = 16.0
-margin_right = 152.0
-margin_bottom = 32.0
-
-[node name="Label" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/VBoxContainer/SoundsSFX"]
-margin_top = 1.0
-margin_right = 24.0
-margin_bottom = 14.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 5 )
-text = "SFX: "
-align = 2
-
-[node name="Number" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/VBoxContainer/SoundsSFX"]
-margin_left = 28.0
-margin_top = 1.0
-margin_right = 48.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 20, 0 )
-custom_fonts/font = ExtResource( 5 )
-text = "0"
-
-[node name="SFXSlider" type="HSlider" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/VBoxContainer/SoundsSFX"]
-margin_left = 52.0
-margin_right = 152.0
-margin_bottom = 16.0
-rect_min_size = Vector2( 100, 0 )
-max_value = 1.0
-step = 0.01
-
-[node name="SoundsMusic" type="HBoxContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/VBoxContainer"]
-margin_top = 36.0
-margin_right = 152.0
-margin_bottom = 52.0
-
-[node name="Label" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/VBoxContainer/SoundsMusic"]
-margin_top = 1.0
-margin_right = 24.0
-margin_bottom = 14.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 5 )
-text = "Music:"
-align = 2
-
-[node name="Number" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/VBoxContainer/SoundsMusic"]
-margin_left = 28.0
-margin_top = 1.0
-margin_right = 48.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 20, 0 )
-custom_fonts/font = ExtResource( 5 )
-text = "0"
-
-[node name="MusicSlider" type="HSlider" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/VBoxContainer/SoundsMusic"]
-margin_left = 52.0
-margin_right = 152.0
-margin_bottom = 16.0
-rect_min_size = Vector2( 100, 0 )
-max_value = 1.0
-step = 0.01
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 160, 92 )
 current = true
@@ -770,7 +809,8 @@ anims/options_to_menu = SubResource( 22 )
 [connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/HBoxContainer/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/HBoxContainer/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer2/Quit" to="." method="_on_Quit_pressed"]
-[connection signal="pressed" from="Credits/VBoxContainer/MarginContainer/HBoxContainer/CreditsBack" to="." method="_on_CreditsBack_pressed"]
 [connection signal="pressed" from="Options/VBoxContainer2/MarginContainer/HBoxContainer/OptionsBack" to="." method="_on_OptionsBack_pressed"]
-[connection signal="value_changed" from="Options/VBoxContainer2/CenterContainer/VBoxContainer/VBoxContainer/SoundsSFX/SFXSlider" to="." method="_on_SFXSlider_value_changed"]
-[connection signal="value_changed" from="Options/VBoxContainer2/CenterContainer/VBoxContainer/VBoxContainer/SoundsMusic/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="value_changed" from="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/SFX/SFXSlider" to="." method="_on_SFXSlider_value_changed"]
+[connection signal="value_changed" from="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/Music/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="toggled" from="Options/VBoxContainer2/CenterContainer/VBoxContainer/Display/Fullscreen/FullscreenCheckButton" to="." method="_on_CheckButton_toggled"]
+[connection signal="pressed" from="Credits/VBoxContainer/MarginContainer/HBoxContainer/CreditsBack" to="." method="_on_CreditsBack_pressed"]
