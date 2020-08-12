@@ -30,12 +30,8 @@ func _input(event):
 			get_tree().quit()
 		else:
 			paused = !paused
-			if paused:
-				$HUD/Pause.show()
-				Engine.time_scale = 0.0
-			else:
-				$HUD/Pause.hide()
-				Engine.time_scale = 1.0
+			$HUD/Pause.visible = paused
+			get_tree().paused = paused
 
 func set_volume(bus: int, volume_scale: float):
 	var volume = -72.0 + (volume_scale*72.0)
@@ -53,10 +49,10 @@ func set_transition(id: int = 0, time: float = 1.0, direction: String = "down"):
 			Transitions[i].show()
 		else:
 			Transitions[i].hide()
-	
+	# Set transition speed
 	if time != 0.0:
 		TransitionPlayer.playback_speed = 1/time
-	
+	# Set transition direction
 	match direction:
 		"left","right","up","down":
 			current_transition = direction
@@ -69,6 +65,7 @@ func goto_scene(path: String = ""):
 	
 	TransitionPlayer.play(current_transition)
 	yield(self, "change_scene_ready")
+	TransitionPlayer
 	match path:
 		"menu","":
 			get_tree().change_scene("res://Scenes/Main.tscn")
@@ -77,13 +74,13 @@ func goto_scene(path: String = ""):
 	
 func _on_Continue_pressed():
 	paused = false
-	$HUD/Pause.hide()
-	Engine.time_scale = 1.0
+	$HUD/Pause.visible = false
+	get_tree().paused = false
 
 func _on_BackToMenu_pressed():
 	paused = false
-	$HUD/Pause.hide()
-	Engine.time_scale = 1.0
+	$HUD/Pause.visible = false
+	get_tree().paused = false
 	
 	set_transition()
 	goto_scene("menu")

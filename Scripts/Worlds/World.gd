@@ -10,7 +10,7 @@ onready var WorldCamera: Camera2D = $Player/Camera2D
 onready var Shaker: Node = $Player/Camera2D/Shaker
 onready var CameraLimits: ReferenceRect = $CameraLimits
 onready var StartPoint: Position2D = $StartPoint
-onready var Checkpoints: Array = $Checkpoints.get_children()
+onready var Checkpoints: Array = get_tree().get_nodes_in_group("Checkpoints")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,10 +40,6 @@ func _on_Player_checkpoint(node):
 
 func _on_Player_respawn():
 	Player.position = current_checkpoint.position
-
-func _on_Player_win():
-	Global.set_transition(3)
-	Global.goto_scene(next_level)
 
 func _on_Player_die():
 	Shaker.shake(WorldCamera, "offset", 2.0, 0.5)

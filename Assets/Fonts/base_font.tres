@@ -1,7 +1,6 @@
 [gd_resource type="DynamicFont" load_steps=2 format=2]
 
-[ext_resource path="res://Assets/Fonts/joystix.monospace.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Fonts/PixelBasicBig.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 10
 font_data = ExtResource( 1 )

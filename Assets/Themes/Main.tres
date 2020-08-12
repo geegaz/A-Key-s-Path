@@ -1,22 +1,10 @@
-[gd_resource type="Theme" load_steps=26 format=2]
+[gd_resource type="Theme" load_steps=24 format=2]
 
 [ext_resource path="res://Assets/Sprites/UI/theme-Sheet.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Fonts/joystix.monospace.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Fonts/base_font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Assets/Sprites/UI/slider/slider1.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sprites/UI/slider/slider3.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sprites/UI/slider/slider2.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Fonts/small_font.tres" type="DynamicFont" id=7]
-[ext_resource path="res://Assets/Sprites/UI/CheckButton/checkbutton3.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Sprites/UI/CheckButton/checkbutton2.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Sprites/UI/CheckButton/checkbutton1.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Sprites/UI/CheckButton/checkbutton4.png" type="Texture" id=11]
 
-[sub_resource type="DynamicFont" id=1]
-size = 10
-font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 1 )
 region_rect = Rect2( 16, 0, 16, 16 )
 margin_left = 3.3719
@@ -24,7 +12,7 @@ margin_right = 3.25483
 margin_top = 3.08429
 margin_bottom = 3.08123
 
-[sub_resource type="StyleBoxTexture" id=3]
+[sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 1 )
 region_rect = Rect2( 32, 0, 16, 16 )
 margin_left = 3.3719
@@ -32,7 +20,7 @@ margin_right = 3.25483
 margin_top = 3.08429
 margin_bottom = 3.08123
 
-[sub_resource type="StyleBoxTexture" id=4]
+[sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 1 )
 region_rect = Rect2( 48, 0, 16, 16 )
 margin_left = 3.3719
@@ -40,7 +28,7 @@ margin_right = 3.25483
 margin_top = 3.08429
 margin_bottom = 3.08123
 
-[sub_resource type="StyleBoxTexture" id=5]
+[sub_resource type="StyleBoxTexture" id=4]
 texture = ExtResource( 1 )
 region_rect = Rect2( 64, 0, 16, 16 )
 margin_left = 3.3719
@@ -48,7 +36,7 @@ margin_right = 3.25483
 margin_top = 3.08429
 margin_bottom = 3.08123
 
-[sub_resource type="StyleBoxTexture" id=6]
+[sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 1 )
 region_rect = Rect2( 80, 0, 16, 16 )
 margin_left = 3.3719
@@ -56,11 +44,39 @@ margin_right = 3.25483
 margin_top = 3.08429
 margin_bottom = 3.08123
 
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 48, 24, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 24, 48, 24, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 48, 24, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 72, 48, 24, 16 )
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 52, 32, 8, 16 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 84, 32, 8, 16 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 68, 32, 8, 16 )
+
 [sub_resource type="StyleBoxEmpty" id=14]
 
-[sub_resource type="StyleBoxEmpty" id=7]
-
-[sub_resource type="StyleBoxTexture" id=8]
+[sub_resource type="StyleBoxTexture" id=15]
 texture = ExtResource( 1 )
 region_rect = Rect2( 16, 32, 16, 16 )
 margin_left = 2.06745
@@ -68,7 +84,7 @@ margin_right = 2.06389
 margin_top = 5.06342
 margin_bottom = 4.98402
 
-[sub_resource type="StyleBoxTexture" id=9]
+[sub_resource type="StyleBoxTexture" id=16]
 texture = ExtResource( 1 )
 region_rect = Rect2( 48, 16, 16, 16 )
 margin_left = 13.0962
@@ -76,7 +92,7 @@ margin_right = 12.8287
 margin_top = 3.19769
 margin_bottom = 4.11239
 
-[sub_resource type="StyleBoxTexture" id=10]
+[sub_resource type="StyleBoxTexture" id=17]
 texture = ExtResource( 1 )
 region_rect = Rect2( 64, 16, 16, 16 )
 margin_left = 12.8391
@@ -84,7 +100,7 @@ margin_right = 12.8287
 margin_top = 3.19769
 margin_bottom = 4.11239
 
-[sub_resource type="StyleBoxTexture" id=11]
+[sub_resource type="StyleBoxTexture" id=18]
 texture = ExtResource( 1 )
 region_rect = Rect2( 80, 16, 16, 16 )
 margin_left = 11.9396
@@ -92,7 +108,7 @@ margin_right = 11.8006
 margin_top = 5.12537
 margin_bottom = 4.11239
 
-[sub_resource type="StyleBoxTexture" id=12]
+[sub_resource type="StyleBoxTexture" id=19]
 texture = ExtResource( 1 )
 region_rect = Rect2( 16, 16, 16, 16 )
 margin_left = 11.04
@@ -100,7 +116,7 @@ margin_right = 10.901
 margin_top = 2.16959
 margin_bottom = 2.18471
 
-[sub_resource type="StyleBoxTexture" id=13]
+[sub_resource type="StyleBoxTexture" id=20]
 texture = ExtResource( 1 )
 region_rect = Rect2( 32, 16, 16, 16 )
 margin_left = 11.04
@@ -115,12 +131,12 @@ Button/colors/font_color_disabled = Color( 1, 1, 1, 0.2 )
 Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
 Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
 Button/constants/hseparation = 2
-Button/fonts/font = SubResource( 1 )
-Button/styles/disabled = SubResource( 2 )
-Button/styles/focus = SubResource( 3 )
-Button/styles/hover = SubResource( 4 )
-Button/styles/normal = SubResource( 5 )
-Button/styles/pressed = SubResource( 6 )
+Button/fonts/font = ExtResource( 3 )
+Button/styles/disabled = SubResource( 1 )
+Button/styles/focus = SubResource( 2 )
+Button/styles/hover = SubResource( 3 )
+Button/styles/normal = SubResource( 4 )
+Button/styles/pressed = SubResource( 5 )
 CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_disabled = Color( 1, 1, 1, 0.2 )
 CheckButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -129,22 +145,22 @@ CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
 CheckButton/constants/check_vadjust = 0
 CheckButton/constants/hseparation = 4
 CheckButton/fonts/font = null
-CheckButton/icons/off = ExtResource( 10 )
-CheckButton/icons/off_disabled = ExtResource( 9 )
-CheckButton/icons/on = ExtResource( 8 )
-CheckButton/icons/on_disabled = ExtResource( 11 )
+CheckButton/icons/off = SubResource( 6 )
+CheckButton/icons/off_disabled = SubResource( 7 )
+CheckButton/icons/on = SubResource( 8 )
+CheckButton/icons/on_disabled = SubResource( 9 )
 CheckButton/styles/disabled = null
-CheckButton/styles/focus = SubResource( 14 )
+CheckButton/styles/focus = SubResource( 10 )
 CheckButton/styles/hover = null
 CheckButton/styles/hover_pressed = null
 CheckButton/styles/normal = null
 CheckButton/styles/pressed = null
-HSlider/icons/grabber = ExtResource( 4 )
-HSlider/icons/grabber_disabled = ExtResource( 5 )
-HSlider/icons/grabber_highlight = ExtResource( 6 )
+HSlider/icons/grabber = SubResource( 11 )
+HSlider/icons/grabber_disabled = SubResource( 12 )
+HSlider/icons/grabber_highlight = SubResource( 13 )
 HSlider/icons/tick = null
-HSlider/styles/grabber_area = SubResource( 7 )
-HSlider/styles/slider = SubResource( 8 )
+HSlider/styles/grabber_area = SubResource( 14 )
+HSlider/styles/slider = SubResource( 15 )
 Label/colors/font_color = Color( 1, 1, 1, 1 )
 Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
 Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
@@ -158,8 +174,8 @@ VScrollBar/icons/decrement = null
 VScrollBar/icons/decrement_highlight = null
 VScrollBar/icons/increment = null
 VScrollBar/icons/increment_highlight = null
-VScrollBar/styles/grabber = SubResource( 9 )
-VScrollBar/styles/grabber_highlight = SubResource( 10 )
-VScrollBar/styles/grabber_pressed = SubResource( 11 )
-VScrollBar/styles/scroll = SubResource( 12 )
-VScrollBar/styles/scroll_focus = SubResource( 13 )
+VScrollBar/styles/grabber = SubResource( 16 )
+VScrollBar/styles/grabber_highlight = SubResource( 17 )
+VScrollBar/styles/grabber_pressed = SubResource( 18 )
+VScrollBar/styles/scroll = SubResource( 19 )
+VScrollBar/styles/scroll_focus = SubResource( 20 )

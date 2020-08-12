@@ -5,7 +5,6 @@
 [ext_resource path="res://Assets/Fonts/small_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Scripts/Objects/World/Finish.gd" type="Script" id=4]
 
-
 [node name="Finish" type="Node2D"]
 script = ExtResource( 4 )
 

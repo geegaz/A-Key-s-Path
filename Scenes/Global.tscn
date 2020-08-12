@@ -47,7 +47,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 320, 224 ), Vector2( 0, 224 ), Vector2( -320, 224 ) ]
+"values": [ Vector2( 384, 224 ), Vector2( 0, 224 ), Vector2( -384, 224 ) ]
 }
 tracks/1/type = "method"
 tracks/1/path = NodePath("..")
@@ -137,14 +137,15 @@ anims/right = SubResource( 3 )
 anims/up = SubResource( 4 )
 
 [node name="Transitions" type="Node2D" parent="TransitionLayer"]
-position = Vector2( 320, 224 )
 
 [node name="Transition0" type="Sprite" parent="TransitionLayer/Transitions"]
+visible = false
 position = Vector2( 160, -128 )
 scale = Vector2( 10, 1 )
 texture = ExtResource( 5 )
 
 [node name="Transition1" type="Sprite" parent="TransitionLayer/Transitions"]
+visible = false
 position = Vector2( 160, -128 )
 scale = Vector2( 5, 1 )
 texture = ExtResource( 6 )
@@ -152,12 +153,14 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 64, 256 )
 
 [node name="Transition2" type="Sprite" parent="TransitionLayer/Transitions"]
+visible = false
 position = Vector2( 160, -128 )
 texture = ExtResource( 6 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 320, 256 )
 
 [node name="Transition3" type="Sprite" parent="TransitionLayer/Transitions"]
+visible = false
 position = Vector2( 160, -128 )
 scale = Vector2( 5, 1 )
 texture = ExtResource( 6 )
@@ -165,10 +168,18 @@ flip_v = true
 region_enabled = true
 region_rect = Rect2( 0, 0, 64, 256 )
 
+[node name="Transition4" type="Sprite" parent="TransitionLayer/Transitions"]
+visible = false
+position = Vector2( 160, -128 )
+rotation = 1.5708
+scale = Vector2( 8, 1.75 )
+texture = ExtResource( 5 )
+
 [node name="HUD" type="CanvasLayer" parent="."]
 layer = 2
 
 [node name="Pause" type="Control" parent="HUD"]
+pause_mode = 2
 margin_right = 320.0
 margin_bottom = 184.0
 theme = ExtResource( 2 )
@@ -193,7 +204,7 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="HUD/Pause/VBoxContainer"]
 margin_right = 320.0
-margin_bottom = 34.0
+margin_bottom = 36.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_y = 1
@@ -201,26 +212,26 @@ text = "Pause"
 align = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="HUD/Pause/VBoxContainer"]
-margin_top = 38.0
+margin_top = 40.0
 margin_right = 320.0
 margin_bottom = 184.0
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HUD/Pause/VBoxContainer/CenterContainer"]
-margin_left = 109.0
-margin_top = 53.0
-margin_right = 211.0
+margin_left = 111.0
+margin_top = 51.0
+margin_right = 208.0
 margin_bottom = 93.0
 
 [node name="Continue" type="Button" parent="HUD/Pause/VBoxContainer/CenterContainer/VBoxContainer"]
-margin_right = 102.0
-margin_bottom = 18.1655
+margin_right = 97.0
+margin_bottom = 19.1655
 text = "Continue"
 
 [node name="BackToMenu" type="Button" parent="HUD/Pause/VBoxContainer/CenterContainer/VBoxContainer"]
-margin_top = 22.0
-margin_right = 102.627
-margin_bottom = 40.1655
+margin_top = 23.0
+margin_right = 97.6267
+margin_bottom = 42.1655
 text = "Back to menu"
 [connection signal="pressed" from="HUD/Pause/VBoxContainer/CenterContainer/VBoxContainer/Continue" to="." method="_on_Continue_pressed"]
 [connection signal="pressed" from="HUD/Pause/VBoxContainer/CenterContainer/VBoxContainer/BackToMenu" to="." method="_on_BackToMenu_pressed"]

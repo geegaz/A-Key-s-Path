@@ -4,7 +4,9 @@
 [ext_resource path="res://Scripts/Objects/World/Shooter.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Fireball.wav" type="AudioStream" id=4]
 
-[node name="Shooter" type="Node2D"]
+[node name="Shooter" type="Node2D" groups=[
+"Shooters",
+]]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
