@@ -36,7 +36,7 @@ tracks/0/keys = {
 "values": [ 0.0, 120.0 ]
 }
 
-[sub_resource type="ViewportTexture" id=6]
+[sub_resource type="ViewportTexture" id=5]
 viewport_path = NodePath("Viewport")
 
 [node name="Cube" type="Node2D"]
@@ -76,4 +76,5 @@ light_negative = true
 light_specular = 0.0
 
 [node name="Image" type="Sprite" parent="."]
-texture = SubResource( 6 )
+modulate = Color( 0.894118, 0.882353, 0.890196, 1 )
+texture = SubResource( 5 )

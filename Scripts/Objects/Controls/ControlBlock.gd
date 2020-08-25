@@ -29,7 +29,7 @@ var control_action: String
 onready var ControlSprite: Sprite = $Sprite
 onready var Collider: CollisionShape2D = $Collider
 onready var GridMask: Light2D = $GridMask
-onready var Shaker: Node = $Shaker
+onready var InputControl: Control = $Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -43,10 +43,11 @@ func _ready():
 
 func _process(_delta):
 	if dragged:
-		if hover:
-			ControlSprite.frame = DRAGGED_HOVER
-		else:
-			ControlSprite.frame = DRAGGED
+#		if hover:
+#			ControlSprite.frame = DRAGGED_HOVER
+#		else:
+#			ControlSprite.frame = DRAGGED
+		ControlSprite.frame = DRAGGED
 	elif in_world:
 		if hover:
 			ControlSprite.frame = WORLD_HOVER
@@ -66,12 +67,12 @@ func _process(_delta):
 	if Input.is_action_just_pressed(control_action) and (dragged or in_world):
 		var tween = $Tween
 		tween.interpolate_property(ControlSprite, "modulate",
-			Color(1.2, 0.0, 0.0),
+			Color(1.5, 1.5, 1.5),
 			Color(1.0, 1.0, 1.0),
 			0.2
 		)
 		tween.start()
-		Shaker.shake(ControlSprite, "offset", 2.0, 0.2)
+		$Shaker.shake(ControlSprite, "offset", 2.0, 0.2)
 	
 	if not valid_pos:
 		ControlSprite.modulate.a = 0.5

@@ -1,5 +1,6 @@
 extends Node
 
+# warning-ignore:unused_signal
 signal change_scene_ready
 
 var paused = false
@@ -16,6 +17,13 @@ var current_transition = "down"
 
 func _ready():
 	$HUD/Pause.hide()
+	
+	var tilesets = [
+		load("res://Assets/Tilesets/terrain.tres"),
+		load("res://Assets/Tilesets/platform.tres"),
+		load("res://Assets/Tilesets/anti_control.tres")]
+	for tileset in tilesets:
+		tileset._create_collisions()
 	
 	set_volume(SFX, 0.5)
 	set_volume(MUSIC, 0.5)
@@ -58,18 +66,17 @@ func set_transition(id: int = 0, time: float = 1.0, direction: String = "down"):
 			current_transition = direction
 		_:
 			current_transition = "down"
-		
 
 func goto_scene(path: String = ""):
 # warning-ignore:return_value_discarded
 	
 	TransitionPlayer.play(current_transition)
 	yield(self, "change_scene_ready")
-	TransitionPlayer
 	match path:
 		"menu","":
 			get_tree().change_scene("res://Scenes/Main.tscn")
 		_:
+# warning-ignore:return_value_discarded
 			get_tree().change_scene(path)
 	
 func _on_Continue_pressed():

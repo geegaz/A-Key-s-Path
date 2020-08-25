@@ -44,7 +44,6 @@ func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player") and !moving:
 		goto_next_offset()
 
-
 func _on_IdleTimer_timeout():
 	if !moving:
 		var anim = randi()%2

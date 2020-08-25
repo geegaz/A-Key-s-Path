@@ -3,7 +3,9 @@ extends Area2D
 onready var _Tween = $Tween
 
 func _ready():
+# warning-ignore:return_value_discarded
 	connect("body_entered", self, "_on_Area2D_body_entered")
+# warning-ignore:return_value_discarded
 	connect("body_exited", self, "_on_Area2D_body_exited")
 	
 	modulate.a = 0.0

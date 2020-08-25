@@ -1,5 +1,9 @@
 extends Node2D
 
+# Screens
+onready var Options = $Options
+onready var Credits = $Credits
+onready var MainMenu = $MainMenu
 # Menu navigation
 onready var StartButton = $MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/Start
 onready var QuitButton = $MainMenu/MainMenuContainer/CenterContainer2/Quit
@@ -44,27 +48,38 @@ func set_slider(slider: Node, label: Node, value: float):
 		slider.value = value
 	label.text = str(value*100)
 
+func change_screen(pos: Vector2, next: Node, previous: Node):
+	var tween = $Tween
+	if !tween.is_active():
+		tween.interpolate_property($Camera2D, "position",
+			$Camera2D.position, pos, 0.2)
+		next.show()
+		tween.start()
+		yield(tween, "tween_all_completed")
+		previous.hide()
+		
+
 func _on_Start_pressed():
 	Global.set_transition()
-	Global.goto_scene("res://Scenes/Worlds/World0.tscn")
+	Global.goto_scene("res://Scenes/Worlds/Tuto1.tscn")
 
 func _on_Quit_pressed():
 	get_tree().quit()
 
 func _on_Options_pressed():
-	$AnimationPlayer.play("goto_options")
+	change_screen(Vector2(-160,92), Options, MainMenu)
 	OptionsBackButton.grab_focus()
 
 func _on_Credits_pressed():
-	$AnimationPlayer.play("goto_credits")
+	change_screen(Vector2(480,92), Credits, MainMenu)
 	CreditsBackButton.grab_focus()
 
 func _on_OptionsBack_pressed():
-	$AnimationPlayer.play("options_to_menu")
+	change_screen(Vector2(160,92), MainMenu, Options)
 	StartButton.grab_focus()
 	
 func _on_CreditsBack_pressed():
-	$AnimationPlayer.play("credits_to_menu")
+	change_screen(Vector2(160,92), MainMenu, Credits)
 	StartButton.grab_focus()
 
 func _on_SFXSlider_value_changed(value):

@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/Tips.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/tips/tips-Sheet.png" type="Texture" id=2]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "fall"
 length = 0.2
 tracks/0/type = "value"
@@ -19,7 +19,7 @@ tracks/0/keys = {
 "values": [ 2, 3 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "idle_0"
 length = 0.8
 tracks/0/type = "value"
@@ -35,7 +35,7 @@ tracks/0/keys = {
 "values": [ 8, 9, 10, 11, 12, 13, 14, 15, 8 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=3]
 resource_name = "idle_1"
 length = 0.8
 tracks/0/type = "value"
@@ -84,13 +84,14 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 16, 64 )
 
 [node name="Tips" type="PathFollow2D"]
 rotate = false
 cubic_interp = false
 loop = false
+lookahead = 0.001
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -102,9 +103,9 @@ frame = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle_0"
-anims/fall = SubResource( 2 )
-anims/idle_0 = SubResource( 3 )
-anims/idle_1 = SubResource( 6 )
+anims/fall = SubResource( 1 )
+anims/idle_0 = SubResource( 2 )
+anims/idle_1 = SubResource( 3 )
 anims/jump = SubResource( 4 )
 anims/run = SubResource( 5 )
 
@@ -113,7 +114,7 @@ collision_layer = 0
 collision_mask = 32
 
 [node name="Collider" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="IdleTimer" type="Timer" parent="."]
 one_shot = true

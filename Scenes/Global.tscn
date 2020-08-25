@@ -123,6 +123,7 @@ tracks/1/keys = {
 }
 
 [node name="Global" type="Node"]
+pause_mode = 2
 script = ExtResource( 1 )
 sfx_volume = 0.7
 music_volume = 0.7
@@ -179,7 +180,6 @@ texture = ExtResource( 5 )
 layer = 2
 
 [node name="Pause" type="Control" parent="HUD"]
-pause_mode = 2
 margin_right = 320.0
 margin_bottom = 184.0
 theme = ExtResource( 2 )

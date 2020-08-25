@@ -1,22 +1,50 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Objects/ControlsUI.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Objects/Controls/ControlRight.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Sprites/UI/controls/space/spacebar_place1.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Sprites/UI/controls/space/spacebar_place3.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sprites/UI/controls/space/spacebar_place2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/UI/controls/controls_place.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/UI/controls/controls_background.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sprites/UI/controls/right/right_place1.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Sprites/UI/controls/right/right_place2.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Sprites/UI/controls/right/right_place3.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Sprites/UI/controls/left/left_place2.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Sprites/UI/controls/left/left_place3.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Sprites/UI/controls/left/left_place1.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/Objects/Controls/ControlJump.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Objects/Controls/ControlLeft.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Sprites/UI/controls/controls_background_top.png" type="Texture" id=15]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 64, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 16, 64, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 32, 64, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
+region = Rect2( 16, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 3 )
+region = Rect2( 16, 32, 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 160, 8 )
 
 [node name="ControlsUI" type="Control"]
@@ -47,6 +75,9 @@ texture = ExtResource( 15 )
 patch_margin_left = 9
 patch_margin_top = 10
 patch_margin_right = 9
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ControlJumpPos" type="Position2D" parent="."]
 position = Vector2( 184, 170 )
@@ -58,9 +89,9 @@ margin_right = 32.0
 margin_bottom = 8.0
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 4 )
+texture_normal = SubResource( 1 )
+texture_pressed = SubResource( 2 )
+texture_hover = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -75,9 +106,9 @@ margin_right = 8.0
 margin_bottom = 8.0
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 12 )
-texture_pressed = ExtResource( 10 )
-texture_hover = ExtResource( 11 )
+texture_normal = SubResource( 5 )
+texture_pressed = SubResource( 6 )
+texture_hover = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -92,9 +123,9 @@ margin_right = 8.0
 margin_bottom = 8.0
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 8 )
-texture_hover = ExtResource( 9 )
+texture_normal = SubResource( 8 )
+texture_pressed = SubResource( 9 )
+texture_hover = SubResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -116,7 +147,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BarRetriever"]
 position = Vector2( 160, 176 )
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 [connection signal="pressed" from="ControlJumpPos/RetrieveJump" to="." method="_on_RetrieveJump_pressed"]
 [connection signal="pressed" from="ControlLeftPos/RetrieveLeft" to="." method="_on_RetrieveLeft_pressed"]
 [connection signal="pressed" from="ControlRightPos/RetrieveRight" to="." method="_on_RetrieveRight_pressed"]

@@ -9,12 +9,19 @@ enum Controls {JUMP, LEFT, RIGHT}
 enum {IDLE, RUNNING, JUMPING, FALLING}
 var state = IDLE
 
-export var max_speed = 75.0
-export var jump_force = 75.0
-export var gravity = 2.0
-export var gravity_strong = 4.0
-export var accel = 0.1
+# Movement exports
+export var max_speed = 120.0		# Player max speed in px/s
+export var jump_force = 140.0
+export var gravity = 4.0
+export var gravity_strong = 10.0
+export var accel = 0.3
 export var coyote_time = 0.1
+
+var velocity = Vector2()
+var target_speed = 0.0
+var target_gravity: float
+
+var air_time = 0.0
 
 var left_control = true
 var right_control = true
@@ -23,15 +30,13 @@ var jump_control = true
 var on_ground = false
 var alive = true
 
-var velocity = Vector2()
-var target_speed = 0.0
-var target_gravity: float
-var air_time = 0.0
-
 onready var Animator = $AnimationPlayer
+onready var _RayCastLeft = $RayCastLeft
+onready var _RayCastRight = $RayCastRight
 
 func _ready():
 	target_gravity = gravity_strong
+	randomize()
 
 func _process(_delta):
 	if target_speed < 0.0:
@@ -60,23 +65,15 @@ func _process(_delta):
 func _physics_process(delta):
 	var direction = 0.0
 	if alive:
+		# Get the movement direction on the X axis. 
+		# right = 1, left = -1
 		if right_control and Input.is_action_pressed("right"):
 			direction += 1
 		if left_control and Input.is_action_pressed("left"):
 			direction -= 1
-		if jump_control and Input.is_action_just_pressed("jump") and air_time < coyote_time:
-			velocity.y -= jump_force
-			target_gravity = gravity
 			
-			randomize()
-			$Sounds/Jump.pitch_scale = (randf()*0.8+0.6)
-			$Sounds/Jump.play()
-			create_jump_effect()
-			
-		elif Input.is_action_just_released("jump") or velocity.y >= 0:
+	if velocity.y >= 0:
 			target_gravity = gravity_strong
-	else:
-		target_gravity = gravity_strong
 	
 	target_speed = direction * max_speed
 	
@@ -85,11 +82,24 @@ func _physics_process(delta):
 	if alive:
 		velocity = move_and_slide(velocity, Vector2.UP)
 	
-	on_ground = ($RayCastLeft.is_colliding() or $RayCastRight.is_colliding() or is_on_floor())
+	on_ground = (_RayCastLeft.is_colliding() or _RayCastRight.is_colliding() or is_on_floor())
 	if on_ground:
 		air_time = 0.0
 	elif air_time < coyote_time:
 		air_time += delta
+
+func _input(event):
+	if event.is_action_pressed("jump") and jump_control:
+		if air_time < coyote_time:
+			velocity.y -= jump_force
+			target_gravity = gravity
+			
+			$Sounds/Jump.pitch_scale = (randf()*0.8+0.6)
+			$Sounds/Jump.play()
+			create_jump_effect()
+			
+	elif event.is_action_released("jump"):
+		target_gravity = gravity_strong
 
 func create_jump_effect():
 	var jump_effect = preload("res://Scenes/Objects/Effect.tscn").instance()
@@ -108,8 +118,9 @@ func death():
 	$Sprite.visible = false
 	$Effector/EffectorCollider.disabled = true
 	$DeathParticles.emitting = true
-	$DeathTimer.start()
 	$Sounds/Death.play()
+	
+	$DeathTimer.start()
 	
 	emit_signal("die")
 
