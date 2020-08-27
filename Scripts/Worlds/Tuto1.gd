@@ -26,12 +26,15 @@ func _on_Tips_reached_offset(offset_id):
 
 func _on_EndAnimation_body_entered(body):
 	if body.is_in_group("Player"):
-		$Player.alive = false
+		$Player.controls_enabled = false
+		$Player.animations_enabled = false
+		$Player.velocity = Vector2(-200,-120)
+		$Player._PlayerSprite.play("CutsceneFall")
 		Tips.goto_next_offset()
 		#$AnimationPlayer.play()
 		#yield($AnimationPlayer, "animation_finished")
-		
-		yield(get_tree().create_timer(2.0), "timeout")
+		WorldCamera.shake(4.0, 2.0)
+		yield(get_tree().create_timer(3.0), "timeout")
 		
 		Global.set_transition(3)
 		Global.goto_scene(next_level)
