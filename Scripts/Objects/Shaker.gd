@@ -26,7 +26,7 @@ func _process(delta):
 
 func _shake_process(delta):
 	# When shaking is finished, return the property to its original state
-	if elapsed_time > shake_time:
+	if elapsed_time > shake_time or !Global.screenshake:
 		stop_shake()
 	# When shaking, calculate the offset
 	else:

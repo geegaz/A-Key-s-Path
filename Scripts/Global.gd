@@ -10,6 +10,7 @@ enum {MASTER, SFX, MUSIC}
 export(int) var max_unlocked_level = 0
 export(float, 0.0, 1.0) var sfx_volume
 export(float, 0.0, 1.0) var music_volume
+var screenshake = true
 
 onready var TransitionPlayer: AnimationPlayer = $TransitionLayer/TransitionPlayer
 onready var Transitions: Array = $TransitionLayer/Transitions.get_children()

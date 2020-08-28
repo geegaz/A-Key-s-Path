@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Themes/Main.tres" type="Theme" id=2]
@@ -97,37 +97,53 @@ animations = [ {
 "speed": 10.0
 } ]
 
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 13 )
+region = Rect2( 16, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 13 )
+region = Rect2( 32, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 13 )
+region = Rect2( 48, 32, 16, 16 )
+
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 13 )
-region = Rect2( 32, 13, 16, 13 )
+region = Rect2( 0, 16, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 13 )
-region = Rect2( 48, 13, 16, 13 )
+region = Rect2( 16, 16, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 13 )
-region = Rect2( 16, 13, 16, 13 )
+region = Rect2( 32, 16, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 13 )
-region = Rect2( 0, 13, 16, 13 )
+region = Rect2( 48, 16, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 13 )
-region = Rect2( 32, 0, 16, 13 )
+region = Rect2( 0, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 13 )
-region = Rect2( 48, 0, 16, 13 )
+region = Rect2( 16, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 13 )
-region = Rect2( 16, 0, 16, 13 )
+region = Rect2( 32, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 13 )
-region = Rect2( 0, 0, 16, 13 )
+region = Rect2( 48, 0, 16, 16 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -167,9 +183,9 @@ motion_scale = Vector2( 0.5, 0.5 )
 
 [node name="Background1" type="TextureRect" parent="Background/BackgroundLayer/Background1"]
 margin_left = -96.0
-margin_top = -96.0
+margin_top = -128.0
 margin_right = 352.0
-margin_bottom = 160.0
+margin_bottom = 128.0
 texture = ExtResource( 11 )
 stretch_mode = 2
 __meta__ = {
@@ -259,12 +275,13 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Background"]
 position = Vector2( 80, 144 )
 frames = SubResource( 9 )
-frame = 1
+frame = 6
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Background"]
 position = Vector2( 264, 104 )
 frames = SubResource( 18 )
+frame = 5
 playing = true
 
 [node name="MainMenu" type="Control" parent="."]
@@ -359,6 +376,37 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="VBoxContainer" type="VBoxContainer" parent="Levels"]
+margin_right = 320.0
+margin_bottom = 184.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Levels/VBoxContainer"]
+margin_right = 320.0
+margin_bottom = 164.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Levels/VBoxContainer"]
+margin_top = 168.0
+margin_right = 320.0
+margin_bottom = 184.0
+
+[node name="LevelsBack" type="TextureButton" parent="Levels/VBoxContainer/CenterContainer"]
+margin_left = 152.0
+margin_right = 168.0
+margin_bottom = 16.0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource( 27 )
+texture_pressed = SubResource( 28 )
+texture_hover = SubResource( 29 )
+texture_disabled = SubResource( 30 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Options" type="Control" parent="."]
 margin_left = -320.0
 margin_bottom = 184.0
@@ -376,7 +424,7 @@ __meta__ = {
 
 [node name="MarginContainer" type="MarginContainer" parent="Options/VBoxContainer2"]
 margin_right = 320.0
-margin_bottom = 23.0
+margin_bottom = 26.0
 custom_constants/margin_right = 5
 custom_constants/margin_top = 5
 custom_constants/margin_left = 5
@@ -386,23 +434,24 @@ custom_constants/margin_bottom = 5
 margin_left = 5.0
 margin_top = 5.0
 margin_right = 315.0
-margin_bottom = 18.0
+margin_bottom = 21.0
 
 [node name="MarginContainer" type="MarginContainer" parent="Options/VBoxContainer2/MarginContainer/HBoxContainer"]
 margin_right = 16.0
-margin_bottom = 13.0
+margin_bottom = 16.0
 custom_constants/margin_right = 16
 
 [node name="CenterContainer" type="CenterContainer" parent="Options/VBoxContainer2/MarginContainer/HBoxContainer"]
 margin_left = 20.0
 margin_right = 290.0
-margin_bottom = 13.0
+margin_bottom = 16.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="Options/VBoxContainer2/MarginContainer/HBoxContainer/CenterContainer"]
 margin_left = 109.0
+margin_top = 1.0
 margin_right = 161.0
-margin_bottom = 13.0
+margin_bottom = 14.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_y = 1
 text = "Options"
@@ -410,7 +459,7 @@ text = "Options"
 [node name="OptionsBack" type="TextureButton" parent="Options/VBoxContainer2/MarginContainer/HBoxContainer"]
 margin_left = 294.0
 margin_right = 310.0
-margin_bottom = 13.0
+margin_bottom = 16.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -420,25 +469,25 @@ texture_hover = SubResource( 21 )
 texture_disabled = SubResource( 22 )
 
 [node name="CenterContainer" type="CenterContainer" parent="Options/VBoxContainer2"]
-margin_top = 27.0
+margin_top = 30.0
 margin_right = 320.0
-margin_bottom = 161.0
+margin_bottom = 164.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Options/VBoxContainer2/CenterContainer"]
 margin_left = 83.0
 margin_right = 236.0
 margin_bottom = 134.0
-custom_constants/separation = 16
+custom_constants/separation = 12
 
 [node name="MarginContainer" type="MarginContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer"]
 margin_right = 153.0
-margin_bottom = 10.0
-custom_constants/margin_top = 10
+margin_bottom = 8.0
+custom_constants/margin_top = 8
 
 [node name="Sound" type="VBoxContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer"]
-margin_top = 26.0
+margin_top = 20.0
 margin_right = 153.0
-margin_bottom = 79.0
+margin_bottom = 69.0
 
 [node name="Label" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound"]
 margin_right = 153.0
@@ -451,12 +500,11 @@ align = 1
 [node name="SFX" type="HBoxContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound"]
 margin_top = 17.0
 margin_right = 153.0
-margin_bottom = 33.0
+margin_bottom = 31.0
 
 [node name="Label" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/SFX"]
-margin_top = 1.0
 margin_right = 25.0
-margin_bottom = 14.0
+margin_bottom = 13.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "SFX: "
@@ -464,9 +512,8 @@ align = 2
 
 [node name="Number" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/SFX"]
 margin_left = 29.0
-margin_top = 1.0
 margin_right = 49.0
-margin_bottom = 14.0
+margin_bottom = 13.0
 rect_min_size = Vector2( 20, 0 )
 custom_fonts/font = ExtResource( 5 )
 text = "0"
@@ -474,21 +521,20 @@ text = "0"
 [node name="SFXSlider" type="HSlider" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/SFX"]
 margin_left = 53.0
 margin_right = 153.0
-margin_bottom = 16.0
+margin_bottom = 14.0
 rect_min_size = Vector2( 100, 0 )
 mouse_default_cursor_shape = 6
 max_value = 1.0
 step = 0.01
 
 [node name="Music" type="HBoxContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound"]
-margin_top = 37.0
+margin_top = 35.0
 margin_right = 153.0
-margin_bottom = 53.0
+margin_bottom = 49.0
 
 [node name="Label" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/Music"]
-margin_top = 1.0
 margin_right = 25.0
-margin_bottom = 14.0
+margin_bottom = 13.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "Music:"
@@ -496,9 +542,8 @@ align = 2
 
 [node name="Number" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/Music"]
 margin_left = 29.0
-margin_top = 1.0
 margin_right = 49.0
-margin_bottom = 14.0
+margin_bottom = 13.0
 rect_min_size = Vector2( 20, 0 )
 custom_fonts/font = ExtResource( 5 )
 text = "0"
@@ -506,14 +551,14 @@ text = "0"
 [node name="MusicSlider" type="HSlider" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/Music"]
 margin_left = 53.0
 margin_right = 153.0
-margin_bottom = 16.0
+margin_bottom = 14.0
 rect_min_size = Vector2( 100, 0 )
 mouse_default_cursor_shape = 6
 max_value = 1.0
 step = 0.01
 
 [node name="Display" type="VBoxContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer"]
-margin_top = 95.0
+margin_top = 81.0
 margin_right = 153.0
 margin_bottom = 134.0
 
@@ -525,14 +570,10 @@ custom_constants/shadow_offset_y = 1
 text = "Display"
 align = 1
 
-[node name="Fullscreen" type="HBoxContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Display"]
+[node name="FullscreenCheckButton" type="CheckButton" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Display"]
 margin_top = 17.0
 margin_right = 153.0
-margin_bottom = 39.0
-
-[node name="FullscreenCheckButton" type="CheckButton" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Display/Fullscreen"]
-margin_right = 152.0
-margin_bottom = 22.1655
+margin_bottom = 33.0
 rect_min_size = Vector2( 152, 0 )
 mouse_default_cursor_shape = 2
 custom_fonts/font = ExtResource( 5 )
@@ -542,7 +583,21 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
 text = "Fullscreen"
-flat = true
+
+[node name="ScreenshakeCheckButton" type="CheckButton" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Display"]
+margin_top = 37.0
+margin_right = 153.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 152, 0 )
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 0.2 )
+custom_colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+pressed = true
+text = "Screenshake"
 
 [node name="Credits" type="Control" parent="."]
 margin_left = 320.0
@@ -555,14 +610,14 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Credits"]
 margin_right = 320.0
-margin_bottom = 184.0
+margin_bottom = 180.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="Credits/VBoxContainer"]
 margin_right = 320.0
-margin_bottom = 23.0
+margin_bottom = 26.0
 custom_constants/margin_right = 5
 custom_constants/margin_top = 5
 custom_constants/margin_left = 5
@@ -575,11 +630,11 @@ __meta__ = {
 margin_left = 5.0
 margin_top = 5.0
 margin_right = 315.0
-margin_bottom = 18.0
+margin_bottom = 21.0
 
 [node name="CreditsBack" type="TextureButton" parent="Credits/VBoxContainer/MarginContainer/HBoxContainer"]
 margin_right = 16.0
-margin_bottom = 13.0
+margin_bottom = 16.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -591,13 +646,14 @@ texture_disabled = SubResource( 26 )
 [node name="CenterContainer" type="CenterContainer" parent="Credits/VBoxContainer/MarginContainer/HBoxContainer"]
 margin_left = 20.0
 margin_right = 286.0
-margin_bottom = 13.0
+margin_bottom = 16.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="Credits/VBoxContainer/MarginContainer/HBoxContainer/CenterContainer"]
 margin_left = 107.0
+margin_top = 1.0
 margin_right = 159.0
-margin_bottom = 13.0
+margin_bottom = 14.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 1
@@ -606,13 +662,13 @@ text = "Credits"
 [node name="MarginContainer" type="MarginContainer" parent="Credits/VBoxContainer/MarginContainer/HBoxContainer"]
 margin_left = 290.0
 margin_right = 310.0
-margin_bottom = 13.0
+margin_bottom = 16.0
 custom_constants/margin_left = 20
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Credits/VBoxContainer"]
-margin_top = 27.0
+margin_top = 30.0
 margin_right = 320.0
-margin_bottom = 184.0
+margin_bottom = 180.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
@@ -756,8 +812,10 @@ current = true
 [connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/HBoxContainer/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/HBoxContainer/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer2/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Levels/VBoxContainer/CenterContainer/LevelsBack" to="." method="_on_LevelsBack_pressed"]
 [connection signal="pressed" from="Options/VBoxContainer2/MarginContainer/HBoxContainer/OptionsBack" to="." method="_on_OptionsBack_pressed"]
 [connection signal="value_changed" from="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/SFX/SFXSlider" to="." method="_on_SFXSlider_value_changed"]
 [connection signal="value_changed" from="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/Music/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
-[connection signal="toggled" from="Options/VBoxContainer2/CenterContainer/VBoxContainer/Display/Fullscreen/FullscreenCheckButton" to="." method="_on_CheckButton_toggled"]
+[connection signal="toggled" from="Options/VBoxContainer2/CenterContainer/VBoxContainer/Display/FullscreenCheckButton" to="." method="_on_CheckButton_toggled"]
+[connection signal="toggled" from="Options/VBoxContainer2/CenterContainer/VBoxContainer/Display/ScreenshakeCheckButton" to="." method="_on_ScreenshakeCheckButton_toggled"]
 [connection signal="pressed" from="Credits/VBoxContainer/MarginContainer/HBoxContainer/CreditsBack" to="." method="_on_CreditsBack_pressed"]
