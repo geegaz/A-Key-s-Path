@@ -22,6 +22,10 @@ onready var MusicLabel = $Options/VBoxContainer2/CenterContainer/VBoxContainer/S
 onready var FullscreenCheckButton = $Options/VBoxContainer2/CenterContainer/VBoxContainer/Display/FullscreenCheckButton
 onready var ScreenshakeCheckButton = $Options/VBoxContainer2/CenterContainer/VBoxContainer/Display/ScreenshakeCheckButton
 
+# Level variables
+export(Array, NodePath) var LevelButtons
+export(Array, String, FILE, "*.tscn") var LevelPaths
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	StartButton.grab_focus()
@@ -40,6 +44,13 @@ func _ready():
 	FullscreenCheckButton.pressed = OS.window_fullscreen
 	ScreenshakeCheckButton.pressed = Global.screenshake
 	
+	unlock_levels()
+	
+	if Global.show_levels:
+		$Camera2D.position = Vector2(160,-96)
+		LevelsBackButton.grab_focus()
+		Global.show_levels = false
+	
 	if OS.has_feature("HTML5"):
 		QuitButton.hide()
 
@@ -47,6 +58,8 @@ func _input(event):
 	if event.is_action_pressed("fullscreen"):
 		yield(get_tree(), "idle_frame")
 		FullscreenCheckButton.pressed = OS.window_fullscreen
+	if event.is_action_pressed("quit"):
+		$QuitConfirmationDialog.call_deferred("show_modal")
 
 func set_slider(slider: Node, label: Node, value: float):
 	if slider.value != value:
@@ -60,13 +73,20 @@ func change_screen(pos: Vector2):
 			$Camera2D.position, pos, 0.2)
 		tween.start()
 		
+func unlock_levels():
+	for i in range(LevelButtons.size()):
+		var _button = get_node(LevelButtons[i])
+		if i > Global.max_unlocked_level:
+			_button.disabled = true
+		if i < LevelPaths.size():
+			_button.connect("pressed", self, "_on_LevelButton_pressed", [LevelPaths[i]])
 
 func _on_Start_pressed():
 	change_screen(Vector2(160,-96))
 	LevelsBackButton.grab_focus()
 
 func _on_Quit_pressed():
-	get_tree().quit()
+	$QuitConfirmationDialog.show_modal()
 
 func _on_Options_pressed():
 	change_screen(Vector2(-160,92))
@@ -110,5 +130,10 @@ func _on_CheckButton_toggled(button_pressed):
 func _on_ScreenshakeCheckButton_toggled(button_pressed):
 	Global.screenshake = button_pressed
 
-#Global.set_transition()
-#Global.goto_scene("res://Scenes/Worlds/Tuto1.tscn")
+func _on_LevelButton_pressed(level_path: String = "menu"):
+	print(level_path)
+	Global.set_transition()
+	Global.goto_scene(level_path)
+
+func _on_QuitConfirmationDialog_confirmed():
+	get_tree().quit()

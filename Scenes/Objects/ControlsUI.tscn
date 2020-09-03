@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/Objects/Controls/ControlLeft.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Sprites/UI/controls/controls_background_top.png" type="Texture" id=15]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 3 )
 region = Rect2( 32, 0, 64, 16 )
 
@@ -20,38 +20,35 @@ region = Rect2( 32, 16, 64, 16 )
 atlas = ExtResource( 3 )
 region = Rect2( 32, 32, 64, 16 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 16, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 32, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 3 )
 region = Rect2( 16, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 3 )
 region = Rect2( 16, 16, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 3 )
 region = Rect2( 16, 32, 16, 16 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 160, 8 )
 
-[node name="ControlsUI" type="Control"]
+[node name="ControlsUI" type="Node2D"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Tween" type="Tween" parent="."]
 
@@ -89,7 +86,7 @@ margin_right = 32.0
 margin_bottom = 8.0
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 1 )
+texture_normal = SubResource( 11 )
 texture_pressed = SubResource( 2 )
 texture_hover = SubResource( 3 )
 __meta__ = {
@@ -106,9 +103,9 @@ margin_right = 8.0
 margin_bottom = 8.0
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 5 )
-texture_pressed = SubResource( 6 )
-texture_hover = SubResource( 7 )
+texture_normal = SubResource( 4 )
+texture_pressed = SubResource( 5 )
+texture_hover = SubResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -123,9 +120,9 @@ margin_right = 8.0
 margin_bottom = 8.0
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 8 )
-texture_pressed = SubResource( 9 )
-texture_hover = SubResource( 10 )
+texture_normal = SubResource( 7 )
+texture_pressed = SubResource( 8 )
+texture_hover = SubResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -147,7 +144,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BarRetriever"]
 position = Vector2( 160, 176 )
-shape = SubResource( 4 )
+shape = SubResource( 10 )
 [connection signal="pressed" from="ControlJumpPos/RetrieveJump" to="." method="_on_RetrieveJump_pressed"]
 [connection signal="pressed" from="ControlLeftPos/RetrieveLeft" to="." method="_on_RetrieveLeft_pressed"]
 [connection signal="pressed" from="ControlRightPos/RetrieveRight" to="." method="_on_RetrieveRight_pressed"]

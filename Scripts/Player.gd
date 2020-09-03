@@ -57,6 +57,9 @@ func _process(_delta):
 				set_state(States.FALLING)
 			else:
 				set_state(States.JUMPING)
+	
+	if state != States.RUNNING and $Sounds/Running.playing:
+		$Sounds/Running.stop()
 
 func _physics_process(delta):
 	var direction = 0.0
@@ -109,16 +112,13 @@ func set_state(new_state):
 		match new_state:
 			States.IDLE:
 				_PlayerSprite.play("Idle")
-				$Sounds/Running.stop()
 			States.RUNNING:
 				_PlayerSprite.play("Run")
 				$Sounds/Running.play()
 			States.JUMPING:
 				_PlayerSprite.play("Jump")
-				$Sounds/Running.stop()
 			States.FALLING:
 				_PlayerSprite.play("Fall")
-				$Sounds/Running.stop()
 
 func win():
 	emit_signal("win")

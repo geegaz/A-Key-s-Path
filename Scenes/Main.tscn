@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Themes/Main.tres" type="Theme" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Assets/Sprites/UI/arrows-Sheet.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Tilesets/spikes.tres" type="TileSet" id=14]
 [ext_resource path="res://Assets/Tilesets/platform.tres" type="TileSet" id=15]
+[ext_resource path="res://Assets/Sprites/UI/levels-Sheet.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Sprites/flag/flag-Sheet.png" type="Texture" id=17]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -97,56 +98,90 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 13 )
-region = Rect2( 0, 32, 16, 16 )
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 16 )
+region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 13 )
-region = Rect2( 16, 32, 16, 16 )
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 16 )
+region = Rect2( 16, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=29]
-atlas = ExtResource( 13 )
-region = Rect2( 32, 32, 16, 16 )
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 16 )
+region = Rect2( 32, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=30]
-atlas = ExtResource( 13 )
-region = Rect2( 48, 32, 16, 16 )
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 16 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 16 )
+region = Rect2( 0, 16, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 16 )
+region = Rect2( 24, 16, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 16 )
+region = Rect2( 0, 40, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 16 )
+region = Rect2( 24, 40, 24, 24 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 13 )
-region = Rect2( 0, 16, 16, 16 )
+region = Rect2( 0, 32, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 13 )
-region = Rect2( 16, 16, 16, 16 )
+region = Rect2( 16, 32, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 13 )
-region = Rect2( 32, 16, 16, 16 )
+region = Rect2( 32, 32, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 13 )
-region = Rect2( 48, 16, 16, 16 )
+region = Rect2( 48, 32, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 13 )
-region = Rect2( 0, 0, 16, 16 )
+region = Rect2( 0, 16, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 13 )
-region = Rect2( 16, 0, 16, 16 )
+region = Rect2( 16, 16, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 13 )
-region = Rect2( 32, 0, 16, 16 )
+region = Rect2( 32, 16, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 13 )
+region = Rect2( 48, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 13 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 13 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 13 )
 region = Rect2( 48, 0, 16, 16 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
+LevelButtons = [ NodePath("Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer/LevelButton"), NodePath("Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer2/LevelButton"), NodePath("Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer3/LevelButton"), NodePath("Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer4/LevelButton") ]
+LevelPaths = [ "res://Scenes/Worlds/Tuto1.tscn", "res://Scenes/Worlds/Tuto2.tscn" ]
 
 [node name="Background" type="Node2D" parent="."]
 
@@ -275,13 +310,12 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Background"]
 position = Vector2( 80, 144 )
 frames = SubResource( 9 )
-frame = 6
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Background"]
 position = Vector2( 264, 104 )
 frames = SubResource( 18 )
-frame = 5
+frame = 7
 playing = true
 
 [node name="MainMenu" type="Control" parent="."]
@@ -372,6 +406,7 @@ text = "Quit"
 [node name="Levels" type="Control" parent="."]
 margin_top = -192.0
 margin_right = 320.0
+theme = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -388,6 +423,97 @@ margin_right = 320.0
 margin_bottom = 164.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+alignment = 1
+
+[node name="World1" type="MarginContainer" parent="Levels/VBoxContainer/VBoxContainer"]
+margin_top = 49.0
+margin_right = 320.0
+margin_bottom = 114.0
+custom_constants/margin_top = 16
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Levels/VBoxContainer/VBoxContainer/World1"]
+margin_left = 8.0
+margin_top = 16.0
+margin_right = 320.0
+margin_bottom = 57.0
+
+[node name="Label" type="Label" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer"]
+margin_right = 312.0
+margin_bottom = 13.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "World 1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="World1Levels" type="HBoxContainer" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer"]
+margin_top = 17.0
+margin_right = 312.0
+margin_bottom = 41.0
+custom_constants/separation = 8
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels"]
+margin_left = 108.0
+margin_right = 124.0
+margin_bottom = 24.0
+
+[node name="LevelButton" type="TextureButton" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer"]
+margin_top = 4.0
+margin_right = 16.0
+margin_bottom = 20.0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource( 31 )
+texture_pressed = SubResource( 32 )
+texture_hover = SubResource( 33 )
+texture_disabled = SubResource( 34 )
+
+[node name="CenterContainer2" type="CenterContainer" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels"]
+margin_left = 132.0
+margin_right = 148.0
+margin_bottom = 24.0
+
+[node name="LevelButton" type="TextureButton" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer2"]
+margin_top = 4.0
+margin_right = 16.0
+margin_bottom = 20.0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource( 31 )
+texture_pressed = SubResource( 32 )
+texture_hover = SubResource( 33 )
+texture_disabled = SubResource( 34 )
+
+[node name="CenterContainer3" type="CenterContainer" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels"]
+margin_left = 156.0
+margin_right = 172.0
+margin_bottom = 24.0
+
+[node name="LevelButton" type="TextureButton" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer3"]
+margin_top = 4.0
+margin_right = 16.0
+margin_bottom = 20.0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource( 31 )
+texture_pressed = SubResource( 32 )
+texture_hover = SubResource( 33 )
+texture_disabled = SubResource( 34 )
+
+[node name="CenterContainer4" type="CenterContainer" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels"]
+margin_left = 180.0
+margin_right = 204.0
+margin_bottom = 24.0
+
+[node name="LevelButton" type="TextureButton" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer4"]
+margin_right = 24.0
+margin_bottom = 24.0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource( 35 )
+texture_pressed = SubResource( 36 )
+texture_hover = SubResource( 37 )
+texture_disabled = SubResource( 38 )
 
 [node name="CenterContainer" type="CenterContainer" parent="Levels/VBoxContainer"]
 margin_top = 168.0
@@ -399,10 +525,10 @@ margin_left = 152.0
 margin_right = 168.0
 margin_bottom = 16.0
 mouse_default_cursor_shape = 2
-texture_normal = SubResource( 27 )
-texture_pressed = SubResource( 28 )
-texture_hover = SubResource( 29 )
-texture_disabled = SubResource( 30 )
+texture_normal = SubResource( 19 )
+texture_pressed = SubResource( 20 )
+texture_hover = SubResource( 21 )
+texture_disabled = SubResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -463,10 +589,10 @@ margin_bottom = 16.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture_normal = SubResource( 19 )
-texture_pressed = SubResource( 20 )
-texture_hover = SubResource( 21 )
-texture_disabled = SubResource( 22 )
+texture_normal = SubResource( 23 )
+texture_pressed = SubResource( 24 )
+texture_hover = SubResource( 25 )
+texture_disabled = SubResource( 26 )
 
 [node name="CenterContainer" type="CenterContainer" parent="Options/VBoxContainer2"]
 margin_top = 30.0
@@ -638,10 +764,10 @@ margin_bottom = 16.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture_normal = SubResource( 23 )
-texture_pressed = SubResource( 24 )
-texture_hover = SubResource( 25 )
-texture_disabled = SubResource( 26 )
+texture_normal = SubResource( 27 )
+texture_pressed = SubResource( 28 )
+texture_hover = SubResource( 29 )
+texture_disabled = SubResource( 30 )
 
 [node name="CenterContainer" type="CenterContainer" parent="Credits/VBoxContainer/MarginContainer/HBoxContainer"]
 margin_left = 20.0
@@ -808,6 +934,18 @@ position = Vector2( 160, 92 )
 current = true
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="QuitConfirmationDialog" type="ConfirmationDialog" parent="."]
+margin_left = 80.0
+margin_top = 40.0
+margin_right = 240.0
+margin_bottom = 98.0
+rect_min_size = Vector2( 160, 56 )
+theme = ExtResource( 2 )
+window_title = "Quit Game ?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/HBoxContainer/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/HBoxContainer/Credits" to="." method="_on_Credits_pressed"]
@@ -819,3 +957,4 @@ current = true
 [connection signal="toggled" from="Options/VBoxContainer2/CenterContainer/VBoxContainer/Display/FullscreenCheckButton" to="." method="_on_CheckButton_toggled"]
 [connection signal="toggled" from="Options/VBoxContainer2/CenterContainer/VBoxContainer/Display/ScreenshakeCheckButton" to="." method="_on_ScreenshakeCheckButton_toggled"]
 [connection signal="pressed" from="Credits/VBoxContainer/MarginContainer/HBoxContainer/CreditsBack" to="." method="_on_CreditsBack_pressed"]
+[connection signal="confirmed" from="QuitConfirmationDialog" to="." method="_on_QuitConfirmationDialog_confirmed"]

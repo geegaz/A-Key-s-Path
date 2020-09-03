@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 
 signal control_placed(control_type)
 signal control_retrieved(control_type)
@@ -28,14 +28,16 @@ func _on_Control_place_in_world(node):
 	emit_signal("control_placed", node.control_type)
 
 func _on_Control_retrieve_from_world(node):
+	node.position = node.get_global_transform_with_canvas().origin
 	reparent(node, self)
+	
 	node.retrieve()
 	emit_signal("control_retrieved", node.control_type)
 	
 	var tween = $Tween
 	var target_pos = ControlPos[node.control_type].position
 	tween.interpolate_property(node, "position",
-		get_viewport().get_mouse_position(),
+		node.position,
 		target_pos,
 		0.2,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()

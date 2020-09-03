@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fireball_particle.png-2601d426bbe5794c844965ae34c7c8fd.stex"
+path="res://.import/levels-Sheet.png-40476e5cba92ec0e2aadcbca2cd72ab5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/effects/particles/fireball_particle.png"
-dest_files=[ "res://.import/fireball_particle.png-2601d426bbe5794c844965ae34c7c8fd.stex" ]
+source_file="res://Assets/Sprites/UI/levels-Sheet.png"
+dest_files=[ "res://.import/levels-Sheet.png-40476e5cba92ec0e2aadcbca2cd72ab5.stex" ]
 
 [params]
 

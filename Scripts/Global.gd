@@ -4,6 +4,7 @@ extends Node
 signal change_scene_ready
 
 var paused = false
+var show_levels = false
 
 enum {MASTER, SFX, MUSIC}
 
@@ -19,6 +20,7 @@ var current_transition = "down"
 func _ready():
 	$HUD/Pause.hide()
 	
+	# Automatically creates collisions for the tilesets
 	var tilesets = [
 		load("res://Assets/Tilesets/terrain.tres"),
 		load("res://Assets/Tilesets/platform.tres"),
@@ -33,14 +35,6 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("fullscreen"):
 		OS.window_fullscreen = !OS.window_fullscreen
-	if event.is_action_pressed("quit"):
-		var scene_name = get_tree().current_scene.name
-		if scene_name == "Main":
-			get_tree().quit()
-		else:
-			paused = !paused
-			$HUD/Pause.visible = paused
-			get_tree().paused = paused
 
 func set_volume(bus: int, volume_scale: float):
 	var volume = -72.0 + (volume_scale*72.0)
@@ -76,10 +70,18 @@ func goto_scene(path: String = ""):
 	match path:
 		"menu","":
 			get_tree().change_scene("res://Scenes/Main.tscn")
+		"levels":
+			show_levels = true
+			get_tree().change_scene("res://Scenes/Main.tscn")
 		_:
 # warning-ignore:return_value_discarded
 			get_tree().change_scene(path)
-	
+
+func switch_paused():
+	paused = !paused
+	$HUD/Pause.visible = paused
+	get_tree().paused = paused
+
 func _on_Continue_pressed():
 	paused = false
 	$HUD/Pause.visible = false
@@ -91,4 +93,4 @@ func _on_BackToMenu_pressed():
 	get_tree().paused = false
 	
 	set_transition()
-	goto_scene("menu")
+	goto_scene("levels")
