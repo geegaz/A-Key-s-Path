@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/Objects/Controls/ControlLeft.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Sprites/UI/controls/controls_background_top.png" type="Texture" id=15]
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
 region = Rect2( 32, 0, 64, 16 )
 
@@ -40,15 +40,18 @@ region = Rect2( 16, 0, 16, 16 )
 atlas = ExtResource( 3 )
 region = Rect2( 16, 16, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 3 )
 region = Rect2( 16, 32, 16, 16 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 160, 8 )
 
-[node name="ControlsUI" type="Node2D"]
+[node name="ControlsUI" type="Control"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Tween" type="Tween" parent="."]
 
@@ -86,7 +89,7 @@ margin_right = 32.0
 margin_bottom = 8.0
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 11 )
+texture_normal = SubResource( 1 )
 texture_pressed = SubResource( 2 )
 texture_hover = SubResource( 3 )
 __meta__ = {
@@ -122,7 +125,7 @@ focus_mode = 0
 enabled_focus_mode = 0
 texture_normal = SubResource( 7 )
 texture_pressed = SubResource( 8 )
-texture_hover = SubResource( 12 )
+texture_hover = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

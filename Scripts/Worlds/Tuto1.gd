@@ -8,7 +8,7 @@ func _ready():
 	WorldCamera.set_camera_limits($GridLimits)
 	TipsImage.flip_h = true
 	
-	$ControlsLayer/ControlsUI.visible = false
+	$ControlsLayer/ControlsUI.hide()
 
 func _on_Player_win():
 	pass

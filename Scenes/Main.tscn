@@ -98,90 +98,90 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="AtlasTexture" id=31]
+[sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 16 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 16 )
 region = Rect2( 16, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 16 )
 region = Rect2( 32, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=34]
+[sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 16 )
 region = Rect2( 48, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=35]
+[sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 16 )
 region = Rect2( 0, 16, 24, 24 )
 
-[sub_resource type="AtlasTexture" id=36]
+[sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 16 )
 region = Rect2( 24, 16, 24, 24 )
 
-[sub_resource type="AtlasTexture" id=37]
+[sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 16 )
 region = Rect2( 0, 40, 24, 24 )
 
-[sub_resource type="AtlasTexture" id=38]
+[sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 16 )
 region = Rect2( 24, 40, 24, 24 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 13 )
 region = Rect2( 0, 32, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 13 )
 region = Rect2( 16, 32, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 13 )
 region = Rect2( 32, 32, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 13 )
 region = Rect2( 48, 32, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 13 )
 region = Rect2( 0, 16, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 13 )
 region = Rect2( 16, 16, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 13 )
 region = Rect2( 32, 16, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 13 )
 region = Rect2( 48, 16, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=35]
 atlas = ExtResource( 13 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 13 )
 region = Rect2( 16, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=37]
 atlas = ExtResource( 13 )
 region = Rect2( 32, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=38]
 atlas = ExtResource( 13 )
 region = Rect2( 48, 0, 16, 16 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
 LevelButtons = [ NodePath("Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer/LevelButton"), NodePath("Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer2/LevelButton"), NodePath("Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer3/LevelButton"), NodePath("Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer4/LevelButton") ]
-LevelPaths = [ "res://Scenes/Worlds/Tuto1.tscn", "res://Scenes/Worlds/Tuto2.tscn" ]
+LevelPaths = [ "res://Scenes/Worlds/World1_Tuto1.tscn", "res://Scenes/Worlds/World1_Tuto2.tscn", "res://Scenes/Worlds/World1_Level1.tscn" ]
 
 [node name="Background" type="Node2D" parent="."]
 
@@ -310,12 +310,13 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Background"]
 position = Vector2( 80, 144 )
 frames = SubResource( 9 )
+frame = 3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Background"]
 position = Vector2( 264, 104 )
 frames = SubResource( 18 )
-frame = 7
+frame = 2
 playing = true
 
 [node name="MainMenu" type="Control" parent="."]
@@ -466,10 +467,10 @@ margin_top = 4.0
 margin_right = 16.0
 margin_bottom = 20.0
 mouse_default_cursor_shape = 2
-texture_normal = SubResource( 31 )
-texture_pressed = SubResource( 32 )
-texture_hover = SubResource( 33 )
-texture_disabled = SubResource( 34 )
+texture_normal = SubResource( 19 )
+texture_pressed = SubResource( 20 )
+texture_hover = SubResource( 21 )
+texture_disabled = SubResource( 22 )
 
 [node name="CenterContainer2" type="CenterContainer" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels"]
 margin_left = 132.0
@@ -481,10 +482,10 @@ margin_top = 4.0
 margin_right = 16.0
 margin_bottom = 20.0
 mouse_default_cursor_shape = 2
-texture_normal = SubResource( 31 )
-texture_pressed = SubResource( 32 )
-texture_hover = SubResource( 33 )
-texture_disabled = SubResource( 34 )
+texture_normal = SubResource( 19 )
+texture_pressed = SubResource( 20 )
+texture_hover = SubResource( 21 )
+texture_disabled = SubResource( 22 )
 
 [node name="CenterContainer3" type="CenterContainer" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels"]
 margin_left = 156.0
@@ -496,10 +497,10 @@ margin_top = 4.0
 margin_right = 16.0
 margin_bottom = 20.0
 mouse_default_cursor_shape = 2
-texture_normal = SubResource( 31 )
-texture_pressed = SubResource( 32 )
-texture_hover = SubResource( 33 )
-texture_disabled = SubResource( 34 )
+texture_normal = SubResource( 19 )
+texture_pressed = SubResource( 20 )
+texture_hover = SubResource( 21 )
+texture_disabled = SubResource( 22 )
 
 [node name="CenterContainer4" type="CenterContainer" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels"]
 margin_left = 180.0
@@ -510,10 +511,10 @@ margin_bottom = 24.0
 margin_right = 24.0
 margin_bottom = 24.0
 mouse_default_cursor_shape = 2
-texture_normal = SubResource( 35 )
-texture_pressed = SubResource( 36 )
-texture_hover = SubResource( 37 )
-texture_disabled = SubResource( 38 )
+texture_normal = SubResource( 23 )
+texture_pressed = SubResource( 24 )
+texture_hover = SubResource( 25 )
+texture_disabled = SubResource( 26 )
 
 [node name="CenterContainer" type="CenterContainer" parent="Levels/VBoxContainer"]
 margin_top = 168.0
@@ -525,10 +526,10 @@ margin_left = 152.0
 margin_right = 168.0
 margin_bottom = 16.0
 mouse_default_cursor_shape = 2
-texture_normal = SubResource( 19 )
-texture_pressed = SubResource( 20 )
-texture_hover = SubResource( 21 )
-texture_disabled = SubResource( 22 )
+texture_normal = SubResource( 27 )
+texture_pressed = SubResource( 28 )
+texture_hover = SubResource( 29 )
+texture_disabled = SubResource( 30 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -589,10 +590,10 @@ margin_bottom = 16.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture_normal = SubResource( 23 )
-texture_pressed = SubResource( 24 )
-texture_hover = SubResource( 25 )
-texture_disabled = SubResource( 26 )
+texture_normal = SubResource( 31 )
+texture_pressed = SubResource( 32 )
+texture_hover = SubResource( 33 )
+texture_disabled = SubResource( 34 )
 
 [node name="CenterContainer" type="CenterContainer" parent="Options/VBoxContainer2"]
 margin_top = 30.0
@@ -764,10 +765,10 @@ margin_bottom = 16.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture_normal = SubResource( 27 )
-texture_pressed = SubResource( 28 )
-texture_hover = SubResource( 29 )
-texture_disabled = SubResource( 30 )
+texture_normal = SubResource( 35 )
+texture_pressed = SubResource( 36 )
+texture_hover = SubResource( 37 )
+texture_disabled = SubResource( 38 )
 
 [node name="CenterContainer" type="CenterContainer" parent="Credits/VBoxContainer/MarginContainer/HBoxContainer"]
 margin_left = 20.0

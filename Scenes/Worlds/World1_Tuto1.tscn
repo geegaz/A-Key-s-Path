@@ -29,7 +29,7 @@
 [ext_resource path="res://Assets/Sprites/UI/controls/controls_place.png" type="Texture" id=27]
 [ext_resource path="res://Assets/Sprites/UI/controls/controls_background.png" type="Texture" id=28]
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=1]
 resource_name = "ShowControls"
 length = 5.0
 tracks/0/type = "value"
@@ -44,25 +44,13 @@ tracks/0/keys = {
 "update": 1,
 "values": [ true ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("ControlsLayer/ControlsUI:position")
+tracks/1/type = "method"
+tracks/1/path = NodePath("Objects/ControlPropLeft/Effect")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 2, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 24 ), Vector2( 0, 0 ) ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath("Objects/ControlPropLeft/Effect")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -70,13 +58,13 @@ tracks/2/keys = {
 "method": "play"
 } ]
 }
-tracks/3/type = "method"
-tracks/3/path = NodePath("Objects/ControlPropRight/Effect")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
+tracks/2/type = "method"
+tracks/2/path = NodePath("Objects/ControlPropRight/Effect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 1.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -84,13 +72,13 @@ tracks/3/keys = {
 "method": "play"
 } ]
 }
-tracks/4/type = "method"
-tracks/4/path = NodePath("Objects/ControlPropJump/Effect")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
+tracks/3/type = "method"
+tracks/3/path = NodePath("Objects/ControlPropJump/Effect")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
 "times": PoolRealArray( 1.8 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -98,13 +86,13 @@ tracks/4/keys = {
 "method": "play"
 } ]
 }
-tracks/5/type = "method"
-tracks/5/path = NodePath(".")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
 "times": PoolRealArray( 3.1, 4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
@@ -115,47 +103,59 @@ tracks/5/keys = {
 "method": "break_end_platforms"
 } ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("ControlsLayer/ControlsUI:margin_top")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 2, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 32.0, 0.0 ]
+}
 
-[sub_resource type="CanvasItemMaterial" id=1]
+[sub_resource type="CanvasItemMaterial" id=2]
 light_mode = 2
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 27 )
-region = Rect2( 32, 0, 64, 16 )
-
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 27 )
-region = Rect2( 32, 16, 64, 16 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 27 )
-region = Rect2( 32, 32, 64, 16 )
+region = Rect2( 32, 0, 64, 16 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 27 )
-region = Rect2( 0, 0, 16, 16 )
+region = Rect2( 32, 16, 64, 16 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 27 )
-region = Rect2( 0, 16, 16, 16 )
+region = Rect2( 32, 32, 64, 16 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 27 )
-region = Rect2( 0, 32, 16, 16 )
+region = Rect2( 0, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 27 )
-region = Rect2( 16, 0, 16, 16 )
+region = Rect2( 0, 16, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 27 )
+region = Rect2( 0, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 27 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 27 )
 region = Rect2( 16, 16, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 27 )
 region = Rect2( 16, 32, 16, 16 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 160, 8 )
 
 [sub_resource type="Curve2D" id=13]
@@ -163,37 +163,37 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 200, 160, 0, 0, 0, 0, 304, 160, -16.347, 0, 0, 0, 336, 144, 0, 0, 0, 0, 360, 144, 0, 0, 0, 0, 472, 144, -22.4419, 0, 22.4419, 0, 512, 120, 0, 0, 0, 0, 544, 128, 0, 0, 0, 0, 560, 128, -35.1316, -0.613844, 35.1316, 0.613844, 616, 104, 0, 0, 0, 0, 672, 128, 0, 0, 0, 0, 728, 128, -23.2945, -1.29414, 23.2945, 1.29414, 776, 112, 0, 0, 0, 0, 816, 144, 0, 0, 0, 0, 832, 144, -6.55645, -32.0534, 0, 0, 864, 176, 0, 0, 0, 0, 1088, 176 )
 }
 
-[sub_resource type="Curve" id=20]
+[sub_resource type="Curve" id=14]
 max_value = 2.0
 bake_resolution = 1
 _data = [ Vector2( 0.495763, 2 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 8, 56 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 32, 32 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 14 )
 region = Rect2( 0, 0, 66, 14 )
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 32, 32 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 14 )
 region = Rect2( 0, 14, 96, 14 )
 
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 64, 40 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 7 )
-next_level = "res://Scenes/Worlds/Tuto2.tscn"
+next_level = "res://Scenes/Worlds/World1_Tuto2.tscn"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/ShowControls = SubResource( 9 )
+anims/ShowControls = SubResource( 1 )
 
 [node name="Sounds" type="Node" parent="."]
 
@@ -207,7 +207,7 @@ __meta__ = {
 
 [node name="Grid" type="TextureRect" parent="GridLimits"]
 light_mask = 2
-material = SubResource( 1 )
+material = SubResource( 2 )
 margin_right = 16.0
 margin_bottom = 16.0
 texture = ExtResource( 15 )
@@ -220,10 +220,11 @@ __meta__ = {
 [node name="ControlsLayer" type="CanvasLayer" parent="."]
 layer = 0
 
-[node name="ControlsUI" type="Node2D" parent="ControlsLayer"]
+[node name="ControlsUI" type="Control" parent="ControlsLayer"]
 script = ExtResource( 10 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 
 [node name="Tween" type="Tween" parent="ControlsLayer/ControlsUI"]
@@ -262,9 +263,9 @@ margin_right = 32.0
 margin_bottom = 8.0
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 11 )
-texture_pressed = SubResource( 2 )
-texture_hover = SubResource( 3 )
+texture_normal = SubResource( 3 )
+texture_pressed = SubResource( 4 )
+texture_hover = SubResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -279,9 +280,9 @@ margin_right = 8.0
 margin_bottom = 8.0
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 4 )
-texture_pressed = SubResource( 5 )
-texture_hover = SubResource( 6 )
+texture_normal = SubResource( 6 )
+texture_pressed = SubResource( 7 )
+texture_hover = SubResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -296,9 +297,9 @@ margin_right = 8.0
 margin_bottom = 8.0
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 7 )
-texture_pressed = SubResource( 8 )
-texture_hover = SubResource( 12 )
+texture_normal = SubResource( 9 )
+texture_pressed = SubResource( 10 )
+texture_hover = SubResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -309,7 +310,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ControlsLayer/ControlsUI/BarRetriever"]
 position = Vector2( 160, 176 )
-shape = SubResource( 10 )
+shape = SubResource( 12 )
 
 [node name="BackgroundLayer" type="ParallaxBackground" parent="."]
 
@@ -407,7 +408,7 @@ initial_velocity = 28.0
 initial_velocity_random = 1.0
 scale_amount = 2.0
 scale_amount_random = 1.0
-scale_amount_curve = SubResource( 20 )
+scale_amount_curve = SubResource( 14 )
 color = Color( 0.392157, 0.152941, 0.0901961, 1 )
 
 [node name="OverlayTileMap" type="TileMap" parent="Tilemaps"]
@@ -456,7 +457,7 @@ position = Vector2( 440, 136 )
 position = Vector2( 944, 119 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Triggers/EndAnimation"]
-shape = SubResource( 14 )
+shape = SubResource( 15 )
 
 [node name="BreakParticles" type="CPUParticles2D" parent="Objects"]
 position = Vector2( 1032, 168 )
@@ -525,7 +526,7 @@ __meta__ = {
 position = Vector2( 136, 128 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorials/Move"]
-shape = SubResource( 15 )
+shape = SubResource( 16 )
 
 [node name="Label" type="Label" parent="Tutorials/Move"]
 margin_left = -32.0
@@ -541,13 +542,13 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Tutorials/Move"]
 position = Vector2( 0, -16 )
-texture = SubResource( 16 )
+texture = SubResource( 17 )
 
 [node name="Jump" parent="Tutorials" instance=ExtResource( 16 )]
 position = Vector2( 304, 128 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorials/Jump"]
-shape = SubResource( 17 )
+shape = SubResource( 18 )
 
 [node name="Label" type="Label" parent="Tutorials/Jump"]
 margin_left = -32.0
@@ -563,14 +564,14 @@ __meta__ = {
 
 [node name="Sprite2" type="Sprite" parent="Tutorials/Jump"]
 position = Vector2( 0, -16 )
-texture = SubResource( 18 )
+texture = SubResource( 19 )
 
 [node name="HoldJump" parent="Tutorials" instance=ExtResource( 16 )]
 position = Vector2( 544, 104 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorials/HoldJump"]
 position = Vector2( 48, 16 )
-shape = SubResource( 19 )
+shape = SubResource( 20 )
 
 [node name="Label" type="Label" parent="Tutorials/HoldJump"]
 margin_left = 24.0
@@ -586,7 +587,7 @@ __meta__ = {
 }
 
 [node name="StartPoint" type="Position2D" parent="."]
-position = Vector2( 120, 152 )
+position = Vector2( 120, 144 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -120 )

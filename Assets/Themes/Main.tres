@@ -122,20 +122,20 @@ margin_right = 10.901
 margin_top = 2.16959
 margin_bottom = 2.18471
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 1 )
 region = Rect2( 80, 64, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 1 )
 region = Rect2( 64, 64, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 16, 32 )
 
-[sub_resource type="StyleBoxTexture" id=21]
-texture = SubResource( 20 )
+[sub_resource type="StyleBoxTexture" id=23]
+texture = SubResource( 22 )
 region_rect = Rect2( 0, 0, 16, 32 )
 margin_left = 2.3355
 margin_right = 2.0562
@@ -204,6 +204,6 @@ WindowDialog/constants/close_v_ofs = 0
 WindowDialog/constants/scaleborder_size = 0
 WindowDialog/constants/title_height = -20
 WindowDialog/fonts/title_font = ExtResource( 3 )
-WindowDialog/icons/close = SubResource( 22 )
-WindowDialog/icons/close_highlight = SubResource( 23 )
-WindowDialog/styles/panel = SubResource( 21 )
+WindowDialog/icons/close = SubResource( 20 )
+WindowDialog/icons/close_highlight = SubResource( 21 )
+WindowDialog/styles/panel = SubResource( 23 )

@@ -63,7 +63,7 @@ func _process(_delta):
 
 func _physics_process(delta):
 	var direction = 0.0
-	if controls_enabled:
+	if controls_enabled and movement_enabled:
 		# Get the movement direction on the X axis. 
 		# right = 1, left = -1
 		if right_control and Input.is_action_pressed("right"):

@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 signal control_placed(control_type)
 signal control_retrieved(control_type)

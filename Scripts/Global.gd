@@ -20,14 +20,6 @@ var current_transition = "down"
 func _ready():
 	$HUD/Pause.hide()
 	
-	# Automatically creates collisions for the tilesets
-	var tilesets = [
-		load("res://Assets/Tilesets/terrain.tres"),
-		load("res://Assets/Tilesets/platform.tres"),
-		load("res://Assets/Tilesets/anti_control.tres")]
-	for tileset in tilesets:
-		tileset._create_collisions()
-	
 	set_volume(SFX, 0.5)
 	set_volume(MUSIC, 0.5)
 	set_transition()
