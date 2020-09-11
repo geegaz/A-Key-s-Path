@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Objects/ControlsUI.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Objects/Controls/ControlRight.tscn" type="PackedScene" id=2]
@@ -43,9 +43,6 @@ region = Rect2( 16, 16, 16, 16 )
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 3 )
 region = Rect2( 16, 32, 16, 16 )
-
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 160, 8 )
 
 [node name="ControlsUI" type="Control"]
 script = ExtResource( 1 )
@@ -140,14 +137,6 @@ control_type = 1
 
 [node name="ControlJump" parent="." instance=ExtResource( 13 )]
 position = Vector2( 184, 170 )
-
-[node name="BarRetriever" type="KinematicBody2D" parent="."]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BarRetriever"]
-position = Vector2( 160, 176 )
-shape = SubResource( 10 )
 [connection signal="pressed" from="ControlJumpPos/RetrieveJump" to="." method="_on_RetrieveJump_pressed"]
 [connection signal="pressed" from="ControlLeftPos/RetrieveLeft" to="." method="_on_RetrieveLeft_pressed"]
 [connection signal="pressed" from="ControlRightPos/RetrieveRight" to="." method="_on_RetrieveRight_pressed"]

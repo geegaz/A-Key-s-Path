@@ -181,7 +181,7 @@ region = Rect2( 48, 0, 16, 16 )
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
 LevelButtons = [ NodePath("Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer/LevelButton"), NodePath("Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer2/LevelButton"), NodePath("Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer3/LevelButton"), NodePath("Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer4/LevelButton") ]
-LevelPaths = [ "res://Scenes/Worlds/World1_Tuto1.tscn", "res://Scenes/Worlds/World1_Tuto2.tscn", "res://Scenes/Worlds/World1_Level1.tscn" ]
+LevelPaths = [ "res://Scenes/Worlds/World1_Tuto1.tscn", "res://Scenes/Worlds/World1_Tuto2.tscn", "res://Scenes/Worlds/World1_Level1.tscn", "res://Scenes/Worlds/World1_Level2.tscn" ]
 
 [node name="Background" type="Node2D" parent="."]
 
@@ -310,12 +310,13 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Background"]
 position = Vector2( 80, 144 )
 frames = SubResource( 9 )
-frame = 1
+frame = 4
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Background"]
 position = Vector2( 264, 104 )
 frames = SubResource( 18 )
+frame = 3
 playing = true
 
 [node name="MainMenu" type="Control" parent="."]
