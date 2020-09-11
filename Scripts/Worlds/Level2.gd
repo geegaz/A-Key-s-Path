@@ -6,8 +6,3 @@ func _ready():
 func _on_Player_win():
 	Global.set_transition(3)
 	Global.goto_scene(next_level)
-
-
-func _on_TeleportTrigger_body_entered(body):
-	if body.is_in_group("Player"):
-		pass
