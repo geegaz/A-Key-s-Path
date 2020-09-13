@@ -1,28 +1,30 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Assets/Tilesets/platform.tres" type="TileSet" id=1]
-[ext_resource path="res://Assets/Tilesets/terrain.tres" type="TileSet" id=12]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/Fonts/PixelBasicBig.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Fonts/PixelBasic.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Sprites/player/player-Sheet.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 128
+font_data = ExtResource( 2 )
+
+[sub_resource type="Shader" id=3]
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+void fragment(){
+	
+	COLOR = vec4(1.0, 1.0, 1.0, texture(TEXTURE,UV).a);
+}"
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
 
 [node name="TestWorld" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource( 14 )]
-position = Vector2( 136, 49 )
-
-[node name="TestMap" type="Node2D" parent="."]
-position = Vector2( -64, 0 )
-
-[node name="TerrainTileMap" type="TileMap" parent="TestMap"]
-tile_set = ExtResource( 12 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( 131092, 0, 1, 131093, 0, 3, 196623, 3, 1, 196624, 3, 3, 196627, 1, 0, 196628, 0, 65538, 196629, 0, 65538, 196630, 0, 2, 196631, 0, 3, 262159, 3, 65537, 262160, 3, 65539, 262162, 1, 1, 262163, 1, 65539, 262164, 0, 65538, 262165, 0, 65538, 262166, 0, 65538, 262167, 0, 131075, 327691, 0, 1, 327692, 0, 2, 327693, 0, 2, 327694, 0, 2, 327695, 4, 65537, 327696, 4, 131075, 327697, 1, 1, 327698, 1, 65538, 327699, 1, 131075, 327700, 0, 65538, 327701, 0, 65538, 327702, 0, 131075, 393227, 0, 65537, 393228, 0, 65538, 393229, 0, 65538, 393230, 0, 65538, 393231, 4, 131072, 393232, 0, 65538, 393233, 1, 131073, 393234, 1, 131075, 393235, 0, 65538, 393236, 0, 65538, 393237, 0, 131075, 458763, 0, 65537, 458764, 0, 65538, 458765, 0, 65538, 458766, 0, 65538, 458767, 0, 65538, 458768, 4, 0, 458769, 0, 65538, 458770, 0, 65538, 458771, 0, 65538, 458772, 0, 65539, 524299, 0, 131073, 524300, 0, 131074, 524301, 0, 131074, 524302, 0, 131074, 524303, 0, 131074, 524304, 4, 131072, 524305, 0, 131074, 524306, 0, 131074, 524307, 0, 131074, 524308, 0, 131075 )
-
-[node name="PlatformTileMap" type="TileMap" parent="TestMap"]
-tile_set = ExtResource( 1 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( 196622, 0, 1, 196625, 0, 0, 196626, 0, 1 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = -256.0
@@ -55,3 +57,134 @@ text = "320 x 576 - page background
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="LevelSizes" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReferenceRect4" type="ReferenceRect" parent="LevelSizes"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 1408.0
+margin_bottom = 1088.0
+border_color = Color( 0.803922, 0, 1, 1 )
+editor_only = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="LevelSizes/ReferenceRect4"]
+margin_top = 896.0
+margin_right = 448.0
+margin_bottom = 1024.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.803922, 0, 1, 1 )
+text = "Level 4"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReferenceRect3" type="ReferenceRect" parent="LevelSizes"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 1216.0
+margin_bottom = 704.0
+border_color = Color( 0, 1, 0.0862745, 1 )
+editor_only = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="LevelSizes/ReferenceRect3"]
+margin_top = 512.0
+margin_right = 448.0
+margin_bottom = 640.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 1, 0.0862745, 1 )
+text = "Level 3"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReferenceRect2" type="ReferenceRect" parent="LevelSizes"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 704.0
+margin_bottom = 512.0
+border_color = Color( 1, 0.819608, 0, 1 )
+editor_only = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="LevelSizes/ReferenceRect2"]
+margin_top = 320.0
+margin_right = 448.0
+margin_bottom = 448.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0.819608, 0, 1 )
+text = "Level 2"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReferenceRect" type="ReferenceRect" parent="LevelSizes"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 1152.0
+margin_bottom = 256.0
+editor_only = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LevelSizes/ReferenceRect"]
+margin_top = 64.0
+margin_right = 448.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Level 1"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="LevelSizes"]
+margin_left = 64.0
+margin_top = 1088.0
+margin_right = 512.0
+margin_bottom = 1192.0
+custom_fonts/font = SubResource( 2 )
+text = "Player size:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerSize" type="Sprite" parent="LevelSizes"]
+material = SubResource( 4 )
+position = Vector2( 544, 1152 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 8
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 768, 576 )
+current = true
+zoom = Vector2( 7, 7 )

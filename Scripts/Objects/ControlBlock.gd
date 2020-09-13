@@ -74,7 +74,7 @@ func _process(_delta):
 		tween.start()
 		$Shaker.shake(ControlSprite, "offset", 2.0, 0.2)
 	
-	if not valid_pos:
+	if dragged and not valid_pos:
 		ControlSprite.modulate.a = 0.5
 	else:
 		ControlSprite.modulate.a = 1.0
@@ -96,6 +96,7 @@ func _on_start_drag():
 	dragged = true
 	toggle_grid(true)
 	Collider.disabled = true
+	z_index = 1
 	
 	emit_signal("place_in_world", self)
 	position = get_global_mouse_position().round()
@@ -107,6 +108,7 @@ func _on_stop_drag():
 		Collider.disabled = false
 		if !in_world:
 			in_world = true
+		z_index = 0
 	else:
 		emit_signal("retrieve_from_world", self)
 
@@ -122,6 +124,7 @@ func retrieve():
 	in_world = false
 	Collider.disabled = true
 	hover = false
+	z_index = 1
 	ControlSprite.modulate = Color(1.0, 1.0, 1.0)
 
 func _on_Control_mouse_entered():

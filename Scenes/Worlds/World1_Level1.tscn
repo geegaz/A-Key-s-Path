@@ -114,9 +114,15 @@ tile_data = PoolIntArray( -65478, 0, 0, 56, 0, 1, 57, 0, 2, 58, 0, 65539, 65592,
 [node name="CanvasModulate" type="CanvasModulate" parent="BackgroundLayer"]
 color = Color( 0.960784, 0.835294, 0.972549, 1 )
 
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( 192, -144 )
+
+[node name="Camera" parent="Player" instance=ExtResource( 5 )]
+
 [node name="Tilemaps" type="Node2D" parent="."]
 
 [node name="AntiControlTileMap" type="TileMap" parent="Tilemaps"]
+z_index = -1
 tile_set = ExtResource( 11 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 16
@@ -259,22 +265,14 @@ position = Vector2( 856, 344 )
 [node name="Checkpoint3" parent="Objects" instance=ExtResource( 4 )]
 position = Vector2( 392, 568 )
 
+[node name="ControlsUI" parent="." instance=ExtResource( 1 )]
+visible = false
+
 [node name="StartPoint" type="Position2D" parent="."]
 position = Vector2( 184, 224 )
-
-[node name="Player" parent="." instance=ExtResource( 7 )]
-position = Vector2( 192, -144 )
-
-[node name="Camera" parent="Player" instance=ExtResource( 5 )]
-
-[node name="ControlsLayer" type="CanvasLayer" parent="."]
-layer = 0
-
-[node name="ControlsUI" parent="ControlsLayer" instance=ExtResource( 1 )]
-visible = false
 [connection signal="checkpoint" from="Player" to="." method="_on_Player_checkpoint"]
 [connection signal="die" from="Player" to="." method="_on_Player_die"]
 [connection signal="respawn" from="Player" to="." method="_on_Player_respawn"]
 [connection signal="win" from="Player" to="." method="_on_Player_win"]
-[connection signal="control_placed" from="ControlsLayer/ControlsUI" to="Player" method="_on_ControlsUI_control_placed"]
-[connection signal="control_retrieved" from="ControlsLayer/ControlsUI" to="Player" method="_on_ControlsUI_control_retrieved"]
+[connection signal="control_placed" from="ControlsUI" to="Player" method="_on_ControlsUI_control_placed"]
+[connection signal="control_retrieved" from="ControlsUI" to="Player" method="_on_ControlsUI_control_retrieved"]

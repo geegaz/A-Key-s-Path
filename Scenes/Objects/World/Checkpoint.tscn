@@ -40,6 +40,7 @@ tracks/0/keys = {
 [node name="Checkpoint" type="StaticBody2D" groups=[
 "Checkpoints",
 ]]
+z_index = -1
 collision_layer = 20
 collision_mask = 0
 

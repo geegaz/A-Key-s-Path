@@ -53,6 +53,7 @@ collision_mask = 0
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+z_index = -1
 frames = SubResource( 10 )
-frame = 4
+frame = 3
 playing = true

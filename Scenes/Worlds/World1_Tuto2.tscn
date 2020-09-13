@@ -1,6 +1,5 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://Assets/Themes/Main.tres" type="Theme" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Objects/World/End.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Objects/ControlsUI.tscn" type="PackedScene" id=4]
@@ -18,125 +17,17 @@
 [ext_resource path="res://Assets/Sprites/World/World1/background_sky.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Sprites/World/World1/background_underground.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Sprites/grid_sprite.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Sprites/UI/hand-Sheet.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Sprites/effects/click_effect.png" type="Texture" id=20]
 
-[sub_resource type="Animation" id=1]
-resource_name = "DragHandTutorial"
-length = 3.5
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("ControlsLayer/Tutorials/Hand:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = false
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1.2, 2, 3.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 115, 173 ), Vector2( 115, 173 ), Vector2( 232, 96 ), Vector2( 232, 96 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("ControlsLayer/Tutorials/Hand:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.8, 2.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("ControlsLayer/Tutorials/Hand:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5, 2.7, 3.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("ControlsLayer/Tutorials/ClickEffect:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "RetrieveHandTutorial"
-length = 1.5
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("ControlsLayer/Tutorials/Hand:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("ControlsLayer/Tutorials/Hand:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 115, 173 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("ControlsLayer/Tutorials/Hand:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 0 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("ControlsLayer/Tutorials/ClickEffect:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
-}
-
-[sub_resource type="CanvasItemMaterial" id=3]
+[sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 2
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 104, 24 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 8, 48 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 8, 24 )
 
 [node name="World" type="Node2D"]
@@ -145,8 +36,6 @@ level_id = 1
 next_level = "res://Scenes/Worlds/World1_Level1.tscn"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/DragHandTutorial = SubResource( 1 )
-anims/RetrieveHandTutorial = SubResource( 2 )
 
 [node name="Sounds" type="Node" parent="."]
 
@@ -159,7 +48,7 @@ __meta__ = {
 
 [node name="Grid" type="TextureRect" parent="GridLimits"]
 light_mask = 2
-material = SubResource( 3 )
+material = SubResource( 1 )
 margin_right = 16.0
 margin_bottom = 16.0
 texture = ExtResource( 18 )
@@ -242,6 +131,11 @@ tile_data = PoolIntArray( -65538, 0, 1, -65537, 0, 2, -131072, 0, 2, -131071, 0,
 [node name="CanvasModulate" type="CanvasModulate" parent="BackgroundLayer"]
 color = Color( 0.960784, 0.835294, 0.972549, 1 )
 
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 192, -144 )
+
+[node name="Camera" parent="Player" instance=ExtResource( 7 )]
+
 [node name="Tilemaps" type="Node2D" parent="."]
 
 [node name="AntiControlTileMap" type="TileMap" parent="Tilemaps"]
@@ -295,69 +189,31 @@ position = Vector2( 536, 328 )
 position = Vector2( 152, 392 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Triggers/UnlockCamera"]
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="ShowHandTutorial" type="Area2D" parent="Objects/Triggers"]
 position = Vector2( 376, 336 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Triggers/ShowHandTutorial"]
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="RetrieveHandTutorial" type="Area2D" parent="Objects/Triggers"]
 position = Vector2( 456, 312 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Triggers/RetrieveHandTutorial"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
+
+[node name="ControlsUI" parent="." instance=ExtResource( 4 )]
+visible = false
 
 [node name="StartPoint" type="Position2D" parent="."]
 position = Vector2( 112, 216 )
-
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 192, -144 )
-
-[node name="Camera" parent="Player" instance=ExtResource( 7 )]
-
-[node name="ControlsLayer" type="CanvasLayer" parent="."]
-layer = 0
-
-[node name="Tutorials" type="Control" parent="ControlsLayer"]
-margin_right = 40.0
-margin_bottom = 40.0
-mouse_filter = 2
-theme = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="ControlsLayer/Tutorials"]
-margin_right = 321.0
-margin_bottom = 190.0
-color = Color( 0, 0, 0, 0.498039 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ClickEffect" type="Sprite" parent="ControlsLayer/Tutorials"]
-position = Vector2( 112, 170 )
-z_index = 2
-texture = ExtResource( 20 )
-hframes = 8
-frame = 7
-
-[node name="Hand" type="Sprite" parent="ControlsLayer/Tutorials"]
-position = Vector2( 115, 173 )
-z_index = 2
-texture = ExtResource( 19 )
-vframes = 2
-hframes = 2
-
-[node name="ControlsUI" parent="ControlsLayer" instance=ExtResource( 4 )]
-[connection signal="body_entered" from="Objects/Triggers/UnlockCamera" to="." method="_on_TriggerRoom1_body_entered"]
-[connection signal="body_entered" from="Objects/Triggers/ShowHandTutorial" to="." method="_on_ShowHandTutorial_body_entered"]
-[connection signal="body_entered" from="Objects/Triggers/RetrieveHandTutorial" to="." method="_on_RetrieveHandTutorial_body_entered"]
 [connection signal="checkpoint" from="Player" to="." method="_on_Player_checkpoint"]
 [connection signal="die" from="Player" to="." method="_on_Player_die"]
 [connection signal="respawn" from="Player" to="." method="_on_Player_respawn"]
 [connection signal="win" from="Player" to="." method="_on_Player_win"]
-[connection signal="control_placed" from="ControlsLayer/ControlsUI" to="Player" method="_on_ControlsUI_control_placed"]
-[connection signal="control_retrieved" from="ControlsLayer/ControlsUI" to="Player" method="_on_ControlsUI_control_retrieved"]
+[connection signal="body_entered" from="Objects/Triggers/UnlockCamera" to="." method="_on_TriggerRoom1_body_entered"]
+[connection signal="body_entered" from="Objects/Triggers/ShowHandTutorial" to="." method="_on_ShowHandTutorial_body_entered"]
+[connection signal="body_entered" from="Objects/Triggers/RetrieveHandTutorial" to="." method="_on_RetrieveHandTutorial_body_entered"]
+[connection signal="control_placed" from="ControlsUI" to="Player" method="_on_ControlsUI_control_placed"]
+[connection signal="control_retrieved" from="ControlsUI" to="Player" method="_on_ControlsUI_control_retrieved"]

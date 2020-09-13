@@ -7,6 +7,7 @@ var current_checkpoint: Node
 
 onready var Player: KinematicBody2D = $Player
 onready var WorldCamera: Camera2D = $Player/Camera
+onready var ControlsUI: Node2D = $ControlsUI
 onready var GridLimits: ReferenceRect = $GridLimits
 onready var StartPoint: Position2D = $StartPoint
 onready var Checkpoints: Array = get_tree().get_nodes_in_group("Checkpoints")
@@ -42,9 +43,17 @@ func _on_Player_checkpoint(node):
 				Checkpoints[i].get_node("Player").play("flag_down")
 		node.get_node("Player").play("flag_up")
 		node.get_node("Particle").emitting = true
+		
+		ControlsUI.retrieve_all()
 
 func _on_Player_respawn():
 	Player.position = current_checkpoint.position
+	ControlsUI.retrieve_all()
 
 func _on_Player_die():
 	WorldCamera.shake(2.0, 0.5)
+	var tween = Player.get_node("Tween")
+	tween.interpolate_property(Player, "position",
+			Player.position, current_checkpoint.position, 1.0,
+			tween.TRANS_SINE, tween.EASE_IN_OUT)
+	tween.start()

@@ -8,7 +8,7 @@ func _ready():
 	WorldCamera.set_camera_limits($GridLimits)
 	TipsImage.flip_h = true
 	
-	$ControlsLayer/ControlsUI.hide()
+	$ControlsUI.hide()
 
 func _on_Player_win():
 	pass
@@ -28,15 +28,17 @@ func _on_Tips_reached_offset(offset_id):
 
 func _on_EndAnimation_body_entered(body):
 	if body.is_in_group("Player"):
+		WorldCamera.shake(2.0, 1.0)
+		
 		$Player.controls_enabled = false
 		$Player.animations_enabled = false
 		$Player.velocity = Vector2(-200,-120)
 		$Player._PlayerSprite.play("CutsceneFall")
 		Tips.goto_next_offset()
 		
-		WorldCamera.shake(2.0, 1.0)
-		$AnimationPlayer.play("ShowControls")
-		yield($AnimationPlayer, "animation_finished")
+		yield(get_tree().create_timer(1.5),"timeout")
+		break_end_platforms()
+		yield(get_tree().create_timer(0.5),"timeout")
 		
 		Global.set_transition(3)
 		Global.goto_scene(next_level)
@@ -47,7 +49,7 @@ func retrieve_all_controls():
 		node.hide()
 	for node in [$Objects/ControlRight,$Objects/ControlLeft,$Objects/ControlJump]:
 		node.visible = true
-		$ControlsLayer/ControlsUI._on_Control_retrieve_from_world(node)
+		$ControlsUI._on_Control_retrieve_from_world(node)
 
 func break_end_platforms():
 	$Tilemaps/PlatformTileMap.set_cell(57,11,-1)
@@ -55,5 +57,5 @@ func break_end_platforms():
 	$Tilemaps/PlatformTileMap/CPUParticles2D.emitting = true
 	
 	$Player.animations_enabled = true
-	$Player.velocity = Vector2(0,-140)
+	$Player.velocity = Vector2(0,-100)
 	
