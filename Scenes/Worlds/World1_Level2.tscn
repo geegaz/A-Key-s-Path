@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Assets/Sprites/World/World1/background_ground.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Sprites/World/World1/background_sky.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Sprites/grid_sprite.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/Worlds/Level2.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/Objects/World/Checkpoint.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Sprites/World/World1/background_underground.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Objects/World/Shooter.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Objects/Cube.tscn" type="PackedScene" id=15]
@@ -23,6 +24,8 @@ light_mode = 2
 
 [node name="World" type="Node2D"]
 script = ExtResource( 9 )
+level_id = 3
+next_level = "res://Scenes/Finish.tscn"
 
 [node name="Tween" type="Tween" parent="."]
 
@@ -80,9 +83,20 @@ motion_scale = Vector2( 0.5, 0.5 )
 
 [node name="Background1" type="TextureRect" parent="BackgroundLayer/Background1"]
 margin_left = -96.0
-margin_top = -32.0
-margin_right = 1312.0
-margin_bottom = 224.0
+margin_top = 192.0
+margin_right = 1440.0
+margin_bottom = 696.0
+texture = ExtResource( 11 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background2" type="TextureRect" parent="BackgroundLayer/Background1"]
+margin_left = -96.0
+margin_top = -64.0
+margin_right = 1440.0
+margin_bottom = 192.0
 texture = ExtResource( 1 )
 stretch_mode = 2
 __meta__ = {

@@ -310,13 +310,13 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Background"]
 position = Vector2( 80, 144 )
 frames = SubResource( 9 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Background"]
 position = Vector2( 264, 104 )
 frames = SubResource( 18 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="MainMenu" type="Control" parent="."]

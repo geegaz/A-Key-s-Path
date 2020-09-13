@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Objects/ControlsUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Objects/World/End.tscn" type="PackedScene" id=2]
@@ -13,7 +13,6 @@
 [ext_resource path="res://Assets/Tilesets/anti_control.tres" type="TileSet" id=11]
 [ext_resource path="res://Assets/Tilesets/background.tres" type="TileSet" id=12]
 [ext_resource path="res://Assets/Tilesets/platform.tres" type="TileSet" id=13]
-[ext_resource path="res://Assets/Sprites/World/World1/background_ground.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Sprites/World/World1/background_sky.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Sprites/grid_sprite.png" type="Texture" id=16]
 [ext_resource path="res://Scripts/Worlds/Level1.gd" type="Script" id=17]
@@ -81,22 +80,11 @@ position = Vector2( 0, -24 )
 [node name="Background1" type="ParallaxLayer" parent="BackgroundLayer"]
 motion_scale = Vector2( 0.5, 0.5 )
 
-[node name="Background1" type="TextureRect" parent="BackgroundLayer/Background1"]
-margin_left = -96.0
-margin_top = -192.0
-margin_right = 1248.0
-margin_bottom = 64.0
-texture = ExtResource( 14 )
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Background2" type="TextureRect" parent="BackgroundLayer/Background1"]
 margin_left = -96.0
-margin_top = 64.0
+margin_top = -64.0
 margin_right = 1248.0
-margin_bottom = 320.0
+margin_bottom = 448.0
 texture = ExtResource( 18 )
 stretch_mode = 2
 __meta__ = {
@@ -232,19 +220,19 @@ delay_offset = 0.5
 muted = true
 
 [node name="Shooter13" parent="Objects" instance=ExtResource( 6 )]
-position = Vector2( 600, 345 )
+position = Vector2( 600, 344 )
 rotation = 3.14159
 delay = 2.0
 muted = true
 
 [node name="Shooter14" parent="Objects" instance=ExtResource( 6 )]
-position = Vector2( 584, 345 )
+position = Vector2( 584, 344 )
 rotation = 3.14159
 delay = 2.0
 muted = true
 
 [node name="Shooter15" parent="Objects" instance=ExtResource( 6 )]
-position = Vector2( 568, 345 )
+position = Vector2( 568, 344 )
 rotation = 3.14159
 delay = 2.0
 muted = true
