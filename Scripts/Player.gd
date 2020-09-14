@@ -81,7 +81,7 @@ func _physics_process(delta):
 		
 		velocity = move_and_slide(velocity, Vector2.UP)
 		
-		on_ground = (_RayCastLeft.is_colliding() or _RayCastRight.is_colliding() or is_on_floor())
+		on_ground = ((_RayCastLeft.is_colliding() or _RayCastRight.is_colliding() or is_on_floor()) and velocity.y >= 0.0)
 		if on_ground:
 			air_time = 0.0
 		elif air_time < coyote_time:

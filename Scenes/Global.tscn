@@ -125,7 +125,6 @@ tracks/1/keys = {
 [node name="Global" type="Node"]
 pause_mode = 2
 script = ExtResource( 1 )
-max_unlocked_level = 4
 sfx_volume = 0.7
 music_volume = 0.7
 

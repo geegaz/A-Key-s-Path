@@ -3,6 +3,7 @@
 [ext_resource path="res://Assets/Fonts/PixelBasicBig.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Fonts/PixelBasic.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Sprites/player/player-Sheet.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Shaders/flash.shader" type="Shader" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 128
@@ -12,17 +13,10 @@ font_data = ExtResource( 1 )
 size = 128
 font_data = ExtResource( 2 )
 
-[sub_resource type="Shader" id=3]
-code = "shader_type canvas_item;
-render_mode unshaded;
-
-void fragment(){
-	
-	COLOR = vec4(1.0, 1.0, 1.0, texture(TEXTURE,UV).a);
-}"
-
 [sub_resource type="ShaderMaterial" id=4]
-shader = SubResource( 3 )
+shader = ExtResource( 4 )
+shader_param/flash_color = Color( 1, 1, 1, 1 )
+shader_param/flash_amount = 1.0
 
 [node name="TestWorld" type="Node2D"]
 
@@ -179,7 +173,7 @@ __meta__ = {
 
 [node name="PlayerSize" type="Sprite" parent="LevelSizes"]
 material = SubResource( 4 )
-position = Vector2( 544, 1152 )
+position = Vector2( 544.297, 1152 )
 texture = ExtResource( 3 )
 vframes = 3
 hframes = 8
