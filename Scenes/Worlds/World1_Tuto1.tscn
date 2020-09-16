@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scenes/Objects/World/Checkpoint.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -9,7 +9,7 @@
 [ext_resource path="res://Scripts/Worlds/Tuto1.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Sprites/World/World1/background_sky.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Tips.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scripts/Objects/ControlsUI.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Objects/ControlsUI.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Tilesets/terrain.tres" type="TileSet" id=11]
 [ext_resource path="res://Assets/Tilesets/background.tres" type="TileSet" id=12]
 [ext_resource path="res://Assets/Sprites/World/World1/background_ground.png" type="Texture" id=13]
@@ -20,13 +20,6 @@
 [ext_resource path="res://Assets/Tilesets/anti_control.tres" type="TileSet" id=18]
 [ext_resource path="res://Assets/Tilesets/overlay.tres" type="TileSet" id=19]
 [ext_resource path="res://Assets/Tilesets/platform.tres" type="TileSet" id=20]
-[ext_resource path="res://Assets/Sprites/World/controls_props.png" type="Texture" id=21]
-[ext_resource path="res://Scenes/Objects/Controls/ControlRight.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Scenes/Objects/Controls/ControlJump.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Scenes/Objects/Controls/ControlLeft.tscn" type="PackedScene" id=25]
-[ext_resource path="res://Assets/Sprites/UI/controls/controls_background_top.png" type="Texture" id=26]
-[ext_resource path="res://Assets/Sprites/UI/controls/controls_place.png" type="Texture" id=27]
-[ext_resource path="res://Assets/Sprites/UI/controls/controls_background.png" type="Texture" id=28]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 2
@@ -45,60 +38,21 @@ _data = [ Vector2( 0.495763, 2 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 
 a = Vector2( 0, -40 )
 b = Vector2( 0, 56 )
 
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 27 )
-region = Rect2( 32, 0, 64, 16 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 27 )
-region = Rect2( 32, 16, 64, 16 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 27 )
-region = Rect2( 32, 32, 64, 16 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 27 )
-region = Rect2( 0, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 27 )
-region = Rect2( 0, 16, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 27 )
-region = Rect2( 0, 32, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 27 )
-region = Rect2( 16, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 27 )
-region = Rect2( 16, 16, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 27 )
-region = Rect2( 16, 32, 16, 16 )
-
-[sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 168, 18 )
-
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 32, 32 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 14 )
 region = Rect2( 0, 0, 66, 14 )
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 32, 32 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 14 )
 region = Rect2( 0, 14, 96, 14 )
 
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 64, 40 )
 
 [node name="World" type="Node2D"]
@@ -239,7 +193,7 @@ cell_size = Vector2( 16, 16 )
 collision_layer = 0
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 524331, 0, 196609, 524332, 0, 196610, 524333, 0, 196611, 589828, 0, 196608, 589845, 0, 1, 589846, 0, 2, 589847, 0, 196610, 589848, 0, 196611, 589851, 0, 196609, 589852, 0, 196610, 589853, 0, 196611, 589874, 0, 196609, 589875, 0, 3, 655365, 0, 196609, 655366, 0, 196610, 655367, 0, 196610, 655368, 0, 2, 655369, 0, 2, 655370, 0, 2, 655371, 0, 2, 655372, 0, 196610, 655373, 0, 196610, 655374, 0, 196610, 655375, 0, 196610, 655376, 0, 196610, 655377, 0, 196610, 655378, 0, 2, 655379, 0, 2, 655380, 0, 2, 655381, 0, 65538, 655382, 0, 131075, 655398, 0, 196609, 655399, 0, 196610, 655400, 0, 196610, 655401, 0, 196610, 655402, 0, 196611, 655411, 0, 65537, 655412, 0, 3, 720904, 0, 131073, 720905, 0, 131074, 720906, 0, 131074, 720907, 0, 131075, 720914, 0, 131073, 720915, 0, 131074, 720916, 0, 131074, 720917, 0, 131075, 720947, 0, 131073, 720948, 0, 131074, 720949, 0, 196610, 720950, 0, 196610, 720951, 0, 3, 720960, 0, 196609, 720961, 0, 196610, 720962, 0, 196611, 786487, 0, 131072 )
+tile_data = PoolIntArray( 524331, 0, 196609, 524332, 0, 196610, 524333, 0, 196611, 589828, 0, 196608, 589845, 0, 1, 589846, 0, 2, 589847, 0, 196610, 589848, 0, 196611, 589851, 0, 196609, 589852, 0, 196610, 589853, 0, 196611, 589874, 0, 196609, 589875, 0, 3, 589887, 3, 0, 655365, 0, 196609, 655366, 0, 196610, 655367, 0, 196610, 655368, 0, 2, 655369, 0, 2, 655370, 0, 2, 655371, 0, 2, 655372, 0, 196610, 655373, 0, 196610, 655374, 0, 196610, 655375, 0, 196610, 655376, 0, 196610, 655377, 0, 196610, 655378, 0, 2, 655379, 0, 2, 655380, 0, 2, 655381, 0, 65538, 655382, 0, 131075, 655398, 0, 196609, 655399, 0, 196610, 655400, 0, 196610, 655401, 0, 196610, 655402, 0, 196611, 655411, 0, 65537, 655412, 0, 3, 655414, 1, 0, 655416, 2, 0, 720904, 0, 131073, 720905, 0, 131074, 720906, 0, 131074, 720907, 0, 131075, 720914, 0, 131073, 720915, 0, 131074, 720916, 0, 131074, 720917, 0, 131075, 720947, 0, 131073, 720948, 0, 131074, 720949, 0, 196610, 720950, 0, 196610, 720951, 0, 3, 720960, 0, 196609, 720961, 0, 196610, 720962, 0, 196611, 786487, 0, 131072 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -281,146 +235,7 @@ position = Vector2( 936, 120 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Triggers/EndAnimation"]
 shape = SubResource( 4 )
 
-[node name="BreakParticles" type="CPUParticles2D" parent="Objects"]
-position = Vector2( 1032, 168 )
-emitting = false
-one_shot = true
-explosiveness = 0.98
-local_coords = false
-emission_shape = 3
-emission_points = PoolVector2Array( 0, 0, -136, 0, -160, 0 )
-emission_colors = PoolColorArray(  )
-direction = Vector2( 0, -1 )
-initial_velocity = 40.0
-initial_velocity_random = 0.5
-scale_amount = 3.0
-scale_amount_random = 1.0
-color = Color( 0.180392, 0.266667, 0.356863, 1 )
-
-[node name="ControlPropJump" type="Sprite" parent="Objects"]
-position = Vector2( 1032, 160 )
-z_index = -1
-texture = ExtResource( 21 )
-region_enabled = true
-region_rect = Rect2( 0, 16, 32, 32 )
-
-[node name="ControlPropLeft" type="Sprite" parent="Objects"]
-position = Vector2( 872, 168 )
-z_index = -1
-texture = ExtResource( 21 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 16, 16 )
-
-[node name="ControlPropRight" type="Sprite" parent="Objects"]
-position = Vector2( 896, 168 )
-texture = ExtResource( 21 )
-region_enabled = true
-region_rect = Rect2( 16, 0, 16, 16 )
-
-[node name="ControlRight" parent="Objects" instance=ExtResource( 23 )]
-visible = false
-position = Vector2( 896, 168 )
-control_type = 2
-
-[node name="ControlLeft" parent="Objects" instance=ExtResource( 25 )]
-visible = false
-position = Vector2( 872, 168 )
-control_type = 1
-
-[node name="ControlJump" parent="Objects" instance=ExtResource( 24 )]
-visible = false
-position = Vector2( 1032, 162 )
-
-[node name="ControlsUI" type="Node2D" parent="."]
-script = ExtResource( 10 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Tween" type="Tween" parent="ControlsUI"]
-
-[node name="BarBase" type="TextureRect" parent="ControlsUI"]
-margin_top = 158.0
-margin_right = 34.0
-margin_bottom = 190.0
-rect_scale = Vector2( 9.44, 1 )
-texture = ExtResource( 28 )
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BarSlots" type="NinePatchRect" parent="ControlsUI"]
-margin_left = 96.0
-margin_top = 158.0
-margin_right = 224.0
-margin_bottom = 190.0
-texture = ExtResource( 26 )
-patch_margin_left = 9
-patch_margin_top = 10
-patch_margin_right = 9
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ControlJumpPos" type="Position2D" parent="ControlsUI"]
-position = Vector2( 184, 170 )
-
-[node name="RetrieveJump" type="TextureButton" parent="ControlsUI/ControlJumpPos"]
-margin_left = -32.0
-margin_top = -8.0
-margin_right = 32.0
-margin_bottom = 8.0
-focus_mode = 0
-enabled_focus_mode = 0
-texture_normal = SubResource( 5 )
-texture_pressed = SubResource( 6 )
-texture_hover = SubResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ControlLeftPos" type="Position2D" parent="ControlsUI"]
-position = Vector2( 112, 170 )
-
-[node name="RetrieveLeft" type="TextureButton" parent="ControlsUI/ControlLeftPos"]
-margin_left = -8.0
-margin_top = -8.0
-margin_right = 8.0
-margin_bottom = 8.0
-focus_mode = 0
-enabled_focus_mode = 0
-texture_normal = SubResource( 8 )
-texture_pressed = SubResource( 9 )
-texture_hover = SubResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ControlRightPos" type="Position2D" parent="ControlsUI"]
-position = Vector2( 136, 170 )
-
-[node name="RetrieveRight" type="TextureButton" parent="ControlsUI/ControlRightPos"]
-margin_left = -8.0
-margin_top = -8.0
-margin_right = 8.0
-margin_bottom = 8.0
-focus_mode = 0
-enabled_focus_mode = 0
-texture_normal = SubResource( 11 )
-texture_pressed = SubResource( 12 )
-texture_hover = SubResource( 13 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BarRetriever" type="KinematicBody2D" parent="ControlsUI"]
-position = Vector2( 160, 176 )
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ControlsUI/BarRetriever"]
-shape = SubResource( 14 )
+[node name="ControlsUI" parent="." instance=ExtResource( 10 )]
 
 [node name="Tutorials" type="Control" parent="."]
 theme = ExtResource( 4 )
@@ -432,7 +247,7 @@ __meta__ = {
 position = Vector2( 136, 128 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorials/Move"]
-shape = SubResource( 15 )
+shape = SubResource( 5 )
 
 [node name="Label" type="Label" parent="Tutorials/Move"]
 margin_left = -32.0
@@ -448,13 +263,13 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Tutorials/Move"]
 position = Vector2( 0, -16 )
-texture = SubResource( 16 )
+texture = SubResource( 6 )
 
 [node name="Jump" parent="Tutorials" instance=ExtResource( 16 )]
 position = Vector2( 304, 128 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorials/Jump"]
-shape = SubResource( 17 )
+shape = SubResource( 7 )
 
 [node name="Label" type="Label" parent="Tutorials/Jump"]
 margin_left = -32.0
@@ -470,14 +285,14 @@ __meta__ = {
 
 [node name="Sprite2" type="Sprite" parent="Tutorials/Jump"]
 position = Vector2( 0, -16 )
-texture = SubResource( 18 )
+texture = SubResource( 8 )
 
 [node name="HoldJump" parent="Tutorials" instance=ExtResource( 16 )]
 position = Vector2( 544, 104 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorials/HoldJump"]
 position = Vector2( 48, 16 )
-shape = SubResource( 19 )
+shape = SubResource( 9 )
 
 [node name="Label" type="Label" parent="Tutorials/HoldJump"]
 margin_left = 24.0
@@ -501,12 +316,3 @@ position = Vector2( 120, 144 )
 [connection signal="respawn" from="Player" to="." method="_on_Player_respawn"]
 [connection signal="win" from="Player" to="." method="_on_Player_win"]
 [connection signal="body_entered" from="Objects/Triggers/EndAnimation" to="." method="_on_EndAnimation_body_entered"]
-[connection signal="place_in_world" from="Objects/ControlRight" to="ControlsUI" method="_on_Control_place_in_world"]
-[connection signal="retrieve_from_world" from="Objects/ControlRight" to="ControlsUI" method="_on_Control_retrieve_from_world"]
-[connection signal="place_in_world" from="Objects/ControlLeft" to="ControlsUI" method="_on_Control_place_in_world"]
-[connection signal="retrieve_from_world" from="Objects/ControlLeft" to="ControlsUI" method="_on_Control_retrieve_from_world"]
-[connection signal="place_in_world" from="Objects/ControlJump" to="ControlsUI" method="_on_Control_place_in_world"]
-[connection signal="retrieve_from_world" from="Objects/ControlJump" to="ControlsUI" method="_on_Control_retrieve_from_world"]
-[connection signal="pressed" from="ControlsUI/ControlJumpPos/RetrieveJump" to="ControlsUI" method="_on_RetrieveJump_pressed"]
-[connection signal="pressed" from="ControlsUI/ControlLeftPos/RetrieveLeft" to="ControlsUI" method="_on_RetrieveLeft_pressed"]
-[connection signal="pressed" from="ControlsUI/ControlRightPos/RetrieveRight" to="ControlsUI" method="_on_RetrieveRight_pressed"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Fonts/PixelBasicBig.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Fonts/PixelBasic.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Sprites/player/player-Sheet.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Shaders/flash.shader" type="Shader" id=4]
+[ext_resource path="res://Assets/Tilesets/terrain.tres" type="TileSet" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 128
@@ -13,7 +14,7 @@ font_data = ExtResource( 1 )
 size = 128
 font_data = ExtResource( 2 )
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 4 )
 shader_param/flash_color = Color( 1, 1, 1, 1 )
 shader_param/flash_amount = 1.0
@@ -53,6 +54,7 @@ __meta__ = {
 }
 
 [node name="LevelSizes" type="Control" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
@@ -172,7 +174,7 @@ __meta__ = {
 }
 
 [node name="PlayerSize" type="Sprite" parent="LevelSizes"]
-material = SubResource( 4 )
+material = SubResource( 3 )
 position = Vector2( 544.297, 1152 )
 texture = ExtResource( 3 )
 vframes = 3
@@ -182,3 +184,9 @@ hframes = 8
 position = Vector2( 768, 576 )
 current = true
 zoom = Vector2( 7, 7 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 196613, 0, 1, 196614, 0, 2, 196615, 0, 2, 196616, 0, 2, 196617, 0, 2, 196618, 0, 3, 262149, 0, 65537, 262150, 0, 65538, 262151, 0, 65538, 262152, 0, 65538, 262153, 0, 65538, 262154, 0, 65539, 327685, 0, 131073, 327686, 0, 131074, 327687, 0, 131074, 327688, 0, 131074, 327689, 0, 131074, 327690, 0, 131075 )
