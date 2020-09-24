@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/overlay.png-c394b3e65a36d06e60fc50c114a2312d.stex"
+path="res://.import/grass_overlay.png-672258de1561444d5a953fc5223f7c95.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/World/overlay.png"
-dest_files=[ "res://.import/overlay.png-c394b3e65a36d06e60fc50c114a2312d.stex" ]
+source_file="res://Assets/Tilesets/grass_overlay.png"
+dest_files=[ "res://.import/grass_overlay.png-672258de1561444d5a953fc5223f7c95.stex" ]
 
 [params]
 

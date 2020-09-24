@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/terrain.png-f2615ec1e11122dd16508487ca409714.stex"
+path="res://.import/ground_terrain.png-93342648a23a4fd6c2fbd20a6e84aebe.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/World/terrain.png"
-dest_files=[ "res://.import/terrain.png-f2615ec1e11122dd16508487ca409714.stex" ]
+source_file="res://Assets/Tilesets/ground_terrain.png"
+dest_files=[ "res://.import/ground_terrain.png-93342648a23a4fd6c2fbd20a6e84aebe.stex" ]
 
 [params]
 

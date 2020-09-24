@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/background_tiles.png-bb90ced9eb3d6c259e495a1e679fe79d.stex"
+path="res://.import/overlay.png-6c6cd138d6f56709969eb6f1e6c89331.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/World/background_tiles.png"
-dest_files=[ "res://.import/background_tiles.png-bb90ced9eb3d6c259e495a1e679fe79d.stex" ]
+source_file="res://Assets/Tilesets/overlay.png"
+dest_files=[ "res://.import/overlay.png-6c6cd138d6f56709969eb6f1e6c89331.stex" ]
 
 [params]
 
