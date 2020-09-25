@@ -15,13 +15,13 @@ func _on_Player_win():
 
 func _on_Tips_goto_next_offset(offset_id):
 	match offset_id:
-		1,2,5,7:
+		_:
 			TipsImage.flip_h = false
 			continue
 
 func _on_Tips_reached_offset(offset_id):
 	match offset_id:
-		1,4,6:
+		_:
 			TipsImage.flip_h = true
 			continue
 
@@ -52,9 +52,9 @@ func retrieve_all_controls():
 		$ControlsUI._on_Control_retrieve_from_world(node)
 
 func break_end_platforms():
-	$Tilemaps/PlatformTileMap.set_cell(57,11,-1)
-	$Tilemaps/PlatformTileMap.set_cell(58,11,-1)
-	$Tilemaps/PlatformTileMap/CPUParticles2D.emitting = true
+	$Tilemaps/TerrainTileMap.set_cell(57,11,-1)
+	$Tilemaps/TerrainTileMap.set_cell(58,11,-1)
+	$Tilemaps/CPUParticles2D.emitting = true
 	
 	$Player.animations_enabled = true
 	$Player.velocity = Vector2(0,-100)

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/background_underground.png-9632f6ea792962e790f3611949773c5e.stex"
+path="res://.import/anti_control_tiles.png-665ea1e26a6eb9b026d9e75a2e3c861e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/World/World1/background_underground.png"
-dest_files=[ "res://.import/background_underground.png-9632f6ea792962e790f3611949773c5e.stex" ]
+source_file="res://Assets/Sprites/tilesets/anti_control_tiles.png"
+dest_files=[ "res://.import/anti_control_tiles.png-665ea1e26a6eb9b026d9e75a2e3c861e.stex" ]
 
 [params]
 

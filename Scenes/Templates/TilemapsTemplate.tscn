@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/Tilesets/overlay.tres" type="TileSet" id=1]
+[ext_resource path="res://Assets/Tilesets/terrain_.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Tilesets/anti_control.tres" type="TileSet" id=2]
-[ext_resource path="res://Assets/Tilesets/terrain.tres" type="TileSet" id=3]
+[ext_resource path="res://Assets/Tilesets/overlay_.tres" type="TileSet" id=3]
 [ext_resource path="res://Assets/Tilesets/spikes.tres" type="TileSet" id=4]
-[ext_resource path="res://Assets/Tilesets/platform.tres" type="TileSet" id=5]
 
 [node name="Tilemaps" type="Node2D"]
 
@@ -20,26 +19,16 @@ __meta__ = {
 }
 
 [node name="TerrainTileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 3 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 collision_mask = 0
 format = 1
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="PlatformTileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 5 )
-cell_size = Vector2( 16, 16 )
-collision_mask = 0
-format = 1
-tile_data = PoolIntArray( 720885, 0, 196608 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="OverlayTileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 0
 collision_mask = 0

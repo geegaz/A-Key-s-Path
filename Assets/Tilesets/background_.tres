@@ -1,8 +1,9 @@
 [gd_resource type="TileSet" load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Tilesets/rock_background.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Tilesets/metal_background.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/tilesets/rock_background.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/tilesets/metal_background.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/TileSets/BackgroundTileSet.gd" type="Script" id=3]
+
 
 [resource]
 0/name = "rock_background.png 0"

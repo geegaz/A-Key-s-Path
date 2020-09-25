@@ -20,7 +20,7 @@ func _ready():
 func _process(delta):
 	if moving:
 		offset += (speed*delta)
-		if offset >= offsets[next_offset_id]:
+		if offset >= offsets[next_offset_id]-0.1:
 			moving = false
 			Collider.set_deferred("disabled", false)
 			Animator.play("idle_1")
@@ -29,11 +29,12 @@ func _process(delta):
 			IdleTimer.start()
 			
 			emit_signal("reached_offset", next_offset_id)
+			next_offset_id += 1
 			
 
 func goto_next_offset():
-	if next_offset_id+1 < offsets.size():
-		next_offset_id += 1
+	if next_offset_id < offsets.size():
+		
 		moving = true
 		Collider.set_deferred("disabled", true)
 		Animator.play("run")

@@ -93,6 +93,7 @@ cubic_interp = false
 loop = false
 lookahead = 0.001
 script = ExtResource( 1 )
+speed = 150.0
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -8 )
