@@ -29,7 +29,7 @@ func _input(event):
 		OS.window_fullscreen = !OS.window_fullscreen
 
 func set_volume(bus: int, volume_scale: float):
-	var volume = -72.0 + (volume_scale*72.0)
+	var volume = linear2db(volume_scale)
 	match bus:
 		SFX:
 			sfx_volume = volume_scale

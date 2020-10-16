@@ -278,13 +278,13 @@ tile_data = PoolIntArray( 196627, 0, 8, 196628, 0, 9, 196629, 0, 11, 327679, 0, 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Background"]
 position = Vector2( 80, 144 )
 frames = SubResource( 9 )
-frame = 4
+frame = 7
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Background"]
 position = Vector2( 264, 104 )
 frames = SubResource( 18 )
-frame = 3
+frame = 6
 playing = true
 
 [node name="MainMenu" type="Control" parent="."]

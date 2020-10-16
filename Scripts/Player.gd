@@ -11,9 +11,9 @@ var state = States.IDLE
 
 # Movement exports
 export var max_speed = 120.0		# Player max speed in px/s
-export var jump_force = 140.0
-export var gravity = 4.0
-export var gravity_strong = 10.0
+export var jump_force = 160.0
+export var gravity = 310.0
+export var gravity_strong = 650.0
 export var accel = 0.3
 export var coyote_time = 0.1
 
@@ -76,7 +76,7 @@ func _physics_process(delta):
 	if movement_enabled:
 		if velocity.y >= 0:
 			target_gravity = gravity_strong
-		velocity.y += target_gravity
+		velocity.y += target_gravity*delta
 		velocity.x = lerp(velocity.x, target_speed, accel)
 		
 		velocity = move_and_slide(velocity, Vector2.UP)
