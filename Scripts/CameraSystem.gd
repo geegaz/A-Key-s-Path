@@ -11,8 +11,8 @@ onready var _Tween = $Tween
 onready var _Zones = get_tree().get_nodes_in_group("CameraZones")
 
 var center = Vector2()
-var free_x = false
-var free_y = false
+var free_x = true
+var free_y = true
 var zoom = 1.0
 
 var target_reached = false
