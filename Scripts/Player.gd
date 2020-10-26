@@ -90,8 +90,9 @@ func _physics_process(delta):
 func _input(event):
 	if event.is_action_pressed("jump") and jump_control:
 		if air_time < coyote_time:
-			velocity.y -= jump_force
+			velocity.y = -jump_force
 			target_gravity = gravity
+			air_time = coyote_time
 			
 			$Sounds/Jump.pitch_scale = (randf()*0.8+0.6)
 			$Sounds/Jump.play()

@@ -6,7 +6,7 @@ export(String, FILE, "*.tscn") var next_level
 var current_checkpoint: Node
 
 onready var Player: KinematicBody2D = $Player
-onready var WorldCamera: Camera2D = $Player/Camera
+onready var WorldCamera: Camera2D = $CameraSystem/Camera
 onready var ControlsUI: Node2D = $ControlsUI
 onready var GridLimits: ReferenceRect = $GridLimits
 onready var StartPoint: Position2D = $StartPoint

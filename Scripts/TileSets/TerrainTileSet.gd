@@ -4,27 +4,24 @@ tool
 func _is_tile_bound(drawn_id, neighbor_id):
 	# ground = 0
 	# rock = 1
-	# transition = 2
 	# metal = 3
-	# leaves = 5
 	# blue tiles = 6
 	# sand = 7
+	# grass_ground = 8
+	# grass_rock = 9
+	# platform = 10
 	var bound = false
 	match drawn_id:
-		0,1,6,7:
+		0,1,6,8,9:
 			match neighbor_id:
-				0,1,2,6:
-					bound = true
-		3,2:
-			match neighbor_id:
-				3,2:
-					bound = true
-		5:
-			match neighbor_id:
-				0,1,2,3,6,7:
+				0,1,3,6,8,9:
 					bound = true
 		7:
 			match neighbor_id:
-				0,1,2,3,6:
+				0,1,3,6,8,9:
+					bound = true
+		10:
+			match neighbor_id:
+				-1:
 					bound = true
 	return bound

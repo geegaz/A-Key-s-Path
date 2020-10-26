@@ -2,10 +2,18 @@
 
 [ext_resource path="res://Assets/Tilesets/terrain_.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Tilesets/anti_control.tres" type="TileSet" id=2]
-[ext_resource path="res://Assets/Tilesets/overlay_.tres" type="TileSet" id=3]
+[ext_resource path="res://Assets/Tilesets/background_.tres" type="TileSet" id=3]
 [ext_resource path="res://Assets/Tilesets/spikes.tres" type="TileSet" id=4]
 
 [node name="Tilemaps" type="Node2D"]
+
+[node name="BackgroundTileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="AntiControlTileMap" type="TileMap" parent="."]
 z_index = -1
@@ -21,16 +29,6 @@ __meta__ = {
 [node name="TerrainTileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
-collision_mask = 0
-format = 1
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="OverlayTileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 3 )
-cell_size = Vector2( 16, 16 )
-collision_layer = 0
 collision_mask = 0
 format = 1
 __meta__ = {

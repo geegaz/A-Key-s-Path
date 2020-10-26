@@ -4,8 +4,8 @@ export(NodePath) var Target_Path
 export(float) var trans_time = 0.8
 
 onready var _Target = get_node(Target_Path)
-onready var _Camera = $Camera2D
-onready var _Shaker = $Camera2D/Shaker
+onready var _Camera = $Camera
+onready var _Shaker = $Camera/Shaker
 onready var _Tween = $Tween
 
 onready var _Zones = get_tree().get_nodes_in_group("CameraZones")
@@ -24,7 +24,7 @@ func _ready():
 		zone.connect("zone_entered", self, "_on_CameraZone_zone_entered")
 
 func _physics_process(delta):
-	if !target_reached:
+	if !target_reached and _Target:
 		reach_time += delta
 		var target_pos = center
 		if free_x:
@@ -35,7 +35,7 @@ func _physics_process(delta):
 		_Camera.position = lerp(_Camera.position, target_pos, reach_time)
 		target_reached = (reach_time >= trans_time)
 		
-	if target_reached:
+	if target_reached and _Target:
 		if free_x:
 			_Camera.position.x = _Target.position.x
 		if free_y:
