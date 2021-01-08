@@ -31,13 +31,15 @@ extents = Vector2( 48, 8 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 16, 24 )
 
-[sub_resource type="CanvasItemMaterial" id=6]
+[sub_resource type="CanvasItemMaterial" id=5]
 light_mode = 2
 
 [node name="World" type="Node2D"]
 script = ExtResource( 8 )
 level_id = 1
 next_level = "res://Scenes/Worlds/World1_Level1.tscn"
+
+[node name="Tween" type="Tween" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
@@ -71,7 +73,7 @@ position = Vector2( -8, -144 )
 shape = SubResource( 3 )
 
 [node name="CameraZone2" parent="CameraSystem" instance=ExtResource( 13 )]
-position = Vector2( 288, 392 )
+position = Vector2( 240, 392 )
 free_x = true
 free_y = true
 
@@ -87,7 +89,7 @@ __meta__ = {
 
 [node name="Grid" type="TextureRect" parent="GridLimits"]
 light_mask = 2
-material = SubResource( 6 )
+material = SubResource( 5 )
 margin_right = 16.0
 margin_bottom = 16.0
 texture = ExtResource( 18 )

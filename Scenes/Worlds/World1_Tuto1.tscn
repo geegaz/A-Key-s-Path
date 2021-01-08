@@ -21,46 +21,48 @@
 [ext_resource path="res://Scenes/CameraZone.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/CameraSystem.tscn" type="PackedScene" id=20]
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 56, 64 )
 
-[sub_resource type="CanvasItemMaterial" id=1]
+[sub_resource type="CanvasItemMaterial" id=2]
 light_mode = 2
 
-[sub_resource type="Curve2D" id=2]
+[sub_resource type="Curve2D" id=3]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 200, 160, 0, 0, 0, 0, 304, 160, -16.347, 0, 0, 0, 336, 144, 0, 0, 0, 0, 360, 144, 0, 0, 0, 0, 472, 144, -22.4419, 0, 22.4419, 0, 512, 120, 0, 0, 0, 0, 544, 128, 0, 0, 0, 0, 560, 128, -35.1316, -0.613844, 35.1316, 0.613844, 616, 104, 0, 0, 0, 0, 672, 128, 0, 0, 0, 0, 728, 128, -23.2945, -1.29414, 23.2945, 1.29414, 776, 112, 0, 0, 0, 0, 816, 144, 0, 0, 0, 0, 832, 144, -6.55645, -32.0534, 0, 0, 864, 176, 0, 0, 0, 0, 1088, 176 )
 }
 
-[sub_resource type="Curve" id=3]
+[sub_resource type="Curve" id=4]
 max_value = 2.0
 bake_resolution = 1
 _data = [ Vector2( 0.495763, 2 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="SegmentShape2D" id=4]
+[sub_resource type="SegmentShape2D" id=5]
 a = Vector2( 0, -40 )
 b = Vector2( 0, 56 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 32, 32 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 14 )
 region = Rect2( 0, 0, 66, 14 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 32, 32 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 14 )
 region = Rect2( 0, 14, 96, 14 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 64, 40 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 7 )
 next_level = "res://Scenes/Worlds/World1_Tuto2.tscn"
+
+[node name="Tween" type="Tween" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
@@ -78,7 +80,7 @@ position = Vector2( 120, 96 )
 free_x = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraSystem/CameraZone"]
-shape = SubResource( 10 )
+shape = SubResource( 1 )
 
 [node name="GridLimits" type="ReferenceRect" parent="."]
 margin_right = 1088.0
@@ -90,7 +92,7 @@ __meta__ = {
 
 [node name="Grid" type="TextureRect" parent="GridLimits"]
 light_mask = 2
-material = SubResource( 1 )
+material = SubResource( 2 )
 margin_right = 16.0
 margin_bottom = 16.0
 texture = ExtResource( 15 )
@@ -145,7 +147,7 @@ __meta__ = {
 color = Color( 0.988235, 0.831373, 0.831373, 1 )
 
 [node name="Path2D" type="Path2D" parent="."]
-curve = SubResource( 2 )
+curve = SubResource( 3 )
 
 [node name="Tips" parent="Path2D" instance=ExtResource( 9 )]
 position = Vector2( 274.973, 160 )
@@ -213,7 +215,7 @@ initial_velocity = 28.0
 initial_velocity_random = 1.0
 scale_amount = 2.0
 scale_amount_random = 1.0
-scale_amount_curve = SubResource( 3 )
+scale_amount_curve = SubResource( 4 )
 color = Color( 0.392157, 0.152941, 0.0901961, 1 )
 
 [node name="Objects" type="Node2D" parent="."]
@@ -230,7 +232,7 @@ position = Vector2( 424, 136 )
 position = Vector2( 936, 120 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Triggers/EndAnimation"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="ControlsUI" parent="." instance=ExtResource( 10 )]
 visible = false
@@ -248,7 +250,7 @@ collision_layer = 0
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorials/Move"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="Label" type="Label" parent="Tutorials/Move"]
 margin_left = -32.0
@@ -264,7 +266,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Tutorials/Move"]
 position = Vector2( 0, -16 )
-texture = SubResource( 6 )
+texture = SubResource( 7 )
 
 [node name="Jump" parent="Tutorials" instance=ExtResource( 16 )]
 position = Vector2( 304, 128 )
@@ -272,7 +274,7 @@ collision_layer = 0
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorials/Jump"]
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="Label" type="Label" parent="Tutorials/Jump"]
 margin_left = -32.0
@@ -288,7 +290,7 @@ __meta__ = {
 
 [node name="Sprite2" type="Sprite" parent="Tutorials/Jump"]
 position = Vector2( 0, -16 )
-texture = SubResource( 8 )
+texture = SubResource( 9 )
 
 [node name="HoldJump" parent="Tutorials" instance=ExtResource( 16 )]
 position = Vector2( 544, 104 )
@@ -297,7 +299,7 @@ collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorials/HoldJump"]
 position = Vector2( 48, 16 )
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
 [node name="Label" type="Label" parent="Tutorials/HoldJump"]
 margin_left = 24.0

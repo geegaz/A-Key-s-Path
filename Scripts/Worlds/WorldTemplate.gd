@@ -52,7 +52,7 @@ func _on_Player_respawn():
 
 func _on_Player_die():
 	WorldCamera.shake(2.0, 0.5)
-	var tween = Player.get_node("Tween")
+	var tween = $Tween
 	tween.interpolate_property(Player, "position",
 			Player.position, current_checkpoint.position, 1.0,
 			tween.TRANS_SINE, tween.EASE_IN_OUT)
