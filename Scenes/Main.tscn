@@ -558,12 +558,12 @@ texture_disabled = SubResource( 34 )
 [node name="CenterContainer" type="CenterContainer" parent="Options/VBoxContainer2"]
 margin_top = 30.0
 margin_right = 320.0
-margin_bottom = 164.0
+margin_bottom = 168.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Options/VBoxContainer2/CenterContainer"]
 margin_left = 83.0
 margin_right = 236.0
-margin_bottom = 134.0
+margin_bottom = 138.0
 custom_constants/separation = 12
 
 [node name="MarginContainer" type="MarginContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer"]
@@ -574,7 +574,7 @@ custom_constants/margin_top = 8
 [node name="Sound" type="VBoxContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer"]
 margin_top = 20.0
 margin_right = 153.0
-margin_bottom = 69.0
+margin_bottom = 73.0
 
 [node name="Label" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound"]
 margin_right = 153.0
@@ -587,11 +587,12 @@ align = 1
 [node name="SFX" type="HBoxContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound"]
 margin_top = 17.0
 margin_right = 153.0
-margin_bottom = 31.0
+margin_bottom = 33.0
 
 [node name="Label" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/SFX"]
+margin_top = 1.0
 margin_right = 25.0
-margin_bottom = 13.0
+margin_bottom = 14.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "SFX: "
@@ -599,8 +600,9 @@ align = 2
 
 [node name="Number" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/SFX"]
 margin_left = 29.0
+margin_top = 1.0
 margin_right = 49.0
-margin_bottom = 13.0
+margin_bottom = 14.0
 rect_min_size = Vector2( 20, 0 )
 custom_fonts/font = ExtResource( 5 )
 text = "0"
@@ -608,20 +610,21 @@ text = "0"
 [node name="SFXSlider" type="HSlider" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/SFX"]
 margin_left = 53.0
 margin_right = 153.0
-margin_bottom = 14.0
+margin_bottom = 16.0
 rect_min_size = Vector2( 100, 0 )
 mouse_default_cursor_shape = 6
 max_value = 1.0
 step = 0.01
 
 [node name="Music" type="HBoxContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound"]
-margin_top = 35.0
+margin_top = 37.0
 margin_right = 153.0
-margin_bottom = 49.0
+margin_bottom = 53.0
 
 [node name="Label" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/Music"]
+margin_top = 1.0
 margin_right = 25.0
-margin_bottom = 13.0
+margin_bottom = 14.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "Music:"
@@ -629,8 +632,9 @@ align = 2
 
 [node name="Number" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/Music"]
 margin_left = 29.0
+margin_top = 1.0
 margin_right = 49.0
-margin_bottom = 13.0
+margin_bottom = 14.0
 rect_min_size = Vector2( 20, 0 )
 custom_fonts/font = ExtResource( 5 )
 text = "0"
@@ -638,16 +642,16 @@ text = "0"
 [node name="MusicSlider" type="HSlider" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/Music"]
 margin_left = 53.0
 margin_right = 153.0
-margin_bottom = 14.0
+margin_bottom = 16.0
 rect_min_size = Vector2( 100, 0 )
 mouse_default_cursor_shape = 6
 max_value = 1.0
 step = 0.01
 
 [node name="Display" type="VBoxContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer"]
-margin_top = 81.0
+margin_top = 85.0
 margin_right = 153.0
-margin_bottom = 134.0
+margin_bottom = 138.0
 
 [node name="Label" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Display"]
 margin_right = 153.0

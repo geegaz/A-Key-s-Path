@@ -76,7 +76,7 @@ region = Rect2( 68, 33, 8, 14 )
 
 [sub_resource type="StyleBoxTexture" id=14]
 texture = ExtResource( 1 )
-region_rect = Rect2( 16, 36, 16, 8 )
+region_rect = Rect2( 16, 32, 16, 16 )
 margin_left = 2.0562
 margin_right = 2.0562
 margin_top = 2.18471
@@ -84,27 +84,27 @@ margin_bottom = 1.92768
 
 [sub_resource type="StyleBoxTexture" id=15]
 texture = ExtResource( 1 )
-region_rect = Rect2( 48, 17, 16, 14 )
-margin_left = 12.8392
-margin_right = 12.9572
-margin_top = 2.04108
-margin_bottom = 3.08429
+region_rect = Rect2( 48, 16, 16, 16 )
+margin_left = 12.0882
+margin_right = 11.834
+margin_top = 4.04383
+margin_bottom = 4.08567
 
 [sub_resource type="StyleBoxTexture" id=16]
 texture = ExtResource( 1 )
-region_rect = Rect2( 64, 17, 16, 14 )
-margin_left = 12.8391
-margin_right = 12.9572
-margin_top = 3.19769
-margin_bottom = 3.08429
+region_rect = Rect2( 64, 16, 16, 16 )
+margin_left = 12.0882
+margin_right = 11.7055
+margin_top = 4.04383
+margin_bottom = 4.08567
 
 [sub_resource type="StyleBoxTexture" id=17]
 texture = ExtResource( 1 )
-region_rect = Rect2( 80, 17, 16, 14 )
-margin_left = 11.8111
-margin_right = 11.9291
-margin_top = 3.96876
-margin_bottom = 3.34132
+region_rect = Rect2( 80, 16, 16, 16 )
+margin_left = 10.7595
+margin_right = 10.8751
+margin_top = 5.20642
+margin_bottom = 5.24825
 
 [sub_resource type="StyleBoxTexture" id=18]
 texture = ExtResource( 1 )
@@ -112,26 +112,23 @@ region_rect = Rect2( 16, 16, 16, 16 )
 margin_left = 10.783
 margin_right = 11.0295
 margin_top = 2.04108
-margin_bottom = 2.18471
+margin_bottom = 2.0562
 
 [sub_resource type="StyleBoxTexture" id=19]
 texture = ExtResource( 1 )
 region_rect = Rect2( 32, 16, 16, 16 )
 margin_left = 11.04
 margin_right = 10.901
-margin_top = 2.16959
-margin_bottom = 2.18471
+margin_top = 2.04108
+margin_bottom = 2.0562
 
 [sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 1 )
 region = Rect2( 80, 64, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 1 )
 region = Rect2( 64, 64, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 16, 32 )
 
 [sub_resource type="StyleBoxTexture" id=23]
