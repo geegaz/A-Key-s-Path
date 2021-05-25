@@ -1,0 +1,218 @@
+[gd_resource type="Theme" load_steps=27 format=2]
+
+[ext_resource path="res://Assets/Sprites/UI/theme-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Fonts/base_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Fonts/small_font.tres" type="DynamicFont" id=7]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 1 )
+region_rect = Rect2( 16, 0, 16, 16 )
+margin_left = 3.3719
+margin_right = 3.25483
+margin_top = 3.08429
+margin_bottom = 3.08123
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 1 )
+region_rect = Rect2( 32, 0, 16, 16 )
+margin_left = 3.3719
+margin_right = 3.25483
+margin_top = 3.08429
+margin_bottom = 3.08123
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 1 )
+region_rect = Rect2( 48, 0, 16, 16 )
+margin_left = 3.3719
+margin_right = 3.25483
+margin_top = 3.08429
+margin_bottom = 3.08123
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 1 )
+region_rect = Rect2( 64, 0, 16, 16 )
+margin_left = 3.3719
+margin_right = 3.25483
+margin_top = 3.08429
+margin_bottom = 3.08123
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 1 )
+region_rect = Rect2( 80, 0, 16, 16 )
+margin_left = 3.3719
+margin_right = 3.25483
+margin_top = 3.08429
+margin_bottom = 3.08123
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 32, 24, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 24, 32, 24, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 32, 24, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 72, 32, 24, 16 )
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 1, 1, 1, 0.2 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 1 )
+region_rect = Rect2( 48, 16, 16, 16 )
+margin_left = 11.0
+margin_right = 11.0
+margin_top = 5.0
+margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = ExtResource( 1 )
+region_rect = Rect2( 64, 16, 16, 16 )
+margin_left = 11.0
+margin_right = 11.0
+margin_top = 5.0
+margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = ExtResource( 1 )
+region_rect = Rect2( 80, 16, 16, 16 )
+margin_left = 11.0
+margin_right = 11.0
+margin_top = 5.0
+margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id=15]
+texture = ExtResource( 1 )
+region_rect = Rect2( 16, 16, 16, 16 )
+margin_left = 12.0
+margin_right = 12.0
+margin_top = 4.0
+margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id=16]
+texture = ExtResource( 1 )
+region_rect = Rect2( 32, 16, 16, 16 )
+margin_left = 12.0
+margin_right = 12.0
+margin_top = 4.0
+margin_bottom = 4.0
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 48, 16, 16 )
+
+[sub_resource type="StyleBoxTexture" id=20]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 48, 16, 16 )
+margin_left = 6.0
+margin_right = 6.0
+margin_top = 6.0
+margin_bottom = 6.0
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 1 )
+region = Rect2( 80, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 48, 16, 16 )
+
+[sub_resource type="StyleBoxTexture" id=23]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 16, 32 )
+margin_left = 2.3355
+margin_right = 2.0562
+margin_top = 29.7346
+margin_bottom = 14.0
+
+[resource]
+default_font = ExtResource( 7 )
+Button/colors/font_color = Color( 0, 0, 0, 1 )
+Button/colors/font_color_disabled = Color( 1, 1, 1, 0.2 )
+Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
+Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = ExtResource( 3 )
+Button/styles/disabled = SubResource( 1 )
+Button/styles/focus = SubResource( 2 )
+Button/styles/hover = SubResource( 3 )
+Button/styles/normal = SubResource( 4 )
+Button/styles/pressed = SubResource( 5 )
+CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_disabled = Color( 1, 1, 1, 0.2 )
+CheckButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+CheckButton/constants/check_vadjust = 0
+CheckButton/constants/hseparation = 0
+CheckButton/fonts/font = null
+CheckButton/icons/off = SubResource( 6 )
+CheckButton/icons/off_disabled = SubResource( 7 )
+CheckButton/icons/on = SubResource( 8 )
+CheckButton/icons/on_disabled = SubResource( 9 )
+CheckButton/styles/disabled = SubResource( 10 )
+CheckButton/styles/focus = SubResource( 11 )
+CheckButton/styles/hover = SubResource( 10 )
+CheckButton/styles/hover_pressed = SubResource( 10 )
+CheckButton/styles/normal = SubResource( 10 )
+CheckButton/styles/pressed = SubResource( 10 )
+HScrollBar/icons/ = null
+HScrollBar/icons/decrement = null
+HScrollBar/icons/decrement_highlight = null
+HScrollBar/icons/increment = null
+HScrollBar/icons/increment_highlight = null
+HScrollBar/styles/grabber = SubResource( 12 )
+HScrollBar/styles/grabber_highlight = SubResource( 13 )
+HScrollBar/styles/grabber_pressed = SubResource( 14 )
+HScrollBar/styles/scroll = SubResource( 15 )
+HScrollBar/styles/scroll_focus = SubResource( 16 )
+HSlider/icons/grabber = SubResource( 17 )
+HSlider/icons/grabber_disabled = SubResource( 18 )
+HSlider/icons/grabber_highlight = SubResource( 19 )
+HSlider/icons/tick = null
+HSlider/styles/grabber_area = SubResource( 10 )
+HSlider/styles/grabber_area_highlight = SubResource( 10 )
+HSlider/styles/slider = SubResource( 20 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 0
+Label/fonts/font = ExtResource( 3 )
+Label/styles/normal = null
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = SubResource( 12 )
+VScrollBar/styles/grabber_highlight = SubResource( 13 )
+VScrollBar/styles/grabber_pressed = SubResource( 14 )
+VScrollBar/styles/scroll = SubResource( 15 )
+VScrollBar/styles/scroll_focus = SubResource( 16 )
+WindowDialog/colors/title_color = Color( 0, 0, 0, 1 )
+WindowDialog/constants/close_h_ofs = 17
+WindowDialog/constants/close_v_ofs = -1
+WindowDialog/constants/scaleborder_size = 0
+WindowDialog/constants/title_height = -18
+WindowDialog/fonts/title_font = ExtResource( 3 )
+WindowDialog/icons/close = SubResource( 21 )
+WindowDialog/icons/close_highlight = SubResource( 22 )
+WindowDialog/styles/panel = SubResource( 23 )

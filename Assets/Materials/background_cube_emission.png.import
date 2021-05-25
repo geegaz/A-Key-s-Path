@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/background_cube_emission.png-b82f6cf05d7e9b94d8977ccac48512ed.s3tc.stex"
+path.etc="res://.import/background_cube_emission.png-b82f6cf05d7e9b94d8977ccac48512ed.etc.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://Assets/Materials/background_cube_emission.png"
+dest_files=[ "res://.import/background_cube_emission.png-b82f6cf05d7e9b94d8977ccac48512ed.s3tc.stex", "res://.import/background_cube_emission.png-b82f6cf05d7e9b94d8977ccac48512ed.etc.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

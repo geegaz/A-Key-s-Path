@@ -17,7 +17,6 @@ var target_property: String
 var target_property_start: Vector2
 
 func _ready():
-	randomize()
 	shaking = false
 
 func _process(delta):

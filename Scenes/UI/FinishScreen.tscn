@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/UI/FinishScreen.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Theme/Main.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/Fonts/title_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Fonts/small_font.tres" type="DynamicFont" id=4]
+
+[node name="FinishScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.105882, 0.105882, 0.105882, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -42.0
+margin_bottom = -6.0
+custom_fonts/font = ExtResource( 3 )
+text = "Thanks for playing !"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -6.0
+margin_bottom = 7.0
+custom_fonts/font = ExtResource( 4 )
+text = "~ Geegaz ~"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -56.0
+margin_top = -28.0
+margin_right = 48.0
+margin_bottom = -8.83447
+text = "Back to Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]

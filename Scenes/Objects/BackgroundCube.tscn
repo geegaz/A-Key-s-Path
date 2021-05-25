@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Materials/background_cube.tres" type="Material" id=1]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="Animation" id=2]
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Cube:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 35, 0, 45 ), Vector3( 35, 120, 45 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "rotation_glowing"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Cube:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 35, 0, 45 ), Vector3( 35, 120, 45 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Cube:material_override:emission_energy")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.5, 0.0, 0.5, 0.0, 0.5, 0.0, 0.5, 0.0, 0.5, 0.0 ]
+}
+
+[sub_resource type="ViewportTexture" id=3]
+viewport_path = NodePath("Viewport")
+
+[node name="Cube" type="Node2D"]
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 128, 128 )
+transparent_bg = true
+handle_input_locally = false
+render_target_v_flip = true
+
+[node name="Cube" type="MeshInstance" parent="Viewport"]
+transform = Transform( 0.707107, -0.707107, 0, 0.579228, 0.579228, -0.573577, 0.40558, 0.40558, 0.819152, 0, 0, 0 )
+material_override = ExtResource( 1 )
+cast_shadow = 0
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Viewport"]
+autoplay = "rotation"
+playback_speed = 0.05
+anims/rotation = SubResource( 2 )
+anims/rotation_glowing = SubResource( 4 )
+
+[node name="Camera" type="Camera" parent="Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
+projection = 1
+size = 4.0
+
+[node name="DirectionalLightUp" type="DirectionalLight" parent="Viewport"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 4, 0 )
+light_energy = 0.2
+light_indirect_energy = 0.0
+
+[node name="Image" type="Sprite" parent="."]
+texture = SubResource( 3 )

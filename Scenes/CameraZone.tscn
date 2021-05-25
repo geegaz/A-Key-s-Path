@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://Scripts/CameraZone.gd" type="Script" id=1]
-
-[node name="CameraZone" type="Area2D" groups=[
-"CameraZones",
-]]
-script = ExtResource( 1 )
-[connection signal="body_entered" from="." to="." method="_on_CameraZone_body_entered"]

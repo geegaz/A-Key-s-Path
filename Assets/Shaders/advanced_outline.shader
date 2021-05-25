@@ -1,10 +1,9 @@
 shader_type canvas_item;
-render_mode unshaded;
 
 uniform float outline_width : hint_range(0.0, 40.0) = 1.0;
 uniform vec4 outline_color : hint_color = vec4(0.0, 0.0, 0.0, 1.0);
-uniform bool use_8way_kernel = true;
-uniform bool normalize_outline = true;
+uniform bool use_8way_kernel = false;
+uniform bool normalize_outline = false;
 
 void fragment() {
 	vec4 col = texture(TEXTURE, UV, 0);

@@ -1,50 +1,51 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Themes/Main.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/Theme/Main.tres" type="Theme" id=2]
 [ext_resource path="res://Assets/Fonts/title_font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Scenes/Objects/Cube.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Fonts/small_font.tres" type="DynamicFont" id=5]
-[ext_resource path="res://Assets/Tilesets/terrain_.tres" type="TileSet" id=6]
-[ext_resource path="res://Assets/Tilesets/background_.tres" type="TileSet" id=7]
-[ext_resource path="res://Assets/Sprites/player/player_sitting-Sheet.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Sprites/backgrounds/World1/background_ground.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Sprites/backgrounds/World1/background_sky.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Objects/BackgroundCube.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/UI/OptionsMenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Tilesets/terrain.tres" type="TileSet" id=6]
+[ext_resource path="res://Assets/Tilesets/background.tres" type="TileSet" id=7]
+[ext_resource path="res://Scenes/UI/CreditsMenu.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/UI/WorldLevels.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Sprites/player/player_animations-Sheet.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/backgrounds/background_ground.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites/backgrounds/background_sky.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Sprites/UI/arrows-Sheet.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Sprites/UI/levels-Sheet.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Sprites/flag/flag-Sheet.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Sprites/flag-Sheet.png" type="Texture" id=17]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 10 )
-region = Rect2( 0, 0, 32, 32 )
+region = Rect2( 0, 160, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 10 )
-region = Rect2( 32, 0, 32, 32 )
+region = Rect2( 32, 160, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 10 )
-region = Rect2( 64, 0, 32, 32 )
+region = Rect2( 64, 160, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 10 )
-region = Rect2( 96, 0, 32, 32 )
+region = Rect2( 96, 160, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 10 )
-region = Rect2( 128, 0, 32, 32 )
+region = Rect2( 128, 160, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 10 )
-region = Rect2( 160, 0, 32, 32 )
+region = Rect2( 160, 160, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 10 )
-region = Rect2( 192, 0, 32, 32 )
+region = Rect2( 192, 160, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 10 )
-region = Rect2( 224, 0, 32, 32 )
+region = Rect2( 224, 160, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
@@ -95,89 +96,55 @@ animations = [ {
 } ]
 
 [sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 16 )
-region = Rect2( 0, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 16 )
-region = Rect2( 16, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 16 )
-region = Rect2( 32, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 16 )
-region = Rect2( 48, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 16 )
-region = Rect2( 0, 16, 24, 24 )
-
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 16 )
-region = Rect2( 24, 16, 24, 24 )
-
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 16 )
-region = Rect2( 0, 40, 24, 24 )
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 16 )
-region = Rect2( 24, 40, 24, 24 )
-
-[sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 13 )
 region = Rect2( 0, 32, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 13 )
 region = Rect2( 16, 32, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 13 )
 region = Rect2( 32, 32, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 13 )
 region = Rect2( 48, 32, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=31]
+[sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 13 )
 region = Rect2( 0, 16, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 13 )
 region = Rect2( 16, 16, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 13 )
 region = Rect2( 32, 16, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=34]
+[sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 13 )
 region = Rect2( 48, 16, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=35]
+[sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 13 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=36]
+[sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 13 )
 region = Rect2( 16, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=37]
+[sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 13 )
 region = Rect2( 32, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=38]
+[sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 13 )
 region = Rect2( 48, 0, 16, 16 )
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node"]
 script = ExtResource( 1 )
-LevelButtons = [ NodePath("Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer/LevelButton"), NodePath("Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer2/LevelButton"), NodePath("Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer3/LevelButton"), NodePath("Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer4/LevelButton") ]
-LevelPaths = [ "res://Scenes/Worlds/World1_Tuto1.tscn", "res://Scenes/Worlds/World1_Tuto2.tscn", "res://Scenes/Worlds/World1_Level1.tscn", "res://Scenes/Worlds/World1_Level2.tscn" ]
 
 [node name="Background" type="Node2D" parent="."]
 
@@ -187,19 +154,18 @@ LevelPaths = [ "res://Scenes/Worlds/World1_Tuto1.tscn", "res://Scenes/Worlds/Wor
 motion_scale = Vector2( 0, 0 )
 
 [node name="ColorRect" type="ColorRect" parent="Background/BackgroundLayer/Background0"]
-margin_left = -160.0
-margin_top = -96.0
-margin_right = 160.0
-margin_bottom = 96.0
+margin_right = 320.0
+margin_bottom = 192.0
+color = Color( 0.988235, 0.831373, 0.831373, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="Background/BackgroundLayer/Background0"]
-margin_left = -160.0
-margin_top = -128.0
-margin_right = 160.0
-margin_bottom = 128.0
+margin_left = -64.0
+margin_top = -32.0
+margin_right = 384.0
+margin_bottom = 224.0
 texture = ExtResource( 12 )
 stretch_mode = 2
 __meta__ = {
@@ -207,51 +173,21 @@ __meta__ = {
 }
 
 [node name="Cube" parent="Background/BackgroundLayer/Background0" instance=ExtResource( 4 )]
-position = Vector2( 0, -24 )
+position = Vector2( 160, 72 )
 
 [node name="Background1" type="ParallaxLayer" parent="Background/BackgroundLayer"]
-motion_scale = Vector2( 0.5, 0.5 )
+motion_scale = Vector2( 0.2, 0.2 )
 
 [node name="Background1" type="TextureRect" parent="Background/BackgroundLayer/Background1"]
-margin_left = -96.0
-margin_top = -128.0
-margin_right = 352.0
-margin_bottom = 128.0
+margin_left = -256.0
+margin_top = -72.0
+margin_right = 576.0
+margin_bottom = 184.0
 texture = ExtResource( 11 )
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Background2" type="ParallaxLayer" parent="Background/BackgroundLayer"]
-
-[node name="ColorRect" type="ColorRect" parent="Background/BackgroundLayer/Background2"]
-margin_left = 320.0
-margin_right = 640.0
-margin_bottom = 194.0
-color = Color( 0.105882, 0.105882, 0.105882, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect2" type="ColorRect" parent="Background/BackgroundLayer/Background2"]
-margin_left = -320.0
-margin_bottom = 194.0
-color = Color( 0.105882, 0.105882, 0.105882, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect3" type="ColorRect" parent="Background/BackgroundLayer/Background2"]
-margin_right = 320.0
-margin_bottom = 34.0
-color = Color( 0.105882, 0.105882, 0.105882, 0.498039 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CanvasModulate" type="CanvasModulate" parent="Background/BackgroundLayer"]
-color = Color( 0.988235, 0.831373, 0.831373, 1 )
 
 [node name="Tilemaps" type="Node2D" parent="Background"]
 
@@ -260,43 +196,36 @@ z_index = -1
 tile_set = ExtResource( 7 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 65554, 0, 8, 65555, 0, 11, 131073, 0, 8, 131074, 0, 11, 131089, 0, 8, 131090, 0, 65541, 131091, 0, 65547, 196608, 1, 8, 196609, 1, 11, 196610, 0, 65547, 196624, 2, 0, 196625, 0, 131080, 196626, 0, 131082, 196627, 0, 65547, 262144, 1, 196616, 262145, 1, 196619, 262146, 0, 196614, 262147, 0, 3, 262159, 0, 196609, 262160, 0, 5, 262161, 1, 8, 262162, 1, 11, 262163, 0, 65547, 327680, 0, 65536, 327683, 0, 65540, 327684, 0, 11, 327696, 0, 131080, 327697, 1, 131080, 327698, 1, 65547, 327699, 0, 65547, 393216, 0, 65536, 393218, 1, 8, 393219, 1, 11, 393220, 0, 65547, 393221, 2, 0, 393231, 0, 8, 393232, 0, 65541, 393233, 1, 196616, 393234, 1, 196619, 393235, 0, 196619, 393255, 5, 196608, 458752, 0, 65540, 458753, 0, 9, 458754, 1, 196616, 458755, 1, 196619, 458756, 0, 65542, 458757, 0, 9, 458758, 0, 11, 458760, 0, 8, 458761, 0, 11, 458765, 0, 0, 458767, 0, 131080, 458768, 0, 131078, 458769, 0, 196618, 458770, 0, 196619, 524288, 0, 131076, 524289, 0, 196618, 524290, 0, 131077, 524291, 0, 131082, 524292, 0, 131082, 524293, 0, 131082, 524294, 0, 65547, 524296, 0, 131080, 524297, 0, 65547, 524299, 2, 0, 524300, 1, 8, 524301, 1, 11, 524302, 0, 6, 524303, 0, 196613, 524304, 0, 131079, 589824, 0, 131072, 589826, 0, 196616, 589827, 0, 131077, 589828, 1, 8, 589829, 1, 9, 589830, 1, 11, 589831, 0, 9, 589832, 0, 65541, 589833, 0, 65542, 589834, 0, 11, 589835, 2, 0, 589836, 1, 131080, 589837, 1, 65547, 589838, 0, 65547, 589840, 0, 65540, 589841, 0, 11, 655360, 5, 0, 655361, 5, 0, 655363, 0, 131080, 655364, 1, 131080, 655365, 1, 131082, 655366, 1, 65547, 655367, 0, 131082, 655368, 0, 131082, 655369, 0, 131082, 655370, 0, 65542, 655371, 0, 9, 655372, 1, 196616, 655373, 1, 196619, 655374, 0, 65542, 655375, 0, 9, 655376, 0, 65541, 655377, 0, 65547, 720899, 0, 196616, 720900, 1, 196616, 720901, 1, 196618, 720902, 1, 196619, 720903, 0, 196618, 720904, 0, 196618, 720905, 0, 196618, 720906, 0, 196618, 720907, 0, 196618, 720908, 0, 196618, 720909, 0, 196618, 720910, 0, 196618, 720911, 0, 196618, 720912, 0, 196618, 720913, 0, 196619, 917503, 5, 0, 851968, 5, 0, 851969, 5, 0, 851970, 5, 0, 851971, 5, 0, 851972, 5, 0, 851973, 5, 0, 851976, 5, 0, 851977, 5, 0, 851984, 5, 0, 851985, 5, 0, 851986, 5, 0, 851987, 5, 0, 851988, 5, 0 )
+tile_data = PoolIntArray( 131053, 0, 3, 65536, 0, 0, 65537, 0, 2, 65554, 0, 0, 65555, 0, 2, 65557, 0, 3, 65575, 0, 0, 65576, 0, 2, 196587, 0, 0, 196588, 0, 1, 196589, 0, 65538, 196607, 0, 0, 131072, 0, 131073, 131073, 0, 131076, 131074, 0, 2, 131089, 0, 0, 131090, 0, 65537, 131091, 0, 65540, 131092, 0, 1, 131093, 0, 65538, 131109, 0, 3, 131111, 0, 65536, 131112, 0, 65538, 262123, 0, 65536, 262124, 0, 65540, 262125, 0, 65537, 262126, 0, 2, 262143, 0, 65539, 196609, 0, 131072, 196610, 0, 65538, 196625, 1, 0, 196626, 1, 1, 196627, 1, 2, 196628, 0, 65537, 196629, 0, 65538, 196645, 0, 65536, 196646, 0, 1, 196647, 0, 65537, 196648, 0, 65538, 327659, 0, 65536, 327660, 1, 0, 327661, 1, 1, 327662, 1, 2, 327678, 0, 0, 327679, 0, 196612, 262144, 0, 2, 262146, 0, 65536, 262147, 0, 2, 262160, 0, 0, 262161, 1, 131072, 262162, 1, 131073, 262163, 1, 131074, 262164, 0, 131076, 262165, 0, 65540, 262166, 0, 2, 262181, 0, 65536, 262182, 0, 4, 262183, 0, 65537, 262184, 0, 65538, 393195, 0, 65536, 393196, 1, 131072, 393197, 1, 131073, 393198, 1, 131074, 393214, 0, 65536, 393215, 0, 131076, 327680, 0, 131076, 327681, 1, 0, 327682, 1, 1, 327683, 1, 2, 327684, 0, 2, 327695, 0, 196608, 327696, 0, 65538, 327698, 0, 65536, 327699, 0, 4, 327700, 1, 0, 327701, 1, 1, 327702, 1, 1, 327703, 1, 2, 327716, 0, 0, 327717, 0, 65537, 327718, 0, 131076, 327719, 0, 65537, 327720, 0, 65538, 458731, 0, 65536, 458732, 0, 4, 458733, 0, 65538, 458749, 1, 0, 458750, 1, 1, 458751, 1, 1, 393216, 1, 1, 393217, 1, 196612, 393218, 1, 196612, 393219, 1, 65538, 393220, 0, 131074, 393232, 0, 65536, 393233, 0, 1, 393234, 0, 4, 393235, 0, 65537, 393236, 1, 131072, 393237, 1, 131073, 393238, 1, 131073, 393239, 1, 131074, 393251, 0, 196608, 393252, 0, 4, 393253, 0, 4, 393254, 0, 196612, 393255, 0, 196612, 393256, 0, 65538, 524267, 0, 65536, 524268, 0, 4, 524269, 0, 131076, 524270, 0, 1, 524271, 0, 2, 524284, 0, 196608, 524285, 1, 65536, 524286, 1, 4, 524287, 1, 65537, 458752, 1, 131073, 458753, 1, 131073, 458754, 1, 131073, 458755, 1, 131074, 458767, 0, 0, 458768, 0, 4, 458769, 0, 65537, 458770, 0, 65537, 458771, 0, 4, 458772, 0, 4, 458773, 0, 65540, 458774, 0, 131074, 458788, 0, 65536, 458789, 0, 131076, 458790, 0, 131076, 458791, 0, 4, 458792, 0, 65538, 589803, 0, 65536, 589804, 0, 4, 589805, 0, 65540, 589806, 0, 196612, 589807, 0, 131074, 589821, 1, 131072, 589822, 1, 131073, 589823, 1, 131074, 524288, 0, 65540, 524289, 0, 131076, 524290, 0, 131076, 524291, 0, 65537, 524292, 0, 2, 524296, 0, 0, 524297, 0, 2, 524301, 0, 0, 524302, 0, 1, 524303, 0, 131073, 524304, 0, 131076, 524305, 0, 4, 524306, 0, 131076, 524307, 0, 131076, 524308, 0, 131076, 524309, 0, 65538, 524311, 0, 3, 524323, 0, 196608, 524324, 1, 0, 524325, 1, 1, 524326, 1, 2, 524327, 0, 65537, 524328, 0, 65538, 655339, 0, 65536, 655340, 0, 131076, 655341, 0, 65540, 655342, 0, 65538, 655356, 0, 0, 655357, 0, 65540, 655358, 0, 196612, 655359, 0, 196612, 589824, 0, 196612, 589825, 0, 4, 589826, 0, 65537, 589827, 0, 65537, 589828, 0, 65538, 589830, 0, 0, 589831, 1, 0, 589832, 1, 2, 589833, 0, 131076, 589834, 0, 1, 589835, 0, 2, 589837, 0, 65536, 589838, 0, 65538, 589840, 0, 65536, 589841, 0, 4, 589842, 0, 196612, 589843, 0, 65540, 589844, 0, 4, 589845, 0, 131076, 589846, 0, 1, 589847, 0, 65538, 589860, 1, 65536, 589861, 1, 4, 589862, 1, 65538, 589863, 0, 196612, 589864, 0, 65538, 720875, 0, 65536, 720876, 0, 196612, 720877, 0, 131076, 720878, 0, 131076, 720879, 0, 1, 720880, 0, 2, 720890, 0, 0, 720891, 0, 1, 720892, 0, 4, 720893, 0, 65537, 720894, 0, 4, 720895, 0, 131076, 655360, 0, 65537, 655361, 0, 65540, 655362, 0, 131076, 655363, 0, 65537, 655364, 0, 131076, 655365, 0, 1, 655366, 0, 65537, 655367, 1, 65536, 655368, 1, 65538, 655369, 0, 65537, 655370, 0, 196612, 655371, 0, 65540, 655372, 0, 1, 655373, 0, 196612, 655374, 1, 0, 655375, 1, 1, 655376, 1, 2, 655377, 0, 65540, 655378, 0, 65540, 655379, 0, 4, 655380, 0, 4, 655381, 0, 4, 655382, 0, 65540, 655383, 0, 196612, 655384, 0, 2, 655394, 0, 0, 655395, 0, 1, 655396, 1, 131072, 655397, 1, 131073, 655398, 1, 131074, 655399, 0, 65537, 655400, 0, 65538, 786411, 0, 65536, 786412, 0, 65540, 786413, 0, 65540, 786414, 0, 196612, 786415, 0, 196612, 786416, 0, 65538, 786426, 0, 65536, 786427, 0, 4, 786428, 0, 65540, 786429, 0, 4, 786430, 0, 65540, 786431, 0, 65537, 720896, 0, 131076, 720897, 0, 65537, 720898, 0, 196612, 720899, 0, 65540, 720900, 0, 4, 720901, 0, 65537, 720902, 0, 4, 720903, 1, 65536, 720904, 1, 65538, 720905, 0, 196612, 720906, 0, 131076, 720907, 0, 4, 720908, 0, 196612, 720909, 0, 65537, 720910, 1, 65536, 720911, 1, 65540, 720912, 1, 65537, 720913, 1, 196610, 720914, 0, 196612, 720915, 0, 4, 720916, 0, 4, 720917, 0, 65540, 720918, 0, 4, 720919, 0, 4, 720920, 0, 65538, 720930, 0, 65536, 720931, 0, 196612, 720932, 0, 196612, 720933, 0, 65537, 720934, 0, 196612, 720935, 0, 65540, 720936, 0, 65538, 851947, 0, 131072, 851948, 0, 131073, 851949, 0, 131073, 851950, 0, 131073, 851951, 0, 131073, 851952, 0, 131073, 851953, 0, 196609, 851954, 0, 196609, 851955, 0, 196609, 851956, 0, 196609, 851957, 0, 196609, 851958, 0, 196609, 851959, 0, 196609, 851960, 0, 196609, 851961, 0, 196609, 851962, 0, 131073, 851963, 0, 131073, 851964, 0, 131073, 851965, 0, 131073, 851966, 0, 131073, 851967, 0, 131073, 786432, 0, 131073, 786433, 0, 131073, 786434, 0, 131073, 786435, 0, 131073, 786436, 0, 131073, 786437, 0, 131073, 786438, 0, 131073, 786439, 1, 131072, 786440, 1, 131074, 786441, 0, 131073, 786442, 0, 131073, 786443, 0, 131073, 786444, 0, 131073, 786445, 0, 131073, 786446, 1, 131072, 786447, 1, 131073, 786448, 1, 131074, 786449, 0, 131073, 786450, 0, 131073, 786451, 0, 131073, 786452, 0, 131073, 786453, 0, 131073, 786454, 0, 131073, 786455, 0, 131073, 786456, 0, 131073, 786457, 0, 196609, 786458, 0, 196609, 786459, 0, 196609, 786460, 0, 196609, 786461, 0, 196609, 786462, 0, 196609, 786463, 0, 196609, 786464, 0, 196609, 786465, 0, 196609, 786466, 0, 131073, 786467, 0, 131073, 786468, 0, 131073, 786469, 0, 131073, 786470, 0, 131073, 786471, 0, 131073, 786472, 0, 131074 )
 
 [node name="TerrainTileMap" type="TileMap" parent="Background/Tilemaps"]
 tile_set = ExtResource( 6 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 131052, 15, 1, 196587, 9, 8, 196588, 9, 11, 131090, 13, 1, 131091, 14, 0, 131092, 13, 2, 131093, 13, 2, 262123, 9, 131080, 262124, 9, 65547, 262143, 14, 65536, 196608, 13, 2, 196609, 13, 1, 196626, 10, 1, 196627, 9, 8, 196628, 9, 9, 196629, 9, 11, 196647, 8, 8, 196648, 8, 11, 327659, 1, 131080, 327660, 9, 65547, 327679, 9, 8, 262144, 9, 11, 262145, 10, 0, 262163, 9, 131080, 262164, 9, 131082, 262165, 9, 65547, 262183, 0, 131080, 262184, 0, 65547, 393195, 1, 131080, 393196, 9, 65547, 393215, 9, 131080, 327680, 9, 65547, 327698, 13, 0, 327699, 1, 131080, 327700, 1, 131078, 327701, 1, 196619, 327718, 8, 8, 327719, 0, 65541, 327720, 0, 65547, 458731, 0, 131080, 458732, 8, 65547, 458751, 1, 131080, 393216, 1, 65547, 393217, 13, 1, 393233, 13, 1, 393234, 8, 8, 393235, 1, 65541, 393236, 1, 65547, 393253, 3, 196609, 393254, 3, 196611, 393255, 0, 131082, 393256, 0, 65547, 524267, 0, 131080, 524268, 0, 65547, 524269, 14, 0, 524270, 13, 0, 524287, 1, 131080, 458752, 1, 65542, 458753, 9, 11, 458768, 3, 8, 458769, 3, 11, 458770, 0, 65541, 458771, 1, 131082, 458772, 9, 65547, 458790, 0, 131080, 458791, 0, 131082, 458792, 0, 65547, 589803, 0, 131080, 589804, 3, 196609, 589805, 3, 196610, 589806, 3, 196611, 589822, 3, 8, 589823, 3, 11, 524288, 1, 131082, 524289, 1, 65547, 524290, 15, 0, 524291, 13, 2, 524304, 3, 196616, 524305, 3, 196619, 524306, 0, 131082, 524307, 0, 131082, 524308, 8, 65542, 524309, 8, 11, 524326, 0, 131080, 524327, 0, 131082, 524328, 0, 65547, 655339, 0, 131080, 655340, 0, 131082, 655341, 0, 65547, 655358, 3, 196616, 655359, 3, 196619, 589824, 0, 131082, 589825, 0, 65542, 589826, 3, 196609, 589827, 3, 196610, 589828, 3, 196611, 589841, 0, 131080, 589842, 0, 131082, 589843, 0, 131082, 589844, 0, 131082, 589845, 3, 196609, 589846, 3, 196611, 589862, 1, 131080, 589863, 1, 131082, 589864, 1, 65547, 720875, 0, 131080, 720876, 0, 131082, 720877, 0, 65547, 720894, 8, 131080, 720895, 0, 131082, 655360, 0, 131082, 655361, 0, 131082, 655362, 0, 131082, 655363, 0, 65547, 655376, 0, 8, 655377, 0, 65541, 655378, 0, 131082, 655379, 0, 131082, 655380, 0, 131082, 655381, 0, 65547, 655397, 9, 8, 655398, 9, 65541, 655399, 1, 131082, 655400, 1, 65547, 786411, 0, 131080, 786412, 0, 131082, 786413, 0, 65542, 786414, 8, 11, 786429, 8, 8, 786430, 8, 65541, 786431, 0, 131082, 720896, 0, 131082, 720897, 0, 131082, 720898, 0, 131082, 720899, 0, 65547, 720912, 0, 131080, 720913, 0, 131082, 720914, 0, 131082, 720915, 0, 131082, 720916, 0, 131082, 720917, 0, 65547, 720933, 1, 131080, 720934, 1, 131082, 720935, 1, 131082, 720936, 1, 65547, 851947, 0, 196616, 851948, 0, 196618, 851949, 0, 196618, 851950, 0, 196619, 851965, 0, 196616, 851966, 0, 196618, 851967, 0, 196618, 786432, 0, 196618, 786433, 0, 196618, 786434, 0, 196618, 786435, 0, 196619, 786448, 0, 196616, 786449, 0, 196618, 786450, 0, 196618, 786451, 0, 196618, 786452, 0, 196618, 786453, 0, 196619, 786469, 1, 196616, 786470, 1, 196618, 786471, 1, 196618, 786472, 1, 196619 )
+tile_data = PoolIntArray( 196588, 13, 0, 131072, 11, 0, 131091, 14, 0, 131111, 3, 0, 131112, 3, 2, 262123, 3, 0, 262124, 3, 2, 262143, 3, 0, 196608, 3, 2, 196627, 3, 0, 196628, 3, 2, 196647, 3, 65536, 196648, 8, 0, 327659, 3, 65536, 327660, 3, 65538, 327679, 3, 65536, 262144, 3, 65538, 262145, 13, 1, 262163, 3, 65536, 262164, 3, 65538, 262182, 11, 0, 262183, 0, 65536, 262184, 8, 0, 393195, 0, 65536, 393196, 3, 65538, 393213, 9, 65537, 393214, 9, 1, 393215, 3, 65536, 327680, 3, 65540, 327681, 3, 2, 327698, 11, 1, 327699, 0, 65536, 327700, 0, 65538, 327701, 13, 0, 327716, 12, 0, 327718, 3, 0, 327719, 3, 65540, 327720, 8, 0, 458731, 0, 65536, 458732, 0, 65538, 458733, 9, 0, 458751, 0, 65536, 393216, 0, 196612, 393217, 0, 65538, 393234, 3, 0, 393235, 3, 131076, 393236, 0, 4, 393237, 3, 2, 393252, 9, 1, 393253, 2, 196608, 393254, 2, 196609, 393255, 2, 196609, 393256, 2, 196610, 524267, 0, 65536, 524268, 0, 65538, 524269, 13, 0, 524270, 13, 0, 524286, 13, 0, 524287, 0, 65536, 458752, 8, 0, 458753, 0, 65538, 458754, 9, 0, 458768, 2, 0, 458769, 2, 1, 458770, 2, 2, 458771, 1, 65537, 458772, 8, 0, 458773, 3, 65538, 458790, 1, 65536, 458791, 1, 196612, 458792, 8, 0, 589803, 8, 0, 589804, 2, 196608, 589805, 2, 196609, 589806, 2, 196610, 589822, 3, 0, 589823, 3, 65540, 524288, 0, 196612, 524289, 0, 65538, 524291, 13, 1, 524304, 2, 131072, 524305, 2, 131073, 524306, 2, 131074, 524307, 8, 0, 524308, 0, 65537, 524309, 0, 65538, 524310, 11, 0, 524326, 1, 65536, 524327, 8, 0, 524328, 8, 0, 655339, 8, 0, 655340, 1, 4, 655341, 1, 65538, 655357, 13, 0, 655358, 3, 65536, 655359, 8, 0, 589824, 0, 65537, 589825, 2, 196608, 589826, 2, 196609, 589827, 2, 196609, 589828, 2, 196610, 589840, 13, 2, 589841, 1, 65536, 589842, 1, 4, 589843, 8, 0, 589844, 2, 196608, 589845, 2, 196609, 589846, 2, 196610, 589861, 13, 0, 589862, 3, 65536, 589863, 8, 0, 589864, 8, 0, 720875, 8, 0, 720876, 8, 0, 720877, 1, 65538, 720892, 2, 196608, 720893, 2, 196609, 720894, 2, 196610, 720895, 8, 0, 655360, 8, 0, 655361, 1, 131076, 655362, 1, 65538, 655376, 1, 0, 655377, 1, 196612, 655378, 8, 0, 655379, 8, 0, 655380, 1, 131076, 655381, 1, 65538, 655397, 3, 0, 655398, 3, 131076, 655399, 8, 0, 655400, 8, 0, 786411, 8, 0, 786412, 8, 0, 786413, 1, 196612, 786414, 1, 2, 786429, 1, 65536, 786430, 8, 0, 786431, 8, 0, 720896, 8, 0, 720897, 8, 0, 720898, 1, 65538, 720912, 1, 65536, 720913, 8, 0, 720914, 8, 0, 720915, 8, 0, 720916, 8, 0, 720917, 1, 65538, 720933, 1, 65536, 720934, 8, 0, 720935, 8, 0, 720936, 8, 0, 851947, 8, 0, 851948, 8, 0, 851949, 8, 0, 851950, 1, 131074, 851965, 1, 131072, 851966, 8, 0, 851967, 8, 0, 786432, 8, 0, 786433, 8, 0, 786434, 1, 131074, 786448, 1, 131072, 786449, 8, 0, 786450, 8, 0, 786451, 8, 0, 786452, 8, 0, 786453, 1, 131074, 786469, 1, 131072, 786470, 8, 0, 786471, 8, 0, 786472, 8, 0 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Background"]
 position = Vector2( 80, 144 )
 frames = SubResource( 9 )
-frame = 1
+frame = 4
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Background"]
 position = Vector2( 264, 104 )
 frames = SubResource( 18 )
+frame = 7
 playing = true
 
 [node name="MainMenu" type="Control" parent="."]
-margin_right = 320.0
-margin_bottom = 184.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 theme = ExtResource( 2 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
-[node name="MainMenuContainer" type="VBoxContainer" parent="MainMenu"]
-margin_right = 320.0
-margin_bottom = 176.0
-size_flags_horizontal = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="MainMenu/MainMenuContainer"]
-margin_right = 320.0
+[node name="Label" type="Label" parent="MainMenu"]
+anchor_right = 1.0
 margin_bottom = 36.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -306,38 +235,58 @@ custom_constants/shadow_offset_y = 2
 text = "A KEY(S) PATH"
 align = 1
 uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="CenterContainer" type="CenterContainer" parent="MainMenu/MainMenuContainer"]
-margin_top = 40.0
-margin_right = 320.0
-margin_bottom = 95.0
-size_flags_horizontal = 3
+[node name="Quit" type="Button" parent="MainMenu"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -24.0
+margin_top = -28.0
+margin_right = 24.0
+margin_bottom = -8.83447
+mouse_default_cursor_shape = 2
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MainMenuContainer/CenterContainer"]
-margin_left = 88.0
-margin_right = 232.0
-margin_bottom = 55.0
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -72.0
+margin_top = -34.0
+margin_right = 72.0
+margin_bottom = 21.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Start" type="Button" parent="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer"]
+[node name="Start" type="Button" parent="MainMenu/VBoxContainer"]
 margin_right = 144.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 144, 32 )
 mouse_default_cursor_shape = 2
 text = "Start"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenu/VBoxContainer"]
 margin_top = 36.0
 margin_right = 144.0
 margin_bottom = 55.0
 
-[node name="Options" type="Button" parent="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="Options" type="Button" parent="MainMenu/VBoxContainer/HBoxContainer"]
 margin_right = 70.0
 margin_bottom = 19.1655
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 text = "Options"
 
-[node name="Credits" type="Button" parent="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="Credits" type="Button" parent="MainMenu/VBoxContainer/HBoxContainer"]
 margin_left = 74.0
 margin_right = 144.0
 margin_bottom = 19.1655
@@ -345,147 +294,87 @@ mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 text = "Credits"
 
-[node name="Control" type="Control" parent="MainMenu/MainMenuContainer"]
-margin_top = 99.0
-margin_right = 320.0
-margin_bottom = 153.0
-size_flags_vertical = 3
-
-[node name="CenterContainer2" type="CenterContainer" parent="MainMenu/MainMenuContainer"]
-margin_top = 157.0
-margin_right = 320.0
-margin_bottom = 176.166
-size_flags_horizontal = 3
-
-[node name="Quit" type="Button" parent="MainMenu/MainMenuContainer/CenterContainer2"]
-margin_left = 142.0
-margin_right = 176.627
-margin_bottom = 19.1655
-mouse_default_cursor_shape = 2
-text = "Quit"
-
-[node name="Levels" type="Control" parent="."]
-margin_top = -192.0
-margin_right = 320.0
+[node name="LevelsMenu" type="Control" parent="."]
+anchor_top = -1.02222
+anchor_right = 1.0
+anchor_bottom = -0.0222222
 theme = ExtResource( 2 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Levels"]
-margin_right = 320.0
-margin_bottom = 184.0
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelsMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Levels/VBoxContainer"]
+[node name="WorldLevels" parent="LevelsMenu/VBoxContainer" instance=ExtResource( 9 )]
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 61.0
 margin_right = 320.0
-margin_bottom = 164.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-alignment = 1
+margin_bottom = 118.0
+world_name = "World 1"
+levels_paths = [ "res://Scenes/TestWorld.tscn", "res://Scenes/TestWorld.tscn", "res://Scenes/TestWorld.tscn", "res://Scenes/TestWorld.tscn", "res://Scenes/TestWorld.tscn", "res://Scenes/TestWorld.tscn" ]
 
-[node name="World1" type="MarginContainer" parent="Levels/VBoxContainer/VBoxContainer"]
-margin_top = 49.0
-margin_right = 320.0
-margin_bottom = 114.0
-custom_constants/margin_top = 16
-custom_constants/margin_left = 8
-custom_constants/margin_bottom = 8
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Levels/VBoxContainer/VBoxContainer/World1"]
-margin_left = 8.0
-margin_top = 16.0
-margin_right = 320.0
-margin_bottom = 57.0
-
-[node name="Label" type="Label" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer"]
-margin_right = 312.0
-margin_bottom = 13.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "World 1"
-align = 1
+[node name="LevelsBack" type="TextureButton" parent="LevelsMenu"]
+anchor_left = 0.5
+anchor_top = 1.022
+anchor_right = 0.5
+anchor_bottom = 1.022
+margin_left = -8.0
+margin_top = -23.96
+margin_right = 8.0
+margin_bottom = -7.96001
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = SubResource( 19 )
+texture_pressed = SubResource( 20 )
+texture_hover = SubResource( 21 )
+texture_disabled = SubResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="World1Levels" type="HBoxContainer" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer"]
-margin_top = 17.0
-margin_right = 312.0
-margin_bottom = 41.0
-custom_constants/separation = 8
-alignment = 1
+[node name="OptionsMenu" parent="." instance=ExtResource( 5 )]
+anchor_left = -1.0
+anchor_right = 0.0
 
-[node name="CenterContainer" type="CenterContainer" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels"]
-margin_left = 108.0
-margin_right = 124.0
-margin_bottom = 24.0
-
-[node name="LevelButton" type="TextureButton" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer"]
-margin_top = 4.0
-margin_right = 16.0
-margin_bottom = 20.0
+[node name="OptionsBack" type="TextureButton" parent="OptionsMenu"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -24.0
+margin_top = 5.0
+margin_right = -8.0
+margin_bottom = 21.0
 mouse_default_cursor_shape = 2
-texture_normal = SubResource( 19 )
-texture_pressed = SubResource( 20 )
-texture_hover = SubResource( 21 )
-texture_disabled = SubResource( 22 )
-
-[node name="CenterContainer2" type="CenterContainer" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels"]
-margin_left = 132.0
-margin_right = 148.0
-margin_bottom = 24.0
-
-[node name="LevelButton" type="TextureButton" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer2"]
-margin_top = 4.0
-margin_right = 16.0
-margin_bottom = 20.0
-mouse_default_cursor_shape = 2
-texture_normal = SubResource( 19 )
-texture_pressed = SubResource( 20 )
-texture_hover = SubResource( 21 )
-texture_disabled = SubResource( 22 )
-
-[node name="CenterContainer3" type="CenterContainer" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels"]
-margin_left = 156.0
-margin_right = 172.0
-margin_bottom = 24.0
-
-[node name="LevelButton" type="TextureButton" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer3"]
-margin_top = 4.0
-margin_right = 16.0
-margin_bottom = 20.0
-mouse_default_cursor_shape = 2
-texture_normal = SubResource( 19 )
-texture_pressed = SubResource( 20 )
-texture_hover = SubResource( 21 )
-texture_disabled = SubResource( 22 )
-
-[node name="CenterContainer4" type="CenterContainer" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels"]
-margin_left = 180.0
-margin_right = 204.0
-margin_bottom = 24.0
-
-[node name="LevelButton" type="TextureButton" parent="Levels/VBoxContainer/VBoxContainer/World1/VBoxContainer/World1Levels/CenterContainer4"]
-margin_right = 24.0
-margin_bottom = 24.0
-mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 texture_normal = SubResource( 23 )
 texture_pressed = SubResource( 24 )
 texture_hover = SubResource( 25 )
 texture_disabled = SubResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="CenterContainer" type="CenterContainer" parent="Levels/VBoxContainer"]
-margin_top = 168.0
-margin_right = 320.0
-margin_bottom = 184.0
+[node name="CreditsMenu" parent="." instance=ExtResource( 8 )]
+anchor_left = 1.0
+anchor_right = 2.0
 
-[node name="LevelsBack" type="TextureButton" parent="Levels/VBoxContainer/CenterContainer"]
-margin_left = 152.0
-margin_right = 168.0
-margin_bottom = 16.0
+[node name="CreditsBack" type="TextureButton" parent="CreditsMenu"]
+margin_left = 8.0
+margin_top = 5.0
+margin_right = 24.0
+margin_bottom = 21.0
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 texture_normal = SubResource( 27 )
 texture_pressed = SubResource( 28 )
 texture_hover = SubResource( 29 )
@@ -494,432 +383,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Options" type="Control" parent="."]
-margin_left = -320.0
-margin_bottom = 184.0
-theme = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="Options"]
-margin_right = 320.0
-margin_bottom = 177.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MarginContainer" type="MarginContainer" parent="Options/VBoxContainer2"]
-margin_right = 320.0
-margin_bottom = 26.0
-custom_constants/margin_right = 5
-custom_constants/margin_top = 5
-custom_constants/margin_left = 5
-custom_constants/margin_bottom = 5
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Options/VBoxContainer2/MarginContainer"]
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 315.0
-margin_bottom = 21.0
-
-[node name="MarginContainer" type="MarginContainer" parent="Options/VBoxContainer2/MarginContainer/HBoxContainer"]
-margin_right = 16.0
-margin_bottom = 16.0
-custom_constants/margin_right = 16
-
-[node name="CenterContainer" type="CenterContainer" parent="Options/VBoxContainer2/MarginContainer/HBoxContainer"]
-margin_left = 20.0
-margin_right = 290.0
-margin_bottom = 16.0
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="Options/VBoxContainer2/MarginContainer/HBoxContainer/CenterContainer"]
-margin_left = 109.0
-margin_top = 1.0
-margin_right = 161.0
-margin_bottom = 14.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_y = 1
-text = "Options"
-
-[node name="OptionsBack" type="TextureButton" parent="Options/VBoxContainer2/MarginContainer/HBoxContainer"]
-margin_left = 294.0
-margin_right = 310.0
-margin_bottom = 16.0
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture_normal = SubResource( 31 )
-texture_pressed = SubResource( 32 )
-texture_hover = SubResource( 33 )
-texture_disabled = SubResource( 34 )
-
-[node name="CenterContainer" type="CenterContainer" parent="Options/VBoxContainer2"]
-margin_top = 30.0
-margin_right = 320.0
-margin_bottom = 168.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Options/VBoxContainer2/CenterContainer"]
-margin_left = 83.0
-margin_right = 236.0
-margin_bottom = 138.0
-custom_constants/separation = 12
-
-[node name="MarginContainer" type="MarginContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer"]
-margin_right = 153.0
-margin_bottom = 8.0
-custom_constants/margin_top = 8
-
-[node name="Sound" type="VBoxContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer"]
-margin_top = 20.0
-margin_right = 153.0
-margin_bottom = 73.0
-
-[node name="Label" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound"]
-margin_right = 153.0
-margin_bottom = 13.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_y = 1
-text = "Sound"
-align = 1
-
-[node name="SFX" type="HBoxContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound"]
-margin_top = 17.0
-margin_right = 153.0
-margin_bottom = 33.0
-
-[node name="Label" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/SFX"]
-margin_top = 1.0
-margin_right = 25.0
-margin_bottom = 14.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 5 )
-text = "SFX: "
-align = 2
-
-[node name="Number" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/SFX"]
-margin_left = 29.0
-margin_top = 1.0
-margin_right = 49.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 20, 0 )
-custom_fonts/font = ExtResource( 5 )
-text = "0"
-
-[node name="SFXSlider" type="HSlider" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/SFX"]
-margin_left = 53.0
-margin_right = 153.0
-margin_bottom = 16.0
-rect_min_size = Vector2( 100, 0 )
-mouse_default_cursor_shape = 6
-max_value = 1.0
-step = 0.01
-
-[node name="Music" type="HBoxContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound"]
-margin_top = 37.0
-margin_right = 153.0
-margin_bottom = 53.0
-
-[node name="Label" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/Music"]
-margin_top = 1.0
-margin_right = 25.0
-margin_bottom = 14.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 5 )
-text = "Music:"
-align = 2
-
-[node name="Number" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/Music"]
-margin_left = 29.0
-margin_top = 1.0
-margin_right = 49.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 20, 0 )
-custom_fonts/font = ExtResource( 5 )
-text = "0"
-
-[node name="MusicSlider" type="HSlider" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/Music"]
-margin_left = 53.0
-margin_right = 153.0
-margin_bottom = 16.0
-rect_min_size = Vector2( 100, 0 )
-mouse_default_cursor_shape = 6
-max_value = 1.0
-step = 0.01
-
-[node name="Display" type="VBoxContainer" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer"]
-margin_top = 85.0
-margin_right = 153.0
-margin_bottom = 138.0
-
-[node name="Label" type="Label" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Display"]
-margin_right = 153.0
-margin_bottom = 13.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_y = 1
-text = "Display"
-align = 1
-
-[node name="FullscreenCheckButton" type="CheckButton" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Display"]
-margin_top = 17.0
-margin_right = 153.0
-margin_bottom = 33.0
-rect_min_size = Vector2( 152, 0 )
-mouse_default_cursor_shape = 2
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color_disabled = Color( 1, 1, 1, 0.2 )
-custom_colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
-text = "Fullscreen"
-
-[node name="ScreenshakeCheckButton" type="CheckButton" parent="Options/VBoxContainer2/CenterContainer/VBoxContainer/Display"]
-margin_top = 37.0
-margin_right = 153.0
-margin_bottom = 53.0
-rect_min_size = Vector2( 152, 0 )
-mouse_default_cursor_shape = 2
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color_disabled = Color( 1, 1, 1, 0.2 )
-custom_colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
-pressed = true
-text = "Screenshake"
-
-[node name="Credits" type="Control" parent="."]
-margin_left = 320.0
-margin_right = 640.0
-margin_bottom = 184.0
-theme = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Credits"]
-margin_right = 320.0
-margin_bottom = 180.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MarginContainer" type="MarginContainer" parent="Credits/VBoxContainer"]
-margin_right = 320.0
-margin_bottom = 26.0
-custom_constants/margin_right = 5
-custom_constants/margin_top = 5
-custom_constants/margin_left = 5
-custom_constants/margin_bottom = 5
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Credits/VBoxContainer/MarginContainer"]
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 315.0
-margin_bottom = 21.0
-
-[node name="CreditsBack" type="TextureButton" parent="Credits/VBoxContainer/MarginContainer/HBoxContainer"]
-margin_right = 16.0
-margin_bottom = 16.0
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture_normal = SubResource( 35 )
-texture_pressed = SubResource( 36 )
-texture_hover = SubResource( 37 )
-texture_disabled = SubResource( 38 )
-
-[node name="CenterContainer" type="CenterContainer" parent="Credits/VBoxContainer/MarginContainer/HBoxContainer"]
-margin_left = 20.0
-margin_right = 286.0
-margin_bottom = 16.0
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="Credits/VBoxContainer/MarginContainer/HBoxContainer/CenterContainer"]
-margin_left = 107.0
-margin_top = 1.0
-margin_right = 159.0
-margin_bottom = 14.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 0
-custom_constants/shadow_offset_y = 1
-text = "Credits"
-
-[node name="MarginContainer" type="MarginContainer" parent="Credits/VBoxContainer/MarginContainer/HBoxContainer"]
-margin_left = 290.0
-margin_right = 310.0
-margin_bottom = 16.0
-custom_constants/margin_left = 20
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Credits/VBoxContainer"]
-margin_top = 30.0
-margin_right = 320.0
-margin_bottom = 180.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-scroll_horizontal_enabled = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CenterContainer" type="CenterContainer" parent="Credits/VBoxContainer/ScrollContainer"]
-margin_right = 304.0
-margin_bottom = 252.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer"]
-margin_left = 71.0
-margin_right = 232.0
-margin_bottom = 252.0
-custom_constants/separation = 16
-
-[node name="MarginContainer" type="MarginContainer" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2"]
-margin_right = 161.0
-margin_bottom = 20.0
-custom_constants/margin_top = 20
-
-[node name="CodeDesignGraphics" type="VBoxContainer" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2"]
-margin_top = 36.0
-margin_right = 161.0
-margin_bottom = 62.0
-custom_constants/separation = 0
-
-[node name="Label" type="Label" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2/CodeDesignGraphics"]
-margin_right = 161.0
-margin_bottom = 13.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Code, Design & Graphics"
-align = 1
-
-[node name="Label2" type="Label" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2/CodeDesignGraphics"]
-margin_top = 13.0
-margin_right = 161.0
-margin_bottom = 26.0
-custom_fonts/font = ExtResource( 5 )
-text = "Geegaz"
-align = 1
-
-[node name="FontOriginal" type="VBoxContainer" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2"]
-visible = false
-margin_top = 78.0
-margin_right = 161.0
-margin_bottom = 124.0
-
-[node name="Label" type="Label" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2/FontOriginal"]
-margin_right = 161.0
-margin_bottom = 13.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Fonts"
-align = 1
-
-[node name="Label2" type="Label" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2/FontOriginal"]
-margin_top = 17.0
-margin_right = 161.0
-margin_bottom = 46.0
-custom_fonts/font = ExtResource( 5 )
-text = "Joystix by Raymond Larabie
-BitPotion by JoebRogers"
-align = 1
-
-[node name="FontGeegaz" type="VBoxContainer" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2"]
-margin_top = 78.0
-margin_right = 161.0
-margin_bottom = 124.0
-
-[node name="Label" type="Label" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2/FontGeegaz"]
-margin_right = 161.0
-margin_bottom = 13.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Fonts"
-align = 1
-
-[node name="Label2" type="Label" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2/FontGeegaz"]
-margin_top = 17.0
-margin_right = 161.0
-margin_bottom = 46.0
-custom_fonts/font = ExtResource( 5 )
-text = "PixelBasic & PixelBasic Big
-by Geegaz"
-align = 1
-
-[node name="SFX" type="VBoxContainer" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2"]
-margin_top = 140.0
-margin_right = 161.0
-margin_bottom = 170.0
-
-[node name="Label" type="Label" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2/SFX"]
-margin_right = 161.0
-margin_bottom = 13.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "SFX"
-align = 1
-
-[node name="Label2" type="Label" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2/SFX"]
-margin_top = 17.0
-margin_right = 161.0
-margin_bottom = 30.0
-custom_fonts/font = ExtResource( 5 )
-text = "Platformer SFX by David Stearns"
-align = 1
-
-[node name="Music" type="VBoxContainer" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2"]
-margin_top = 186.0
-margin_right = 161.0
-margin_bottom = 216.0
-
-[node name="Label" type="Label" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2/Music"]
-margin_right = 161.0
-margin_bottom = 13.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Music"
-align = 1
-
-[node name="Label2" type="Label" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2/Music"]
-margin_top = 17.0
-margin_right = 161.0
-margin_bottom = 30.0
-custom_fonts/font = ExtResource( 5 )
-text = "Bunker by Metre"
-align = 1
-
-[node name="MarginContainer2" type="MarginContainer" parent="Credits/VBoxContainer/ScrollContainer/CenterContainer/VBoxContainer2"]
-margin_top = 232.0
-margin_right = 161.0
-margin_bottom = 252.0
-custom_constants/margin_top = 20
-
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 160, 92 )
+anchor_mode = 0
 current = true
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="QuitConfirmationDialog" type="ConfirmationDialog" parent="."]
-margin_left = 80.0
-margin_top = 40.0
-margin_right = 240.0
-margin_bottom = 98.0
-rect_min_size = Vector2( 160, 56 )
-theme = ExtResource( 2 )
-window_title = "Quit Game ?"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-[connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
-[connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/HBoxContainer/Options" to="." method="_on_Options_pressed"]
-[connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer/VBoxContainer/HBoxContainer/Credits" to="." method="_on_Credits_pressed"]
-[connection signal="pressed" from="MainMenu/MainMenuContainer/CenterContainer2/Quit" to="." method="_on_Quit_pressed"]
-[connection signal="pressed" from="Levels/VBoxContainer/CenterContainer/LevelsBack" to="." method="_on_LevelsBack_pressed"]
-[connection signal="pressed" from="Options/VBoxContainer2/MarginContainer/HBoxContainer/OptionsBack" to="." method="_on_OptionsBack_pressed"]
-[connection signal="value_changed" from="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/SFX/SFXSlider" to="." method="_on_SFXSlider_value_changed"]
-[connection signal="value_changed" from="Options/VBoxContainer2/CenterContainer/VBoxContainer/Sound/Music/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
-[connection signal="toggled" from="Options/VBoxContainer2/CenterContainer/VBoxContainer/Display/FullscreenCheckButton" to="." method="_on_CheckButton_toggled"]
-[connection signal="toggled" from="Options/VBoxContainer2/CenterContainer/VBoxContainer/Display/ScreenshakeCheckButton" to="." method="_on_ScreenshakeCheckButton_toggled"]
-[connection signal="pressed" from="Credits/VBoxContainer/MarginContainer/HBoxContainer/CreditsBack" to="." method="_on_CreditsBack_pressed"]
-[connection signal="confirmed" from="QuitConfirmationDialog" to="." method="_on_QuitConfirmationDialog_confirmed"]
+[connection signal="pressed" from="MainMenu/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/HBoxContainer/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/HBoxContainer/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="LevelsMenu/LevelsBack" to="." method="_on_LevelsBack_pressed"]
+[connection signal="pressed" from="OptionsMenu/OptionsBack" to="." method="_on_OptionsBack_pressed"]
+[connection signal="pressed" from="CreditsMenu/CreditsBack" to="." method="_on_CreditsBack_pressed"]

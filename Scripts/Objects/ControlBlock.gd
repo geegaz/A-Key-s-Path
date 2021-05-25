@@ -1,9 +1,7 @@
 extends KinematicBody2D
 
-signal start_drag
-signal stop_drag
-signal place_in_world(node)
-signal retrieve_from_world(node)
+signal place(control_type)
+signal retrieve(control_type)
 
 enum Controls {JUMP, LEFT, RIGHT}
 export(Controls) var control_type
@@ -33,13 +31,7 @@ onready var InputControl: Control = $Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-# warning-ignore:return_value_discarded
-	connect("start_drag", self, "_on_start_drag")
-# warning-ignore:return_value_discarded
-	connect("stop_drag", self, "_on_stop_drag")
-	
 	control_action = Actions[control_type]
-	randomize()
 
 func _process(_delta):
 	if dragged:
@@ -91,17 +83,17 @@ func _physics_process(delta):
 		if $Placement.get_overlapping_bodies().size() > 0:
 			valid_pos = false
 
-func _on_start_drag():
+func start_drag():
 	drag_time = 0.0
 	dragged = true
 	toggle_grid(true)
 	Collider.disabled = true
 	z_index = 1
 	
-	emit_signal("place_in_world", self)
+	emit_signal("place", self.control_type)
 	position = get_global_mouse_position().round()
 
-func _on_stop_drag():
+func stop_drag():
 	dragged = false
 	toggle_grid(false)
 	if valid_pos and drag_time > limit_drag_time:
@@ -110,7 +102,7 @@ func _on_stop_drag():
 			in_world = true
 		z_index = 0
 	else:
-		emit_signal("retrieve_from_world", self)
+		emit_signal("retrieve", self.control_type)
 
 func toggle_grid(state):
 	var animator = $AnimationGrid
@@ -136,10 +128,10 @@ func _on_Control_mouse_exited():
 func _on_Control_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed:
-			emit_signal("start_drag")
+			start_drag()
 
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and !event.pressed and dragged:
-			emit_signal("stop_drag")
+			stop_drag()
 

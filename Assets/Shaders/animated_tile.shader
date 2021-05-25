@@ -1,14 +1,13 @@
 shader_type canvas_item;
-render_mode unshaded;
 
-uniform sampler2D frames: hint_albedo;
-uniform float count;
-uniform float duration;
-uniform float width;
-uniform float startX = 0;
+uniform sampler2D frames_texture: hint_albedo;
+uniform int h_frames = 1;
+uniform int v_frames = 1;
+uniform float frame_duration;
 
 void fragment() {
-	float frame = floor(mod(TIME, count * duration) / duration);
-	float offset = floor((UV.x - startX) / width);
-	COLOR = texture(frames, UV + vec2((mod(offset + frame, count) - offset) * width, 0));
+	vec2 frames = vec2(float(h_frames), float(v_frames));
+	float frame = floor(mod(TIME, frames.x * frames.y * frame_duration) / frame_duration);
+	vec2 offset = vec2(mod(frame, frames.x), floor(frame/frames.x)*frames.y) / frames; //in UV
+	COLOR = texture(frames_texture, UV + offset);
 }

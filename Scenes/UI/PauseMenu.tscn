@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Theme/Main.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Fonts/title_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/Shaders/blur_background.shader" type="Shader" id=3]
+[ext_resource path="res://Scripts/UI/PauseMenu.gd" type="Script" id=4]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 3 )
+shader_param/blur_amount = 2.0
+shader_param/mix_amount = 0.5
+
+[node name="PauseMenu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 111.0
+margin_top = 49.0
+margin_right = 208.0
+margin_bottom = 131.0
+alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 97.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_y = 1
+text = "Pause"
+align = 1
+
+[node name="Continue" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 40.0
+margin_right = 97.0
+margin_bottom = 59.1655
+text = "Continue"
+
+[node name="Options" type="Button" parent="CenterContainer/VBoxContainer"]
+visible = false
+margin_top = 63.0
+margin_right = 97.0
+margin_bottom = 82.1655
+text = "Options"
+
+[node name="BackToMenu" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 63.0
+margin_right = 97.6267
+margin_bottom = 82.1655
+text = "Back to menu"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/BackToMenu" to="." method="_on_BackToMenu_pressed"]

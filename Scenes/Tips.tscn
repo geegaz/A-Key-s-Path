@@ -98,8 +98,8 @@ speed = 150.0
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
-vframes = 3
 hframes = 8
+vframes = 3
 frame = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -119,5 +119,6 @@ shape = SubResource( 6 )
 
 [node name="IdleTimer" type="Timer" parent="."]
 one_shot = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="IdleTimer" to="." method="_on_IdleTimer_timeout"]

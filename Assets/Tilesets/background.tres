@@ -1,0 +1,69 @@
+[gd_resource type="TileSet" load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/TileSets/ConnectingTiles.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Tilesets/tilesets/background_tiles.png" type="Texture" id=2]
+
+[resource]
+0/name = "background_rock"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 80, 64 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 16777392, Vector2( 0, 1 ), 17039538, Vector2( 0, 2 ), 262194, Vector2( 0, 3 ), 48, Vector2( 1, 0 ), 20971704, Vector2( 1, 1 ), 21299386, Vector2( 1, 2 ), 327738, Vector2( 1, 3 ), 56, Vector2( 2, 0 ), 4194456, Vector2( 2, 1 ), 4259994, Vector2( 2, 2 ), 65562, Vector2( 2, 3 ), 24, Vector2( 3, 0 ), 144, Vector2( 3, 1 ), 146, Vector2( 3, 2 ), 18, Vector2( 3, 3 ), 16, Vector2( 4, 0 ), 21299386, Vector2( 4, 1 ), 21299386, Vector2( 4, 2 ), 21299386, Vector2( 4, 3 ), 21299386 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 16, 16 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "background_metal"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 80, 0, 80, 64 )
+1/tile_mode = 1
+1/autotile/bitmask_mode = 1
+1/autotile/bitmask_flags = [ Vector2( 0, 0 ), 16777392, Vector2( 0, 1 ), 17039538, Vector2( 0, 2 ), 262194, Vector2( 0, 3 ), 48, Vector2( 1, 0 ), 20971704, Vector2( 1, 1 ), 21299386, Vector2( 1, 2 ), 327738, Vector2( 1, 3 ), 56, Vector2( 2, 0 ), 4194456, Vector2( 2, 1 ), 4259994, Vector2( 2, 2 ), 65562, Vector2( 2, 3 ), 24, Vector2( 3, 0 ), 144, Vector2( 3, 1 ), 146, Vector2( 3, 2 ), 18, Vector2( 3, 3 ), 16, Vector2( 4, 0 ), 21299386, Vector2( 4, 1 ), 21299386, Vector2( 4, 2 ), 21299386, Vector2( 4, 3 ), 21299386 ]
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 16, 16 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "background_fill"
+2/texture = ExtResource( 2 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 224, 48, 16, 16 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+script = ExtResource( 1 )
+connecting_tiles_names = [ "background_rock" ]
+sticking_tiles_names = [ "background_metal" ]

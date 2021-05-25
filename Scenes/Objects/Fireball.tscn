@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/Sprites/fireball/fireball-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/fireball-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Objects/Fireball.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -39,7 +39,7 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
@@ -56,4 +56,5 @@ scale_amount_random = 1.0
 color = Color( 0.501961, 0.00784314, 0.215686, 1 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
