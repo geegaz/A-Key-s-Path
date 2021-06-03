@@ -19,4 +19,5 @@ func _on_ActivationArea_body_exited(body):
 
 
 func _on_End_body_entered(body):
+	emit_signal("finished_level")
 	Global.transition_to_scene(next_level)

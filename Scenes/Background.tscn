@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Tools/Background.gd" type="Script" id=1]
+
+[node name="Background" type="ReferenceRect"]
+margin_right = 320.0
+margin_bottom = 180.0
+border_color = Color( 0, 0, 1, 1 )
+border_width = 2.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ReferenceRect" type="ReferenceRect" parent="ParallaxBackground/ParallaxLayer"]
+margin_right = 320.0
+margin_bottom = 180.0
+border_width = 2.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.2, 0.2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ReferenceRect" type="ReferenceRect" parent="ParallaxBackground/ParallaxLayer2"]
+margin_right = 320.0
+margin_bottom = 180.0
+border_color = Color( 1, 0, 1, 1 )
+border_width = 2.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="item_rect_changed" from="." to="." method="_on_Background_item_rect_changed"]

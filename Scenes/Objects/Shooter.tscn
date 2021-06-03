@@ -4,7 +4,6 @@
 [ext_resource path="res://Scripts/Objects/Shooter.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Fireball.wav" type="AudioStream" id=4]
 
-
 [node name="Shooter" type="Node2D" groups=[
 "Shooters",
 ]]
@@ -23,6 +22,7 @@ autostart = true
 stream = ExtResource( 4 )
 max_distance = 200.0
 bus = "SFX"
+
 [connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

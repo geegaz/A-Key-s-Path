@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=17 format=2]
 
-[ext_resource path="res://Scripts/TileSets/AutomatedTiles.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Tools/TileSets/AutomatedTiles.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Tilesets/tilesets/terrain_tiles.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Tilesets/tilesets/prop_tiles.png" type="Texture" id=3]
 

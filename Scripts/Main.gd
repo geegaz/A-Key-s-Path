@@ -26,7 +26,7 @@ func _ready():
 		QuitButton.hide()
 
 func _input(event):
-	if event.is_action_pressed("quit"):
+	if event.is_action_pressed("ui_cancel"):
 		if current_screen == MAIN:
 			get_tree().quit()
 		else:

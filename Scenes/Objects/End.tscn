@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
 
-[sub_resource type="SpatialMaterial" id=8]
+[sub_resource type="SpatialMaterial" id=2]
 flags_transparent = true
 albedo_texture = ExtResource( 3 )
 emission_enabled = true
@@ -18,15 +18,14 @@ emission_operator = 0
 emission_on_uv2 = false
 emission_texture = ExtResource( 3 )
 
-[sub_resource type="QuadMesh" id=7]
+[sub_resource type="QuadMesh" id=3]
 
-[sub_resource type="Curve" id=9]
+[sub_resource type="Curve" id=4]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -2.01948, 0.0, 0, 0 ]
 
-[sub_resource type="CubeMesh" id=3]
+[sub_resource type="CubeMesh" id=5]
 
-[sub_resource type="Animation" id=5]
-resource_name = "break 2"
+[sub_resource type="Animation" id=6]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pivot/Cube:translation")
@@ -137,7 +136,7 @@ tracks/8/keys = {
 "values": [ Vector3( 1, 1, 1 ), Vector3( 1, 1, 1 ), Vector3( 0.8, 1.2, 1 ), Vector3( 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=7]
 resource_name = "close"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pivot/Cube:translation")
@@ -248,7 +247,7 @@ tracks/8/keys = {
 "values": [ Vector3( 1, 1, 1 ), Vector3( 1, 1, 1 ), Vector3( 0.8, 1.2, 1 ), Vector3( 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=8]
 resource_name = "hover"
 length = 4.0
 loop = true
@@ -289,48 +288,48 @@ tracks/2/keys = {
 "values": [ Vector3( 0.7, -0.904558, 0.0520945 ), Vector3( 0.7, -0.510635, 0.121554 ), Vector3( 0.7, -1.00304, 0.0347297 ), Vector3( 0.7, -0.904558, 0.0520945 ) ]
 }
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id=9]
 shader = ExtResource( 2 )
 shader_param/outline_width = 1.0
 shader_param/outline_color = Color( 0, 0, 0, 1 )
 shader_param/use_8way_kernel = false
 shader_param/normalize_outline = false
 
-[sub_resource type="ViewportTexture" id=2]
+[sub_resource type="ViewportTexture" id=10]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="CircleShape2D" id=20]
+[sub_resource type="CircleShape2D" id=11]
 radius = 96.0
 
 [sub_resource type="AnimationNodeAnimation" id=12]
 animation = "break"
 
-[sub_resource type="AnimationNodeAnimation" id=17]
+[sub_resource type="AnimationNodeAnimation" id=13]
 animation = "close"
 
-[sub_resource type="AnimationNodeAnimation" id=13]
+[sub_resource type="AnimationNodeAnimation" id=14]
 animation = "hover"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
 
-[sub_resource type="AnimationNodeStateMachine" id=14]
+[sub_resource type="AnimationNodeStateMachine" id=18]
 states/break/node = SubResource( 12 )
 states/break/position = Vector2( 312, 167 )
-states/close/node = SubResource( 17 )
+states/close/node = SubResource( 13 )
 states/close/position = Vector2( 692, 167 )
-states/hover/node = SubResource( 13 )
+states/hover/node = SubResource( 14 )
 states/hover/position = Vector2( 491, 91 )
-transitions = [ "break", "hover", SubResource( 16 ), "hover", "close", SubResource( 18 ), "close", "break", SubResource( 19 ) ]
+transitions = [ "break", "hover", SubResource( 15 ), "hover", "close", SubResource( 16 ), "close", "break", SubResource( 17 ) ]
 start_node = "break"
 end_node = "close"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=15]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=19]
 
 [node name="End" type="Area2D"]
 collision_layer = 8
@@ -353,9 +352,9 @@ size = 8.0
 
 [node name="Particles" type="CPUParticles" parent="Viewport"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.98023e-08, -1 )
-material_override = SubResource( 8 )
+material_override = SubResource( 2 )
 amount = 6
-mesh = SubResource( 7 )
+mesh = SubResource( 3 )
 emission_shape = 2
 emission_box_extents = Vector3( 0.1, 0.1, 0 )
 direction = Vector3( 0, -1, 0 )
@@ -363,33 +362,33 @@ spread = 90.0
 gravity = Vector3( 0, 10, 0 )
 initial_velocity = 1.0
 damping = 2.0
-scale_amount_curve = SubResource( 9 )
+scale_amount_curve = SubResource( 4 )
 
 [node name="Pivot" type="Spatial" parent="Viewport"]
 transform = Transform( 1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0, 0 )
 
 [node name="Cube" type="MeshInstance" parent="Viewport/Pivot"]
-transform = Transform( 0.465292, 0.264294, -0.0788531, -0.133709, 0.726143, 0.161723, 0.125, -0.207056, 0.466509, -0.8, 0.735015, 0.0767048 )
+transform = Transform( 0.465292, 0.264294, -0.0788531, -0.133709, 0.726143, 0.161723, 0.125, -0.207057, 0.466509, -0.8, 0.425536, 0.0221352 )
 material_override = ExtResource( 1 )
-mesh = SubResource( 3 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="Cube2" type="MeshInstance" parent="Viewport/Pivot"]
-transform = Transform( 0.475175, -0.125001, 0.0926481, 0.0926477, 0.466508, 0.154235, -0.125, -0.12941, 0.466508, 0.9, 1.32577, 0.180871 )
+transform = Transform( 0.475175, -0.125, 0.0926478, 0.0926474, 0.466508, 0.154235, -0.125, -0.12941, 0.466508, 0.9, 1.1227, 0.145064 )
 material_override = ExtResource( 1 )
-mesh = SubResource( 3 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="Cube3" type="MeshInstance" parent="Viewport/Pivot"]
-transform = Transform( 0.488904, -0.0602173, 0.0300058, 0.0950242, 0.291116, 0.0745575, -0.0440825, -0.0403202, 0.4935, 0.7, -0.901749, 0.05259 )
+transform = Transform( 0.488904, -0.0602171, 0.0300057, 0.0950239, 0.291116, 0.0745575, -0.0440824, -0.0403202, 0.4935, 0.7, -1.01809, 0.0320758 )
 material_override = ExtResource( 1 )
-mesh = SubResource( 3 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Viewport"]
-anims/break = SubResource( 5 )
-anims/close = SubResource( 11 )
-anims/hover = SubResource( 10 )
+anims/break = SubResource( 6 )
+anims/close = SubResource( 7 )
+anims/hover = SubResource( 8 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="Viewport"]
 transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 4, 0 )
@@ -399,22 +398,22 @@ light_indirect_energy = 0.0
 light_specular = 0.0
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 4 )
+material = SubResource( 9 )
 z_index = -1
-texture = SubResource( 2 )
+texture = SubResource( 10 )
 
 [node name="ActivationArea" type="Area2D" parent="."]
-collision_layer = 8
-collision_mask = 0
+collision_layer = 0
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActivationArea"]
-shape = SubResource( 20 )
+shape = SubResource( 11 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 14 )
+tree_root = SubResource( 18 )
 anim_player = NodePath("../Viewport/AnimationPlayer")
 active = true
-parameters/playback = SubResource( 15 )
+parameters/playback = SubResource( 19 )
 
 [connection signal="body_entered" from="." to="." method="_on_End_body_entered"]
 [connection signal="body_entered" from="ActivationArea" to="." method="_on_ActivationArea_body_entered"]

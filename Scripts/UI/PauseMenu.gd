@@ -12,7 +12,7 @@ func _ready():
 		_OptionsMenu
 
 func _input(event):
-	if event.is_action_pressed("quit"):
+	if event.is_action_pressed("ui_cancel"):
 		if _OptionsMenu and _OptionsMenu.visible:
 			_OptionsMenu.back()
 		else:
