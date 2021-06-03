@@ -1,14 +1,5 @@
 extends Node
 
-# warning-ignore:unused_signal
-signal change_scene_ready
-
-var world_unlocked_levels = [
-	0
-]
-var sfx_volume
-var music_volume
-var screenshake = true
 
 var show_levels = false
 

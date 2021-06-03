@@ -1,0 +1,10 @@
+{
+    "worlds": [
+        {
+            "name": "World 1",
+            "levels": [
+                "res://Scenes/Levels/TestWorld.tscn"
+            ]
+        }
+    ]
+}

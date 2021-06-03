@@ -19,6 +19,8 @@ config/windows_native_icon="res://icon.ico"
 [autoload]
 
 Global="*res://Scenes/Global.tscn"
+LevelManager="*res://Scripts/Managers/LevelManager.gd"
+OptionManager="*res://Scripts/Managers/OptionManager.gd"
 
 [display]
 
