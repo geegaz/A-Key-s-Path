@@ -1,12 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Tools/Background.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/backgrounds/background_sky.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/backgrounds/background_ground.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Objects/BackgroundCube.tscn" type="PackedScene" id=4]
 
 [node name="Background" type="ReferenceRect"]
 margin_right = 320.0
 margin_bottom = 180.0
-border_color = Color( 0, 0, 1, 1 )
-border_width = 2.0
+border_color = Color( 1, 1, 1, 1 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true,
@@ -17,8 +19,22 @@ __meta__ = {
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0, 0 )
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
+margin_right = 320.0
+margin_bottom = 180.0
+color = Color( 0.988235, 0.831373, 0.831373, 1 )
 __meta__ = {
-"_edit_group_": true
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+margin_right = 320.0
+margin_bottom = 256.0
+texture = ExtResource( 2 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
 }
 
 [node name="ReferenceRect" type="ReferenceRect" parent="ParallaxBackground/ParallaxLayer"]
@@ -29,16 +45,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Cube" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource( 4 )]
+position = Vector2( 160, 96 )
+
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.2, 0.2 )
+
+[node name="Background1" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+margin_right = 320.0
+margin_bottom = 256.0
+texture = ExtResource( 3 )
+stretch_mode = 2
 __meta__ = {
-"_edit_group_": true
+"_edit_use_anchors_": false
 }
 
 [node name="ReferenceRect" type="ReferenceRect" parent="ParallaxBackground/ParallaxLayer2"]
 margin_right = 320.0
 margin_bottom = 180.0
 border_color = Color( 1, 0, 1, 1 )
+border_width = 2.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="ReferenceRect" type="ReferenceRect" parent="ParallaxBackground/ParallaxLayer3"]
+margin_right = 320.0
+margin_bottom = 180.0
+border_color = Color( 0, 0, 1, 1 )
 border_width = 2.0
 __meta__ = {
 "_edit_use_anchors_": false

@@ -1,16 +1,14 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Theme/Main.tres" type="Theme" id=2]
 [ext_resource path="res://Assets/Fonts/title_font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Scenes/Objects/BackgroundCube.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/UI/OptionsMenu.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Tilesets/terrain.tres" type="TileSet" id=6]
 [ext_resource path="res://Assets/Tilesets/background.tres" type="TileSet" id=7]
 [ext_resource path="res://Scenes/UI/CreditsMenu.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Sprites/player/player_animations-Sheet.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Sprites/backgrounds/background_ground.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Sprites/backgrounds/background_sky.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Sprites/UI/arrows-Sheet.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Sprites/flag-Sheet.png" type="Texture" id=17]
 
@@ -145,48 +143,11 @@ region = Rect2( 48, 0, 16, 16 )
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
 
+[node name="Background2" parent="." instance=ExtResource( 4 )]
+margin_left = -320.0
+margin_right = 640.0
+
 [node name="Background" type="Node2D" parent="."]
-
-[node name="BackgroundLayer" type="ParallaxBackground" parent="Background"]
-
-[node name="Background0" type="ParallaxLayer" parent="Background/BackgroundLayer"]
-motion_scale = Vector2( 0, 0 )
-
-[node name="ColorRect" type="ColorRect" parent="Background/BackgroundLayer/Background0"]
-margin_right = 320.0
-margin_bottom = 192.0
-color = Color( 0.988235, 0.831373, 0.831373, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="Background/BackgroundLayer/Background0"]
-margin_left = -64.0
-margin_top = -32.0
-margin_right = 384.0
-margin_bottom = 224.0
-texture = ExtResource( 12 )
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Cube" parent="Background/BackgroundLayer/Background0" instance=ExtResource( 4 )]
-position = Vector2( 160, 72 )
-
-[node name="Background1" type="ParallaxLayer" parent="Background/BackgroundLayer"]
-motion_scale = Vector2( 0.2, 0.2 )
-
-[node name="Background1" type="TextureRect" parent="Background/BackgroundLayer/Background1"]
-margin_left = -256.0
-margin_top = -72.0
-margin_right = 576.0
-margin_bottom = 184.0
-texture = ExtResource( 11 )
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Tilemaps" type="Node2D" parent="Background"]
 
@@ -206,12 +167,12 @@ tile_data = PoolIntArray( 196588, 13, 0, 131072, 11, 0, 131091, 14, 0, 131111, 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Background"]
 position = Vector2( 80, 144 )
 frames = SubResource( 9 )
+frame = 5
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Background"]
 position = Vector2( 264, 104 )
 frames = SubResource( 18 )
-frame = 3
 playing = true
 
 [node name="MainMenu" type="Control" parent="."]

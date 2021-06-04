@@ -13,9 +13,6 @@ func set_min_size(new_size: Vector2):
 	set_layers_size()
 
 func set_layers_size():
-	if !Engine.editor_hint:
-		return
-	
 	var _BackgroundLayer = get_first_background()
 	if !_BackgroundLayer:
 		return
@@ -30,7 +27,7 @@ func set_layers_size():
 	for layer in layers:
 		for child in layer.get_children():
 			if child.is_class("Control"):
-				child.rect_size = (self.rect_size - min_size) * layer.motion_scale + min_size
+				child.rect_size = min_size + (self.rect_size-min_size) * layer.motion_scale
 				child.rect_position = self.rect_position * layer.motion_scale
 	
 func get_first_background()->Node:

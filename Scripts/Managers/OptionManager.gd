@@ -33,5 +33,9 @@ func set_screenshake(state: bool):
 
 
 func to_dict()->Dictionary:
-	var dict = {}
+	var dict = {
+		"volumes": volumes,
+		"fullscreen": fullscreen,
+		"screenshake": screenshake
+	}
 	return dict
