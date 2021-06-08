@@ -17,11 +17,6 @@ var current_screen = MAIN
 func _ready():
 	StartButton.grab_focus()
 	
-	if Global.show_levels:
-		$Camera2D.position = Vector2(160,-96)
-		LevelsBackButton.grab_focus()
-		Global.show_levels = false
-	
 	if OS.has_feature("HTML5"):
 		QuitButton.hide()
 

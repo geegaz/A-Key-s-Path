@@ -28,7 +28,7 @@ func _on_Continue_pressed():
 
 func _on_BackToMenu_pressed():
 	pause(false)
-	Global.transition_to_scene("res://Scenes/Main.tscn")
+	Global.goto_scene("res://Scenes/Main.tscn")
 
 
 func _on_Options_pressed():
