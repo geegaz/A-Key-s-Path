@@ -2,7 +2,6 @@ extends Area2D
 
 signal finished_level
 
-export(String, FILE, "*.tscn") var next_level
 onready var _StateMachine: AnimationNodeStateMachinePlayback = $AnimationTree["parameters/playback"]
 
 # Called when the node enters the scene tree for the first time.
@@ -20,4 +19,6 @@ func _on_ActivationArea_body_exited(body):
 
 func _on_End_body_entered(body):
 	emit_signal("finished_level")
-	Global.transition_to_scene(next_level)
+	var next_level = Global.get_next_level()
+	Global.unlock_level(next_level[0], next_level[1])
+	Global.goto_level(next_level[0], next_level[1])

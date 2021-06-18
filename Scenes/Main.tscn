@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Theme/Main.tres" type="Theme" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Tilesets/terrain.tres" type="TileSet" id=6]
 [ext_resource path="res://Assets/Tilesets/background.tres" type="TileSet" id=7]
 [ext_resource path="res://Scenes/UI/CreditsMenu.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/UI/LevelsMenu.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Sprites/player/player_animations-Sheet.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sprites/UI/arrows-Sheet.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Sprites/flag-Sheet.png" type="Texture" id=17]
@@ -167,13 +168,12 @@ tile_data = PoolIntArray( 196588, 13, 0, 131072, 11, 0, 131091, 14, 0, 131111, 3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Background"]
 position = Vector2( 80, 144 )
 frames = SubResource( 9 )
-frame = 7
+frame = 5
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Background"]
 position = Vector2( 264, 104 )
 frames = SubResource( 18 )
-frame = 2
 playing = true
 
 [node name="MainMenu" type="Control" parent="."]
@@ -254,14 +254,9 @@ mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 text = "Credits"
 
-[node name="LevelsMenu" type="Control" parent="."]
-anchor_top = -1.02222
-anchor_right = 1.0
-anchor_bottom = -0.0222222
-theme = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+[node name="LevelsMenu" parent="." instance=ExtResource( 9 )]
+anchor_top = -1.06667
+anchor_bottom = -0.0666667
 
 [node name="LevelsBack" type="TextureButton" parent="LevelsMenu"]
 anchor_left = 0.5
@@ -269,9 +264,9 @@ anchor_top = 1.022
 anchor_right = 0.5
 anchor_bottom = 1.022
 margin_left = -8.0
-margin_top = -23.96
+margin_top = -15.96
 margin_right = 8.0
-margin_bottom = -7.96001
+margin_bottom = 0.039978
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0

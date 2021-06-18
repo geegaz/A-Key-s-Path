@@ -1,10 +1,5 @@
 extends Node
 
-
-func _ready():
-	pass
-
-
 ##################### Level Management #####################
 # Used inside level
 var current_world: int = -1
@@ -15,11 +10,32 @@ var worlds_data = [
 	{
 		"name": "World 1",
 		"levels": [
-			"res://Scenes/Levels/World1_Level1.tscn"
+			"res://Scenes/Levels/World1/Tutorial_1.tscn"
 		],
-		"unlocked_levels": 0
+		"unlocked_levels": 1
 	}
 ]
+
+##################### Transition Management #####################
+# TransitionScreen node
+export(NodePath) var transition_screen_path = "TransitionLayer/TransitionScreen"
+onready var _TransitionScreen = get_node_or_null(transition_screen_path)
+# Transition types
+enum {HORIZONTAL, VERTICAL, DIAGONAL, CURTAIN}
+
+##################### Options Management #####################
+# Sounds
+var volumes: Array = [0.7, 0.7, 0.7] setget set_volumes
+enum {MASTER, SFX, MUSIC}
+# Video
+var fullscreen: bool = false setget set_fullscreen
+var screenshake: bool = true setget set_screenshake
+
+
+
+func _ready():
+	pass
+
 
 func is_level_valid(world: int, level: int)->bool:
 	if world < worlds_data.size():
@@ -30,6 +46,15 @@ func is_level_valid(world: int, level: int)->bool:
 	else:
 		print("Invalid world: %s %s"%[world,level])
 	return false
+
+func get_next_level()->Array:
+	if current_world < 0 or current_level < 0:
+		print("Current level not initialized")
+	elif is_level_valid(current_world, current_level+1):
+		return [current_world, current_level+1]
+	elif is_level_valid(current_world+1, 0):
+		return [current_world+1, 0]
+	return [-1, -1]
 
 # Behavior for invalid values: 
 # returns an empty string if the world or level is outside of existing values
@@ -44,13 +69,8 @@ func unlock_level(world: int, level: int):
 	if is_level_valid(world, level):
 		worlds_data[world]["unlocked_levels"] = level+1
 
-
-##################### Transition Management #####################
-# TransitionScreen node
-export(NodePath) var transition_screen_path = "TransitionLayer/TransitionScreen"
-onready var _TransitionScreen = get_node_or_null(transition_screen_path)
-# Transition types
-enum {HORIZONTAL, VERTICAL, DIAGONAL, CURTAIN}
+func goto_level(world: int, level: int):
+	goto_scene(get_level_path(world, level))
 
 func goto_scene(scene_path: String, type: int = DIAGONAL, time: float = 1.0):
 	# If no path has been given, don't do anything
@@ -68,15 +88,6 @@ func goto_scene(scene_path: String, type: int = DIAGONAL, time: float = 1.0):
 	# If there is no TransitionScreen just load the next scene
 	else:
 		get_tree().change_scene(scene_path)
-
-
-##################### Options Management #####################
-# Sounds
-var volumes: Array = [0.7, 0.7, 0.7] setget set_volumes
-enum {MASTER, SFX, MUSIC}
-# Video
-var fullscreen: bool = false setget set_fullscreen
-var screenshake: bool = true setget set_screenshake
 
 func get_volume_linear(bus: int)->float:
 	return db2linear(AudioServer.get_bus_volume_db(bus))
