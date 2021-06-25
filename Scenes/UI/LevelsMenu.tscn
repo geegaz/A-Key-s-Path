@@ -83,6 +83,7 @@ alignment = 1
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 10 )
+custom_constants/separation = 8
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
