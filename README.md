@@ -1,4 +1,4 @@
-*Welcome to the official repository for the game "Out of Control(s)". <br> Here, you can find all jam and post-jam releases in the [Releases](https://github.com/geegaz/GMTK_Jam_2020/releases) section of the repository, or browse the code.*
+*Welcome to the official repository for the game "A Key(s) Path". <br> Here, you can find all jam and post-jam releases in the [Releases](https://github.com/geegaz/GMTK_Jam_2020/releases) section of the repository, or browse the code.*
 
 
 # A Key(s) Path
@@ -35,10 +35,12 @@ The game plays with a mouse and keyboard.
 
 ### Credits:
 
-Made with Godot 3.2.1.<br>
-All design, code and graphics by me (fonts not included).
+Made with Godot 3.3.2.<br>
+All design, code, graphics and fonts by me.
 
-- **Big font:** [Joystix Font](https://www.1001fonts.com/joystix-font.html) by [Raymond Larabie](https://www.1001fonts.com/users/typodermic/)
-- **Small font:** [BitPotion Font Family](https://www.1001fonts.com/bitpotion-font.html) by [JoebRogers](https://www.1001fonts.com/users/JoebRogers/)
 - **SFX:** [Platformer SFX](https://outspacer.itch.io/platformer-sfx) by [David Stearns](https://outspacer.itch.io/)
-- **Music:** [Bunker](https://freemusicarchive.org/music/Metre/Circuit_1731/Bunker) by [Metre](https://freemusicarchive.org/music/Metre)
+- **Music:** /
+
+---
+
+ <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/geegaz/A-Key-s-Path">A Key(s) Path assets</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://geegaz.itch.io/">Geegaz</a> are licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></p> 
