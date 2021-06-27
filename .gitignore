@@ -8,7 +8,5 @@ export_presets.cfg
 .mono/
 data_*/
 
-# License-specific ignores
-Assets/Sounds/
-
+# Custom ignores
 Builds/
