@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=17 format=2]
 
-[ext_resource path="res://Scripts/Tools/TileSets/AutomatedTiles.gd" type="Script" id=1]
+[ext_resource path="res://Addons/SimpleTools/TileSets/AutomatedTiles.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Tilesets/tilesets/terrain_tiles.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Tilesets/tilesets/prop_tiles.png" type="Texture" id=3]
 
@@ -1376,7 +1376,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 15/shapes = [  ]
 15/z_index = 0
 script = ExtResource( 1 )
-connecting_tiles_names = [ "fill", "ground", "grass", "rock", "basalt", "blue_tiles" ]
-sticking_tiles_names = [ "metal", "concrete" ]
+connecting_tiles_names = [  ]
+sticking_tiles_names = [  ]
 create_shapes = true
-automated_tiles_names = [ "fill", "ground", "grass", "rock", "basalt", "blue_tiles", "metal", "concrete", "sand" ]
+automated_tiles_names = [  ]

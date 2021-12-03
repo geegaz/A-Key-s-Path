@@ -20,7 +20,7 @@ tracks/0/keys = {
 "values": [ Vector3( 35, 0, 45 ), Vector3( 35, 120, 45 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "rotation_glowing"
 loop = true
 tracks/0/type = "value"
@@ -48,7 +48,7 @@ tracks/1/keys = {
 "values": [ 0.0, 0.5, 0.0, 0.5, 0.0, 0.5, 0.0, 0.5, 0.0, 0.5, 0.0 ]
 }
 
-[sub_resource type="ViewportTexture" id=3]
+[sub_resource type="ViewportTexture" id=4]
 viewport_path = NodePath("Viewport")
 
 [node name="Cube" type="Node2D"]
@@ -71,7 +71,7 @@ material/0 = null
 autoplay = "rotation"
 playback_speed = 0.05
 anims/rotation = SubResource( 2 )
-anims/rotation_glowing = SubResource( 4 )
+anims/rotation_glowing = SubResource( 3 )
 
 [node name="Camera" type="Camera" parent="Viewport"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
@@ -83,5 +83,5 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 4, 0
 light_energy = 0.2
 light_indirect_energy = 0.0
 
-[node name="Image" type="Sprite" parent="."]
-texture = SubResource( 3 )
+[node name="Sprite" type="Sprite" parent="."]
+texture = SubResource( 4 )

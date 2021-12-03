@@ -332,8 +332,8 @@ end_node = "close"
 [sub_resource type="AnimationNodeStateMachinePlayback" id=19]
 
 [node name="End" type="Area2D"]
-collision_layer = 8
-collision_mask = 0
+collision_layer = 0
+collision_mask = 4
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -368,19 +368,19 @@ scale_amount_curve = SubResource( 4 )
 transform = Transform( 1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0, 0 )
 
 [node name="Cube" type="MeshInstance" parent="Viewport/Pivot"]
-transform = Transform( 0.465292, 0.264294, -0.0788531, -0.133709, 0.726143, 0.161723, 0.125, -0.207057, 0.466509, -0.8, 0.425536, 0.0221352 )
+transform = Transform( 0.465292, 0.264294, -0.0788531, -0.133709, 0.726143, 0.161723, 0.125, -0.207057, 0.466509, -0.8, 0.754246, 0.0800954 )
 material_override = ExtResource( 1 )
 mesh = SubResource( 5 )
 material/0 = null
 
 [node name="Cube2" type="MeshInstance" parent="Viewport/Pivot"]
-transform = Transform( 0.475175, -0.125, 0.0926478, 0.0926474, 0.466508, 0.154235, -0.125, -0.12941, 0.466508, 0.9, 1.1227, 0.145064 )
+transform = Transform( 0.475175, -0.125, 0.0926478, 0.0926474, 0.466508, 0.154235, -0.125, -0.12941, 0.466508, 0.9, 0.590156, 0.0511621 )
 material_override = ExtResource( 1 )
 mesh = SubResource( 5 )
 material/0 = null
 
 [node name="Cube3" type="MeshInstance" parent="Viewport/Pivot"]
-transform = Transform( 0.488904, -0.0602171, 0.0300057, 0.0950239, 0.291116, 0.0745575, -0.0440824, -0.0403202, 0.4935, 0.7, -1.01809, 0.0320758 )
+transform = Transform( 0.488904, -0.0602171, 0.0300057, 0.0950239, 0.291116, 0.0745575, -0.0440824, -0.0403202, 0.4935, 0.7, -0.633735, 0.099848 )
 material_override = ExtResource( 1 )
 mesh = SubResource( 5 )
 material/0 = null
@@ -404,7 +404,7 @@ texture = SubResource( 10 )
 
 [node name="ActivationArea" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 8
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActivationArea"]
 shape = SubResource( 11 )

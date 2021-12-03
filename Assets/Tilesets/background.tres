@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=3 format=2]
 
-[ext_resource path="res://Scripts/Tools/TileSets/ConnectingTiles.gd" type="Script" id=1]
+[ext_resource path="res://Addons/SimpleTools/TileSets/ConnectingTiles.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Tilesets/tilesets/background_tiles.png" type="Texture" id=2]
 
 [resource]

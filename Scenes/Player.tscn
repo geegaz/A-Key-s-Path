@@ -1,8 +1,6 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Footstep 2.wav" type="AudioStream" id=6]
-[ext_resource path="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Jump 1.wav" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Sprites/player/player_animations-Sheet.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -110,16 +108,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 6 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 6 )
-} ],
-"times": PoolRealArray( 0.1, 0.5 )
+"clips": [  ],
+"times": PoolRealArray(  )
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("AudioStreamPlayer:volume_db")
@@ -214,7 +204,7 @@ graph_offset = Vector2( -385, -60 )
 [node name="Player" type="KinematicBody2D" groups=[
 "Player",
 ]]
-collision_layer = 60
+collision_layer = 4
 collision_mask = 3
 script = ExtResource( 1 )
 
@@ -227,6 +217,7 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 10 )
 hframes = 10
 vframes = 9
+frame = 5
 
 [node name="DeathTimer" type="Timer" parent="."]
 wait_time = 1.2
@@ -248,7 +239,6 @@ parameters/playback = SubResource( 25 )
 parameters/MoveState/playback = SubResource( 26 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
 pitch_scale = 0.7
 bus = "SFX"
 

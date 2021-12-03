@@ -16,9 +16,9 @@ func _on_ActivationArea_body_exited(body):
 	if body.is_in_group("Player"):
 		_StateMachine.travel("close")
 
-
 func _on_End_body_entered(body):
-	emit_signal("finished_level")
-	var next_level = Global.get_next_level()
-	Global.unlock_level(next_level[0], next_level[1])
-	Global.goto_level(next_level[0], next_level[1])
+	if body.is_in_group("Player"):
+		emit_signal("finished_level")
+		var next_level = Global.get_next_level()
+		Global.unlock_level(next_level)
+		Global.goto_level(next_level)

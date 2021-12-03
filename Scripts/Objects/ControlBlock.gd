@@ -21,7 +21,7 @@ var dragged = false
 var drag_time = 0.0
 var limit_drag_time = 0.2
 
-var Actions = ["jump", "left", "right"]
+var Actions = ["jump", "ui_left", "ui_right"]
 var control_action: String
 
 onready var ControlSprite: Sprite = $Sprite

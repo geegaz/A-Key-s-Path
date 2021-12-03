@@ -55,9 +55,9 @@ func _physics_process(delta):
 	if controls_enabled:
 		# Get the movement direction on the X axis. 
 		# right = 1, left = -1
-		if right_control and Input.is_action_pressed("right"):
+		if right_control and Input.is_action_pressed("ui_right"):
 			dir += 1
-		if left_control and Input.is_action_pressed("left"):
+		if left_control and Input.is_action_pressed("ui_left"):
 			dir -= 1
 	
 	# Vertical movement

@@ -1,37 +1,62 @@
 extends Control
 
-export(NodePath) var options_menu_path
-onready var _OptionsMenu = get_node_or_null(options_menu_path)
+onready var _OptionsMenu: Control = $OptionsMenu
+onready var _Options: Button = $Pause/CenterContainer/VBoxContainer/Options
+onready var _OptionsBack: Button = $OptionsMenu/OptionsBack
 
-export(NodePath) var option_path = "CenterContainer/VBoxContainer/Options"
+onready var _Pause: Control = $Pause
+onready var _Continue: Button = $Pause/CenterContainer/VBoxContainer/Continue
+
+enum {
+	PAUSE,
+	OPTIONS
+}
 
 func _ready():
 	pause(get_tree().paused)
-	if _OptionsMenu:
-		get_node(option_path).show()
-		_OptionsMenu
+	goto_menu(-1)
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		if _OptionsMenu and _OptionsMenu.visible:
-			_OptionsMenu.back()
+			goto_menu(PAUSE)
 		else:
 			pause(!get_tree().paused)
 
 func pause(state: bool):
-	self.visible = state
+	if state:
+		goto_menu(PAUSE)
+	else:
+		goto_menu(-1)
 	get_tree().paused = state
 
+func goto_menu(menu: int):
+	match menu:
+		PAUSE:
+			_OptionsMenu.hide()
+			_Pause.show()
+			
+			_Continue.grab_focus()
+		OPTIONS:
+			_OptionsMenu.show()
+			_Pause.hide() 
+			
+			_OptionsBack.grab_focus()
+		_:
+			_OptionsMenu.hide()
+			_Pause.hide() 
 
 func _on_Continue_pressed():
 	pause(false)
 
 func _on_BackToMenu_pressed():
 	pause(false)
-	Global.goto_scene("res://Scenes/Main.tscn")
-
+	Global.goto_scene(Global.default_path)
 
 func _on_Options_pressed():
 	if _OptionsMenu:
-		_OptionsMenu.show()
-		self.hide()
+		goto_menu(OPTIONS)
+
+func _on_OptionsBack_pressed():
+	if _OptionsMenu and _OptionsMenu.visible:
+		goto_menu(PAUSE)

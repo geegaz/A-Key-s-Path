@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scripts/UI/CreditsMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Shaders/blur_background.shader" type="Shader" id=2]
 [ext_resource path="res://Assets/Fonts/small_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/Theme/Main.tres" type="Theme" id=4]
+[ext_resource path="res://Addons/SimpleNodes/ActionScrollContainer.gd" type="Script" id=5]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )
@@ -15,7 +15,6 @@ pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 4 )
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -34,6 +33,7 @@ one_shot = true
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
+margin_right = -16.0
 margin_bottom = 24.0
 custom_constants/shadow_offset_y = 1
 text = "Credits"
@@ -50,35 +50,36 @@ anchor_bottom = 1.0
 margin_top = -156.0
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer"]
 margin_right = 304.0
-margin_bottom = 252.0
+margin_bottom = 228.0
 size_flags_horizontal = 3
 custom_constants/separation = 16
 
-[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer2"]
+[node name="MarginContainerTop" type="MarginContainer" parent="ScrollContainer/VBoxContainer2"]
 margin_right = 304.0
-margin_bottom = 20.0
-custom_constants/margin_top = 20
+margin_bottom = 8.0
+custom_constants/margin_top = 8
 
 [node name="CodeDesignGraphics" type="VBoxContainer" parent="ScrollContainer/VBoxContainer2"]
-margin_top = 36.0
+margin_top = 24.0
 margin_right = 304.0
-margin_bottom = 62.0
+margin_bottom = 50.0
 custom_constants/separation = 0
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer2/CodeDesignGraphics"]
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer2/CodeDesignGraphics"]
 margin_right = 304.0
 margin_bottom = 13.0
 custom_constants/shadow_offset_y = 1
 text = "Code, Design & Graphics"
 align = 1
 
-[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer2/CodeDesignGraphics"]
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer2/CodeDesignGraphics"]
 margin_top = 13.0
 margin_right = 304.0
 margin_bottom = 26.0
@@ -86,41 +87,19 @@ custom_fonts/font = ExtResource( 3 )
 text = "Geegaz"
 align = 1
 
-[node name="FontOriginal" type="VBoxContainer" parent="ScrollContainer/VBoxContainer2"]
-visible = false
-margin_top = 78.0
-margin_right = 161.0
-margin_bottom = 124.0
-
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer2/FontOriginal"]
-margin_right = 161.0
-margin_bottom = 13.0
-custom_constants/shadow_offset_y = 1
-text = "Fonts"
-align = 1
-
-[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer2/FontOriginal"]
-margin_top = 17.0
-margin_right = 161.0
-margin_bottom = 46.0
-custom_fonts/font = ExtResource( 3 )
-text = "Joystix by Raymond Larabie
-BitPotion by JoebRogers"
-align = 1
-
-[node name="FontGeegaz" type="VBoxContainer" parent="ScrollContainer/VBoxContainer2"]
-margin_top = 78.0
+[node name="Fonts" type="VBoxContainer" parent="ScrollContainer/VBoxContainer2"]
+margin_top = 66.0
 margin_right = 304.0
-margin_bottom = 124.0
+margin_bottom = 112.0
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer2/FontGeegaz"]
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer2/Fonts"]
 margin_right = 304.0
 margin_bottom = 13.0
 custom_constants/shadow_offset_y = 1
 text = "Fonts"
 align = 1
 
-[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer2/FontGeegaz"]
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer2/Fonts"]
 margin_top = 17.0
 margin_right = 304.0
 margin_bottom = 46.0
@@ -130,38 +109,38 @@ by Geegaz"
 align = 1
 
 [node name="SFX" type="VBoxContainer" parent="ScrollContainer/VBoxContainer2"]
-margin_top = 140.0
+margin_top = 128.0
 margin_right = 304.0
-margin_bottom = 170.0
+margin_bottom = 158.0
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer2/SFX"]
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer2/SFX"]
 margin_right = 304.0
 margin_bottom = 13.0
 custom_constants/shadow_offset_y = 1
 text = "SFX"
 align = 1
 
-[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer2/SFX"]
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer2/SFX"]
 margin_top = 17.0
 margin_right = 304.0
 margin_bottom = 30.0
 custom_fonts/font = ExtResource( 3 )
-text = "Platformer SFX by David Stearns"
+text = "Impact Sounds by Kenney"
 align = 1
 
-[node name="Music" type="VBoxContainer" parent="ScrollContainer/VBoxContainer2"]
-margin_top = 186.0
+[node name="Musics" type="VBoxContainer" parent="ScrollContainer/VBoxContainer2"]
+margin_top = 174.0
 margin_right = 304.0
-margin_bottom = 216.0
+margin_bottom = 204.0
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer2/Music"]
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer2/Musics"]
 margin_right = 304.0
 margin_bottom = 13.0
 custom_constants/shadow_offset_y = 1
 text = "Music"
 align = 1
 
-[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer2/Music"]
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer2/Musics"]
 margin_top = 17.0
 margin_right = 304.0
 margin_bottom = 30.0
@@ -169,8 +148,72 @@ custom_fonts/font = ExtResource( 3 )
 text = "-"
 align = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="ScrollContainer/VBoxContainer2"]
-margin_top = 232.0
+[node name="SFXOriginal" type="VBoxContainer" parent="ScrollContainer/VBoxContainer2"]
+visible = false
+margin_top = 186.0
 margin_right = 304.0
-margin_bottom = 252.0
-custom_constants/margin_top = 20
+margin_bottom = 216.0
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer2/SFXOriginal"]
+margin_right = 304.0
+margin_bottom = 13.0
+custom_constants/shadow_offset_y = 1
+text = "SFX"
+align = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer2/SFXOriginal"]
+margin_top = 17.0
+margin_right = 304.0
+margin_bottom = 30.0
+custom_fonts/font = ExtResource( 3 )
+text = "Platformer SFX by David Stearns"
+align = 1
+
+[node name="FontOriginal" type="VBoxContainer" parent="ScrollContainer/VBoxContainer2"]
+visible = false
+margin_top = 78.0
+margin_right = 304.0
+margin_bottom = 124.0
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer2/FontOriginal"]
+margin_right = 304.0
+margin_bottom = 13.0
+custom_constants/shadow_offset_y = 1
+text = "Fonts"
+align = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer2/FontOriginal"]
+margin_top = 17.0
+margin_right = 304.0
+margin_bottom = 46.0
+custom_fonts/font = ExtResource( 3 )
+text = "Joystix by Raymond Larabie
+BitPotion by JoebRogers"
+align = 1
+
+[node name="MusicOriginal" type="VBoxContainer" parent="ScrollContainer/VBoxContainer2"]
+visible = false
+margin_top = 186.0
+margin_right = 304.0
+margin_bottom = 216.0
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer2/MusicOriginal"]
+margin_right = 304.0
+margin_bottom = 13.0
+custom_constants/shadow_offset_y = 1
+text = "Music"
+align = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer2/MusicOriginal"]
+margin_top = 17.0
+margin_right = 304.0
+margin_bottom = 30.0
+custom_fonts/font = ExtResource( 3 )
+text = "Bunker by Metre"
+align = 1
+
+[node name="MarginContainerBottom" type="MarginContainer" parent="ScrollContainer/VBoxContainer2"]
+margin_top = 220.0
+margin_right = 304.0
+margin_bottom = 228.0
+custom_constants/margin_top = 8
