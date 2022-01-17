@@ -1,13 +1,12 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Global.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/UI/TransitionScreen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/SceneTransition.tscn" type="PackedScene" id=2]
 
 [node name="Global" type="Node"]
 pause_mode = 2
 script = ExtResource( 1 )
 
-[node name="TransitionLayer" type="CanvasLayer" parent="."]
-layer = 3
+[node name="OverlayLayer" type="CanvasLayer" parent="."]
 
-[node name="TransitionScreen" parent="TransitionLayer" instance=ExtResource( 2 )]
+[node name="SceneTransition" parent="OverlayLayer" instance=ExtResource( 2 )]

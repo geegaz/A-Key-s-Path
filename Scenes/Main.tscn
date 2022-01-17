@@ -168,13 +168,13 @@ tile_data = PoolIntArray( 196588, 13, 0, 131072, 11, 0, 131091, 14, 0, 131111, 3
 [node name="PlayerSprite" type="AnimatedSprite" parent="Background"]
 position = Vector2( 80, 144 )
 frames = SubResource( 9 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="FlagSprite" type="AnimatedSprite" parent="Background"]
 position = Vector2( 264, 104 )
 frames = SubResource( 18 )
-frame = 5
+frame = 4
 playing = true
 
 [node name="MainMenu" type="Control" parent="."]
@@ -276,6 +276,7 @@ texture_pressed = SubResource( 20 )
 texture_hover = SubResource( 21 )
 texture_disabled = SubResource( 22 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -286,9 +287,9 @@ anchor_right = 0.0
 [node name="OptionsBack" type="TextureButton" parent="OptionsMenu"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -24.0
+margin_left = -24.8909
 margin_top = 5.0
-margin_right = -8.0
+margin_right = -8.89093
 margin_bottom = 21.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
@@ -298,6 +299,7 @@ texture_pressed = SubResource( 24 )
 texture_hover = SubResource( 25 )
 texture_disabled = SubResource( 26 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -318,6 +320,7 @@ texture_pressed = SubResource( 28 )
 texture_hover = SubResource( 29 )
 texture_disabled = SubResource( 30 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -326,11 +329,3 @@ anchor_mode = 0
 current = true
 
 [node name="Tween" type="Tween" parent="."]
-
-[connection signal="pressed" from="MainMenu/Quit" to="." method="_on_Quit_pressed"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/Start" to="." method="_on_Start_pressed"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/HBoxContainer/Options" to="." method="_on_Options_pressed"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/HBoxContainer/Credits" to="." method="_on_Credits_pressed"]
-[connection signal="pressed" from="LevelsMenu/LevelsBack" to="." method="_on_LevelsBack_pressed"]
-[connection signal="pressed" from="OptionsMenu/OptionsBack" to="." method="_on_OptionsBack_pressed"]
-[connection signal="pressed" from="CreditsMenu/CreditsBack" to="." method="_on_CreditsBack_pressed"]

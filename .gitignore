@@ -9,4 +9,5 @@ export_presets.cfg
 data_*/
 
 # Custom ignores
-.build/
+Builds/
+Media/

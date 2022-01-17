@@ -1,36 +1,32 @@
 extends Node
 
-export(String, FILE, "*.json") var SAVE_PATH: String = "res://save.json"
+# Sounds
+enum {MASTER, SFX, MUSIC}
+# Transition types
+enum {HORIZONTAL, VERTICAL, DIAGONAL, CURTAIN}
 
-##################### Level Management #####################
-# Used inside level
-var current_level: int = -1
-var current_checkpoint: Vector2 = Vector2.ZERO
-# World data
+export(String, FILE, "*.json") var save_path: String = "res://save.json"
 export(String, FILE, "*.tscn") var default_path = "res://Scenes/Main.tscn"
 export(Array, String, FILE, "*.tscn") var level_paths = [
 	"res://Scenes/Levels/Tutorial_1.tscn"
 ]
 export var levels_unlocked: int = 1
+export(NodePath) var transition_screen_path = "OverlayLayer/SceneTransition"
 
-##################### Transition Management #####################
-# TransitionScreen node
-export(NodePath) var transition_screen_path = "TransitionLayer/TransitionScreen"
-onready var _TransitionScreen = get_node_or_null(transition_screen_path)
-# Transition types
-enum {HORIZONTAL, VERTICAL, DIAGONAL, CURTAIN}
-
-##################### Options Management #####################
-# Sounds
-enum {MASTER, SFX, MUSIC}
+var current_level: int = -1
+var current_checkpoint: Vector2 = Vector2.ZERO
 var volumes: Array = [100, 70, 70] setget set_volumes
-# Video
 var fullscreen: bool = false setget set_fullscreen
 var screenshake: bool = true setget set_screenshake
 
+onready var _TransitionScreen = get_node_or_null(transition_screen_path)
 
+#################### Level handling ####################
+# Workflow: 
+# | get_next_level
+# | unlock_level
+# | goto_level - either level is valid or sends back to the main menu
 
-# Workflow: get_next_level -> unlock_level -> goto_level
 func is_level_valid(level: int)->bool:
 	return level < level_paths.size()
 
@@ -54,23 +50,20 @@ func goto_level(level: int):
 	current_level = level
 	goto_scene(get_level_path(level))
 
-func goto_scene(scene_path: String, type: int = DIAGONAL, time: float = 1.0):
+func goto_scene(scene_path: String, transition_time: float = 1.0, transition_type: int = DIAGONAL):
 	# If no path has been given, replace it with default path
 	if scene_path == "":
 		scene_path = default_path
 		
-	# Else if a TransitionScreen is available, do a transition
+	# If a TransitionScreen is available, do a transition
 	if _TransitionScreen:
-		if !_TransitionScreen.in_transition:
-			_TransitionScreen.transition_start(type, time/2.0)
-			# Wait for the middle of the transition
-			yield(_TransitionScreen, "transition_middle")
-			get_tree().change_scene(scene_path)
-			# Reveal the next scene
-			_TransitionScreen.transition_end(type, time/2.0)
-	# If there is no TransitionScreen just load the next scene
+		_TransitionScreen.transition_to_scene(scene_path, transition_time, transition_type)
+	# Else just load the next scene
 	else:
 		get_tree().change_scene(scene_path)
+
+
+#################### Options handling ####################
 
 func get_volume_linear(bus: int)->float:
 	return db2linear(AudioServer.get_bus_volume_db(bus))*100

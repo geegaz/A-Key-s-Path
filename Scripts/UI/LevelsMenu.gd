@@ -23,6 +23,7 @@ func make_levels():
 		# If the level hasn't been unlocked yet
 		if level >= Global.levels_unlocked:
 			new_level.disabled = true
+		
 		# Connect button to its respective level
 		new_level.connect("pressed", Global, "goto_level", [level])
 		_LevelsContainer.add_child(new_level)

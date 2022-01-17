@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Scripts/UI/TransitionScreen.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Shaders/transition.shader" type="Shader" id=2]
+[ext_resource path="res://Assets/Shaders/transition.shader" type="Shader" id=1]
+[ext_resource path="res://Assets/Shaders/animated_sprite.shader" type="Shader" id=2]
 [ext_resource path="res://Assets/Sprites/transitions/diagonal.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/player/loading_animation-Sheet.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Shaders/animated_sprite.shader" type="Shader" id=5]
+[ext_resource path="res://Scripts/UI/SceneTransition.gd" type="Script" id=5]
 
 [sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 2 )
+shader = ExtResource( 1 )
 shader_param/progress = 0.0
 shader_param/smooth_size = 0.001
 shader_param/color = Color( 0.105882, 0.105882, 0.105882, 1 )
@@ -39,6 +39,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "transition_out"
@@ -66,18 +78,29 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="ShaderMaterial" id=4]
-shader = ExtResource( 5 )
+shader = ExtResource( 2 )
 shader_param/h_frames = 4
 shader_param/v_frames = 1
 shader_param/frame_duration = 0.1
 
-[node name="TransitionScreen" type="Control"]
-pause_mode = 2
+[node name="SceneTransition" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -100,5 +123,3 @@ material = SubResource( 4 )
 position = Vector2( 296, 160 )
 texture = ExtResource( 4 )
 hframes = 4
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

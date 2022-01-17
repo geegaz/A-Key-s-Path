@@ -9,13 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "LabelRange",
+"class": "HealthBar",
+"language": "GDScript",
+"path": "res://Addons/SimpleNodes/HealthBar.gd"
+}, {
 "base": "Range",
 "class": "LabelRange",
 "language": "GDScript",
 "path": "res://Addons/SimpleNodes/LabelRange.gd"
+}, {
+"base": "AudioStreamPlayer",
+"class": "RandomStreamPlayer",
+"language": "GDScript",
+"path": "res://Addons/SimpleNodes/RandomStreamPlayer.gd"
 } ]
 _global_script_class_icons={
-"LabelRange": ""
+"HealthBar": "res://Addons/SimpleNodes/HealthBar.svg",
+"LabelRange": "",
+"RandomStreamPlayer": "res://Addons/SimpleNodes/RandomStreamPlayer.svg"
 }
 
 [application]
