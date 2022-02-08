@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=27 format=2]
 
-[ext_resource path="res://Assets/Sprites/UI/theme-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/ui/theme-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Fonts/base_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/Fonts/small_font.tres" type="DynamicFont" id=7]
 
@@ -140,6 +140,7 @@ margin_left = 2.3355
 margin_right = 2.0562
 margin_top = 29.7346
 margin_bottom = 14.0
+expand_margin_top = 16.0
 
 [resource]
 default_font = ExtResource( 7 )
@@ -209,9 +210,9 @@ VScrollBar/styles/scroll = SubResource( 15 )
 VScrollBar/styles/scroll_focus = SubResource( 16 )
 WindowDialog/colors/title_color = Color( 0, 0, 0, 1 )
 WindowDialog/constants/close_h_ofs = 17
-WindowDialog/constants/close_v_ofs = -1
+WindowDialog/constants/close_v_ofs = 15
 WindowDialog/constants/scaleborder_size = 0
-WindowDialog/constants/title_height = -18
+WindowDialog/constants/title_height = 16
 WindowDialog/fonts/title_font = ExtResource( 3 )
 WindowDialog/icons/close = SubResource( 21 )
 WindowDialog/icons/close_highlight = SubResource( 22 )

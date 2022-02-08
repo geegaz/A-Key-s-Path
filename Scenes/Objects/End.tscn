@@ -1,12 +1,13 @@
 [gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://Assets/Materials/cube.tres" type="Material" id=1]
+[ext_resource path="res://Assets/Materials/end_cube.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Shaders/advanced_outline.shader" type="Shader" id=2]
 [ext_resource path="res://Assets/Sprites/effects/end_particle.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Objects/End.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Models/custom_cube.obj" type="ArrayMesh" id=5]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16 )
+[sub_resource type="CircleShape2D" id=20]
+radius = 16.0
 
 [sub_resource type="SpatialMaterial" id=2]
 flags_transparent = true
@@ -22,8 +23,6 @@ emission_texture = ExtResource( 3 )
 
 [sub_resource type="Curve" id=4]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -2.01948, 0.0, 0, 0 ]
-
-[sub_resource type="CubeMesh" id=5]
 
 [sub_resource type="Animation" id=6]
 length = 0.5
@@ -49,7 +48,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( -18.8714, -9.59391, -16.416 ), Vector3( -18.8714, -9.59391, -16.416 ) ]
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 0, 0, -16.416 ), Vector3( 0, 0, -16.416 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Pivot/Cube2:rotation_degrees")
@@ -61,7 +60,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( -17.967, 11.2327, 11.2327 ), Vector3( -17.967, 11.2327, 11.2327 ) ]
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 0, 0, 11.233 ), Vector3( 0, 0, 11.233 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Pivot/Cube2:translation")
@@ -97,7 +96,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( -8.57562, 3.47941, 11.081 ), Vector3( -8.57562, 3.47941, 11.081 ) ]
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 0, 0, 11.081 ), Vector3( 0, 0, 11.081 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("Particles:emitting")
@@ -160,7 +159,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( -18.8714, -9.59391, -16.416 ), Vector3( -18.8714, -9.59391, -16.416 ), Vector3( -1.06721e-06, 0, 0 ) ]
+"values": [ Vector3( 0, 0, -16.416 ), Vector3( 0, 0, -16.416 ), Vector3( -1.06721e-06, 0, 0 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Pivot/Cube2:translation")
@@ -184,7 +183,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( -17.967, 11.2327, 11.2327 ), Vector3( -17.967, 11.2327, 11.2327 ), Vector3( 0, 0, 0 ) ]
+"values": [ Vector3( 0, 0, 11.233 ), Vector3( 0, 0, 11.233 ), Vector3( 0, 0, 0 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Pivot/Cube3:translation")
@@ -208,7 +207,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( -8.57562, 3.47941, 11.081 ), Vector3( -8.57562, 3.47941, 11.081 ), Vector3( -3.55738e-06, 0, 0 ) ]
+"values": [ Vector3( 0, 0, 11.081 ), Vector3( 0, 0, 11.081 ), Vector3( -3.55738e-06, 0, 0 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("Particles:emitting")
@@ -315,6 +314,7 @@ switch_mode = 2
 auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=16]
+xfade_time = 0.2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=17]
 
@@ -337,7 +337,7 @@ collision_mask = 4
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 20 )
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 64, 64 )
@@ -365,37 +365,30 @@ damping = 2.0
 scale_amount_curve = SubResource( 4 )
 
 [node name="Pivot" type="Spatial" parent="Viewport"]
-transform = Transform( 1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0, 0 )
+transform = Transform( -1, -2.99004e-08, -8.21505e-08, 0, 0.939693, -0.34202, 8.74228e-08, -0.34202, -0.939693, 0, 0, 0 )
 
 [node name="Cube" type="MeshInstance" parent="Viewport/Pivot"]
-transform = Transform( 0.465292, 0.264294, -0.0788531, -0.133709, 0.726143, 0.161723, 0.125, -0.207057, 0.466509, -0.8, 0.754246, 0.0800954 )
+transform = Transform( 0.479617, 0.226089, 0, -0.141305, 0.767393, 0, 0, 0, 0.500003, -0.8, 0.870823, 0.100651 )
 material_override = ExtResource( 1 )
-mesh = SubResource( 5 )
+mesh = ExtResource( 5 )
 material/0 = null
 
 [node name="Cube2" type="MeshInstance" parent="Viewport/Pivot"]
-transform = Transform( 0.475175, -0.125, 0.0926478, 0.0926474, 0.466508, 0.154235, -0.125, -0.12941, 0.466508, 0.9, 0.590156, 0.0511621 )
+transform = Transform( 0.490421, -0.0974, 0, 0.0973996, 0.490423, 0, 0, 0, 0.500002, 0.9, 1.30019, 0.176361 )
 material_override = ExtResource( 1 )
-mesh = SubResource( 5 )
+mesh = ExtResource( 5 )
 material/0 = null
 
 [node name="Cube3" type="MeshInstance" parent="Viewport/Pivot"]
-transform = Transform( 0.488904, -0.0602171, 0.0300057, 0.0950239, 0.291116, 0.0745575, -0.0440824, -0.0403202, 0.4935, 0.7, -0.633735, 0.099848 )
+transform = Transform( 0.490678, -0.0576591, 0, 0.0960983, 0.294407, 0, 0, 0, 0.500001, 0.7, -0.832456, 0.0648083 )
 material_override = ExtResource( 1 )
-mesh = SubResource( 5 )
+mesh = ExtResource( 5 )
 material/0 = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Viewport"]
 anims/break = SubResource( 6 )
 anims/close = SubResource( 7 )
 anims/hover = SubResource( 8 )
-
-[node name="DirectionalLight" type="DirectionalLight" parent="Viewport"]
-transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 4, 0 )
-light_color = Color( 0.913725, 0.682353, 0.682353, 1 )
-light_energy = 1.5
-light_indirect_energy = 0.0
-light_specular = 0.0
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 9 )

@@ -1,8 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Materials/background_cube.tres" type="Material" id=1]
-
-[sub_resource type="CubeMesh" id=1]
+[ext_resource path="res://Assets/Models/custom_cube.obj" type="ArrayMesh" id=2]
 
 [sub_resource type="Animation" id=2]
 loop = true
@@ -63,7 +62,7 @@ render_target_v_flip = true
 transform = Transform( 0.707107, -0.707107, 0, 0.579228, 0.579228, -0.573577, 0.40558, 0.40558, 0.819152, 0, 0, 0 )
 material_override = ExtResource( 1 )
 cast_shadow = 0
-mesh = SubResource( 1 )
+mesh = ExtResource( 2 )
 skeleton = NodePath("")
 material/0 = null
 
@@ -77,11 +76,6 @@ anims/rotation_glowing = SubResource( 3 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
 projection = 1
 size = 4.0
-
-[node name="DirectionalLightUp" type="DirectionalLight" parent="Viewport"]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 4, 0 )
-light_energy = 0.2
-light_indirect_energy = 0.0
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = SubResource( 4 )

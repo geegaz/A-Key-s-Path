@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tilesets/terrain.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/UI/ControlsScreen.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Objects/End.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/UI/controls/DragBlock.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/UI/PauseMenu.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/UI/OptionsMenu.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Sprites/ui/controls/left.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
 
 [node name="TestWorld" type="Node"]
 
@@ -24,14 +27,22 @@ tile_data = PoolIntArray( 393212, 1, 0, 393213, 1, 1, 393214, 1, 1, 393215, 1, 1
 [node name="ControlsUI" parent="." instance=ExtResource( 3 )]
 player_path = NodePath("../Player")
 
-[node name="End" parent="." instance=ExtResource( 4 )]
-position = Vector2( 248, 64 )
-next_level = "res://Scenes/Main.tscn"
-
 [node name="UILayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="UILayer" instance=ExtResource( 5 )]
-options_menu_path = NodePath("../OptionsMenu")
 
-[node name="OptionsMenu" parent="UILayer" instance=ExtResource( 6 )]
-pause_menu_path = NodePath("../PauseMenu")
+[node name="DragBlock" type="KinematicBody2D" parent="."]
+input_pickable = true
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DragBlock"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="DragBlock"]
+texture = ExtResource( 6 )
+hframes = 2
+vframes = 4
+
+[connection signal="input_event" from="DragBlock" to="DragBlock" method="_on_DragBlock_input_event"]
+[connection signal="mouse_entered" from="DragBlock" to="DragBlock" method="_on_DragBlock_mouse_entered"]
+[connection signal="mouse_exited" from="DragBlock" to="DragBlock" method="_on_DragBlock_mouse_exited"]

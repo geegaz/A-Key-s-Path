@@ -1,15 +1,15 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/UI/LevelsMenu.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Theme/resources/level_button/disabled.tres" type="Texture" id=2]
-[ext_resource path="res://Assets/Theme/resources/level_button/hover.tres" type="Texture" id=3]
-[ext_resource path="res://Assets/Theme/resources/level_button/normal.tres" type="Texture" id=4]
-[ext_resource path="res://Assets/Theme/resources/level_button/pressed.tres" type="Texture" id=5]
-[ext_resource path="res://Assets/Theme/resources/level_button/big_hover.tres" type="Texture" id=6]
-[ext_resource path="res://Assets/Theme/resources/level_button/big_pressed.tres" type="Texture" id=7]
-[ext_resource path="res://Assets/Theme/resources/level_button/big_disabled.tres" type="Texture" id=8]
-[ext_resource path="res://Assets/Theme/resources/level_button/big_normal.tres" type="Texture" id=9]
-[ext_resource path="res://Assets/Theme/Main.tres" type="Theme" id=10]
+[ext_resource path="res://Assets/Themes/resources/level_button/disabled.tres" type="Texture" id=2]
+[ext_resource path="res://Assets/Themes/resources/level_button/hover.tres" type="Texture" id=3]
+[ext_resource path="res://Assets/Themes/resources/level_button/normal.tres" type="Texture" id=4]
+[ext_resource path="res://Assets/Themes/resources/level_button/pressed.tres" type="Texture" id=5]
+[ext_resource path="res://Assets/Themes/resources/level_button/big_hover.tres" type="Texture" id=6]
+[ext_resource path="res://Assets/Themes/resources/level_button/big_pressed.tres" type="Texture" id=7]
+[ext_resource path="res://Assets/Themes/resources/level_button/big_disabled.tres" type="Texture" id=8]
+[ext_resource path="res://Assets/Themes/resources/level_button/big_normal.tres" type="Texture" id=9]
+[ext_resource path="res://Assets/Themes/Main.tres" type="Theme" id=10]
 
 [node name="LevelsMenu" type="Control"]
 anchor_right = 1.0
@@ -62,71 +62,6 @@ margin_bottom = 16.0
 theme = ExtResource( 10 )
 custom_constants/separation = 8
 alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="LevelButton" type="TextureButton" parent="LevelsContainer"]
-visible = false
-margin_left = 112.0
-margin_top = 4.0
-margin_right = 128.0
-margin_bottom = 20.0
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-texture_disabled = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="LevelButton2" type="TextureButton" parent="LevelsContainer"]
-visible = false
-margin_left = 124.0
-margin_top = 4.0
-margin_right = 140.0
-margin_bottom = 20.0
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-texture_disabled = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="LevelButton3" type="TextureButton" parent="LevelsContainer"]
-visible = false
-margin_left = 136.0
-margin_top = 4.0
-margin_right = 152.0
-margin_bottom = 20.0
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-texture_disabled = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="FinalLevelButton" type="TextureButton" parent="LevelsContainer"]
-visible = false
-margin_left = 148.0
-margin_right = 172.0
-margin_bottom = 24.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 9 )
-texture_pressed = ExtResource( 7 )
-texture_hover = ExtResource( 6 )
-texture_disabled = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

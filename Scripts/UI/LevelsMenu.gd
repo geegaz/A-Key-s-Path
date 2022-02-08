@@ -1,10 +1,10 @@
 extends Control
 
-export(NodePath) var template_level_path = "Templates/LevelButton"
-export(NodePath) var template_final_level_path = "Templates/FinalLevelButton"
+export(NodePath) var template_level = "Templates/LevelButton"
+export(NodePath) var template_final_level = "Templates/FinalLevelButton"
 
-onready var _TemplateLevel: TextureButton = get_node_or_null(template_level_path)
-onready var _TemplateFinalLevel: TextureButton = get_node_or_null(template_final_level_path)
+onready var _TemplateLevel: TextureButton = get_node_or_null(template_level)
+onready var _TemplateFinalLevel: TextureButton = get_node_or_null(template_final_level)
 
 onready var _LevelsContainer = $LevelsContainer
 

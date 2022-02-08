@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Assets/Theme/Main.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Themes/Main.tres" type="Theme" id=1]
 [ext_resource path="res://Scenes/UI/OptionsMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Shaders/blur_background.shader" type="Shader" id=3]
 [ext_resource path="res://Scripts/UI/PauseMenu.gd" type="Script" id=4]
@@ -81,12 +81,10 @@ text = "Back to menu"
 visible = false
 
 [node name="OptionsBack" type="Button" parent="OptionsMenu"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -87.0
-margin_top = 3.0
-margin_right = -48.3733
-margin_bottom = 22.1655
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 46.6267
+margin_bottom = 27.1655
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false

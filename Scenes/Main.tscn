@@ -1,7 +1,7 @@
 [gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Theme/Main.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/Themes/Main.tres" type="Theme" id=2]
 [ext_resource path="res://Assets/Fonts/title_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/UI/OptionsMenu.tscn" type="PackedScene" id=5]
@@ -10,7 +10,7 @@
 [ext_resource path="res://Scenes/UI/CreditsMenu.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/UI/LevelsMenu.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Sprites/player/player_animations-Sheet.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Sprites/UI/arrows-Sheet.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Sprites/ui/arrows-Sheet.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Sprites/flag-Sheet.png" type="Texture" id=17]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -168,13 +168,13 @@ tile_data = PoolIntArray( 196588, 13, 0, 131072, 11, 0, 131091, 14, 0, 131111, 3
 [node name="PlayerSprite" type="AnimatedSprite" parent="Background"]
 position = Vector2( 80, 144 )
 frames = SubResource( 9 )
-frame = 1
+frame = 6
 playing = true
 
 [node name="FlagSprite" type="AnimatedSprite" parent="Background"]
 position = Vector2( 264, 104 )
 frames = SubResource( 18 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="MainMenu" type="Control" parent="."]
@@ -254,6 +254,15 @@ margin_bottom = 19.1655
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 text = "Credits"
+
+[node name="ColorRect" type="ColorRect" parent="MainMenu"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.498039 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="LevelsMenu" parent="." instance=ExtResource( 9 )]
 anchor_top = -1.06667

@@ -16,6 +16,8 @@ onready var LevelsBackButton = $LevelsMenu/LevelsBack
 
 onready var QuitButton = $MainMenu/Quit
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Connect every button

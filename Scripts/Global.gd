@@ -2,8 +2,6 @@ extends Node
 
 # Sounds
 enum {MASTER, SFX, MUSIC}
-# Transition types
-enum {HORIZONTAL, VERTICAL, DIAGONAL, CURTAIN}
 
 export(String, FILE, "*.json") var save_path: String = "res://save.json"
 export(String, FILE, "*.tscn") var default_path = "res://Scenes/Main.tscn"
@@ -50,14 +48,14 @@ func goto_level(level: int):
 	current_level = level
 	goto_scene(get_level_path(level))
 
-func goto_scene(scene_path: String, transition_time: float = 1.0, transition_type: int = DIAGONAL):
+func goto_scene(scene_path: String, transition_time: float = 0.5):
 	# If no path has been given, replace it with default path
 	if scene_path == "":
 		scene_path = default_path
 		
 	# If a TransitionScreen is available, do a transition
 	if _TransitionScreen:
-		_TransitionScreen.transition_to_scene(scene_path, transition_time, transition_type)
+		_TransitionScreen.transition_to_scene(scene_path, transition_time)
 	# Else just load the next scene
 	else:
 		get_tree().change_scene(scene_path)

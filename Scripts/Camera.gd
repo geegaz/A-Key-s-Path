@@ -5,7 +5,7 @@ export(NodePath) var camera_limits_rect
 onready var _CameraLimitsRect: Control = get_node_or_null(camera_limits_rect)
 
 export(Vector2) var target
-export(int, FLAGS, "x", "y") var lock_axis = 0
+export(int, FLAGS, "X", "Y") var lock_axis = 0
 
 onready var _Tween = $Tween
 

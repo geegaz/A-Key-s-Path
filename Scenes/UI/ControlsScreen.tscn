@@ -3,10 +3,10 @@
 [ext_resource path="res://Scenes/UI/Controls/ControlLeft.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/UI/Controls/ControlJump.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/UI/Controls/ControlRight.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/Objects/ControlsUI.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Sprites/UI/controls/controls_place.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sprites/UI/controls/controls_background_top.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sprites/UI/controls/controls_background.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/UI/controls/ControlsUI.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Sprites/ui/controls/controls_place.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/ui/controls/controls_background_top.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/ui/controls/controls_background.png" type="Texture" id=7]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 5 )

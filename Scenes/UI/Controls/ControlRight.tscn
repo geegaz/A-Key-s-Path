@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Scripts/Objects/ControlBlock.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sprites/UI/controls/right.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/UI/controls/ControlBlock.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/ui/controls/right.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/effects/light_mask.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Shaker.tscn" type="PackedScene" id=4]
 
@@ -54,7 +54,7 @@ disabled = true
 
 [node name="Placement" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 17
+collision_mask = 5
 
 [node name="PlacementCollider" type="CollisionShape2D" parent="Placement"]
 shape = SubResource( 2 )

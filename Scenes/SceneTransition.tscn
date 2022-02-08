@@ -8,7 +8,7 @@
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
-shader_param/progress = 0.0
+shader_param/progress = -1.0
 shader_param/smooth_size = 0.001
 shader_param/color = Color( 0.105882, 0.105882, 0.105882, 1 )
 shader_param/transition_mask = ExtResource( 3 )
@@ -46,10 +46,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ true, true ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -85,10 +85,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true, false ]
 }
 
 [sub_resource type="ShaderMaterial" id=4]
@@ -119,6 +119,7 @@ anims/transition_in = SubResource( 2 )
 anims/transition_out = SubResource( 3 )
 
 [node name="LoadingSprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 material = SubResource( 4 )
 position = Vector2( 296, 160 )
 texture = ExtResource( 4 )

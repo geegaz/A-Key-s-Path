@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/UI/OptionsMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Shaders/blur_background.shader" type="Shader" id=2]
 [ext_resource path="res://Assets/Fonts/small_font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Assets/Theme/Main.tres" type="Theme" id=4]
+[ext_resource path="res://Assets/Themes/Main.tres" type="Theme" id=4]
 [ext_resource path="res://Addons/SimpleNodes/LabelRange.gd" type="Script" id=5]
 
 [sub_resource type="ShaderMaterial" id=1]
@@ -31,7 +31,7 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
-margin_right = -16.0
+margin_right = -1.0
 margin_bottom = 24.0
 custom_constants/shadow_offset_y = 1
 text = "Options"
@@ -55,19 +55,23 @@ __meta__ = {
 
 [node name="CenterContainer" type="CenterContainer" parent="ScrollContainer"]
 margin_right = 304.0
-margin_bottom = 158.0
+margin_bottom = 174.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/CenterContainer"]
 margin_left = 73.0
 margin_right = 231.0
-margin_bottom = 158.0
+margin_bottom = 174.0
 custom_constants/separation = 16
 
-[node name="Sound" type="VBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer"]
+[node name="PushTop" type="Control" parent="ScrollContainer/CenterContainer/VBoxContainer"]
 margin_right = 158.0
-margin_bottom = 73.0
+
+[node name="Sound" type="VBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer"]
+margin_top = 16.0
+margin_right = 158.0
+margin_bottom = 89.0
 
 [node name="Label" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/Sound"]
 margin_right = 158.0
@@ -174,9 +178,9 @@ script = ExtResource( 5 )
 label_path = NodePath("../Number")
 
 [node name="Display" type="VBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer"]
-margin_top = 89.0
+margin_top = 105.0
 margin_right = 158.0
-margin_bottom = 142.0
+margin_bottom = 158.0
 
 [node name="Label" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/Display"]
 margin_right = 158.0
@@ -216,6 +220,6 @@ pressed = true
 text = "Screenshake"
 
 [node name="PushBottom" type="Control" parent="ScrollContainer/CenterContainer/VBoxContainer"]
-margin_top = 158.0
+margin_top = 174.0
 margin_right = 158.0
-margin_bottom = 158.0
+margin_bottom = 174.0

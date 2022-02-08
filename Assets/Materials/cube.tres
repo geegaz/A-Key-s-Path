@@ -1,8 +1,0 @@
-[gd_resource type="SpatialMaterial" format=2]
-
-[resource]
-resource_local_to_scene = true
-albedo_color = Color( 0.305882, 0.396078, 0.501961, 1 )
-metallic_specular = 0.0
-uv1_scale = Vector3( 3, 2, 1 )
-uv2_scale = Vector3( 0.5, 1, 1 )
