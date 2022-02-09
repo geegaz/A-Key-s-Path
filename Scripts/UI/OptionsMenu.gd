@@ -22,6 +22,11 @@ func _ready():
 	_Fullscreen.pressed = Global.fullscreen
 	_Screenshake.pressed = Global.screenshake
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("fullscreen"):
+		Global.fullscreen = not Global.fullscreen
+		_Fullscreen.pressed = Global.fullscreen
+
 func _on_Sliders_value_changed(value: float, bus: int):
 	Global.volumes[bus] = value
 

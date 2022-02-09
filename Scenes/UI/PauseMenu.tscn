@@ -1,14 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Themes/Main.tres" type="Theme" id=1]
 [ext_resource path="res://Scenes/UI/OptionsMenu.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Shaders/blur_background.shader" type="Shader" id=3]
 [ext_resource path="res://Scripts/UI/PauseMenu.gd" type="Script" id=4]
-
-[sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 3 )
-shader_param/blur_amount = 2.0
-shader_param/mix_amount = 0.5
 
 [node name="PauseMenu" type="Control"]
 pause_mode = 2
@@ -29,9 +23,9 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="Pause"]
-material = SubResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.498039 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

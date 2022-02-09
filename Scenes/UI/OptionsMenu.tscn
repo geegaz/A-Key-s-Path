@@ -1,15 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/UI/OptionsMenu.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Shaders/blur_background.shader" type="Shader" id=2]
 [ext_resource path="res://Assets/Fonts/small_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/Themes/Main.tres" type="Theme" id=4]
 [ext_resource path="res://Addons/SimpleNodes/LabelRange.gd" type="Script" id=5]
-
-[sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 2 )
-shader_param/blur_amount = 2.0
-shader_param/mix_amount = 0.5
 
 [node name="OptionsMenu" type="Control"]
 pause_mode = 2
@@ -22,9 +16,9 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.498039 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
