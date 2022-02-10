@@ -106,6 +106,7 @@ hframes = 2
 vframes = 4
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
 margin_top = 57.0
 margin_right = 400.0
 margin_bottom = 91.0
@@ -114,15 +115,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="title" type="Sprite" parent="ColorRect2"]
+position = Vector2( 200, 17 )
+texture = ExtResource( 8 )
+
 [node name="icon" type="Sprite" parent="."]
 visible = false
 position = Vector2( 200, 142 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 9 )
-
-[node name="title" type="Sprite" parent="."]
-position = Vector2( 200, 74 )
-texture = ExtResource( 8 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 200, 113 )
