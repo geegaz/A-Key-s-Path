@@ -1,0 +1,9 @@
+{
+    "connecting": [
+        "background_rock",
+        "background_fill"
+    ],
+    "sticky": [
+        "background_metal"
+    ]
+}

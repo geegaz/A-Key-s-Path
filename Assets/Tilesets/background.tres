@@ -3,7 +3,6 @@
 [ext_resource path="res://Addons/SimpleTools/TileSets/ConnectingTiles.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/tilesets/background_tiles.png" type="Texture" id=2]
 
-
 [resource]
 0/name = "background_rock"
 0/texture = ExtResource( 2 )
@@ -66,5 +65,4 @@
 2/shapes = [  ]
 2/z_index = 0
 script = ExtResource( 1 )
-connecting_tiles_names = [ "background_rock" ]
-sticking_tiles_names = [ "background_metal" ]
+rules_file = "res://Assets/Tilesets/background_rules.json"

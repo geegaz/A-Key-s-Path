@@ -2,17 +2,18 @@ extends "./ConnectingTiles.gd"
 tool
 
 export(bool) var create_shapes: bool = true setget set_create_shape
-export(Array, String) var automated_tiles_names = [] setget set_automated_tiles_names
 
 var automated = []
 
 enum {SUCCESS, ERROR}
 
-func set_create_shape(_new_state: bool):
+func set_create_shape(_state: bool):
 	if !Engine.editor_hint:
 		# Skip function if not in the editor
 		return
-		
+	
+	automated = find_tiles_by_names(rules.get("automated"))
+	
 	var result: int = create_collisions()
 	match result:
 		SUCCESS:
@@ -21,10 +22,6 @@ func set_create_shape(_new_state: bool):
 		ERROR:
 			create_shapes = false
 			print("Error while creating shapes")
-
-func set_automated_tiles_names(new_array: Array):
-	automated = find_tiles_by_names(new_array)
-	automated_tiles_names = new_array
 
 func create_collisions()->int:
 	for tile in automated:

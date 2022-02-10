@@ -1,0 +1,25 @@
+{
+    "connecting": [
+        "rock",
+        "ground",
+        "grass",
+        "blue_tiles",
+        "basalt",
+        "fill"
+    ],
+    "sticky": [
+        "metal",
+        "concrete"
+    ],
+    "automated": [
+        "rock",
+        "ground",
+        "metal",
+        "grass",
+        "blue_tiles",
+        "basalt",
+        "concrete",
+        "fill",
+        "platform"
+    ]
+}
