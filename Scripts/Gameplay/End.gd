@@ -6,7 +6,7 @@ onready var _StateMachine: AnimationNodeStateMachinePlayback = $AnimationTree["p
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_StateMachine.travel("close")
+	pass
 
 func _on_ActivationArea_body_entered(body):
 	if body.is_in_group("Player"):

@@ -1,4 +1,5 @@
-class_name LabelRange extends Range
+class_name LabelRange, "./LabelRange.svg"
+extends Range
 
 export(NodePath) var label_path: NodePath
 onready var _Label: = get_node_or_null(label_path) as Label

@@ -1,5 +1,13 @@
 extends Node
 
+# Controls
+enum Controls {JUMP, LEFT, RIGHT}
+var active_controls: Array = [
+	true,
+	true,
+	true
+]
+
 # Sounds
 enum {MASTER, SFX, MUSIC}
 
@@ -18,6 +26,11 @@ var fullscreen: bool = false setget set_fullscreen
 var screenshake: bool = true setget set_screenshake
 
 onready var _TransitionScreen = get_node_or_null(transition_screen_path)
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("fullscreen"):
+		set_fullscreen(not fullscreen)
 
 #################### Level handling ####################
 # Workflow: 

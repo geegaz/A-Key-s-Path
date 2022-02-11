@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Tilesets/terrain.tres" type="TileSet" id=1]
-[ext_resource path="res://Scenes/PlayerCamera.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Gameplay/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/UI/PauseMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/UI/ControlsScreen.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Objects/End.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Gameplay/End.tscn" type="PackedScene" id=7]
 
 [node name="Level" type="Node"]
 
@@ -25,8 +24,9 @@ player_path = NodePath("../Player")
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 96, 120 )
 
-[node name="PlayerCamera" parent="." instance=ExtResource( 2 )]
-current = true
-
 [node name="End" parent="." instance=ExtResource( 7 )]
-position = Vector2( 179, 128 )
+position = Vector2( 256, 128.749 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 160, 88 )
+current = true

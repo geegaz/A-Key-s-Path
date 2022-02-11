@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "RandomStreamPlayer",
 "language": "GDScript",
 "path": "res://Addons/SimpleNodes/RandomStreamPlayer.gd"
+}, {
+"base": "Node",
+"class": "Shaker",
+"language": "GDScript",
+"path": "res://Addons/SimpleNodes/Shaker.gd"
 } ]
 _global_script_class_icons={
 "HealthBar": "res://Addons/SimpleNodes/HealthBar.svg",
-"LabelRange": "",
-"RandomStreamPlayer": "res://Addons/SimpleNodes/RandomStreamPlayer.svg"
+"LabelRange": "res://Addons/SimpleNodes/LabelRange.svg",
+"RandomStreamPlayer": "res://Addons/SimpleNodes/RandomStreamPlayer.svg",
+"Shaker": "res://Addons/SimpleNodes/Shaker.svg"
 }
 
 [application]

@@ -3,10 +3,13 @@
 [ext_resource path="res://Scenes/UI/Controls/ControlLeft.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/UI/Controls/ControlJump.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/UI/Controls/ControlRight.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/UI/controls/ControlsUI.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/UI/controls/ControlScreen.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Sprites/ui/controls/controls_place.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/ui/controls/controls_background_top.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sprites/ui/controls/controls_background.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 168, 18 )
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 5 )
@@ -44,12 +47,17 @@ region = Rect2( 16, 16, 16, 16 )
 atlas = ExtResource( 5 )
 region = Rect2( 16, 32, 16, 16 )
 
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 168, 18 )
-
-[node name="ControlsUI" type="Node2D"]
+[node name="ControlsScreen" type="Node2D"]
 z_index = 1
 script = ExtResource( 4 )
+
+[node name="BarRetriever" type="KinematicBody2D" parent="."]
+position = Vector2( 160, 178 )
+collision_layer = 16
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BarRetriever"]
+shape = SubResource( 10 )
 
 [node name="Tween" type="Tween" parent="."]
 
@@ -58,6 +66,7 @@ margin_top = 158.0
 margin_right = 34.0
 margin_bottom = 190.0
 rect_scale = Vector2( 9.44, 1 )
+mouse_filter = 2
 texture = ExtResource( 7 )
 stretch_mode = 2
 __meta__ = {
@@ -130,14 +139,6 @@ position = Vector2( 112, 170 )
 
 [node name="ControlRight" parent="." instance=ExtResource( 3 )]
 position = Vector2( 136, 170 )
-
-[node name="BarRetriever" type="KinematicBody2D" parent="."]
-position = Vector2( 160, 178 )
-collision_layer = 16
-collision_mask = 2147483648
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BarRetriever"]
-shape = SubResource( 10 )
 
 [connection signal="pressed" from="ControlJumpPos/RetrieveJump" to="." method="_on_RetrieveControl" binds= [ 0 ]]
 [connection signal="pressed" from="ControlLeftPos/RetrieveLeft" to="." method="_on_RetrieveControl" binds= [ 1 ]]

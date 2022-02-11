@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Visuals/BackgroundCube.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Sprites/backgrounds/background_ground.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/backgrounds/background_sky.png" type="Texture" id=3]
+
+[node name="Background" type="ParallaxBackground"]
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.988235, 0.831373, 0.831373, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.2, 0.2 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer"]
+margin_left = -224.0
+margin_top = -90.0
+margin_right = 224.0
+margin_bottom = 166.0
+mouse_filter = 2
+texture = ExtResource( 3 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.3, 0.3 )
+
+[node name="Cube" parent="ParallaxLayer2" instance=ExtResource( 1 )]
+position = Vector2( 0, -24 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.4, 0.4 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer3"]
+margin_left = -352.0
+margin_top = -90.0
+margin_right = 352.0
+margin_bottom = 166.0
+mouse_filter = 2
+texture = ExtResource( 2 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

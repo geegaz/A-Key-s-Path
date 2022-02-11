@@ -19,7 +19,6 @@
         "blue_tiles",
         "basalt",
         "concrete",
-        "fill",
-        "platform"
+        "fill"
     ]
 }

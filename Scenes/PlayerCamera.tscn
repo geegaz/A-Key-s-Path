@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://Scripts/Camera.gd" type="Script" id=1]
-
-[node name="PlayerCamera" type="Camera2D" groups=[
-"player_camera",
-]]
-script = ExtResource( 1 )

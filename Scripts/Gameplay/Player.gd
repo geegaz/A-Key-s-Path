@@ -19,15 +19,10 @@ var air_time = 0.0
 var buffer_time = 0.0
 var on_ground: bool = false
 
-var left_control: bool = true
-var right_control: bool = true
-var jump_control: bool = true
-
 var controls_enabled = true
 
 onready var _PlayerSprite = $Sprite
-onready var _CutsceneStateMachine: AnimationNodeStateMachinePlayback = $AnimationTree["parameters/playback"]
-onready var _MoveStateMachine: AnimationNodeStateMachinePlayback  = $AnimationTree["parameters/MoveState/playback"]
+onready var _StateMachine: AnimationNodeStateMachinePlayback  = $AnimationTree["parameters/playback"]
 
 func _ready():
 	target_gravity = gravity_strong
@@ -41,12 +36,12 @@ func _process(_delta):
 	# Animation states
 	if on_ground:
 		if target_speed != 0.0:
-			_MoveStateMachine.travel("run")
+			_StateMachine.travel("run")
 		else:
-			_MoveStateMachine.travel("idle")
+			_StateMachine.travel("idle")
 	else:
 		if velocity.y > 0.0:
-			_MoveStateMachine.travel("fall")
+			_StateMachine.travel("fall")
 		
 
 func _physics_process(delta):
@@ -55,9 +50,9 @@ func _physics_process(delta):
 	if controls_enabled:
 		# Get the movement direction on the X axis. 
 		# right = 1, left = -1
-		if right_control and Input.is_action_pressed("ui_right"):
+		if Global.active_controls[Global.Controls.RIGHT] and Input.is_action_pressed("ui_right"):
 			dir += 1
-		if left_control and Input.is_action_pressed("ui_left"):
+		if Global.active_controls[Global.Controls.LEFT] and Input.is_action_pressed("ui_left"):
 			dir -= 1
 	
 	# Vertical movement
@@ -84,8 +79,8 @@ func _physics_process(delta):
 		if buffer_time > 0:
 			buffer_time -= delta
 
-func _input(event):
-	if event.is_action_pressed("jump") and jump_control:
+func _unhandled_input(event: InputEvent) -> void:
+	if Global.active_controls[Global.Controls.JUMP] and event.is_action_pressed("jump"):
 		# Reset buffer time, check for air_time
 		buffer_time = jump_buffer
 		if air_time < coyote_time:
@@ -105,11 +100,11 @@ func jump():
 	on_ground = false
 	
 	# Animation and effects
-	_MoveStateMachine.travel("jump")
+	_StateMachine.travel("jump")
 	create_jump_effect()
 
 func create_jump_effect():
-	var jump_effect = preload("res://Scenes/Objects/Effect.tscn").instance()
+	var jump_effect = preload("res://Scenes/Visuals/Effect.tscn").instance()
 	jump_effect.position = self.global_position
 	jump_effect.play("player_jump")
 	get_parent().add_child(jump_effect)

@@ -1,15 +1,13 @@
 extends Camera2D
 
 
-export(NodePath) var camera_limits_rect
-onready var _CameraLimitsRect: Control = get_node_or_null(camera_limits_rect)
+export(NodePath) var target_node
+onready var _Target: Node2D = get_node_or_null(target_node)
 
-export(Vector2) var target
 export(int, FLAGS, "X", "Y") var lock_axis = 0
 
 func _ready():
-	if _CameraLimitsRect:
-		set_camera_limits(_CameraLimitsRect)
+	pass
 
 func _process(delta):
 	pass

@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Materials/background_cube.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Models/custom_cube.obj" type="ArrayMesh" id=2]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 loop = true
 step = 0.05
 tracks/0/type = "value"
@@ -19,7 +19,7 @@ tracks/0/keys = {
 "values": [ Vector3( 35, 0, 45 ), Vector3( 35, 120, 45 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "rotation_glowing"
 loop = true
 tracks/0/type = "value"
@@ -47,7 +47,7 @@ tracks/1/keys = {
 "values": [ 0.0, 0.5, 0.0, 0.5, 0.0, 0.5, 0.0, 0.5, 0.0, 0.5, 0.0 ]
 }
 
-[sub_resource type="ViewportTexture" id=4]
+[sub_resource type="ViewportTexture" id=3]
 viewport_path = NodePath("Viewport")
 
 [node name="Cube" type="Node2D"]
@@ -59,7 +59,7 @@ handle_input_locally = false
 render_target_v_flip = true
 
 [node name="Cube" type="MeshInstance" parent="Viewport"]
-transform = Transform( 0.707107, -0.707107, 0, 0.579228, 0.579228, -0.573577, 0.40558, 0.40558, 0.819152, 0, 0, 0 )
+transform = Transform( -0.00231099, 0.704796, 0.709407, 0.579228, 0.579228, -0.573577, -0.815162, 0.409583, -0.409576, 0, 0, 0 )
 material_override = ExtResource( 1 )
 cast_shadow = 0
 mesh = ExtResource( 2 )
@@ -69,8 +69,8 @@ material/0 = null
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Viewport"]
 autoplay = "rotation"
 playback_speed = 0.05
-anims/rotation = SubResource( 2 )
-anims/rotation_glowing = SubResource( 3 )
+anims/rotation = SubResource( 1 )
+anims/rotation_glowing = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="Viewport"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
@@ -78,4 +78,4 @@ projection = 1
 size = 4.0
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = SubResource( 4 )
+texture = SubResource( 3 )

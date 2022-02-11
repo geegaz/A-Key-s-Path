@@ -3,12 +3,7 @@ extends Node2D
 signal control_placed(control_type)
 signal control_retrieved(control_type)
 
-enum {JUMP, LEFT, RIGHT}
-
-export(NodePath) var player_path
-onready var _Player: KinematicBody2D = get_node_or_null(player_path)
-
-onready var Controls: Array = [
+onready var ControlBlocks: Array = [
 	$ControlJump,
 	$ControlLeft,
 	$ControlRight
@@ -20,7 +15,7 @@ onready var ControlPos: Array = [
 ]
 
 func _ready():
-	for control in Controls:
+	for control in ControlBlocks:
 		if control:
 			control.connect("place", self, "_on_PlaceControl")
 			control.connect("retrieve", self, "_on_RetrieveControl")
@@ -35,48 +30,36 @@ func _get_camera_pos():
 	var vtrans = get_canvas_transform()
 	return -vtrans.get_origin() / vtrans.get_scale()
 
-func set_player_control_state(control_id: int, new_state: bool = true):
-	if !_Player:
-		return
-		
-	match control_id:
-		JUMP:
-			_Player.jump_control = new_state
-		LEFT:
-			_Player.left_control = new_state
-		RIGHT:
-			_Player.right_control = new_state
-
 func reparent(child: Node, new_parent: Node):
 	var old_parent = child.get_parent()
 	old_parent.remove_child(child)
 	new_parent.add_child(child)
 
 func retrieve_all():
-	for control in Controls:
+	for control in ControlBlocks:
 		if control and control.in_world:
 			retrieve_control(control.control_type)
 
 func place_control(control_type: int):
-	var control = Controls[control_type]
+	var control = ControlBlocks[control_type]
 	if !control:
 		return
 	# Expects the ControlsScreen to be a child of the scene root
 	reparent(control, get_parent())
-	set_player_control_state(control_type, false)
+	Global.active_controls[control_type] = false
 
 	# If another node wants to detect control changes
 	emit_signal("control_placed", control_type)
 
 func retrieve_control(control_type: int):
-	var control = Controls[control_type]
+	var control = ControlBlocks[control_type]
 	if !control:
 		return
 	# Get the control's position in global coordinates,
 	# and reparent the control to the ControlsScreen
 	control.position = control.get_global_transform_with_canvas().origin
 	reparent(control, self)
-	set_player_control_state(control_type, true)
+	Global.active_controls[control_type] = true
 	control.retrieve()
 	
 	# If another node wants to detect control changes
