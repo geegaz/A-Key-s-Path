@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/controls_place.png-948e4178098d0a209ed1ec98039b0eea.stex"
+path="res://.import/controls_place.png-9032d355968e98f6bdbecaf793163129.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/ui/controls/controls_place.png"
-dest_files=[ "res://.import/controls_place.png-948e4178098d0a209ed1ec98039b0eea.stex" ]
+source_file="res://Assets/Sprites/UI/controls/controls_place.png"
+dest_files=[ "res://.import/controls_place.png-9032d355968e98f6bdbecaf793163129.stex" ]
 
 [params]
 

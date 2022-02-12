@@ -1,8 +1,6 @@
 class_name Shaker, "./Shaker.svg"
 extends Node
 
-signal start_shake
-signal stop_shake
 
 const shake_decay: float = 0.8
 const shake_power: float = 2.0
@@ -45,10 +43,11 @@ func _ready()-> void:
 
 func _process(delta: float)-> void:
 	for id in processes.size():
-		processes[id]._process(delta)
-		if processes[id].shake <= 0:
+		if not processes[id] or processes[id].shake <= 0:
 			processes.remove(id)
-			
+		else:
+			processes[id]._process(delta)
+	
 func find_process(node: Node, property: String) -> int:
 	for id in processes.size():
 		if processes[id].node == node and processes[id].property == property:

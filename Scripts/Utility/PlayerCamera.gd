@@ -10,7 +10,8 @@ func _ready():
 	pass
 
 func _process(delta):
-	pass
+	if _Target:
+		position = _Target.position
 
 # Launches the shaking
 #func shake(scale: float, time: float, intensity: float = 80.0):

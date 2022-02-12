@@ -26,6 +26,7 @@ var fullscreen: bool = false setget set_fullscreen
 var screenshake: bool = true setget set_screenshake
 
 onready var _TransitionScreen = get_node_or_null(transition_screen_path)
+onready var _Shaker: Shaker = $Shaker
 
 
 func _input(event: InputEvent) -> void:
@@ -93,4 +94,5 @@ func set_fullscreen(state: bool):
 	fullscreen = state
 
 func set_screenshake(state: bool):
+	_Shaker.set_process(state)
 	screenshake = state

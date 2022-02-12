@@ -1,11 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Scripts/Utility/PlayerCamera.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Utility/Shaker.tscn" type="PackedScene" id=2]
 
 [node name="PlayerCamera" type="Camera2D" groups=[
 "player_camera",
 ]]
 script = ExtResource( 1 )
-
-[node name="Shaker" parent="." instance=ExtResource( 2 )]

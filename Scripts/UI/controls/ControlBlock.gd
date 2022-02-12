@@ -25,7 +25,6 @@ onready var control_action: String = Actions[control_type]
 
 onready var _Sprite: Sprite = $Sprite
 onready var _Collider: CollisionShape2D = $Collider
-onready var _Shaker: Shaker = $Shaker
 onready var _Placement: Control = $Placement
 
 # Called when the node enters the scene tree for the first time.
@@ -67,7 +66,7 @@ func _process(delta):
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed(control_action) and (dragged or in_world):
 		modulate = Color.red * 2
-		_Shaker.add_shake(_Sprite, "offset", Vector2(1,16), 0.2, 2.0)
+		Global._Shaker.add_shake(_Sprite, "offset", Vector2(1,16), 0.2, 2.0)
 
 func _physics_process(delta):
 	valid_pos = true
