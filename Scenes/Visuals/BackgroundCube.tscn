@@ -60,6 +60,7 @@ render_target_v_flip = true
 
 [node name="Cube" type="MeshInstance" parent="Viewport"]
 transform = Transform( -0.00231099, 0.704796, 0.709407, 0.579228, 0.579228, -0.573577, -0.815162, 0.409583, -0.409576, 0, 0, 0 )
+layers = 524288
 material_override = ExtResource( 1 )
 cast_shadow = 0
 mesh = ExtResource( 2 )
@@ -74,6 +75,7 @@ anims/rotation_glowing = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="Viewport"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
+cull_mask = 524288
 projection = 1
 size = 4.0
 

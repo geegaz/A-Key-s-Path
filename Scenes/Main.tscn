@@ -174,7 +174,7 @@ __meta__ = {
 }
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Background2"]
-motion_scale = Vector2( 0.2, 0.2 )
+motion_scale = Vector2( 0.2, 0.1 )
 
 [node name="TextureRect" type="TextureRect" parent="Background2/ParallaxLayer"]
 margin_left = -64.0
@@ -188,13 +188,13 @@ __meta__ = {
 }
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="Background2"]
-motion_scale = Vector2( 0.3, 0.3 )
+motion_scale = Vector2( 0.3, 0.15 )
 
 [node name="Cube" parent="Background2/ParallaxLayer2" instance=ExtResource( 12 )]
 position = Vector2( 160, 66 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="Background2"]
-motion_scale = Vector2( 0.4, 0.4 )
+motion_scale = Vector2( 0.4, 0.2 )
 
 [node name="TextureRect" type="TextureRect" parent="Background2/ParallaxLayer3"]
 margin_left = -192.0
@@ -227,13 +227,13 @@ tile_data = PoolIntArray( 196588, 13, 0, 131072, 11, 0, 131091, 14, 0, 131111, 3
 [node name="PlayerSprite" type="AnimatedSprite" parent="Background"]
 position = Vector2( 80, 144 )
 frames = SubResource( 9 )
-frame = 3
+frame = 6
 playing = true
 
 [node name="FlagSprite" type="AnimatedSprite" parent="Background"]
 position = Vector2( 264, 104 )
 frames = SubResource( 18 )
-frame = 6
+frame = 1
 playing = true
 
 [node name="MainMenu" type="Control" parent="."]

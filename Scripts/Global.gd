@@ -65,7 +65,8 @@ func goto_scene(scene_path: String, transition_time: float = 0.5):
 	# If no path has been given, replace it with default path
 	if scene_path == "":
 		scene_path = default_path
-		
+	
+	print("Loading scene %s"%scene_path)
 	# If a TransitionScreen is available, do a transition
 	if _TransitionScreen:
 		_TransitionScreen.transition_to_scene(scene_path, transition_time)

@@ -134,6 +134,7 @@ jump={
 2d_physics/layer_1="Terrain"
 2d_physics/layer_2="Hazards"
 2d_physics/layer_3="Player"
+3d_render/layer_20="Background"
 
 [rendering]
 
