@@ -8,42 +8,42 @@
 [ext_resource path="res://Assets/Sprites/ui/controls/controls_background_top.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sprites/ui/controls/controls_background.png" type="Texture" id=7]
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 168, 18 )
-
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 5 )
-region = Rect2( 32, 0, 64, 16 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 5 )
-region = Rect2( 32, 16, 64, 16 )
+region = Rect2( 32, 0, 64, 16 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 5 )
-region = Rect2( 32, 32, 64, 16 )
+region = Rect2( 32, 16, 64, 16 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 16, 16 )
+region = Rect2( 32, 32, 64, 16 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 5 )
-region = Rect2( 0, 16, 16, 16 )
+region = Rect2( 0, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 5 )
-region = Rect2( 0, 32, 16, 16 )
+region = Rect2( 0, 16, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 5 )
-region = Rect2( 16, 0, 16, 16 )
+region = Rect2( 0, 32, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 5 )
-region = Rect2( 16, 16, 16, 16 )
+region = Rect2( 16, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 5 )
+region = Rect2( 16, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 5 )
 region = Rect2( 16, 32, 16, 16 )
 
@@ -57,13 +57,14 @@ collision_layer = 16
 collision_mask = 2147483648
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BarRetriever"]
-shape = SubResource( 10 )
+shape = SubResource( 1 )
 
 [node name="Tween" type="Tween" parent="."]
 
 [node name="BarBase" type="TextureRect" parent="."]
+margin_left = -16.0
 margin_top = 158.0
-margin_right = 34.0
+margin_right = 21.0
 margin_bottom = 190.0
 rect_scale = Vector2( 9.44, 1 )
 mouse_filter = 2
@@ -94,9 +95,9 @@ margin_left = -32.0
 margin_top = -8.0
 margin_right = 32.0
 margin_bottom = 8.0
-texture_normal = SubResource( 1 )
-texture_pressed = SubResource( 2 )
-texture_hover = SubResource( 3 )
+texture_normal = SubResource( 2 )
+texture_pressed = SubResource( 3 )
+texture_hover = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -109,9 +110,9 @@ margin_left = -8.0
 margin_top = -8.0
 margin_right = 8.0
 margin_bottom = 8.0
-texture_normal = SubResource( 4 )
-texture_pressed = SubResource( 5 )
-texture_hover = SubResource( 6 )
+texture_normal = SubResource( 5 )
+texture_pressed = SubResource( 6 )
+texture_hover = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -124,9 +125,9 @@ margin_left = -8.0
 margin_top = -8.0
 margin_right = 8.0
 margin_bottom = 8.0
-texture_normal = SubResource( 7 )
-texture_pressed = SubResource( 8 )
-texture_hover = SubResource( 9 )
+texture_normal = SubResource( 8 )
+texture_pressed = SubResource( 9 )
+texture_hover = SubResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
