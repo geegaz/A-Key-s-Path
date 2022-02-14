@@ -30,11 +30,6 @@ func _get_camera_pos():
 	var vtrans = get_canvas_transform()
 	return -vtrans.get_origin() / vtrans.get_scale()
 
-func reparent(child: Node, new_parent: Node):
-	var old_parent = child.get_parent()
-	old_parent.remove_child(child)
-	new_parent.add_child(child)
-
 func retrieve_all():
 	for control in ControlBlocks:
 		if control and control.in_world:
@@ -44,8 +39,7 @@ func place_control(control_type: int):
 	var control = ControlBlocks[control_type]
 	if !control:
 		return
-	# Expects the ControlsScreen to be a child of the scene root
-	reparent(control, get_parent())
+	control.set_as_toplevel(true)
 	Global.active_controls[control_type] = false
 
 	# If another node wants to detect control changes
@@ -58,7 +52,7 @@ func retrieve_control(control_type: int):
 	# Get the control's position in global coordinates,
 	# and reparent the control to the ControlsScreen
 	control.position = control.get_global_transform_with_canvas().origin
-	reparent(control, self)
+	control.set_as_toplevel(false)
 	Global.active_controls[control_type] = true
 	control.retrieve()
 	

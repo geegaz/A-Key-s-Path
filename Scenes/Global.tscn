@@ -9,6 +9,7 @@ pause_mode = 2
 script = ExtResource( 1 )
 
 [node name="Shaker" parent="." instance=ExtResource( 3 )]
+pause_mode = 1
 
 [node name="OverlayLayer" type="CanvasLayer" parent="."]
 layer = 100

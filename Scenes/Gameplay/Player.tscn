@@ -147,7 +147,7 @@ graph_offset = Vector2( -160, -77 )
 [node name="Player" type="KinematicBody2D" groups=[
 "Player",
 ]]
-collision_layer = 4
+collision_layer = 12
 collision_mask = 3
 script = ExtResource( 1 )
 
@@ -160,7 +160,7 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 10 )
 hframes = 10
 vframes = 9
-frame = 4
+frame = 5
 
 [node name="DeathTimer" type="Timer" parent="."]
 wait_time = 1.2

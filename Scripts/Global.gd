@@ -94,5 +94,5 @@ func set_fullscreen(state: bool):
 	fullscreen = state
 
 func set_screenshake(state: bool):
-	_Shaker.set_process(state)
+	_Shaker.set_active(state)
 	screenshake = state

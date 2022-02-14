@@ -35,6 +35,11 @@ class ShakeProcess:
 		noise_offset += speed
 		
 		node.set(property, property_default + offset)
+	
+	func _reset()->void:
+		shake = 0
+		offset = Vector2.ZERO
+		node.set(property, property_default)
 
 var processes: Array = []
 
@@ -69,4 +74,8 @@ func add_shake(node: Node, property: String, offset: Vector2, value: float, spee
 	processes[id].max_offset = offset
 	processes[id].speed = speed
 	processes[id].shake = min(processes[id].shake + value, 1.0)
-	
+
+func set_active(value: bool) -> void:
+	for process in processes:
+		process._reset()
+	set_process(value)

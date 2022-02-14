@@ -3,6 +3,6 @@
 [ext_resource path="res://Scripts/Utility/PlayerCamera.gd" type="Script" id=1]
 
 [node name="PlayerCamera" type="Camera2D" groups=[
-"player_camera",
+"Camera",
 ]]
 script = ExtResource( 1 )

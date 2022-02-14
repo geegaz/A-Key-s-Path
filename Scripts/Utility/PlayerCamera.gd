@@ -1,6 +1,5 @@
 extends Camera2D
 
-
 export(NodePath) var target_node
 onready var _Target: Node2D = get_node_or_null(target_node)
 
