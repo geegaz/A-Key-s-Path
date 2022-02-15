@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Shaders/transition.shader" type="Shader" id=1]
-[ext_resource path="res://Assets/Shaders/animated_sprite.shader" type="Shader" id=2]
+[ext_resource path="res://Scripts/Utility/SpriteEffect.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Sprites/transitions/diagonal.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/player/loading_animation-Sheet.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/UI/SceneTransition.gd" type="Script" id=5]
@@ -91,12 +91,6 @@ tracks/2/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="ShaderMaterial" id=4]
-shader = ExtResource( 2 )
-shader_param/h_frames = 4
-shader_param/v_frames = 1
-shader_param/frame_duration = 0.1
-
 [node name="SceneTransition" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -120,7 +114,9 @@ anims/transition_out = SubResource( 3 )
 
 [node name="LoadingSprite" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-material = SubResource( 4 )
 position = Vector2( 296, 160 )
 texture = ExtResource( 4 )
 hframes = 4
+script = ExtResource( 2 )
+frames = 4
+looping = true

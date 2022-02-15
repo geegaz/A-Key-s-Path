@@ -1,7 +1,7 @@
 extends Area2D
 
 onready var _FlagSprite: AnimatedSprite = $FlagSprite
-onready var _FlagParticles: Particles2D = $FlagParticles
+onready var _FlagParticles: CPUParticles2D = $FlagParticles
 onready var _Collision: CollisionShape2D = $Collision
 onready var _Audio: AudioStreamPlayer = $AudioStreamPlayer
 
@@ -12,7 +12,7 @@ func _on_Checkpoint_body_entered(body):
 			set_active(node == self)
 
 func set_active(active: bool):
-	_Collision.disabled = !active
+	_Collision.set_deferred("disabled",!active)
 	if active:
 		_FlagSprite.animation = "active"
 		_FlagParticles.emitting = true

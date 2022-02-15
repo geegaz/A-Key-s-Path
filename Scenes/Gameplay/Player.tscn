@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/Gameplay/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Animations/cutscene_tips.tres" type="Animation" id=2]
 [ext_resource path="res://Assets/Animations/cutscene_fall.tres" type="Animation" id=3]
+[ext_resource path="res://Scenes/Visuals/Effects/JumpEffect.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Sprites/player/player_animations-Sheet.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -140,7 +141,7 @@ states/run/node = SubResource( 9 )
 states/run/position = Vector2( 454, 59 )
 transitions = [ "idle", "run", SubResource( 10 ), "run", "idle", SubResource( 11 ), "idle", "jump", SubResource( 12 ), "jump", "fall", SubResource( 13 ), "fall", "idle", SubResource( 14 ) ]
 start_node = "idle"
-graph_offset = Vector2( -160, -77 )
+graph_offset = Vector2( -259, -33 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=16]
 
@@ -150,6 +151,8 @@ graph_offset = Vector2( -160, -77 )
 collision_layer = 12
 collision_mask = 3
 script = ExtResource( 1 )
+jump_effect = ExtResource( 4 )
+land_effect = ExtResource( 4 )
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1 )
@@ -160,7 +163,7 @@ position = Vector2( 0, -8 )
 texture = ExtResource( 10 )
 hframes = 10
 vframes = 9
-frame = 5
+frame = 20
 
 [node name="DeathTimer" type="Timer" parent="."]
 wait_time = 1.2
