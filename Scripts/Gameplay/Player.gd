@@ -35,7 +35,10 @@ func _ready():
 	pass
 
 func _process(_delta):
-	_Sprite.flip_h = target_speed < 0.0
+	if target_speed < 0.0:
+		_Sprite.flip_h = true
+	elif target_speed > 0.0:
+		_Sprite.flip_h = false
 	
 	# Animation states
 	if on_ground:
@@ -46,8 +49,6 @@ func _process(_delta):
 	else:
 		if velocity.y >= 0.0:
 			_StateMachine.travel("fall")
-		else:
-			_StateMachine.travel("jump")
 	
 
 func _physics_process(delta):
@@ -106,7 +107,7 @@ func jump():
 	on_ground = false
 	
 	# Animation and effects
-#	_StateMachine.travel("jump")
+	_StateMachine.travel("jump")
 	create_effect(jump_effect)
 
 func land():

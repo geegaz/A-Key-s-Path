@@ -1,0 +1,353 @@
+<REAPER_PROJECT 0.1 "6.40/win64" 1645048203
+  RIPPLE 0
+  GROUPOVERRIDE 0 0 0
+  AUTOXFADE 1
+  ENVATTACH 3
+  POOLEDENVATTACH 0
+  MIXERUIFLAGS 11 48
+  PEAKGAIN 1
+  FEEDBACK 0
+  PANLAW 1
+  PROJOFFS 0 0 0
+  MAXPROJLEN 0 600
+  GRID 3199 8 1 8 1 0 0 0
+  TIMEMODE 1 5 -1 30 0 0 -1
+  VIDEO_CONFIG 0 0 256
+  PANMODE 3
+  CURSOR 7.70351078729311
+  ZOOM 6.49054715188751 0 0
+  VZOOMEX 14 0
+  USE_REC_CFG 0
+  RECMODE 1
+  SMPTESYNC 0 30 100 40 1000 300 0 0 1 0 0
+  LOOP 1
+  LOOPGRAN 0 4
+  RECORD_PATH "" ""
+  <RECORD_CFG
+  >
+  <APPLYFX_CFG
+  >
+  RENDER_FILE ""
+  RENDER_PATTERN reflexions
+  RENDER_FMT 0 2 44100
+  RENDER_1X 0
+  RENDER_RANGE 3 0 0 18 1000
+  RENDER_RESAMPLE 4 0 1
+  RENDER_ADDTOPROJ 0
+  RENDER_STEMS 0
+  RENDER_DITHER 0
+  TIMELOCKMODE 1
+  TEMPOENVLOCKMODE 1
+  ITEMMIX 0
+  DEFPITCHMODE 589824 0
+  TAKELANE 1
+  SAMPLERATE 44100 0 0
+  <RENDER_CFG
+    dmdnbwAAAD8AgAAAAIAAAAAgAAAAAAEAAA==
+  >
+  LOCK 1
+  <METRONOME 6 2
+    VOL 0.25 0.125
+    FREQ 800 1600 1
+    BEATLEN 4
+    SAMPLES "" ""
+    PATTERN 2863311530 2863311529
+    MULT 1
+  >
+  GLOBAL_AUTO -1
+  TEMPO 120 4 4
+  PLAYRATE 1 0 0.25 4
+  SELECTION 172 192
+  SELECTION2 172 192
+  MASTERAUTOMODE 0
+  MASTERTRACKHEIGHT 0 0
+  MASTERPEAKCOL 16576
+  MASTERMUTESOLO 0
+  MASTERTRACKVIEW 0 0.6667 0.5 0.5 -1 -1 -1 0 0 0 -1 -1 0
+  MASTERHWOUT 0 0 1 0 0 0 0 -1
+  MASTER_NCH 2 2
+  MASTER_VOLUME 1 0 -1 -1 1
+  MASTER_FX 1
+  MASTER_SEL 0
+  <MASTERPLAYSPEEDENV
+    EGUID {89C3CA95-7C4B-C40E-88F5-D46A135074D4}
+    ACT 0 -1
+    VIS 0 1 1
+    LANEHEIGHT 0 0
+    ARM 0
+    DEFSHAPE 0 -1 -1
+  >
+  <TEMPOENVEX
+    EGUID {D1B649C7-A606-2FCF-2D92-A1FA87D01712}
+    ACT 0 -1
+    VIS 1 0 1
+    LANEHEIGHT 0 0
+    ARM 0
+    DEFSHAPE 1 -1 -1
+  >
+  MARKER 3 0 part1-in 1 0 1 R {B2774538-D67B-49BC-B043-153536663E85}
+  MARKER 3 12 "" 1 0 1 R
+  MARKER 2 12 part1 1 0 1 R {404FA7BF-C369-4F96-98DA-A171DF00A69E}
+  MARKER 2 96 "" 1 0 1 R
+  MARKER 4 96 part1-out 1 0 1 R {EA5D0D17-10A6-4664-BDC6-8B8AE8A27A16}
+  MARKER 4 106 "" 1 0 1 R
+  MARKER 5 108 part2-in 1 0 1 R {95D110D5-E73D-41FC-8C58-A02DFDE6ACEB}
+  MARKER 5 116 "" 1 0 1 R
+  MARKER 1 116 part2 1 0 1 R {094F2C5B-A67B-4D27-B075-9E1034F5E52D}
+  MARKER 1 172 "" 1 0 1 R
+  MARKER 6 172 part2-out 1 0 1 R {6895C9B0-DF95-4E33-9D5A-248E035F7A46}
+  MARKER 6 192 "" 1 0 1 R
+  <PROJBAY
+  >
+  <TRACK {D643FB36-F850-D911-2760-EEEF8003C4F5}
+    NAME "Konkombre - reflexions"
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 -1 -1 -1
+    FREEMODE 0
+    SEL 1
+    REC 0 0 1 0 0 0 0
+    VU 2
+    TRACKHEIGHT 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {D643FB36-F850-D911-2760-EEEF8003C4F5}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 12
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0.01 0 1 0 0 0
+      FADEOUT 1 0.01 0 1 0 0 0
+      MUTE 0 0
+      SEL 1
+      IGUID {D7028825-C63A-FE91-799F-EF6B01B48BBB}
+      IID 1
+      NAME "Konkombre - reflexions.ogg"
+      VOLPAN 1 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {93D7FC2B-F9A2-28CC-A53E-F607E42C4F99}
+      <SOURCE VORBIS
+        FILE "D:\Documents\Projets Godot\Projects\A Key(s) Path\Assets\Music\konkombre_music\Konkombre - reflexions.ogg"
+      >
+    >
+    <ITEM
+      POSITION 96
+      SNAPOFFS 0
+      LENGTH 10
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0.01 0 1 0 0 0
+      FADEOUT 1 0.01 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {2DD43F36-FAC5-4EBE-B9AD-494402C39836}
+      IID 26
+      NAME "Konkombre - reflexions.ogg"
+      VOLPAN 1 0 1 -1
+      SOFFS 96
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {209165EA-4615-4B3B-82BA-47D527FCB481}
+      <SOURCE VORBIS
+        FILE "D:\Documents\Projets Godot\Projects\A Key(s) Path\Assets\Music\konkombre_music\Konkombre - reflexions.ogg"
+      >
+    >
+    <ITEM
+      POSITION 108
+      SNAPOFFS 0
+      LENGTH 8
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0.01 0 1 0 0 0
+      FADEOUT 1 0.01 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {C45D0C11-2EB0-4DB9-8E7F-BE9C60FCB04E}
+      IID 39
+      NAME "Konkombre - reflexions.ogg"
+      VOLPAN 1 0 1 -1
+      SOFFS 106
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {79EE55CF-B748-4CE7-9017-A5038298D237}
+      <SOURCE VORBIS
+        FILE "D:\Documents\Projets Godot\Projects\A Key(s) Path\Assets\Music\konkombre_music\Konkombre - reflexions.ogg"
+      >
+    >
+    <ITEM
+      POSITION 172
+      SNAPOFFS 0
+      LENGTH 20
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0.01 0 1 0 0 0
+      FADEOUT 1 0.01 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {0372078F-B804-17E7-6C16-3B0EF8945D2B}
+      IID 20
+      NAME "Konkombre - reflexions.ogg"
+      VOLPAN 1 0 1 -1
+      SOFFS 170
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {5F8B9BFF-A827-7795-10FA-12EEF8F1CEC9}
+      <SOURCE VORBIS
+        FILE "D:\Documents\Projets Godot\Projects\A Key(s) Path\Assets\Music\konkombre_music\Konkombre - reflexions.ogg"
+      >
+    >
+  >
+  <TRACK {AF6CD98A-2BF3-9CED-B6CE-F61548D37FBC}
+    NAME ""
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 1 0 0 0 0
+    VU 2
+    TRACKHEIGHT 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {AF6CD98A-2BF3-9CED-B6CE-F61548D37FBC}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 12
+      SNAPOFFS 0
+      LENGTH 84
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0.01 0 1 0 0 0
+      FADEOUT 1 0.01 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {4C5C4042-6841-4F80-935A-8954496055E9}
+      IID 44
+      NAME "Konkombre - reflexions.ogg"
+      VOLPAN 1 0 1 -1
+      SOFFS 12
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {DBC9067B-6A8D-4E2A-A332-7B5CA226CDF1}
+      <SOURCE VORBIS
+        FILE "D:\Documents\Projets Godot\Projects\A Key(s) Path\Assets\Music\konkombre_music\Konkombre - reflexions.ogg"
+      >
+    >
+    <ITEM
+      POSITION 92
+      SNAPOFFS 0
+      LENGTH 4
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1.1 0.01 4 1 1 0 0
+      FADEOUT 1.1 0.01 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {85522364-BDF6-4972-B369-81562E443F4A}
+      IID 2
+      NAME "Konkombre - reflexions.ogg"
+      VOLPAN 1 0 1 -1
+      SOFFS 8
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {95F1435D-CB58-46CE-958F-2A04DDFE99C6}
+      <SOURCE VORBIS
+        FILE "D:\Documents\Projets Godot\Projects\A Key(s) Path\Assets\Music\konkombre_music\Konkombre - reflexions.ogg"
+      >
+    >
+    <ITEM
+      POSITION 116
+      SNAPOFFS 0
+      LENGTH 56
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0.01 0 1 0 0 0
+      FADEOUT 1.1 0.01 4 1 1 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {4BE02C92-FFDD-4428-8C95-64317C1F5BB1}
+      IID 41
+      NAME "Konkombre - reflexions.ogg"
+      VOLPAN 1 0 1 -1
+      SOFFS 114
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {8F6FD32E-968D-4C91-9242-E9074D89E22C}
+      <SOURCE VORBIS
+        FILE "D:\Documents\Projets Godot\Projects\A Key(s) Path\Assets\Music\konkombre_music\Konkombre - reflexions.ogg"
+      >
+    >
+    <ITEM
+      POSITION 168
+      SNAPOFFS 0
+      LENGTH 4
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1.1 0.01 4 1 1 0 0
+      FADEOUT 1 0.01 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {A3CB5D37-E73C-9598-05D7-28AC70E99CE7}
+      IID 19
+      NAME "Konkombre - reflexions.ogg"
+      VOLPAN 1 0 1 -1
+      SOFFS 115
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {CC713BB6-3DDC-9860-7B45-86042E8656EB}
+      <SOURCE VORBIS
+        FILE "D:\Documents\Projets Godot\Projects\A Key(s) Path\Assets\Music\konkombre_music\Konkombre - reflexions.ogg"
+      >
+    >
+  >
+  <TRACK {806DF343-48EE-4B41-A32E-67FC2EBAA157}
+    NAME ""
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 1 0 0 0 0
+    VU 2
+    TRACKHEIGHT 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {806DF343-48EE-4B41-A32E-67FC2EBAA157}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+  >
+>

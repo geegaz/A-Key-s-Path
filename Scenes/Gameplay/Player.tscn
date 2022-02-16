@@ -1,9 +1,11 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scripts/Gameplay/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Animations/cutscene_tips.tres" type="Animation" id=2]
 [ext_resource path="res://Assets/Animations/cutscene_fall.tres" type="Animation" id=3]
 [ext_resource path="res://Scenes/Visuals/Effects/JumpEffect.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Visuals/Effects/LandEffect.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Addons/SimpleNodes/RandomStreamPlayer.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Sprites/player/player_animations-Sheet.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -73,39 +75,22 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 10, 11, 12, 13, 14, 15, 16, 17 ]
 }
-tracks/1/type = "audio"
-tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/type = "method"
+tracks/1/path = NodePath("RunningSound")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"clips": [  ],
-"times": PoolRealArray(  )
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AudioStreamPlayer:volume_db")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("AudioStreamPlayer:pitch_scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.7 ]
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play_random"
+}, {
+"args": [ 0.0 ],
+"method": "play_random"
+} ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=6]
@@ -152,7 +137,7 @@ collision_layer = 12
 collision_mask = 3
 script = ExtResource( 1 )
 jump_effect = ExtResource( 4 )
-land_effect = ExtResource( 4 )
+land_effect = ExtResource( 5 )
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1 )
@@ -160,10 +145,11 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -8 )
+z_index = 1
 texture = ExtResource( 10 )
 hframes = 10
 vframes = 9
-frame = 20
+frame = 3
 
 [node name="DeathTimer" type="Timer" parent="."]
 wait_time = 1.2
@@ -183,9 +169,11 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 16 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-pitch_scale = 0.7
-bus = "SFX"
+[node name="RunningSound" type="AudioStreamPlayer" parent="."]
+script = ExtResource( 6 )
+
+[node name="JumpingSound" type="AudioStreamPlayer" parent="."]
+script = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = -19.6889

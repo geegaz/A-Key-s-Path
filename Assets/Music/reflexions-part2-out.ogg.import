@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/reflexions-part2-out.ogg-b8251c659e15d72788db2858428cdd76.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/reflexions-part2-out.ogg"
+dest_files=[ "res://.import/reflexions-part2-out.ogg-b8251c659e15d72788db2858428cdd76.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
