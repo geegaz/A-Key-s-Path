@@ -39,16 +39,12 @@ position = Vector2( -72, 56 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-drag_margin_left = 0.1
-drag_margin_top = 0.1
-drag_margin_right = 0.1
-drag_margin_bottom = 0.1
-editor_draw_drag_margin = true
 
 [node name="End" parent="." instance=ExtResource( 7 )]
 position = Vector2( 488, 48 )
 
 [node name="Checkpoint" parent="." instance=ExtResource( 8 )]
-position = Vector2( 168, 56 )
+position = Vector2( 135, 56 )
+
+[node name="Checkpoint2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 160, 56 )

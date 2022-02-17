@@ -7,6 +7,7 @@ onready var _TemplateLevel: TextureButton = get_node_or_null(template_level)
 onready var _TemplateFinalLevel: TextureButton = get_node_or_null(template_final_level)
 
 onready var _LevelsContainer = $LevelsContainer
+var level_buttons: Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,4 +29,6 @@ func make_levels():
 		new_level.connect("pressed", Global, "goto_level", [level])
 		_LevelsContainer.add_child(new_level)
 		new_level.show()
+		
+		level_buttons.append(new_level)
 

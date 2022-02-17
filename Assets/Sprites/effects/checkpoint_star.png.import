@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/theme-Sheet.png-c1fc5ddf9ef0600c6e1f6030ac5d9756.stex"
+path="res://.import/checkpoint_star.png-ada281fe25f793b18f8fdfddbbc7241f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/theme-Sheet.png"
-dest_files=[ "res://.import/theme-Sheet.png-c1fc5ddf9ef0600c6e1f6030ac5d9756.stex" ]
+source_file="res://Assets/Sprites/effects/checkpoint_star.png"
+dest_files=[ "res://.import/checkpoint_star.png-ada281fe25f793b18f8fdfddbbc7241f.stex" ]
 
 [params]
 

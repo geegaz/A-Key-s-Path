@@ -33,13 +33,19 @@ _global_script_classes=[ {
 "class": "Shaker",
 "language": "GDScript",
 "path": "res://Addons/SimpleNodes/Shaker.gd"
+}, {
+"base": "Sprite",
+"class": "SpriteEffect",
+"language": "GDScript",
+"path": "res://Scripts/Utility/SpriteEffect.gd"
 } ]
 _global_script_class_icons={
 "HealthBar": "res://Addons/SimpleNodes/HealthBar.svg",
 "LabelRange": "res://Addons/SimpleNodes/LabelRange.svg",
 "MusicManager": "",
 "RandomStreamPlayer": "res://Addons/SimpleNodes/RandomStreamPlayer.svg",
-"Shaker": "res://Addons/SimpleNodes/Shaker.svg"
+"Shaker": "res://Addons/SimpleNodes/Shaker.svg",
+"SpriteEffect": ""
 }
 
 [application]

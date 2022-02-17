@@ -6,6 +6,8 @@ var screen_pos = [Vector2.ZERO, Vector2.UP, Vector2.LEFT, Vector2.RIGHT]
 var current_screen = MAIN
 
 # Menu navigation
+onready var _LevelsMenu: Control = $LevelsMenu
+
 onready var _StartButton = $MainMenu/VBoxContainer/Start
 onready var _OptionsButton = $MainMenu/VBoxContainer/HBoxContainer/Options
 onready var _CreditsButton = $MainMenu/VBoxContainer/HBoxContainer/Credits
@@ -21,7 +23,7 @@ onready var _AnimationPlayer: AnimationPlayer = $AnimationPlayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Connect every button
-	_StartButton.connect("pressed", self, "travel_to_screen", [LEVELS, _LevelsBackButton])
+	_StartButton.connect("pressed", self, "travel_to_screen", [LEVELS, _LevelsMenu.level_buttons.front()])
 	_OptionsButton.connect("pressed", self, "travel_to_screen", [OPTIONS, _OptionsBackButton])
 	_CreditsButton.connect("pressed", self, "travel_to_screen", [CREDITS, _CreditsBackButton])
 	

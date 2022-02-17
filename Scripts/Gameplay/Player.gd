@@ -6,6 +6,7 @@ export(PackedScene) var jump_effect
 export(PackedScene) var land_effect
 export(PackedScene) var death_effect
 
+export var controls_enabled = true
 # Movement exports
 export var max_speed = 120.0 # Player max speed in px/s
 export var jump_force = 160.0
@@ -23,8 +24,6 @@ var target_gravity: float = gravity_strong
 var air_time = air_buffer
 var jump_time = jump_buffer
 var on_ground: bool = false
-
-var controls_enabled = true
 
 onready var _Sprite = $Sprite
 onready var _Collision = $Collider
@@ -108,18 +107,18 @@ func jump():
 	
 	# Animation and effects
 	_StateMachine.travel("jump")
-	create_effect(jump_effect)
+	Global.create_at(jump_effect, global_position)
 
 func land():
 	# Animation and effects
-	create_effect(land_effect)
+	Global.create_at(land_effect, global_position)
 
 func die()->void:
+	velocity = Vector2.ZERO
+	_StateMachine.start("die")
+
+func respawn():
 	position = Global.current_checkpoint
 
-func create_effect(scene: PackedScene, pos: Vector2 = position)->void:
-	var effect: Node2D = scene.instance()
-	if effect:
-		add_child(effect)
-		effect.set_as_toplevel(true)
-		effect.position = pos
+func _on_HazardsHitbox_body_entered(body):
+	die()

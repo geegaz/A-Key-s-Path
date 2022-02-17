@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Themes/Main.tres" type="Theme" id=2]
@@ -13,87 +13,8 @@
 [ext_resource path="res://Assets/Sprites/backgrounds/background_ground.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Visuals/BackgroundCube.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Sprites/ui/arrows-Sheet.png" type="Texture" id=13]
+[ext_resource path="res://Scripts/Utility/SpriteEffect.gd" type="Script" id=14]
 [ext_resource path="res://Assets/Sprites/flag-Sheet.png" type="Texture" id=17]
-
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 10 )
-region = Rect2( 0, 160, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 10 )
-region = Rect2( 32, 160, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 10 )
-region = Rect2( 64, 160, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 10 )
-region = Rect2( 96, 160, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 10 )
-region = Rect2( 128, 160, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 10 )
-region = Rect2( 160, 160, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 10 )
-region = Rect2( 192, 160, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 10 )
-region = Rect2( 224, 160, 32, 32 )
-
-[sub_resource type="SpriteFrames" id=9]
-animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
-"loop": true,
-"name": "default",
-"speed": 10.0
-} ]
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 17 )
-region = Rect2( 0, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 17 )
-region = Rect2( 16, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 17 )
-region = Rect2( 32, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 17 )
-region = Rect2( 48, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 17 )
-region = Rect2( 64, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 17 )
-region = Rect2( 80, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 17 )
-region = Rect2( 96, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 17 )
-region = Rect2( 112, 0, 16, 16 )
-
-[sub_resource type="SpriteFrames" id=18]
-animations = [ {
-"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
-"loop": true,
-"name": "default",
-"speed": 10.0
-} ]
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 13 )
@@ -224,17 +145,24 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 196588, 13, 0, 131072, 11, 0, 131091, 14, 0, 131111, 3, 0, 131112, 3, 2, 262123, 3, 0, 262124, 3, 2, 262143, 3, 0, 196608, 3, 2, 196627, 3, 0, 196628, 3, 2, 196647, 3, 65536, 196648, 8, 0, 327659, 3, 65536, 327660, 3, 65538, 327679, 3, 65536, 262144, 3, 65538, 262145, 13, 1, 262163, 3, 65536, 262164, 3, 65538, 262182, 11, 0, 262183, 0, 65536, 262184, 8, 0, 393195, 0, 65536, 393196, 3, 65538, 393213, 9, 65537, 393214, 9, 1, 393215, 3, 65536, 327680, 3, 65540, 327681, 3, 2, 327698, 11, 1, 327699, 0, 65536, 327700, 0, 65538, 327701, 13, 0, 327718, 3, 0, 327719, 3, 65540, 327720, 8, 0, 458731, 0, 65536, 458732, 0, 65538, 458733, 9, 0, 458751, 0, 65536, 393216, 0, 196612, 393217, 0, 65538, 393234, 3, 0, 393235, 3, 131076, 393236, 0, 4, 393237, 3, 2, 393252, 9, 1, 393253, 2, 196608, 393254, 2, 196609, 393255, 2, 196609, 393256, 2, 196610, 524267, 0, 65536, 524268, 0, 65538, 524269, 13, 0, 524270, 13, 0, 524286, 13, 0, 524287, 0, 65536, 458752, 8, 0, 458753, 0, 65538, 458754, 9, 0, 458768, 2, 0, 458769, 2, 1, 458770, 2, 2, 458771, 1, 65537, 458772, 8, 0, 458773, 3, 65538, 458790, 1, 65536, 458791, 1, 196612, 458792, 8, 0, 589803, 8, 0, 589804, 2, 196608, 589805, 2, 196609, 589806, 2, 196610, 589822, 3, 0, 589823, 3, 65540, 524288, 0, 196612, 524289, 0, 65538, 524291, 13, 1, 524304, 2, 131072, 524305, 2, 131073, 524306, 2, 131074, 524307, 8, 0, 524308, 0, 65537, 524309, 0, 65538, 524310, 11, 0, 524326, 1, 65536, 524327, 8, 0, 524328, 8, 0, 655339, 8, 0, 655340, 1, 4, 655341, 1, 65538, 655357, 13, 0, 655358, 3, 65536, 655359, 8, 0, 589824, 0, 65537, 589825, 2, 196608, 589826, 2, 196609, 589827, 2, 196609, 589828, 2, 196610, 589840, 13, 2, 589841, 1, 65536, 589842, 1, 4, 589843, 8, 0, 589844, 2, 196608, 589845, 2, 196609, 589846, 2, 196610, 589861, 13, 0, 589862, 3, 65536, 589863, 8, 0, 589864, 8, 0, 720875, 8, 0, 720876, 8, 0, 720877, 1, 65538, 720892, 2, 196608, 720893, 2, 196609, 720894, 2, 196610, 720895, 8, 0, 655360, 8, 0, 655361, 1, 131076, 655362, 1, 65538, 655376, 1, 0, 655377, 1, 196612, 655378, 8, 0, 655379, 8, 0, 655380, 1, 131076, 655381, 1, 65538, 655397, 3, 0, 655398, 3, 131076, 655399, 8, 0, 655400, 8, 0, 786411, 8, 0, 786412, 8, 0, 786413, 1, 196612, 786414, 1, 2, 786429, 1, 65536, 786430, 8, 0, 786431, 8, 0, 720896, 8, 0, 720897, 8, 0, 720898, 1, 65538, 720912, 1, 65536, 720913, 8, 0, 720914, 8, 0, 720915, 8, 0, 720916, 8, 0, 720917, 1, 65538, 720933, 1, 65536, 720934, 8, 0, 720935, 8, 0, 720936, 8, 0, 851947, 8, 0, 851948, 8, 0, 851949, 8, 0, 851950, 1, 131074, 851965, 1, 131072, 851966, 8, 0, 851967, 8, 0, 786432, 8, 0, 786433, 8, 0, 786434, 1, 131074, 786448, 1, 131072, 786449, 8, 0, 786450, 8, 0, 786451, 8, 0, 786452, 8, 0, 786453, 1, 131074, 786469, 1, 131072, 786470, 8, 0, 786471, 8, 0, 786472, 8, 0 )
 
-[node name="PlayerSprite" type="AnimatedSprite" parent="Background"]
+[node name="SpritePlayer" type="Sprite" parent="Background"]
 position = Vector2( 80, 144 )
-frames = SubResource( 9 )
-frame = 6
-playing = true
+texture = ExtResource( 10 )
+hframes = 10
+vframes = 9
+frame = 57
+script = ExtResource( 14 )
+start_frame = 50
+frames = 8
+looping = true
 
-[node name="FlagSprite" type="AnimatedSprite" parent="Background"]
+[node name="SpriteFlag" type="Sprite" parent="Background"]
 position = Vector2( 264, 104 )
-frames = SubResource( 18 )
-frame = 1
-playing = true
+texture = ExtResource( 17 )
+hframes = 9
+script = ExtResource( 14 )
+frames = 8
+looping = true
 
 [node name="MainMenu" type="Control" parent="."]
 anchor_right = 1.0

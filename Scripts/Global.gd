@@ -96,3 +96,15 @@ func set_fullscreen(state: bool):
 func set_screenshake(state: bool):
 	_Shaker.set_active(state)
 	screenshake = state
+
+
+#################### Helper Functions ####################
+
+func create_at(scene: PackedScene, pos: Vector2)->Node:
+	var new_scene: Node2D = scene.instance()
+	if new_scene:
+		add_child(new_scene)
+		new_scene.set_as_toplevel(true)
+		new_scene.position = pos
+		
+	return new_scene
