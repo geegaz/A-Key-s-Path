@@ -19,5 +19,5 @@ func set_active(active: bool):
 	_SpriteActive.visible = active
 	_Sprite.visible = not active
 	if active:
-		Global.create_at(activate_effect, global_position)
+		Global.create_at(activate_effect, global_position, self)
 		_Audio.play()

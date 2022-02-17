@@ -185,16 +185,17 @@ graph_offset = Vector2( -267, -141 )
 "Player",
 ]]
 collision_layer = 12
+collision/safe_margin = 0.01
 script = ExtResource( 1 )
 jump_effect = ExtResource( 4 )
 land_effect = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -8 )
+z_index = 1
 texture = ExtResource( 10 )
 hframes = 10
 vframes = 9
-frame = 5
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1 )

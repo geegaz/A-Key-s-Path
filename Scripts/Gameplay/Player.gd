@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+signal died
+signal respawned
+
 enum {JUMP, LEFT, RIGHT}
 
 export(PackedScene) var jump_effect
@@ -48,7 +51,7 @@ func _process(_delta):
 	else:
 		if velocity.y >= 0.0:
 			_StateMachine.travel("fall")
-	
+
 
 func _physics_process(delta):
 	# Get horizontal movement direction, if controls are enabled
@@ -82,7 +85,7 @@ func _physics_process(delta):
 		air_time = min(air_time + delta, air_buffer)
 		jump_time = min(jump_time + delta, jump_buffer)
 	
-	if jump_time < jump_buffer and air_time < air_buffer:
+	if controls_enabled and (jump_time < jump_buffer and air_time < air_buffer):
 		jump()
 	elif landed:
 		land()
@@ -107,18 +110,24 @@ func jump():
 	
 	# Animation and effects
 	_StateMachine.travel("jump")
-	Global.create_at(jump_effect, global_position)
+	Global.create_at(jump_effect, global_position, self)
 
 func land():
 	# Animation and effects
-	Global.create_at(land_effect, global_position)
+	Global.create_at(land_effect, global_position, self)
 
 func die()->void:
 	velocity = Vector2.ZERO
+	set_physics_process(false)
+	emit_signal("died")
+	
 	_StateMachine.start("die")
 
 func respawn():
 	position = Global.current_checkpoint
+	set_physics_process(true)
+	emit_signal("respawned")
 
 func _on_HazardsHitbox_body_entered(body):
-	die()
+	if _StateMachine.get_current_node() != "die":
+		die()

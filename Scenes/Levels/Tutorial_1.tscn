@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Tilesets/terrain.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Visuals/Background.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Tilesets/spikes.tres" type="TileSet" id=6]
 [ext_resource path="res://Scenes/Gameplay/End.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Gameplay/Checkpoint.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Utility/PlayerCamera.tscn" type="PackedScene" id=9]
 
 [node name="Level" type="Node"]
 
@@ -37,14 +38,14 @@ tile_data = PoolIntArray( -327691, 1, 0, -327690, 1, 1, -327689, 1, 1, -327688, 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( -72, 56 )
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-current = true
+[node name="PlayerCamera" parent="Player" instance=ExtResource( 9 )]
+target_node = NodePath("..")
 
 [node name="End" parent="." instance=ExtResource( 7 )]
 position = Vector2( 488, 48 )
 
 [node name="Checkpoint" parent="." instance=ExtResource( 8 )]
-position = Vector2( 135, 56 )
+position = Vector2( 136, 56 )
 
 [node name="Checkpoint2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 160, 56 )
