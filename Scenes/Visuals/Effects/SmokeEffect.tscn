@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Utility/SpriteEffect.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/effects/shooter_smoke.png" type="Texture" id=2]
+
+[node name="SmokeEffect" type="Sprite"]
+texture = ExtResource( 2 )
+hframes = 8
+script = ExtResource( 1 )
+frames = 8

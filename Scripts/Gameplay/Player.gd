@@ -5,9 +5,11 @@ signal respawned
 
 enum {JUMP, LEFT, RIGHT}
 
-export(PackedScene) var jump_effect
-export(PackedScene) var land_effect
-export(PackedScene) var death_effect
+export var effects: Dictionary = {
+	"Jump": preload("res://Scenes/Visuals/Effects/JumpEffect.tscn"),
+	"Land": preload("res://Scenes/Visuals/Effects/LandEffect.tscn"),
+	"Death": null
+}
 
 export var controls_enabled = true
 # Movement exports
@@ -110,22 +112,23 @@ func jump():
 	
 	# Animation and effects
 	_StateMachine.travel("jump")
-	Global.create_at(jump_effect, global_position, self)
+	Global.create_at(effects["Jump"], global_position, self)
 
 func land():
 	# Animation and effects
-	Global.create_at(land_effect, global_position, self)
+	Global.create_at(effects["Land"], global_position, self)
 
 func die()->void:
 	velocity = Vector2.ZERO
 	set_physics_process(false)
-	emit_signal("died")
-	
 	_StateMachine.start("die")
+	
+	emit_signal("died")
 
 func respawn():
 	position = Global.current_checkpoint
 	set_physics_process(true)
+	
 	emit_signal("respawned")
 
 func _on_HazardsHitbox_body_entered(body):

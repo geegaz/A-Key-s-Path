@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Sprites/shooter/shooter_animated.tres" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/shooter_Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Gameplay/Shooter.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Sounds/SFX/David Stearns - Platformer SFX/Fireball.wav" type="AudioStream" id=4]
+[ext_resource path="res://Scripts/Utility/SpriteEffect.gd" type="Script" id=3]
 
 [node name="Shooter" type="Node2D" groups=[
 "Shooters",
@@ -10,19 +10,17 @@
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+rotation = 1.57079
 texture = ExtResource( 1 )
+hframes = 8
+script = ExtResource( 3 )
+frames = 8
+looping = true
 
-[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( 0, -8.34465e-07 )
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+rect = Rect2( -8, -8, 256, 16 )
+process_parent = true
 
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-
-[node name="Sound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 4 )
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
 max_distance = 200.0
 bus = "SFX"
-
-[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
-[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,9 +1,41 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Utility/SpriteEffect.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/effects/checkpoint_star.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Utility/ParticlesEffect.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Sprites/effects/confetti_particle.png" type="Texture" id=4]
 
-[node name="CheckpointEffect" type="Sprite"]
+[sub_resource type="CanvasItemMaterial" id=1]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0.714286, 1 )
+colors = PoolColorArray( 0.35, 0, 1, 1, 1, 1, 1, 0 )
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+material = SubResource( 1 )
+lifetime = 2.0
+explosiveness = 1.0
+local_coords = false
+texture = ExtResource( 4 )
+direction = Vector2( 0, -1 )
+spread = 20.0
+gravity = Vector2( 0, 60 )
+initial_velocity = 100.0
+initial_velocity_random = 0.5
+damping = 40.0
+color_ramp = SubResource( 2 )
+hue_variation = 0.1
+hue_variation_random = 0.5
+anim_speed = 5.0
+anim_offset = 1.0
+anim_offset_random = 1.0
+script = ExtResource( 3 )
+
+[node name="CheckpointEffect" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 hframes = 6
 script = ExtResource( 1 )

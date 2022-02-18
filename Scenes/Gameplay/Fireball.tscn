@@ -1,60 +1,27 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Gameplay/Fireball.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/fireball-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Utility/SpriteEffect.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Visuals/Effects/FireballDestroyParticles.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 3.0
 
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 2 )
-region = Rect2( 16, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 2 )
-region = Rect2( 32, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 2 )
-region = Rect2( 48, 0, 16, 16 )
-
-[sub_resource type="SpriteFrames" id=6]
-animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
-"loop": true,
-"name": "default",
-"speed": 10.0
-} ]
-
 [node name="Fireball" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 1 )
+destroy_effect = ExtResource( 4 )
+
+[node name="SpriteEffect" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 4
+script = ExtResource( 3 )
+frames = 4
+looping = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 6 )
-frame = 2
-playing = true
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-emitting = false
-amount = 4
-lifetime = 0.5
-one_shot = true
-explosiveness = 1.0
-local_coords = false
-direction = Vector2( 0, -1 )
-initial_velocity = 40.0
-scale_amount = 2.0
-scale_amount_random = 1.0
-color = Color( 0.501961, 0.00784314, 0.215686, 1 )
-
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-
-[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+rect = Rect2( -8, -8, 16, 16 )

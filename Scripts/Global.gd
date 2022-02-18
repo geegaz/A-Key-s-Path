@@ -100,7 +100,7 @@ func set_screenshake(state: bool):
 
 #################### Helper Functions ####################
 
-func create_at(scene: PackedScene, pos: Vector2 = Vector2.ZERO, parent: Node = self)->Node:
+func create_at(scene: PackedScene, pos: Vector2, parent: Node = self)->Node:
 	var new_scene: Node2D = scene.instance()
 	if new_scene:
 		parent.add_child(new_scene)

@@ -1,31 +1,19 @@
 extends KinematicBody2D
 
-var dir = Vector2.ZERO
-var speed = 1.0
-var alive = true
+export var speed: float = 100
+export var destroy_effect: PackedScene
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	if !alive and !$CPUParticles2D.emitting:
-		queue_free()
+onready var _Visibility: = $VisibilityNotifier2D
+
+func _ready() -> void:
+	_Visibility.connect("screen_exited", self, "queue_free")
 
 func _physics_process(delta):
-	var collision
-	if alive:
-		 collision = move_and_collide((dir*speed)*delta)
+	var collision = move_and_collide(Vector2.RIGHT.rotated(rotation) * speed * delta)
 	if collision:
-		alive = false
-		$CollisionShape2D.disabled = true
-		$AnimatedSprite.visible = false
-		$CPUParticles2D.emitting = true
-	
-	if !alive and !$CPUParticles2D.emitting:
-		queue_free()
-		
-func init(dir_param: Vector2, speed_param: float):
-	self.dir = dir_param
-	self.speed = speed_param
-	self.rotation_degrees = rad2deg(dir.angle())-90
+		destroy()
 
-func _on_VisibilityNotifier2D_screen_exited():
+func destroy()->void:
+	var effect: = Global.create_at(destroy_effect, global_position)
+	effect.rotation = rotation
 	queue_free()

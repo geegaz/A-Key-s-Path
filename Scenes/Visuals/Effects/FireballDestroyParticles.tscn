@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Utility/ParticlesEffect.gd" type="Script" id=1]
+
+[sub_resource type="Curve" id=1]
+max_value = 2.0
+_data = [ Vector2( 0, 2 ), 0.0, 1.2551, 0, 0, Vector2( 1, 0 ), -2.30101, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0.894118, 0.192157, 0.109804, 1, 0, 0, 0, 1 )
+
+[node name="FireballDestroyParticles" type="CPUParticles2D"]
+lifetime = 0.5
+explosiveness = 1.0
+local_coords = false
+direction = Vector2( -1, 0 )
+gravity = Vector2( 0, 20 )
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+damping = 50.0
+scale_amount = 2.0
+scale_amount_random = 1.0
+scale_amount_curve = SubResource( 1 )
+color_ramp = SubResource( 2 )
+script = ExtResource( 1 )

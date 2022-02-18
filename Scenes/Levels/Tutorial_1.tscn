@@ -17,7 +17,7 @@
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
-[node name="ControlsUI" parent="UILayer" instance=ExtResource( 5 )]
+[node name="ControlsScreen" parent="UILayer" instance=ExtResource( 5 )]
 
 [node name="PauseMenu" parent="UILayer" instance=ExtResource( 4 )]
 
@@ -55,4 +55,5 @@ position = Vector2( 160, 56 )
 [node name="Shooters" type="Node" parent="."]
 
 [node name="Shooter" parent="Shooters" instance=ExtResource( 10 )]
-position = Vector2( -8, 56 )
+position = Vector2( 24, 56 )
+rotation = -1.57079
