@@ -1,24 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Gameplay/Tips.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/tips/tips-Sheet.png" type="Texture" id=2]
-
-
-[sub_resource type="Animation" id=1]
-resource_name = "fall"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 2, 3 ]
-}
 
 [sub_resource type="Animation" id=2]
 resource_name = "idle_0"
@@ -52,22 +35,6 @@ tracks/0/keys = {
 "values": [ 16, 17, 18, 19, 20, 21, 22, 23 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "jump"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 1 ]
-}
-
 [sub_resource type="Animation" id=5]
 resource_name = "run"
 length = 0.4
@@ -85,8 +52,9 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 16, 64 )
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 16.0
+height = 96.0
 
 [node name="Tips" type="PathFollow2D"]
 rotate = false
@@ -105,10 +73,8 @@ frame = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle_0"
-anims/fall = SubResource( 1 )
 anims/idle_0 = SubResource( 2 )
 anims/idle_1 = SubResource( 3 )
-anims/jump = SubResource( 4 )
 anims/run = SubResource( 5 )
 
 [node name="Area2D" type="Area2D" parent="."]

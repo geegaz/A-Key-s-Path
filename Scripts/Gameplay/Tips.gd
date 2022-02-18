@@ -9,9 +9,10 @@ export(Array, float) var offsets = []
 var moving: bool = false
 var next_offset_id: int = 0
 
-onready var IdleTimer = $IdleTimer
-onready var Animator = $AnimationPlayer
-onready var Collider = $Area2D/Collider
+onready var _Idle: = $IdleTimer
+onready var _Animation: = $AnimationPlayer
+onready var _Collider: = $Area2D/Collider
+onready var _Sprite: = $Sprite
 
 func _ready():
 	offset = 0.0
@@ -24,12 +25,13 @@ func _process(delta):
 			# When reached the target offset,
 			# stop Tips and make it able to detect the player again
 			moving = false
-			Collider.set_deferred("disabled", false)
-			Animator.play("idle_1")
+			_Sprite.flip_h = true
+			_Collider.set_deferred("disabled", false)
+			_Animation.play("idle_1")
 			
 			# Start the timer to play random animations
-			IdleTimer.wait_time = randf()*2.0+0.5
-			IdleTimer.start()
+			_Idle.wait_time = randf()*2.0+0.5
+			_Idle.start()
 			
 			emit_signal("reached_offset", next_offset_id)		
 
@@ -42,12 +44,11 @@ func goto_next_offset(new_offset_id):
 		# and prevent the player from interacting with it until it reached 
 		# the next offset
 		moving = true
-		Collider.set_deferred("disabled", true)
-		Animator.play("run")
+		_Sprite.flip_h = false
+		_Collider.set_deferred("disabled", true)
+		_Animation.play("run")
 		
 		emit_signal("goto_next_offset", next_offset_id)
-	elif loop:
-		pass
 
 
 func _on_Area2D_body_entered(body):
@@ -59,11 +60,11 @@ func _on_IdleTimer_timeout():
 		var anim = randi()%2
 		match anim:
 			0:
-				Animator.play("idle_0")
+				_Animation.play("idle_0")
 			1:
-				Animator.play("idle_1")
+				_Animation.play("idle_1")
 			_:
-				Animator.play("idle_0")
+				_Animation.play("idle_0")
 		
-		IdleTimer.wait_time = randf()*2.0+0.5
-		IdleTimer.start()
+		_Idle.wait_time = randf()*2.0+0.5
+		_Idle.start()

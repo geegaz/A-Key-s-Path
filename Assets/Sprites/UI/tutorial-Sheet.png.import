@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tutorial-Sheet.png-e0d42266bb5b9d2ec4f98a463ff64024.stex"
+path="res://.import/tutorial-Sheet.png-a69910cb7349dd11e33402f185c92022.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/tutorial-Sheet.png"
-dest_files=[ "res://.import/tutorial-Sheet.png-e0d42266bb5b9d2ec4f98a463ff64024.stex" ]
+source_file="res://Assets/Sprites/ui/tutorial-Sheet.png"
+dest_files=[ "res://.import/tutorial-Sheet.png-a69910cb7349dd11e33402f185c92022.stex" ]
 
 [params]
 

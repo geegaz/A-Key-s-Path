@@ -102,7 +102,7 @@ tracks/0/keys = {
 "values": [ 20, 21, 22, 23 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -135,7 +135,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=20]
+[sub_resource type="AnimationNodeAnimation" id=8]
 animation = "die"
 
 [sub_resource type="AnimationNodeAnimation" id=9]
@@ -160,12 +160,12 @@ animation = "run"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=17]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachine" id=18]
-states/die/node = SubResource( 20 )
+[sub_resource type="AnimationNodeStateMachine" id=19]
+states/die/node = SubResource( 8 )
 states/die/position = Vector2( 288, -63 )
 states/fall/node = SubResource( 9 )
 states/fall/position = Vector2( 288, 168 )
@@ -175,11 +175,11 @@ states/jump/node = SubResource( 11 )
 states/jump/position = Vector2( 454, 168 )
 states/run/node = SubResource( 12 )
 states/run/position = Vector2( 454, 59 )
-transitions = [ "idle", "run", SubResource( 13 ), "run", "idle", SubResource( 14 ), "idle", "jump", SubResource( 15 ), "jump", "fall", SubResource( 16 ), "fall", "idle", SubResource( 17 ), "die", "idle", SubResource( 21 ) ]
+transitions = [ "idle", "run", SubResource( 13 ), "run", "idle", SubResource( 14 ), "idle", "jump", SubResource( 15 ), "jump", "fall", SubResource( 16 ), "fall", "idle", SubResource( 17 ), "die", "idle", SubResource( 18 ) ]
 start_node = "idle"
 graph_offset = Vector2( -267, -141 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=19]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=20]
 
 [node name="Player" type="KinematicBody2D" groups=[
 "Player",
@@ -196,6 +196,7 @@ z_index = 1
 texture = ExtResource( 10 )
 hframes = 10
 vframes = 9
+frame = 3
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1 )
@@ -216,13 +217,13 @@ anims/die = SubResource( 3 )
 anims/fall = SubResource( 4 )
 anims/idle = SubResource( 5 )
 anims/jump = SubResource( 6 )
-anims/run = SubResource( 8 )
+anims/run = SubResource( 7 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 18 )
+tree_root = SubResource( 19 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 19 )
+parameters/playback = SubResource( 20 )
 
 [node name="RunningSound" type="AudioStreamPlayer" parent="."]
 script = ExtResource( 6 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/UI/Controls/ControlLeft.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/UI/Controls/ControlJump.tscn" type="PackedScene" id=2]
@@ -8,65 +8,59 @@
 [ext_resource path="res://Assets/Sprites/ui/controls/controls_background_top.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sprites/ui/controls/controls_background.png" type="Texture" id=7]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 168, 18 )
-
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 5 )
 region = Rect2( 32, 0, 64, 16 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 5 )
 region = Rect2( 32, 16, 64, 16 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 5 )
 region = Rect2( 32, 32, 64, 16 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 16, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 32, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 5 )
 region = Rect2( 16, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 5 )
 region = Rect2( 16, 16, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 5 )
 region = Rect2( 16, 32, 16, 16 )
 
-[node name="ControlsScreen" type="Node2D"]
-z_index = 1
+[node name="ControlsScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
 script = ExtResource( 4 )
-
-[node name="BarRetriever" type="KinematicBody2D" parent="."]
-position = Vector2( 160, 178 )
-collision_layer = 16
-collision_mask = 2147483648
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BarRetriever"]
-shape = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Tween" type="Tween" parent="."]
 
 [node name="BarBase" type="TextureRect" parent="."]
-margin_left = -16.0
-margin_top = 158.0
-margin_right = 21.0
-margin_bottom = 190.0
-rect_scale = Vector2( 9.44, 1 )
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -22.0
+margin_bottom = 10.0
 mouse_filter = 2
 texture = ExtResource( 7 )
 stretch_mode = 2
@@ -75,10 +69,14 @@ __meta__ = {
 }
 
 [node name="BarSlots" type="NinePatchRect" parent="."]
-margin_left = 96.0
-margin_top = 158.0
-margin_right = 224.0
-margin_bottom = 190.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -64.0
+margin_top = -22.0
+margin_right = 64.0
+margin_bottom = 10.0
 texture = ExtResource( 6 )
 patch_margin_left = 9
 patch_margin_top = 10
@@ -87,47 +85,44 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ControlJumpPos" type="Position2D" parent="."]
-position = Vector2( 184, 170 )
+[node name="RetrieveJump" type="TextureButton" parent="BarSlots"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -8.0
+margin_top = 4.0
+margin_right = 56.0
+margin_bottom = 20.0
+texture_normal = SubResource( 1 )
+texture_pressed = SubResource( 2 )
+texture_hover = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="RetrieveJump" type="TextureButton" parent="ControlJumpPos"]
+[node name="RetrieveLeft" type="TextureButton" parent="BarSlots"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -56.0
+margin_top = 4.0
+margin_right = -40.0
+margin_bottom = 20.0
+texture_normal = SubResource( 4 )
+texture_pressed = SubResource( 5 )
+texture_hover = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RetrieveRight" type="TextureButton" parent="BarSlots"]
+anchor_left = 0.5
+anchor_right = 0.5
 margin_left = -32.0
-margin_top = -8.0
-margin_right = 32.0
-margin_bottom = 8.0
-texture_normal = SubResource( 2 )
-texture_pressed = SubResource( 3 )
-texture_hover = SubResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ControlLeftPos" type="Position2D" parent="."]
-position = Vector2( 112, 170 )
-
-[node name="RetrieveLeft" type="TextureButton" parent="ControlLeftPos"]
-margin_left = -8.0
-margin_top = -8.0
-margin_right = 8.0
-margin_bottom = 8.0
-texture_normal = SubResource( 5 )
-texture_pressed = SubResource( 6 )
-texture_hover = SubResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ControlRightPos" type="Position2D" parent="."]
-position = Vector2( 136, 170 )
-
-[node name="RetrieveRight" type="TextureButton" parent="ControlRightPos"]
-margin_left = -8.0
-margin_top = -8.0
-margin_right = 8.0
-margin_bottom = 8.0
-texture_normal = SubResource( 8 )
-texture_pressed = SubResource( 9 )
-texture_hover = SubResource( 10 )
+margin_top = 4.0
+margin_right = -16.0
+margin_bottom = 20.0
+texture_normal = SubResource( 7 )
+texture_pressed = SubResource( 8 )
+texture_hover = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -140,7 +135,3 @@ position = Vector2( 112, 170 )
 
 [node name="ControlRight" parent="." instance=ExtResource( 3 )]
 position = Vector2( 136, 170 )
-
-[connection signal="pressed" from="ControlJumpPos/RetrieveJump" to="." method="_on_RetrieveControl" binds= [ 0 ]]
-[connection signal="pressed" from="ControlLeftPos/RetrieveLeft" to="." method="_on_RetrieveControl" binds= [ 1 ]]
-[connection signal="pressed" from="ControlRightPos/RetrieveRight" to="." method="_on_RetrieveControl" binds= [ 2 ]]

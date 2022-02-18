@@ -1,80 +1,86 @@
-extends Node2D
+extends Control
 
-signal control_placed(control_type)
-signal control_retrieved(control_type)
-
-onready var ControlBlocks: Array = [
-	$ControlJump,
-	$ControlLeft,
-	$ControlRight
+onready var _ControlKeys: Dictionary = {
+	$ControlJump: $ControlJump.position,
+	$ControlLeft: $ControlLeft.position,
+	$ControlRight: $ControlRight.position
+}
+onready var _ControlButtons: Array = [
+	$BarSlots/RetrieveJump,
+	$BarSlots/RetrieveLeft,
+	$BarSlots/RetrieveRight
 ]
-onready var ControlPos: Array = [
-	$ControlJumpPos,
-	$ControlLeftPos,
-	$ControlRightPos
-]
+onready var _BarBase: = $BarBase
 
 func _ready():
-	for control in ControlBlocks:
+	var index: int = 0
+	for control in _ControlKeys:
 		if control:
-			control.connect("place", self, "_on_PlaceControl")
-			control.connect("retrieve", self, "_on_RetrieveControl")
-	
-	show()
+			control.connect("dragged", self, "_on_ControlKey_dragged", [control])
+			control.connect("placed", self, "_on_ControlKey_placed", [control])
+			control.connect("retrieved", self, "_on_ControlKey_retrieved", [control])
+			
+			_ControlButtons[index].connect("pressed", self, "_on_ControlKey_retrieved", [control])
+		index += 1
 
 func _process(delta):
-	position = _get_camera_pos()
+	pass
 
-func _get_camera_pos():
-	# https://godotengine.org/qa/4750/get-center-of-the-current-camera2d
-	var vtrans = get_canvas_transform()
-	return -vtrans.get_origin() / vtrans.get_scale()
+#func _get_camera_pos():
+#	# https://godotengine.org/qa/4750/get-center-of-the-current-camera2d
+#	var vtrans = get_canvas_transform()
+#	return -vtrans.get_origin() / vtrans.get_scale()
+
+func reparent(node: Node2D, target: Node):
+	# Detach from old parent
+	var source = node.get_parent()
+	source.remove_child(node)
+	# Attach to new parent
+	target.add_child(node)
+	node.set_owner(target)
 
 func retrieve_all():
-	for control in ControlBlocks:
+	for control in _ControlKeys:
 		if control and control.in_world:
-			retrieve_control(control.control_type)
+			control.set_physical(false)
+			reparent(control, self)
+			retrieve_control(control)
 
-func place_control(control_type: int):
-	var control = ControlBlocks[control_type]
-	if !control:
-		return
-	control.set_as_toplevel(true)
-	Global.active_controls[control_type] = false
+func place_control(control: Node2D):
+	control.position = control.get_absolute_world_position(control.position)
+	Global.active_controls[control.control_type] = false
 
-	# If another node wants to detect control changes
-	emit_signal("control_placed", control_type)
-
-func retrieve_control(control_type: int):
-	var control = ControlBlocks[control_type]
-	if !control:
-		return
+func retrieve_control(control: Node2D):
 	# Get the control's position in global coordinates,
 	# and reparent the control to the ControlsScreen
-	control.position = control.get_global_transform_with_canvas().origin
-	control.set_as_toplevel(false)
-	Global.active_controls[control_type] = true
-	control.retrieve()
-	
-	# If another node wants to detect control changes
-	emit_signal("control_retrieved", control_type)
+	control.position = control.get_absolute_local_position(control.position)
+	Global.active_controls[control.control_type] = true
 	
 	# Smoothly interpolate the control's position to ControlsScreen
 	var tween = $Tween
 	tween.remove(control)
-	tween.follow_property(control, "position",
+	tween.interpolate_property(control, "position",
 		control.position,
-		ControlPos[control_type], "position",
+		_ControlKeys[control],
 		0.2, Tween.TRANS_BACK, Tween.EASE_OUT)
 	tween.start()
 
 
-func _on_PlaceControl(control_type):
-	place_control(control_type)
+func _on_ControlKey_dragged(control):
+	control.set_physical(false)
+	reparent(control, self)
+	place_control(control)
 
+func _on_ControlKey_placed(control):
+	if _BarBase.get_rect().has_point(control.get_global_mouse_position()):
+		control.position = control.get_absolute_world_position(control.position)
+		_on_ControlKey_retrieved(control)
+	else:
+		control.set_physical(true)
+		reparent(control, get_tree().root)
+		place_control(control)
 
-func _on_RetrieveControl(control_type):
-	retrieve_control(control_type)
-
-func _on_RetrieveAll():
-	retrieve_all()
+func _on_ControlKey_retrieved(control):
+	control.set_physical(false)
+	reparent(control, self)
+	retrieve_control(control)

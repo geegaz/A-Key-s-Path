@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scripts/UI/controls/ControlBlock.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/UI/controls/ControlKey.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/ui/controls/right.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -10,13 +10,22 @@ extents = Vector2( 8, 8 )
 extents = Vector2( 7, 6 )
 
 [node name="ControlRight" type="KinematicBody2D"]
+collision_layer = 0
 collision_mask = 0
 script = ExtResource( 1 )
 control_type = 2
 
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 2
+vframes = 4
+
 [node name="Collider" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 disabled = true
+
+[node name="PlacementCollider" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
 
 [node name="Placement" type="Control" parent="."]
 margin_left = -8.0
@@ -26,15 +35,3 @@ margin_bottom = 8.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="PlacementArea" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 21
-
-[node name="PlacementCollider" type="CollisionShape2D" parent="PlacementArea"]
-shape = SubResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
-hframes = 2
-vframes = 4

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spacebar.png-b9e0f3baa47bb7dc25fd0bf8afe7f295.stex"
+path="res://.import/spacebar.png-c3a4b8b7ba2f3763c1309247920e2886.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UI/controls/spacebar.png"
-dest_files=[ "res://.import/spacebar.png-b9e0f3baa47bb7dc25fd0bf8afe7f295.stex" ]
+source_file="res://Assets/Sprites/ui/controls/spacebar.png"
+dest_files=[ "res://.import/spacebar.png-c3a4b8b7ba2f3763c1309247920e2886.stex" ]
 
 [params]
 

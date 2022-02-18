@@ -16,55 +16,55 @@
 [ext_resource path="res://Scripts/Utility/SpriteEffect.gd" type="Script" id=14]
 [ext_resource path="res://Assets/Sprites/flag-Sheet.png" type="Texture" id=17]
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 13 )
 region = Rect2( 0, 32, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 13 )
 region = Rect2( 16, 32, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 13 )
 region = Rect2( 32, 32, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 13 )
 region = Rect2( 48, 32, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 13 )
 region = Rect2( 0, 16, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 13 )
 region = Rect2( 16, 16, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 13 )
 region = Rect2( 32, 16, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 13 )
 region = Rect2( 48, 16, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 13 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 13 )
 region = Rect2( 16, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 13 )
 region = Rect2( 32, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 13 )
 region = Rect2( 48, 0, 16, 16 )
 
-[sub_resource type="Animation" id=31]
+[sub_resource type="Animation" id=13]
 resource_name = "title"
 length = 4.0
 tracks/0/type = "value"
@@ -269,10 +269,10 @@ margin_bottom = 0.039978
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture_normal = SubResource( 19 )
-texture_pressed = SubResource( 20 )
-texture_hover = SubResource( 21 )
-texture_disabled = SubResource( 22 )
+texture_normal = SubResource( 1 )
+texture_pressed = SubResource( 2 )
+texture_hover = SubResource( 3 )
+texture_disabled = SubResource( 4 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -292,10 +292,10 @@ margin_bottom = 21.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture_normal = SubResource( 23 )
-texture_pressed = SubResource( 24 )
-texture_hover = SubResource( 25 )
-texture_disabled = SubResource( 26 )
+texture_normal = SubResource( 5 )
+texture_pressed = SubResource( 6 )
+texture_hover = SubResource( 7 )
+texture_disabled = SubResource( 8 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -313,10 +313,10 @@ margin_bottom = 21.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture_normal = SubResource( 27 )
-texture_pressed = SubResource( 28 )
-texture_hover = SubResource( 29 )
-texture_disabled = SubResource( 30 )
+texture_normal = SubResource( 9 )
+texture_pressed = SubResource( 10 )
+texture_hover = SubResource( 11 )
+texture_disabled = SubResource( 12 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -331,4 +331,4 @@ current = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "title"
 playback_speed = 2.0
-anims/title = SubResource( 31 )
+anims/title = SubResource( 13 )

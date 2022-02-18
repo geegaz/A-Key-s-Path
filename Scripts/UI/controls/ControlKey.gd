@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
-signal place(control_type)
-signal retrieve(control_type)
+signal dragged
+signal placed
+signal retrieved
 
 export(Global.Controls) var control_type
 
@@ -13,9 +14,10 @@ enum {
 }
 var TILESIZE: = Vector2(16, 16)
 
-var hover: = false
 var valid_pos: = true
 var in_world: = false
+
+var hover: = false
 var dragged: = false
 var drag_time = 0.0
 var limit_drag_time = 0.2
@@ -23,9 +25,11 @@ var limit_drag_time = 0.2
 var Actions = ["jump", "ui_left", "ui_right"]
 onready var control_action: String = Actions[control_type]
 
-onready var _Sprite: Sprite = $Sprite
-onready var _Collider: CollisionShape2D = $Collider
-onready var _Placement: Control = $Placement
+onready var _Sprite: = $Sprite
+onready var _Collider: = $Collider
+onready var _Placement: = $Placement
+
+onready var displacement: = Vector2.UP * TILESIZE/2 if control_type == Global.Controls.JUMP else TILESIZE/2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,6 +41,8 @@ func _process(delta):
 	# Sprite appearance
 	if dragged:
 		_Sprite.frame = DRAGGED
+		drag_time += delta
+		
 	elif in_world:
 		_Sprite.frame = WORLD
 	elif Input.is_action_pressed(control_action):
@@ -45,18 +51,11 @@ func _process(delta):
 		_Sprite.frame = NORMAL
 	_Sprite.frame *= 2
 	
-	# Drag management
 	if dragged:
-		drag_time += delta
 		# ControlBlock movement
-		var displacement: Vector2 = TILESIZE/2
-		if control_type == Global.Controls.JUMP:
-			displacement = Vector2.UP * TILESIZE/2
-		position = (get_global_mouse_position() - displacement).snapped(TILESIZE) + displacement
-		
+		position = get_position_snapped(get_global_mouse_position())
 		if not Input.is_mouse_button_pressed(BUTTON_LEFT):
 			stop_drag()
-	
 	elif hover:
 		_Sprite.frame += 1
 	
@@ -70,43 +69,49 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(delta):
 	valid_pos = true
-	if dragged and $PlacementArea.get_overlapping_bodies().size() > 0:
-		valid_pos = false
+	if dragged:
+		collision_mask = 5
+		valid_pos = not test_move(Transform2D(0, get_absolute_world_position(position) + Vector2.DOWN), Vector2.UP)
+	
+	collision_mask = 0
 
 func start_drag():
 	drag_time = 0.0
 	dragged = true
-	_Collider.disabled = true
-	z_index = 1
 	
-	emit_signal("place", self.control_type)
-#	position = get_global_mouse_position().round()
+	emit_signal("dragged")
 
 func stop_drag():
 	dragged = false
+	position = get_position_snapped(position)
 	if valid_pos and drag_time > limit_drag_time:
-		_Collider.disabled = false
-		if !in_world:
-			in_world = true
-		z_index = 0
+		emit_signal("placed")
 	else:
-		emit_signal("retrieve", self.control_type)
-		
-func retrieve():
-	in_world = false
-	_Collider.disabled = true
-	hover = false
-	z_index = 1
+		position = get_absolute_world_position(position)
+		emit_signal("retrieved")
+
+func get_absolute_world_position(pos: Vector2)-> Vector2:
+	return get_viewport().canvas_transform.xform_inv(pos)
+
+func get_absolute_local_position(pos: Vector2)-> Vector2:
+	return get_viewport().canvas_transform.xform(pos)
+
+func get_position_snapped(pos: Vector2)->Vector2:
+	var target_pos: Vector2 = (get_absolute_world_position(pos) - displacement).snapped(TILESIZE)
+	return get_absolute_local_position(target_pos) + displacement
+
+func set_physical(value: bool):
 	_Sprite.modulate = Color.white
+	# Set collision
+	in_world = value
+	set_collision_layer_bit(0, value)
+	_Collider.set_deferred("disabled", not value)
 
 func _on_Placement_mouse_entered():
 	hover = true
 
 func _on_Placement_mouse_exited():
 	hover = false
-
-func _on_Placement_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	pass
 
 func _on_Placement_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:

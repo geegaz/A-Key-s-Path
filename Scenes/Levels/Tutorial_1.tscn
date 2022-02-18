@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Tilesets/terrain.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Visuals/Background.tscn" type="PackedScene" id=2]
@@ -9,12 +9,15 @@
 [ext_resource path="res://Scenes/Gameplay/End.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Gameplay/Checkpoint.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Utility/PlayerCamera.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Gameplay/Shooter.tscn" type="PackedScene" id=10]
 
 [node name="Level" type="Node"]
 
 [node name="Background" parent="." instance=ExtResource( 2 )]
 
 [node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="ControlsUI" parent="UILayer" instance=ExtResource( 5 )]
 
 [node name="PauseMenu" parent="UILayer" instance=ExtResource( 4 )]
 
@@ -33,13 +36,12 @@ collision_mask = 0
 format = 1
 tile_data = PoolIntArray( -327691, 1, 0, -327690, 1, 1, -327689, 1, 1, -327688, 1, 1, -327687, 1, 1, -327686, 1, 1, -327685, 1, 1, -327684, 1, 1, -327683, 1, 1, -327682, 1, 1, -327681, 1, 1, -393216, 1, 1, -393215, 1, 1, -393214, 1, 1, -393213, 1, 1, -393212, 1, 1, -393211, 1, 1, -393210, 1, 1, -393209, 1, 1, -393208, 1, 1, -393207, 1, 1, -393206, 1, 2, -262155, 1, 65536, -262154, 1, 4, -262153, 1, 131073, -262152, 1, 131073, -262151, 1, 131073, -262150, 1, 131073, -262149, 1, 131073, -262148, 1, 131073, -262147, 1, 131073, -262146, 1, 131073, -262145, 1, 131073, -327680, 1, 131073, -327679, 1, 131073, -327678, 1, 131073, -327677, 1, 131073, -327676, 1, 131073, -327675, 1, 131073, -327674, 1, 131073, -327673, 1, 131073, -327672, 1, 131073, -327671, 1, 65540, -327670, 1, 65538, -196619, 1, 65536, -196618, 1, 65538, -262135, 1, 65536, -262134, 1, 65538, -131083, 1, 65536, -131082, 1, 65538, -196599, 1, 65536, -196598, 1, 65538, -65547, 1, 65536, -65546, 1, 65538, -131063, 1, 65536, -131062, 1, 65538, -11, 1, 65536, -10, 1, 65538, -65527, 1, 65536, -65526, 1, 65538, 65525, 1, 65536, 65526, 1, 65538, 9, 1, 65536, 10, 1, 65538, 131061, 1, 65536, 131062, 1, 65538, 65545, 1, 65536, 65546, 1, 65538, 196597, 1, 65536, 196598, 1, 65538, 131081, 1, 65536, 131082, 1, 65538, 262133, 1, 65536, 262134, 1, 65538, 196608, 13, 2, 196612, 11, 1, 196617, 1, 65536, 196618, 1, 65538, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 0, 0, 327669, 1, 65536, 327670, 1, 65540, 327671, 1, 1, 327672, 1, 1, 327673, 1, 1, 327674, 1, 1, 327675, 1, 1, 327676, 1, 1, 327677, 3, 1, 327678, 3, 1, 327679, 3, 1, 262144, 3, 1, 262145, 3, 1, 262146, 3, 1, 262147, 3, 1, 262148, 3, 1, 262149, 1, 1, 262150, 1, 1, 262151, 1, 1, 262152, 1, 1, 262153, 1, 131076, 262154, 1, 65538, 393205, 1, 131072, 393206, 1, 131073, 393207, 1, 131073, 393208, 1, 131073, 393209, 1, 131073, 393210, 1, 131073, 393211, 1, 131073, 393212, 1, 131073, 393213, 1, 131073, 393214, 1, 131073, 393215, 1, 131073, 327680, 1, 131073, 327681, 1, 131073, 327682, 1, 131073, 327683, 1, 131073, 327684, 1, 131073, 327685, 1, 131073, 327686, 1, 131073, 327687, 1, 131073, 327688, 1, 131073, 327689, 1, 131073, 327690, 1, 131074 )
 
-[node name="ControlsUI" parent="." instance=ExtResource( 5 )]
+[node name="PlayerCamera" parent="." instance=ExtResource( 9 )]
+position = Vector2( -72, 56 )
+target_node = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( -72, 56 )
-
-[node name="PlayerCamera" parent="Player" instance=ExtResource( 9 )]
-target_node = NodePath("..")
 
 [node name="End" parent="." instance=ExtResource( 7 )]
 position = Vector2( 488, 48 )
@@ -49,3 +51,8 @@ position = Vector2( 136, 56 )
 
 [node name="Checkpoint2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 160, 56 )
+
+[node name="Shooters" type="Node" parent="."]
+
+[node name="Shooter" parent="Shooters" instance=ExtResource( 10 )]
+position = Vector2( -8, 56 )
