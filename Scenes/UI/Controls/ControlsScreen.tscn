@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/UI/Controls/ControlLeft.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/UI/Controls/ControlJump.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Sprites/UI/controls/controls_place.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/UI/controls/controls_background_top.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sprites/UI/controls/controls_background.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/UI/hand-Sheet.png" type="Texture" id=8]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 5 )
@@ -43,6 +44,47 @@ region = Rect2( 16, 16, 16, 16 )
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 5 )
 region = Rect2( 16, 32, 16, 16 )
+
+[sub_resource type="Animation" id=10]
+resource_name = "tutorial"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Hand:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 1.4, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 3, 3, 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6, 1.4, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 112, 168 ), Vector2( 112, 168 ), Vector2( 200, 56 ), Vector2( 200, 56 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Hand:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="ControlsScreen" type="Control"]
 anchor_right = 1.0
@@ -92,6 +134,7 @@ margin_left = -8.0
 margin_top = 4.0
 margin_right = 56.0
 margin_bottom = 20.0
+focus_mode = 0
 texture_normal = SubResource( 1 )
 texture_pressed = SubResource( 2 )
 texture_hover = SubResource( 3 )
@@ -106,6 +149,7 @@ margin_left = -56.0
 margin_top = 4.0
 margin_right = -40.0
 margin_bottom = 20.0
+focus_mode = 0
 texture_normal = SubResource( 4 )
 texture_pressed = SubResource( 5 )
 texture_hover = SubResource( 6 )
@@ -120,6 +164,7 @@ margin_left = -32.0
 margin_top = 4.0
 margin_right = -16.0
 margin_bottom = 20.0
+focus_mode = 0
 texture_normal = SubResource( 7 )
 texture_pressed = SubResource( 8 )
 texture_hover = SubResource( 9 )
@@ -135,3 +180,14 @@ position = Vector2( 112, 170 )
 
 [node name="ControlRight" parent="." instance=ExtResource( 3 )]
 position = Vector2( 136, 170 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/tutorial = SubResource( 10 )
+
+[node name="Hand" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 200, 56 )
+texture = ExtResource( 8 )
+hframes = 2
+vframes = 2
+frame = 2

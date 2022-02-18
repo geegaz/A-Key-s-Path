@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=31 format=2]
+[gd_resource type="Theme" load_steps=26 format=2]
 
 [ext_resource path="res://Assets/Themes/resources/button/focus.tres" type="StyleBox" id=1]
 [ext_resource path="res://Assets/Themes/resources/button/pressed.tres" type="StyleBox" id=2]
@@ -37,41 +37,6 @@ margin_left = 6.0
 margin_right = 6.0
 margin_top = 6.0
 margin_bottom = 6.0
-
-[sub_resource type="StyleBoxTexture" id=7]
-region_rect = Rect2( 48, 16, 16, 16 )
-margin_left = 11.0
-margin_right = 11.0
-margin_top = 5.0
-margin_bottom = 5.0
-
-[sub_resource type="StyleBoxTexture" id=8]
-region_rect = Rect2( 64, 16, 16, 16 )
-margin_left = 11.0
-margin_right = 11.0
-margin_top = 5.0
-margin_bottom = 5.0
-
-[sub_resource type="StyleBoxTexture" id=9]
-region_rect = Rect2( 80, 16, 16, 16 )
-margin_left = 11.0
-margin_right = 11.0
-margin_top = 5.0
-margin_bottom = 5.0
-
-[sub_resource type="StyleBoxTexture" id=10]
-region_rect = Rect2( 16, 16, 16, 16 )
-margin_left = 12.0
-margin_right = 12.0
-margin_top = 4.0
-margin_bottom = 4.0
-
-[sub_resource type="StyleBoxTexture" id=11]
-region_rect = Rect2( 32, 16, 16, 16 )
-margin_left = 12.0
-margin_right = 12.0
-margin_top = 4.0
-margin_bottom = 4.0
 
 [sub_resource type="AtlasTexture" id=12]
 region = Rect2( 80, 48, 16, 16 )
@@ -148,11 +113,11 @@ VScrollBar/icons/decrement = null
 VScrollBar/icons/decrement_highlight = null
 VScrollBar/icons/increment = null
 VScrollBar/icons/increment_highlight = null
-VScrollBar/styles/grabber = SubResource( 7 )
-VScrollBar/styles/grabber_highlight = SubResource( 8 )
-VScrollBar/styles/grabber_pressed = SubResource( 9 )
-VScrollBar/styles/scroll = SubResource( 10 )
-VScrollBar/styles/scroll_focus = SubResource( 11 )
+VScrollBar/styles/grabber = ExtResource( 16 )
+VScrollBar/styles/grabber_highlight = ExtResource( 15 )
+VScrollBar/styles/grabber_pressed = ExtResource( 12 )
+VScrollBar/styles/scroll = ExtResource( 14 )
+VScrollBar/styles/scroll_focus = ExtResource( 13 )
 WindowDialog/colors/title_color = Color( 0, 0, 0, 1 )
 WindowDialog/constants/close_h_ofs = 17
 WindowDialog/constants/close_v_ofs = 15

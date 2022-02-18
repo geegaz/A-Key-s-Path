@@ -1,5 +1,8 @@
 extends Control
 
+signal control_placed(control)
+signal control_retrieved(control)
+
 onready var _ControlKeys: Dictionary = {
 	$ControlJump: $ControlJump.position,
 	$ControlLeft: $ControlLeft.position,
@@ -11,6 +14,8 @@ onready var _ControlButtons: Array = [
 	$BarSlots/RetrieveRight
 ]
 onready var _BarBase: = $BarBase
+
+var tutorial: = false
 
 func _ready():
 	var index: int = 0
@@ -55,12 +60,16 @@ func retrieve_all():
 func place_control(control: Node2D):
 	control.position = control.get_absolute_world_position(control.position)
 	Global.active_controls[control.control_type] = false
+	
+	emit_signal("control_placed", control)
 
 func retrieve_control(control: Node2D):
 	# Get the control's position in global coordinates,
 	# and reparent the control to the ControlsScreen
 	control.position = control.get_absolute_local_position(control.position)
 	Global.active_controls[control.control_type] = true
+	
+	emit_signal("control_retrieved", control)
 	
 	# Smoothly interpolate the control's position to ControlsScreen
 	var tween = $Tween
@@ -98,3 +107,14 @@ func _on_Checkpoint_body_entered(body):
 func _on_Player_died():
 	# Player... died
 	call_deferred("retrieve_all")
+
+func start_tutorial()->void:
+	if tutorial:
+		return
+	tutorial = true
+	
+	$AnimationPlayer.play("tutorial")
+	$Hand.show()
+	yield(self, "control_placed")
+	$AnimationPlayer.stop(true)
+	$Hand.hide()
