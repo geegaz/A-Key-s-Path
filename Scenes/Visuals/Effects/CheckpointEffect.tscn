@@ -13,7 +13,7 @@ particles_anim_loop = true
 
 [sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0.714286, 1 )
-colors = PoolColorArray( 0.35, 0, 1, 1, 1, 1, 1, 0 )
+colors = PoolColorArray( 0.27451, 0, 1, 1, 1, 1, 1, 0 )
 
 [node name="CPUParticles2D" type="CPUParticles2D"]
 material = SubResource( 1 )

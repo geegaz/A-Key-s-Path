@@ -22,6 +22,12 @@ func _ready():
 			
 			_ControlButtons[index].connect("pressed", self, "_on_ControlKey_retrieved", [control])
 		index += 1
+	
+	for checkpoint in get_tree().get_nodes_in_group("Checkpoint"):
+		checkpoint.connect("body_entered", self, "_on_Checkpoint_body_entered")
+	
+	for player in get_tree().get_nodes_in_group("Player"):
+		player.connect("died", self, "_on_Player_died")
 
 func _process(delta):
 	pass
@@ -65,7 +71,6 @@ func retrieve_control(control: Node2D):
 		0.2, Tween.TRANS_BACK, Tween.EASE_OUT)
 	tween.start()
 
-
 func _on_ControlKey_dragged(control):
 	control.set_physical(false)
 	reparent(control, self)
@@ -84,3 +89,12 @@ func _on_ControlKey_retrieved(control):
 	control.set_physical(false)
 	reparent(control, self)
 	retrieve_control(control)
+
+func _on_Checkpoint_body_entered(body):
+	# Player reached checkpoint
+	if body.is_in_group("Player"):
+		call_deferred("retrieve_all")
+
+func _on_Player_died():
+	# Player... died
+	call_deferred("retrieve_all")

@@ -6,10 +6,9 @@ onready var _Target: Node2D = get_node_or_null(target_node)
 func _ready():
 	set_as_toplevel(true)
 	
-	var parent = get_parent()
-	if parent.is_in_group("Player"):
-		parent.connect("died", self, "_on_Player_died")
-		parent.connect("respawned", self, "_on_Player_respawned")
+	var players: = get_tree().get_nodes_in_group("Player")
+	for player in players:
+		player.connect("died", self, "_on_Player_died")
 
 func _process(delta):
 	if _Target:
@@ -26,5 +25,3 @@ func set_camera_limits(rect_node: Control):
 func _on_Player_died():
 	Global._Shaker.add_shake(self, "offset", Vector2(5, 10), 1.0, 10)
 
-func _on_Player_respawned():
-	pass # Replace with function body.

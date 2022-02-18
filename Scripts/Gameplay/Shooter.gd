@@ -1,9 +1,7 @@
 extends Node2D
 
 export var fireball: PackedScene = preload("res://Scenes/Gameplay/Fireball.tscn")
-export var effects: Dictionary = {
-	"Smoke": preload("res://Scenes/Visuals/Effects/SmokeEffect.tscn")
-}
+export var smoke_effect: PackedScene = preload("res://Scenes/Visuals/Effects/SmokeEffect.tscn")
 export var shooting: = true
 export(float, 0.1, 10.0) var delay = 1.0
 export(float, 0.0, 10.0) var delay_offset = 0.0
@@ -27,13 +25,7 @@ func _process(delta: float) -> void:
 
 func shoot():
 	_Audio.pitch_scale = randf()*0.5 + 0.2
-	Global.create_at(effects["Smoke"], global_position, self)
+	Global.create_at(smoke_effect, global_position, self)
 	
 	var new_fireball: = Global.create_at(fireball, global_position)
 	new_fireball.rotation = rotation
-
-func _on_VisibilityNotifier2D_viewport_entered():
-	shooting = true
-
-func _on_VisibilityNotifier2D_viewport_exited():
-	shooting = false

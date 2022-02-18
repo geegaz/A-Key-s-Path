@@ -1,10 +1,8 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scripts/Gameplay/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Animations/cutscene_tips.tres" type="Animation" id=2]
 [ext_resource path="res://Assets/Animations/cutscene_fall.tres" type="Animation" id=3]
-[ext_resource path="res://Scenes/Visuals/Effects/JumpEffect.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Visuals/Effects/LandEffect.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Addons/SimpleNodes/RandomStreamPlayer.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Sprites/player/player_animations-Sheet.png" type="Texture" id=10]
 
@@ -164,6 +162,8 @@ animation = "run"
 switch_mode = 2
 auto_advance = true
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
 [sub_resource type="AnimationNodeStateMachine" id=19]
 states/die/node = SubResource( 8 )
 states/die/position = Vector2( 288, -63 )
@@ -175,9 +175,9 @@ states/jump/node = SubResource( 11 )
 states/jump/position = Vector2( 454, 168 )
 states/run/node = SubResource( 12 )
 states/run/position = Vector2( 454, 59 )
-transitions = [ "idle", "run", SubResource( 13 ), "run", "idle", SubResource( 14 ), "idle", "jump", SubResource( 15 ), "jump", "fall", SubResource( 16 ), "fall", "idle", SubResource( 17 ), "die", "idle", SubResource( 18 ) ]
+transitions = [ "idle", "run", SubResource( 13 ), "run", "idle", SubResource( 14 ), "idle", "jump", SubResource( 15 ), "jump", "fall", SubResource( 16 ), "fall", "idle", SubResource( 17 ), "die", "idle", SubResource( 18 ), "idle", "fall", SubResource( 21 ) ]
 start_node = "idle"
-graph_offset = Vector2( -267, -141 )
+graph_offset = Vector2( -222, -46 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=20]
 
@@ -187,8 +187,6 @@ graph_offset = Vector2( -267, -141 )
 collision_layer = 12
 collision/safe_margin = 0.01
 script = ExtResource( 1 )
-jump_effect = ExtResource( 4 )
-land_effect = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -8 )
@@ -196,7 +194,7 @@ z_index = 1
 texture = ExtResource( 10 )
 hframes = 10
 vframes = 9
-frame = 3
+frame = 27
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1 )

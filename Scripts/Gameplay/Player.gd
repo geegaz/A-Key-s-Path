@@ -120,6 +120,11 @@ func land():
 
 func die()->void:
 	velocity = Vector2.ZERO
+	# Status variables
+	jump_time = jump_buffer
+	air_time = air_buffer
+	on_ground = false
+	
 	set_physics_process(false)
 	_StateMachine.start("die")
 	
