@@ -1,5 +1,7 @@
 extends Camera2D
 
+export(NodePath) var limits_rect
+
 export(NodePath) var target_node
 onready var _Target: Node2D = get_node_or_null(target_node)
 
@@ -9,6 +11,10 @@ func _ready():
 	var players: = get_tree().get_nodes_in_group("Player")
 	for player in players:
 		player.connect("died", self, "_on_Player_died")
+	
+	var limits: Control = get_node_or_null(limits_rect)
+	if limits:
+		set_camera_limits(limits)
 
 func _process(delta):
 	if _Target:

@@ -3,7 +3,11 @@
 [ext_resource path="res://Scripts/Gameplay/Tips.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/tips/tips-Sheet.png" type="Texture" id=2]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 16.0
+height = 96.0
+
+[sub_resource type="Animation" id=1]
 resource_name = "idle_0"
 length = 0.8
 tracks/0/type = "value"
@@ -19,7 +23,7 @@ tracks/0/keys = {
 "values": [ 8, 9, 10, 11, 12, 13, 14, 15, 8 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "idle_1"
 length = 0.8
 tracks/0/type = "value"
@@ -35,7 +39,7 @@ tracks/0/keys = {
 "values": [ 16, 17, 18, 19, 20, 21, 22, 23 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 resource_name = "run"
 length = 0.4
 loop = true
@@ -52,10 +56,6 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=6]
-radius = 16.0
-height = 96.0
-
 [node name="Tips" type="PathFollow2D"]
 rotate = false
 cubic_interp = false
@@ -71,21 +71,23 @@ hframes = 8
 vframes = 3
 frame = 8
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "idle_0"
-anims/idle_0 = SubResource( 2 )
-anims/idle_1 = SubResource( 3 )
-anims/run = SubResource( 5 )
-
 [node name="Area2D" type="Area2D" parent="."]
+monitorable = false
 collision_layer = 0
 collision_mask = 4
 
 [node name="Collider" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="IdleTimer" type="Timer" parent="."]
 one_shot = true
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle_0"
+anims/idle_0 = SubResource( 1 )
+anims/idle_1 = SubResource( 2 )
+anims/run = SubResource( 3 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="IdleTimer" to="." method="_on_IdleTimer_timeout"]

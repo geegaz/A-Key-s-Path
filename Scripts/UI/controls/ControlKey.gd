@@ -70,7 +70,7 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta):
 	valid_pos = true
 	if dragged:
-		collision_mask = 5
+		collision_mask = 21
 		valid_pos = not test_move(Transform2D(0, get_absolute_world_position(position) + Vector2.DOWN), Vector2.UP)
 	
 	collision_mask = 0
@@ -83,6 +83,7 @@ func start_drag():
 
 func stop_drag():
 	dragged = false
+	# Positioning & placement
 	position = get_position_snapped(position)
 	if valid_pos and drag_time > limit_drag_time:
 		emit_signal("placed")

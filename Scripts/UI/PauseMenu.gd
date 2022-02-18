@@ -51,6 +51,7 @@ func _on_Continue_pressed():
 
 func _on_BackToMenu_pressed():
 	pause(false)
+	Global._Music.stop_music(1.0)
 	Global.goto_scene(Global.default_path)
 
 func _on_Options_pressed():

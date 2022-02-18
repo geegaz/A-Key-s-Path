@@ -18,8 +18,6 @@ onready var _LevelsBackButton = $LevelsMenu/LevelsBack
 
 onready var _QuitButton = $MainMenu/Quit
 
-onready var _AnimationPlayer: AnimationPlayer = $AnimationPlayer
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Connect every button
@@ -56,8 +54,6 @@ func back():
 func travel_to_screen(new_screen: int, focus_button: Control = null):
 	if new_screen > 3:
 		return
-	
-	_AnimationPlayer.seek(4, true)
 	
 	current_screen = new_screen
 	var tween = $Tween

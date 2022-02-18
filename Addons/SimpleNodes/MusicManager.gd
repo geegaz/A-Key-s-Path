@@ -17,10 +17,11 @@ func create_music(stream_path: String)->AudioStreamPlayer:
 	new_player.bus = "Music"
 	return new_player
 
-func change_music(new_music: AudioStreamPlayer, crossfade_time: float)->void:
+func change_music(new_music: AudioStreamPlayer, crossfade_time: float = 0.0)->void:
 	add_child(new_music)
 	
 	if crossfade_time > 0.0:
+		_Tween.remove_all()
 		_Tween.interpolate_property(
 			new_music, "volume_db",
 			new_music.volume_db, 0,
@@ -32,6 +33,7 @@ func change_music(new_music: AudioStreamPlayer, crossfade_time: float)->void:
 				_Current.volume_db, -80,
 				crossfade_time
 			)
+		_Tween.start()
 	else:
 		new_music.volume_db = 0
 		if _Current:
@@ -39,6 +41,12 @@ func change_music(new_music: AudioStreamPlayer, crossfade_time: float)->void:
 			_Current.queue_free()
 	
 	set_current(new_music)
+
+func stop_music(stop_time: float = 0.0)->void:
+	if queue:
+		queue.queue_free()
+		queue = null
+	change_music(AudioStreamPlayer.new(), stop_time)
 
 func queue_music(new_queue: AudioStreamPlayer)->void:
 	queue = new_queue

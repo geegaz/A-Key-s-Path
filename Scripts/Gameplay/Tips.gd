@@ -7,7 +7,7 @@ export var speed = 300.0
 export(Array, float) var offsets = []
 
 var moving: bool = false
-var next_offset_id: int = 0
+var next_offset_id: int = -1
 
 onready var _Idle: = $IdleTimer
 onready var _Animation: = $AnimationPlayer

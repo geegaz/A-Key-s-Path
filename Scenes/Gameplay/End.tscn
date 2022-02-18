@@ -396,10 +396,10 @@ anims/hover = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 8 )
-z_index = -1
 texture = SubResource( 9 )
 
 [node name="ActivationArea" type="Area2D" parent="."]
+monitorable = false
 collision_layer = 0
 collision_mask = 4
 
