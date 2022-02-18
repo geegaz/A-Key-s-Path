@@ -12,7 +12,7 @@
 [ext_resource path="res://Assets/Sprites/player/player_animations-Sheet.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sprites/backgrounds/background_ground.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Visuals/BackgroundCube.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Assets/Sprites/ui/arrows-Sheet.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Sprites/UI/arrows-Sheet.png" type="Texture" id=13]
 [ext_resource path="res://Scripts/Utility/SpriteEffect.gd" type="Script" id=14]
 [ext_resource path="res://Assets/Sprites/flag-Sheet.png" type="Texture" id=17]
 

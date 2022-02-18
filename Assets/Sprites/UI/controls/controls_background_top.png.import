@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/controls_background_top.png-81eb5b2594d8f05226677379642b6caa.stex"
+path="res://.import/controls_background_top.png-438e40d4214f67e17f623a3356922870.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/ui/controls/controls_background_top.png"
-dest_files=[ "res://.import/controls_background_top.png-81eb5b2594d8f05226677379642b6caa.stex" ]
+source_file="res://Assets/Sprites/UI/controls/controls_background_top.png"
+dest_files=[ "res://.import/controls_background_top.png-438e40d4214f67e17f623a3356922870.stex" ]
 
 [params]
 

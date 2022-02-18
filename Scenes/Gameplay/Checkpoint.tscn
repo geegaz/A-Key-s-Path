@@ -11,7 +11,6 @@ extents = Vector2( 6, 7 )
 [node name="Checkpoint" type="Area2D" groups=[
 "Checkpoint",
 ]]
-z_index = -1
 monitorable = false
 collision_layer = 0
 collision_mask = 4
