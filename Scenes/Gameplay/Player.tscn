@@ -162,9 +162,9 @@ animation = "run"
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
 
-[sub_resource type="AnimationNodeStateMachine" id=19]
+[sub_resource type="AnimationNodeStateMachine" id=20]
 states/die/node = SubResource( 8 )
 states/die/position = Vector2( 288, -63 )
 states/fall/node = SubResource( 9 )
@@ -175,11 +175,11 @@ states/jump/node = SubResource( 11 )
 states/jump/position = Vector2( 454, 168 )
 states/run/node = SubResource( 12 )
 states/run/position = Vector2( 454, 59 )
-transitions = [ "idle", "run", SubResource( 13 ), "run", "idle", SubResource( 14 ), "idle", "jump", SubResource( 15 ), "jump", "fall", SubResource( 16 ), "fall", "idle", SubResource( 17 ), "die", "idle", SubResource( 18 ), "idle", "fall", SubResource( 21 ) ]
+transitions = [ "idle", "run", SubResource( 13 ), "run", "idle", SubResource( 14 ), "idle", "jump", SubResource( 15 ), "jump", "fall", SubResource( 16 ), "fall", "idle", SubResource( 17 ), "die", "idle", SubResource( 18 ), "idle", "fall", SubResource( 19 ) ]
 start_node = "idle"
 graph_offset = Vector2( -222, -46 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=20]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=21]
 
 [node name="Player" type="KinematicBody2D" groups=[
 "Player",
@@ -194,7 +194,7 @@ z_index = 1
 texture = ExtResource( 10 )
 hframes = 10
 vframes = 9
-frame = 27
+frame = 7
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1 )
@@ -218,10 +218,10 @@ anims/jump = SubResource( 6 )
 anims/run = SubResource( 7 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 19 )
+tree_root = SubResource( 20 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 20 )
+parameters/playback = SubResource( 21 )
 
 [node name="RunningSound" type="AudioStreamPlayer" parent="."]
 script = ExtResource( 6 )

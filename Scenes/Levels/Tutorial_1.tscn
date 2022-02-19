@@ -29,6 +29,21 @@ func _on_Tips_goto_next_offset(offset_id:int) -> void:
 		Global._Music.change_music(\"Part1_intro\", 0.0)
 		Global._Music.queue_music(\"Part1_loop\")
 		$AnimationPlayer.play(\"title_drop\",-1, 2.0)
+
+
+func _on_EndTrigger_body_entered(body: Node) -> void:
+	if body.is_in_group(\"Player\"):
+		$Others/EndTrigger/CollisionShape2D.set_deferred(\"disabled\", true)
+		
+		Global._Shaker.add_shake($PlayerCamera, \"offset\", Vector2(10,20), 1.0, 10.0)
+		$Player.controls_enabled = false
+		$Player.velocity = Vector2(-200, -120)
+		$Player/AnimationTree.active = false
+		$Player/AnimationPlayer.play(\"cutscene_fall\")
+		
+		yield(get_tree().create_timer(2.0), \"timeout\")
+		
+		$End._on_End_body_entered(body)
 "
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -265,4 +280,5 @@ position = Vector2( -72, 56 )
 anims/end_cutscene = SubResource( 8 )
 anims/title_drop = SubResource( 9 )
 
+[connection signal="body_entered" from="Others/EndTrigger" to="." method="_on_EndTrigger_body_entered"]
 [connection signal="goto_next_offset" from="Others/Path2D/Tips" to="." method="_on_Tips_goto_next_offset"]

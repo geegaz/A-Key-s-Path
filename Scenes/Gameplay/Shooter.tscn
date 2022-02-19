@@ -19,7 +19,6 @@ looping = true
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
 rect = Rect2( -8, -16, 256, 32 )
-process_parent = true
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]
 max_distance = 200.0

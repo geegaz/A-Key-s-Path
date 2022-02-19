@@ -14,6 +14,6 @@ func _physics_process(delta):
 		destroy()
 
 func destroy()->void:
-	var effect: = Global.create_at(destroy_effect, global_position)
+	var effect: = Global.create_at(destroy_effect, global_position, get_parent())
 	effect.rotation = rotation
 	queue_free()

@@ -20,12 +20,13 @@ func _process(delta: float) -> void:
 	if time >= delay:
 		time = 0.0
 		# If the shooter is active, shoot
-		if shooting:
+		if shooting and _Visibility.visible:
 			shoot()
 
 func shoot():
 	_Audio.pitch_scale = randf()*0.5 + 0.2
-	Global.create_at(smoke_effect, global_position, self)
+	var new_smoke_effect = Global.create_at(smoke_effect, global_position, self)
+	new_smoke_effect.rotation = rotation
 	
-	var new_fireball: = Global.create_at(fireball, global_position)
+	var new_fireball: = Global.create_at(fireball, global_position, self)
 	new_fireball.rotation = rotation
