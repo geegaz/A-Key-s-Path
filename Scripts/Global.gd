@@ -14,7 +14,8 @@ enum {MASTER, SFX, MUSIC}
 export(String, FILE, "*.json") var save_path: String = "res://save.json"
 export(String, FILE, "*.tscn") var default_path = "res://Scenes/Main.tscn"
 export(Array, String, FILE, "*.tscn") var level_paths = [
-	"res://Scenes/Levels/Tutorial_1.tscn"
+	"res://Scenes/Levels/Tutorial_1.tscn",
+	"res://Scenes/Levels/Tutorial_2.tscn"
 ]
 export var levels_unlocked: int = 1
 export(NodePath) var transition_screen_path = "OverlayLayer/SceneTransition"

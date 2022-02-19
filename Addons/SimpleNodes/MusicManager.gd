@@ -1,70 +1,73 @@
 extends Node
 class_name MusicManager
 
-var queue: AudioStreamPlayer
+onready var musics: = {
+	"Part1_intro": preload("res://Assets/Music/reflexions-part1-in.ogg"),
+	"Part1_loop": preload("res://Assets/Music/reflexions-part1.ogg"),
+	
+	"Background_ambiance": preload("res://Assets/Sounds/background_ambiance.ogg")
+}
 
-onready var _Current: AudioStreamPlayer
+var current_music: = ""
+var queue: = ""
+
+onready var _Tracks: = [
+	$Track1,
+	$Track2
+]
+
 onready var _Tween: Tween = Tween.new()
 
 func _ready() -> void:
 	add_child(_Tween)
 	_Tween.connect("tween_completed",self,"_on_Tween_tween_completed")
+	for track in _Tracks:
+		track.connect("finished",self,"_on_Track_finished", [track])
 
-func create_music(stream_path: String)->AudioStreamPlayer:
-	var stream: AudioStream = load(stream_path)
-	var new_player: = AudioStreamPlayer.new()
-	new_player.stream = stream
-	new_player.bus = "Music"
-	return new_player
-
-func change_music(new_music: AudioStreamPlayer, crossfade_time: float = 0.0)->void:
-	add_child(new_music)
+func change_music(new_music: String, crossfade_time: float = 0.0)->void:
+	if new_music == current_music:
+		return
+	elif new_music in musics:
+		_Tracks[-1].stream = musics[new_music]
+	else:
+		_Tracks[-1].stream = null
 	
+	_Tracks[-1].play()
 	if crossfade_time > 0.0:
 		_Tween.remove_all()
 		_Tween.interpolate_property(
-			new_music, "volume_db",
-			new_music.volume_db, 0,
+			_Tracks[-1], "volume_db",
+			_Tracks[-1].volume_db, 0,
 			crossfade_time
 		)
-		if _Current:
-			_Tween.interpolate_property(
-				_Current, "volume_db",
-				_Current.volume_db, -80,
-				crossfade_time
-			)
+		_Tween.interpolate_property(
+			_Tracks[0], "volume_db",
+			_Tracks[0].volume_db, -80,
+			crossfade_time
+		)
 		_Tween.start()
 	else:
-		new_music.volume_db = 0
-		if _Current:
-			_Current.volume_db = -80
-			_Current.queue_free()
+		_Tracks[-1].volume_db = 0
+		_Tracks[0].volume_db = -80
+		_Tracks[0].stop()
 	
-	set_current(new_music)
+	queue = ""
+	current_music = new_music
+	_Tracks.invert()
 
 func stop_music(stop_time: float = 0.0)->void:
-	if queue:
-		queue.queue_free()
-		queue = null
-	change_music(AudioStreamPlayer.new(), stop_time)
+	queue = ""
+	change_music("", stop_time)
 
-func queue_music(new_queue: AudioStreamPlayer)->void:
-	queue = new_queue
-	add_child(queue)
+func queue_music(new_music: String)->void:
+	queue = new_music
 
-func set_current(new_music: AudioStreamPlayer)->void:
-	_Current = new_music
-	_Current.connect("finished",self,"_on_Current_finished")
-	_Current.play()
-
-func _on_Current_finished()->void:
-	if queue:
-		_Current.queue_free()
-		set_current(queue)
-		
-		queue = null
+func _on_Track_finished(track: Node)->void:
+	if _Tracks.find(track) == 0 and queue in musics:
+		change_music(queue)
 
 func _on_Tween_tween_completed(object: Object, key: String)->void:
 	var value = object.get(key)
 	if key == "volume_db" and value <= -80:
-		object.queue_free()
+		# Then it's probably one of the tracks
+		object.stop()

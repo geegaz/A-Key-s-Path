@@ -16,27 +16,15 @@
 [ext_resource path="res://Assets/Themes/resources/scroll_bar/scroll.tres" type="StyleBox" id=14]
 [ext_resource path="res://Assets/Themes/resources/scroll_bar/grabber_highlight.tres" type="StyleBox" id=15]
 [ext_resource path="res://Assets/Themes/resources/scroll_bar/grabber.tres" type="StyleBox" id=16]
+[ext_resource path="res://Assets/Themes/resources/slider/slider.tres" type="StyleBox" id=17]
+[ext_resource path="res://Assets/Themes/resources/slider/grabber_highlight.tres" type="Texture" id=18]
+[ext_resource path="res://Assets/Themes/resources/slider/grabber_disabled.tres" type="Texture" id=19]
+[ext_resource path="res://Assets/Themes/resources/slider/grabber.tres" type="Texture" id=20]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 1, 1, 1, 0.2 )
-
-[sub_resource type="AtlasTexture" id=3]
-region = Rect2( 16, 48, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=4]
-region = Rect2( 48, 48, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=5]
-region = Rect2( 32, 48, 16, 16 )
-
-[sub_resource type="StyleBoxTexture" id=6]
-region_rect = Rect2( 0, 48, 16, 16 )
-margin_left = 6.0
-margin_right = 6.0
-margin_top = 6.0
-margin_bottom = 6.0
 
 [sub_resource type="AtlasTexture" id=7]
 region = Rect2( 80, 48, 16, 16 )
@@ -93,13 +81,13 @@ HScrollBar/styles/grabber_highlight = ExtResource( 15 )
 HScrollBar/styles/grabber_pressed = ExtResource( 12 )
 HScrollBar/styles/scroll = ExtResource( 14 )
 HScrollBar/styles/scroll_focus = ExtResource( 13 )
-HSlider/icons/grabber = SubResource( 3 )
-HSlider/icons/grabber_disabled = SubResource( 4 )
-HSlider/icons/grabber_highlight = SubResource( 5 )
+HSlider/icons/grabber = ExtResource( 20 )
+HSlider/icons/grabber_disabled = ExtResource( 19 )
+HSlider/icons/grabber_highlight = ExtResource( 18 )
 HSlider/icons/tick = null
 HSlider/styles/grabber_area = SubResource( 1 )
 HSlider/styles/grabber_area_highlight = SubResource( 1 )
-HSlider/styles/slider = SubResource( 6 )
+HSlider/styles/slider = ExtResource( 17 )
 Label/colors/font_color = Color( 1, 1, 1, 1 )
 Label/colors/font_color_shadow = Color( 0, 0, 0, 1 )
 Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )

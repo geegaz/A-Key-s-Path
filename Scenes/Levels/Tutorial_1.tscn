@@ -20,16 +20,14 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node
 
-onready var intro_music: = Global._Music.create_music(\"res://Assets/Music/reflexions-part1-in.ogg\")
-onready var loop_music: = Global._Music.create_music(\"res://Assets/Music/reflexions-part1.ogg\")
-
 func _ready() -> void:
 	Global.current_checkpoint = $Player.global_position
+	Global._Music.change_music(\"Background_ambiance\", 1.0)
 
 func _on_Tips_goto_next_offset(offset_id:int) -> void:
 	if offset_id == 0:
-		Global._Music.change_music(intro_music, 1.0)
-		Global._Music.queue_music(loop_music)
+		Global._Music.change_music(\"Part1_intro\", 0.0)
+		Global._Music.queue_music(\"Part1_loop\")
 		$AnimationPlayer.play(\"title_drop\",-1, 2.0)
 "
 

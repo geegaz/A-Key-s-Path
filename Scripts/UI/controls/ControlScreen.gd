@@ -15,8 +15,6 @@ onready var _ControlButtons: Array = [
 ]
 onready var _BarBase: = $BarBase
 
-var tutorial: = false
-
 func _ready():
 	var index: int = 0
 	for control in _ControlKeys:
@@ -108,13 +106,3 @@ func _on_Player_died():
 	# Player... died
 	call_deferred("retrieve_all")
 
-func start_tutorial()->void:
-	if tutorial:
-		return
-	tutorial = true
-	
-	$AnimationPlayer.play("tutorial")
-	$Hand.show()
-	yield(self, "control_placed")
-	$AnimationPlayer.stop(true)
-	$Hand.hide()
