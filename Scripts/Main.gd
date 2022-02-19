@@ -18,6 +18,8 @@ onready var _LevelsBackButton = $LevelsMenu/LevelsBack
 
 onready var _QuitButton = $MainMenu/Quit
 
+onready var background_ambiance: = Global._Music.create_music("res://Assets/Sounds/background_ambiance.ogg")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Connect every button
@@ -36,6 +38,7 @@ func _ready():
 	if OS.has_feature("HTML5"):
 		_QuitButton.hide()
 	
+	Global._Music.change_music(background_ambiance, 1.0)
 
 func _input(event):
 	if event.is_action_pressed("fullscreen"):

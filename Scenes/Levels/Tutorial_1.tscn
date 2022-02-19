@@ -28,7 +28,7 @@ func _ready() -> void:
 
 func _on_Tips_goto_next_offset(offset_id:int) -> void:
 	if offset_id == 0:
-		Global._Music.change_music(intro_music)
+		Global._Music.change_music(intro_music, 1.0)
 		Global._Music.queue_music(loop_music)
 		$AnimationPlayer.play(\"title_drop\",-1, 2.0)
 "
@@ -55,11 +55,10 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 384, 32, 0, 0, 28.9191, -16.9689, 608, 32, 0, 0, 0, 0, 656, 48, 0, 0, 22.9059, -33.9749, 688, 48, 0, 0, 0, 0, 728, 32, 0, 0, 54.374, -53.802, 832, 32, 0, 0, 0, 0, 920, 16, 0, 0, 23.7041, -9.67565, 952, 16, 0, 0, 0, 0, 992, 32, 0, 0, 24.0094, 0.39685, 1024, 32, 0, 0, 0, 0, 1064, 64, 0, 0, 0, 0, 1408, 64 )
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=8]
 resource_name = "end_cutscene"
 
-[sub_resource type="Animation" id=8]
-resource_name = "title_drop"
+[sub_resource type="Animation" id=9]
 length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Others/Title:frame")
@@ -265,7 +264,7 @@ target_node = NodePath("../Player")
 position = Vector2( -72, 56 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/end_cutscene = SubResource( 9 )
-anims/title_drop = SubResource( 8 )
+anims/end_cutscene = SubResource( 8 )
+anims/title_drop = SubResource( 9 )
 
 [connection signal="goto_next_offset" from="Others/Path2D/Tips" to="." method="_on_Tips_goto_next_offset"]
