@@ -1,0 +1,137 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Sprites/backgrounds/background_sky.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/backgrounds/background_ground.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Visuals/BackgroundCube.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Themes/Main.tres" type="Theme" id=4]
+[ext_resource path="res://Assets/Sprites/title.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Fonts/small_font.tres" type="DynamicFont" id=6]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node
+
+func _ready() -> void:
+	Global._Music.change_music(\"Part2_outro\", 0.2)
+
+func _on_Button_pressed() -> void:
+	Global.goto_scene(Global.default_path)
+"
+
+[node name="Thanks" type="Node"]
+script = SubResource( 1 )
+
+[node name="Background" type="ParallaxBackground" parent="."]
+
+[node name="BackgroundColor" type="ColorRect" parent="Background"]
+margin_right = 320.0
+margin_bottom = 180.0
+mouse_filter = 2
+color = Color( 0.988235, 0.831373, 0.831373, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.2, 0.1 )
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer"]
+margin_left = -64.0
+margin_right = 384.0
+margin_bottom = 256.0
+mouse_filter = 2
+texture = ExtResource( 1 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.3, 0.15 )
+
+[node name="Cube" parent="Background/ParallaxLayer2" instance=ExtResource( 3 )]
+position = Vector2( 160, 66 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.4, 0.2 )
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer3"]
+margin_left = -192.0
+margin_right = 512.0
+margin_bottom = 256.0
+mouse_filter = 2
+texture = ExtResource( 2 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="ThanksScreen" type="Control" parent="UILayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="UILayer/ThanksScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.498039 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UILayer/ThanksScreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -50.0
+margin_right = 80.0
+margin_bottom = -37.0
+custom_constants/shadow_offset_y = 1
+text = "Thank you for playing"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="UILayer/ThanksScreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -2.0
+margin_right = 80.0
+margin_bottom = 11.0
+custom_fonts/font = ExtResource( 6 )
+custom_constants/shadow_offset_y = 1
+text = "~ Geegaz ~"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Sprite" parent="UILayer/ThanksScreen"]
+position = Vector2( 160, 72 )
+texture = ExtResource( 5 )
+
+[node name="Button" type="Button" parent="UILayer/ThanksScreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -48.0
+margin_top = 38.0
+margin_right = 49.6267
+margin_bottom = 57.1655
+text = "Back to Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="UILayer/ThanksScreen/Button" to="." method="_on_Button_pressed"]

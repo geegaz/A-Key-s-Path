@@ -1,4 +1,4 @@
-<REAPER_PROJECT 0.1 "6.40/win64" 1645045785
+<REAPER_PROJECT 0.1 "6.40/linux-x86_64" 1645247706
   RIPPLE 0
   GROUPOVERRIDE 0 0 0
   AUTOXFADE 1
@@ -14,8 +14,8 @@
   TIMEMODE 1 5 -1 30 0 0 -1
   VIDEO_CONFIG 0 0 256
   PANMODE 3
-  CURSOR 254
-  ZOOM 12.85911208940579 0 0
+  CURSOR 102
+  ZOOM 6.49054715188751 0 0
   VZOOMEX 14 0
   USE_REC_CFG 0
   RECMODE 1
@@ -28,11 +28,11 @@
   <APPLYFX_CFG
   >
   RENDER_FILE ""
-  RENDER_PATTERN ""
-  RENDER_FMT 0 2 0
+  RENDER_PATTERN reflexions
+  RENDER_FMT 0 2 44100
   RENDER_1X 0
   RENDER_RANGE 3 0 0 18 1000
-  RENDER_RESAMPLE 3 0 1
+  RENDER_RESAMPLE 4 0 1
   RENDER_ADDTOPROJ 0
   RENDER_STEMS 0
   RENDER_DITHER 0
@@ -43,6 +43,7 @@
   TAKELANE 1
   SAMPLERATE 44100 0 0
   <RENDER_CFG
+    dmdnbwAAAD8AgAAAAIAAAAAgAAAAAAEAAA==
   >
   LOCK 1
   <METRONOME 6 2
@@ -56,8 +57,8 @@
   GLOBAL_AUTO -1
   TEMPO 120 4 4
   PLAYRATE 1 0 0.25 4
-  SELECTION 96 12
-  SELECTION2 96 12
+  SELECTION 172 192
+  SELECTION2 172 192
   MASTERAUTOMODE 0
   MASTERTRACKHEIGHT 0 0
   MASTERPEAKCOL 16576
@@ -84,10 +85,16 @@
     ARM 0
     DEFSHAPE 1 -1 -1
   >
-  MARKER 2 12 "" 1 0 1 R {404FA7BF-C369-4F96-98DA-A171DF00A69E}
-  MARKER 2 96 "" 1 0 1 R
-  MARKER 1 116 "" 1 0 1 R {094F2C5B-A67B-4D27-B075-9E1034F5E52D}
-  MARKER 1 172 "" 1 0 1 R
+  MARKER 3 0 part1-in 1 0 1 B {B2774538-D67B-49BC-B043-153536663E85}
+  MARKER 3 12 "" 1 0 1 B
+  MARKER 2 12 part1 1 0 1 B {404FA7BF-C369-4F96-98DA-A171DF00A69E}
+  MARKER 2 96 "" 1 0 1 B
+  MARKER 4 96 part1-out 1 0 1 B {EA5D0D17-10A6-4664-BDC6-8B8AE8A27A16}
+  MARKER 4 114 "" 1 0 1 B
+  MARKER 1 116 part2 1 0 1 B {094F2C5B-A67B-4D27-B075-9E1034F5E52D}
+  MARKER 1 172 "" 1 0 1 B
+  MARKER 6 172 part2-out 1 0 1 B {6895C9B0-DF95-4E33-9D5A-248E035F7A46}
+  MARKER 6 192 "" 1 0 1 B
   <PROJBAY
   >
   <TRACK {D643FB36-F850-D911-2760-EEEF8003C4F5}
@@ -133,7 +140,7 @@
       CHANMODE 0
       GUID {93D7FC2B-F9A2-28CC-A53E-F607E42C4F99}
       <SOURCE VORBIS
-        FILE "D:\Documents\Projets Godot\Projects\A Key(s) Path\Assets\Music\konkombre_music\Konkombre - reflexions.ogg"
+        FILE "Konkombre - reflexions.ogg"
       >
     >
     <ITEM
@@ -155,11 +162,11 @@
       CHANMODE 0
       GUID {209165EA-4615-4B3B-82BA-47D527FCB481}
       <SOURCE VORBIS
-        FILE "D:\Documents\Projets Godot\Projects\A Key(s) Path\Assets\Music\konkombre_music\Konkombre - reflexions.ogg"
+        FILE "Konkombre - reflexions.ogg"
       >
     >
     <ITEM
-      POSITION 108
+      POSITION 106
       SNAPOFFS 0
       LENGTH 8
       LOOP 1
@@ -177,7 +184,7 @@
       CHANMODE 0
       GUID {79EE55CF-B748-4CE7-9017-A5038298D237}
       <SOURCE VORBIS
-        FILE "D:\Documents\Projets Godot\Projects\A Key(s) Path\Assets\Music\konkombre_music\Konkombre - reflexions.ogg"
+        FILE "Konkombre - reflexions.ogg"
       >
     >
     <ITEM
@@ -189,7 +196,7 @@
       FADEIN 1 0.01 0 1 0 0 0
       FADEOUT 1 0.01 0 1 0 0 0
       MUTE 0 0
-      SEL 1
+      SEL 0
       IGUID {0372078F-B804-17E7-6C16-3B0EF8945D2B}
       IID 20
       NAME "Konkombre - reflexions.ogg"
@@ -199,7 +206,7 @@
       CHANMODE 0
       GUID {5F8B9BFF-A827-7795-10FA-12EEF8F1CEC9}
       <SOURCE VORBIS
-        FILE "D:\Documents\Projets Godot\Projects\A Key(s) Path\Assets\Music\konkombre_music\Konkombre - reflexions.ogg"
+        FILE "Konkombre - reflexions.ogg"
       >
     >
   >
@@ -246,7 +253,7 @@
       CHANMODE 0
       GUID {DBC9067B-6A8D-4E2A-A332-7B5CA226CDF1}
       <SOURCE VORBIS
-        FILE "D:\Documents\Projets Godot\Projects\A Key(s) Path\Assets\Music\konkombre_music\Konkombre - reflexions.ogg"
+        FILE "Konkombre - reflexions.ogg"
       >
     >
     <ITEM
@@ -268,7 +275,7 @@
       CHANMODE 0
       GUID {95F1435D-CB58-46CE-958F-2A04DDFE99C6}
       <SOURCE VORBIS
-        FILE "D:\Documents\Projets Godot\Projects\A Key(s) Path\Assets\Music\konkombre_music\Konkombre - reflexions.ogg"
+        FILE "Konkombre - reflexions.ogg"
       >
     >
     <ITEM
@@ -290,7 +297,7 @@
       CHANMODE 0
       GUID {8F6FD32E-968D-4C91-9242-E9074D89E22C}
       <SOURCE VORBIS
-        FILE "D:\Documents\Projets Godot\Projects\A Key(s) Path\Assets\Music\konkombre_music\Konkombre - reflexions.ogg"
+        FILE "Konkombre - reflexions.ogg"
       >
     >
     <ITEM
@@ -312,7 +319,7 @@
       CHANMODE 0
       GUID {CC713BB6-3DDC-9860-7B45-86042E8656EB}
       <SOURCE VORBIS
-        FILE "D:\Documents\Projets Godot\Projects\A Key(s) Path\Assets\Music\konkombre_music\Konkombre - reflexions.ogg"
+        FILE "Konkombre - reflexions.ogg"
       >
     >
   >
