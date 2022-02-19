@@ -116,7 +116,7 @@ motion_scale = Vector2( 0.2, 0.1 )
 [node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer"]
 margin_left = -224.0
 margin_top = -72.0
-margin_right = 608.0
+margin_right = 736.0
 margin_bottom = 184.0
 mouse_filter = 2
 texture = ExtResource( 2 )
@@ -137,7 +137,7 @@ motion_scale = Vector2( 0.4, 0.2 )
 [node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer3"]
 margin_left = -352.0
 margin_top = -72.0
-margin_right = 736.0
+margin_right = 880.0
 margin_bottom = 184.0
 mouse_filter = 2
 texture = ExtResource( 11 )

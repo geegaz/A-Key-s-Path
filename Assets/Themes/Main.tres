@@ -26,13 +26,13 @@
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 1, 1, 1, 0.2 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=3]
 region = Rect2( 80, 48, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=4]
 region = Rect2( 64, 48, 16, 16 )
 
-[sub_resource type="StyleBoxTexture" id=9]
+[sub_resource type="StyleBoxTexture" id=5]
 region_rect = Rect2( 0, 0, 16, 32 )
 margin_left = 2.3355
 margin_right = 2.0562
@@ -112,6 +112,6 @@ WindowDialog/constants/close_v_ofs = 15
 WindowDialog/constants/scaleborder_size = 0
 WindowDialog/constants/title_height = 16
 WindowDialog/fonts/title_font = ExtResource( 3 )
-WindowDialog/icons/close = SubResource( 7 )
-WindowDialog/icons/close_highlight = SubResource( 8 )
-WindowDialog/styles/panel = SubResource( 9 )
+WindowDialog/icons/close = SubResource( 3 )
+WindowDialog/icons/close_highlight = SubResource( 4 )
+WindowDialog/styles/panel = SubResource( 5 )
