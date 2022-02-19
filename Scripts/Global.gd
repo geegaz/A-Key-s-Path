@@ -15,12 +15,13 @@ export(String, FILE, "*.json") var save_path: String = "res://save.json"
 export(String, FILE, "*.tscn") var default_path = "res://Scenes/Main.tscn"
 export(Array, String, FILE, "*.tscn") var level_paths = [
 	"res://Scenes/Levels/Tutorial_1.tscn",
-	"res://Scenes/Levels/Tutorial_2.tscn"
+	"res://Scenes/Levels/Tutorial_2.tscn",
+	"res://Scenes/Levels/Level_1.tscn"
 ]
 export var levels_unlocked: int = 1
 export(NodePath) var transition_screen_path = "OverlayLayer/SceneTransition"
 
-var current_level: int = -1
+var current_level: int = 0
 var current_checkpoint: Vector2 = Vector2.ZERO
 var volumes: Array = [100, 70, 70] setget set_volumes
 var fullscreen: bool = false setget set_fullscreen

@@ -307,12 +307,12 @@ rotation = -1.57079
 [node name="Shooter3" parent="Shooters" instance=ExtResource( 10 )]
 position = Vector2( 952, 24 )
 rotation = -4.71238
-delay_offset = 0.2
+delay_offset = 0.25
 
 [node name="Shooter4" parent="Shooters" instance=ExtResource( 10 )]
 position = Vector2( 968, 24 )
 rotation = -4.71238
-delay_offset = 0.4
+delay_offset = 0.5
 
 [node name="Checkpoints" type="Node" parent="."]
 
