@@ -11,5 +11,5 @@ dest_files=[ "res://.import/reflexions-part2-out.ogg-b8251c659e15d72788db2858428
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

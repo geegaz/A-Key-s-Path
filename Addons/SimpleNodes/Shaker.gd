@@ -47,11 +47,11 @@ func _ready()-> void:
 	pass
 
 func _process(delta: float)-> void:
-	for id in processes.size():
-		if not processes[id] or processes[id].shake <= 0:
-			processes.remove(id)
+	for process in processes:
+		if not process or process.shake <= 0:
+			processes.erase(process)
 		else:
-			processes[id]._process(delta)
+			process._process(delta)
 	
 func find_process(node: Node, property: String) -> int:
 	for id in processes.size():

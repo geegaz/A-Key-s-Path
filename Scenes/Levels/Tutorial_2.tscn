@@ -23,13 +23,10 @@ script/source = "extends Node
 var tutorial: = false
 
 func _ready() -> void:
-	Global.current_checkpoint = $Player.global_position
-	if Global._Music.queue != \"Part1_loop\":
-		Global._Music.change_music(\"Part1_loop\", 1.0)
+	Global._Music.change_music(\"Part1_loop\", 1.0)
 
 func _on_TutorialTrigger_body_entered(body: Node) -> void:
 	if body.is_in_group(\"Player\"):
-		$Player.controls_enabled = false
 		start_tutorial()
 
 func start_tutorial()->void:
@@ -37,6 +34,7 @@ func start_tutorial()->void:
 		return
 	tutorial = true
 	$Others/TutorialTrigger/CollisionShape2D.set_deferred(\"disabled\", true)
+	
 	$AnimationPlayer.play(\"tutorial_start\")
 	yield($UILayer/ControlsScreen, \"control_placed\")
 	$AnimationPlayer.play(\"tutorial_end\")

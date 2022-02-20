@@ -4,7 +4,7 @@ class_name MusicManager
 onready var musics: = {
 	"Part1_intro": preload("res://Assets/Music/reflexions-part1-in.ogg"),
 	"Part1_loop": preload("res://Assets/Music/reflexions-part1.ogg"),
-	"Part1-2_transition": preload("res://Assets/Music/reflexions-part1-2-transition.ogg"),
+	"Part2_intro": preload("res://Assets/Music/reflexions-part2-in.ogg"),
 	"Part2_loop": preload("res://Assets/Music/reflexions-part2.ogg"),
 	"Part2_outro": preload("res://Assets/Music/reflexions-part2-out.ogg"),
 	

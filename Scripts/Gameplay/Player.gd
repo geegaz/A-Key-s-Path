@@ -36,7 +36,7 @@ onready var _AnimationTree: AnimationTree = $AnimationTree
 onready var _StateMachine: AnimationNodeStateMachinePlayback  = _AnimationTree["parameters/playback"]
 
 func _ready():
-	pass
+	Global.current_checkpoint = global_position
 
 func _process(_delta):
 	if target_speed < 0.0:

@@ -89,7 +89,7 @@ func _on_ControlKey_placed(control):
 		_on_ControlKey_retrieved(control)
 	else:
 		control.set_physical(true)
-		reparent(control, get_tree().root)
+		reparent(control, get_tree().current_scene)
 		place_control(control)
 
 func _on_ControlKey_retrieved(control):
