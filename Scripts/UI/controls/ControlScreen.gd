@@ -40,6 +40,10 @@ func _process(delta):
 #	var vtrans = get_canvas_transform()
 #	return -vtrans.get_origin() / vtrans.get_scale()
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("retrieve"):
+		retrieve_all()
+
 func reparent(node: Node2D, target: Node):
 	# Detach from old parent
 	var source = node.get_parent()

@@ -35,12 +35,14 @@ func change_music(new_music: String, crossfade_time: float = 0.0)->void:
 		_Tween.interpolate_property(
 			_Tracks[-1], "volume_db",
 			_Tracks[-1].volume_db, 0,
-			crossfade_time
+			crossfade_time, 
+			Tween.TRANS_CUBIC, Tween.EASE_IN
 		)
 		_Tween.interpolate_property(
 			_Tracks[0], "volume_db",
 			_Tracks[0].volume_db, -80,
-			crossfade_time
+			crossfade_time, 
+			Tween.TRANS_CUBIC, Tween.EASE_OUT
 		)
 		_Tween.start()
 	else:

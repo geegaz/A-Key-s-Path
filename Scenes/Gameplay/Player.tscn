@@ -229,7 +229,7 @@ z_index = 1
 texture = ExtResource( 10 )
 hframes = 10
 vframes = 9
-frame = 4
+frame = 3
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1 )

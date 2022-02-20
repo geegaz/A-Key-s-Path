@@ -25,7 +25,7 @@ func _ready() -> void:
 
 func _on_Tips_goto_next_offset(offset_id:int) -> void:
 	if offset_id == 0:
-		Global._Music.change_music(\"Part1_intro\", 0.0)
+		Global._Music.change_music(\"Part1_intro\", 0.2)
 		Global._Music.queue_music(\"Part1_loop\")
 		$AnimationPlayer.play(\"title_drop\",-1, 2.0)
 
