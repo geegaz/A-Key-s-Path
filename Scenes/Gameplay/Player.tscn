@@ -1,10 +1,16 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Scripts/Gameplay/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Animations/cutscene_tips.tres" type="Animation" id=2]
 [ext_resource path="res://Assets/Animations/cutscene_fall.tres" type="Animation" id=3]
-[ext_resource path="res://Addons/SimpleNodes/RandomStreamPlayer.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Sounds/footstep-002.wav" type="AudioStream" id=4]
+[ext_resource path="res://Addons/SimpleNodes/RandomStreamPlayer.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Sounds/footstep-003.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Sounds/footstep-004.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Sounds/footstep-005.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Sounds/footstep-001.wav" type="AudioStream" id=9]
 [ext_resource path="res://Assets/Sprites/player/player_animations-Sheet.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sounds/jump.wav" type="AudioStream" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 7 )
@@ -98,6 +104,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 20, 21, 22, 23 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("JumpingSound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play_random"
+} ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -194,7 +214,7 @@ z_index = 1
 texture = ExtResource( 10 )
 hframes = 10
 vframes = 9
-frame = 2
+frame = 5
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1 )
@@ -224,10 +244,23 @@ active = true
 parameters/playback = SubResource( 21 )
 
 [node name="RunningSound" type="AudioStreamPlayer" parent="."]
-script = ExtResource( 6 )
+stream = ExtResource( 9 )
+bus = "SFX"
+script = ExtResource( 5 )
+samples = [ ExtResource( 9 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ]
+min_pitch = 0.8
+max_pitch = 1.2
+min_volume = -1.0
+max_volume = 1.0
 
 [node name="JumpingSound" type="AudioStreamPlayer" parent="."]
-script = ExtResource( 6 )
+stream = ExtResource( 11 )
+bus = "SFX"
+script = ExtResource( 5 )
+min_pitch = 0.8
+max_pitch = 1.2
+min_volume = -1.0
+max_volume = 1.0
 
 [node name="Label" type="Label" parent="."]
 margin_left = -19.6889
