@@ -1,22 +1,14 @@
 extends Node
 class_name MusicManager
 
-onready var musics: = {
-	"Part1_intro": preload("res://Assets/Music/reflexions-part1-in.ogg"),
-	"Part1_loop": preload("res://Assets/Music/reflexions-part1.ogg"),
-	"Part2_intro": preload("res://Assets/Music/reflexions-part2-in.ogg"),
-	"Part2_loop": preload("res://Assets/Music/reflexions-part2.ogg"),
-	"Part2_outro": preload("res://Assets/Music/reflexions-part2-out.ogg"),
-	
-	"Background_ambiance": preload("res://Assets/Sounds/background_ambiance.ogg")
-}
+onready var musics: = {}
 
 var current_music: = ""
 var queue: = ""
 
 onready var _Tracks: = [
-	$Track1,
-	$Track2
+	AudioStreamPlayer.new(),
+	AudioStreamPlayer.new()
 ]
 
 onready var _Tween: Tween = Tween.new()
@@ -25,6 +17,8 @@ func _ready() -> void:
 	add_child(_Tween)
 	_Tween.connect("tween_completed",self,"_on_Tween_tween_completed")
 	for track in _Tracks:
+		add_child(track)
+		track.bus = "Music"
 		track.connect("finished",self,"_on_Track_finished", [track])
 
 func change_music(new_music: String, crossfade_time: float = 0.0)->void:

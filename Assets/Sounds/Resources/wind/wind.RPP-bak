@@ -1,4 +1,4 @@
-<REAPER_PROJECT 0.1 "6.47/linux-x86_64" 1645373215
+<REAPER_PROJECT 0.1 "6.40/linux-x86_64" 1645229429
   RIPPLE 0
   GROUPOVERRIDE 0 0 0
   AUTOXFADE 1
@@ -14,13 +14,13 @@
   TIMEMODE 1 5 -1 30 0 0 -1
   VIDEO_CONFIG 0 0 256
   PANMODE 3
-  CURSOR 84
-  ZOOM 7.79162739296915 0 0
+  CURSOR 35
+  ZOOM 2.79404673903377 0 0
   VZOOMEX 23 0
   USE_REC_CFG 0
   RECMODE 1
   SMPTESYNC 0 30 100 40 1000 300 0 0 1 0 0
-  LOOP 1
+  LOOP 0
   LOOPGRAN 0 4
   RECORD_PATH "" ""
   <RECORD_CFG
@@ -56,8 +56,8 @@
   GLOBAL_AUTO -1
   TEMPO 120 4 4
   PLAYRATE 1 0 0.25 4
-  SELECTION 110 0
-  SELECTION2 110 0
+  SELECTION 111 0
+  SELECTION2 111 0
   MASTERAUTOMODE 0
   MASTERTRACKHEIGHT 0 0
   MASTERPEAKCOL 16576
@@ -78,7 +78,7 @@
   >
   <TEMPOENVEX
     EGUID {138E7CDA-6584-6604-A247-82982064B580}
-    ACT 0 -1
+    ACT 1 -1
     VIS 1 0 1
     LANEHEIGHT 0 0
     ARM 0
@@ -91,7 +91,7 @@
     PEAKCOL 16576
     BEAT -1
     AUTOMODE 0
-    VOLPAN 1.77827941003892 0 -1 -1 1
+    VOLPAN 1 0 -1 -1 1
     MUTESOLO 0 0 0
     IPHASE 0
     PLAYOFFS 0 1
@@ -129,7 +129,7 @@
       CHANMODE 0
       GUID {592BE09B-F315-ED5E-479F-CDFCF06A1DAC}
       <SOURCE WAVE
-        FILE "Wind,Ext,Breeze,Grass,Tall,Rustle,Buffeting.wav"
+        FILE "/home/tanguy/Documents/Projets Godot/Projects/A-Key-s-Path/Assets/Sounds/Resources/Wind,Ext,Breeze,Grass,Tall,Rustle,Buffeting.wav"
       >
     >
     <ITEM
@@ -151,7 +151,7 @@
       CHANMODE 0
       GUID {2FF897A9-5F30-FF91-AEC0-02A9F9F62775}
       <SOURCE WAVE
-        FILE "Wind,Ext,Breeze,Grass,Tall,Rustle,Buffeting.wav"
+        FILE "/home/tanguy/Documents/Projets Godot/Projects/A-Key-s-Path/Assets/Sounds/Resources/Wind,Ext,Breeze,Grass,Tall,Rustle,Buffeting.wav"
       >
     >
   >

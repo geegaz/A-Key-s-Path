@@ -31,6 +31,18 @@ onready var _TransitionScreen = get_node_or_null(transition_screen_path)
 onready var _Shaker: Shaker = $Shaker
 onready var _Music: MusicManager = $MusicManager
 
+
+func _ready() -> void:
+	_Music.musics = {
+		"Part1_intro": preload("res://Assets/Music/reflexions-part1-in.ogg"),
+		"Part1_loop": preload("res://Assets/Music/reflexions-part1.ogg"),
+		"Part2_intro": preload("res://Assets/Music/reflexions-part2-in.ogg"),
+		"Part2_loop": preload("res://Assets/Music/reflexions-part2.ogg"),
+		"Part2_outro": preload("res://Assets/Music/reflexions-part2-out.ogg"),
+		
+		"Background_ambiance": preload("res://Assets/Sounds/background_ambiance.ogg")
+	}
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("fullscreen"):
 		set_fullscreen(not fullscreen)

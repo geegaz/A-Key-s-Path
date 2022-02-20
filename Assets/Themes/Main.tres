@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=25 format=2]
+[gd_resource type="Theme" load_steps=30 format=2]
 
 [ext_resource path="res://Assets/Themes/resources/button/focus.tres" type="StyleBox" id=1]
 [ext_resource path="res://Assets/Themes/resources/button/pressed.tres" type="StyleBox" id=2]
@@ -23,13 +23,36 @@
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
-[sub_resource type="AtlasTexture" id=3]
-region = Rect2( 80, 48, 16, 16 )
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 1.0
+content_margin_right = 1.0
+content_margin_top = 1.0
+content_margin_bottom = 1.0
+bg_color = Color( 1, 1, 1, 0 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 0, 1 )
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 1, 1, 1, 0.498039 )
+border_color = Color( 1, 1, 0, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=3]
 
 [sub_resource type="AtlasTexture" id=4]
+region = Rect2( 80, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
 region = Rect2( 64, 48, 16, 16 )
 
-[sub_resource type="StyleBoxTexture" id=5]
+[sub_resource type="StyleBoxTexture" id=6]
 region_rect = Rect2( 0, 0, 16, 32 )
 margin_left = 2.3355
 margin_right = 2.0562
@@ -50,11 +73,11 @@ Button/styles/focus = ExtResource( 1 )
 Button/styles/hover = ExtResource( 6 )
 Button/styles/normal = ExtResource( 4 )
 Button/styles/pressed = ExtResource( 2 )
-CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color = Color( 1, 1, 1, 1 )
 CheckButton/colors/font_color_disabled = Color( 1, 1, 1, 0.2 )
-CheckButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
-CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
-CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover = Color( 1, 1, 1, 1 )
+CheckButton/colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+CheckButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 CheckButton/constants/check_vadjust = 0
 CheckButton/constants/hseparation = 0
 CheckButton/fonts/font = null
@@ -62,12 +85,12 @@ CheckButton/icons/off = ExtResource( 11 )
 CheckButton/icons/off_disabled = ExtResource( 10 )
 CheckButton/icons/on = ExtResource( 8 )
 CheckButton/icons/on_disabled = ExtResource( 9 )
-CheckButton/styles/disabled = ExtResource( 5 )
-CheckButton/styles/focus = ExtResource( 1 )
-CheckButton/styles/hover = ExtResource( 6 )
-CheckButton/styles/hover_pressed = ExtResource( 2 )
-CheckButton/styles/normal = ExtResource( 4 )
-CheckButton/styles/pressed = ExtResource( 2 )
+CheckButton/styles/disabled = SubResource( 1 )
+CheckButton/styles/focus = SubResource( 2 )
+CheckButton/styles/hover = SubResource( 11 )
+CheckButton/styles/hover_pressed = SubResource( 11 )
+CheckButton/styles/normal = SubResource( 9 )
+CheckButton/styles/pressed = SubResource( 10 )
 HScrollBar/icons/ = null
 HScrollBar/icons/decrement = null
 HScrollBar/icons/decrement_highlight = null
@@ -82,8 +105,8 @@ HSlider/icons/grabber = ExtResource( 20 )
 HSlider/icons/grabber_disabled = ExtResource( 19 )
 HSlider/icons/grabber_highlight = ExtResource( 18 )
 HSlider/icons/tick = null
-HSlider/styles/grabber_area = SubResource( 1 )
-HSlider/styles/grabber_area_highlight = SubResource( 1 )
+HSlider/styles/grabber_area = SubResource( 3 )
+HSlider/styles/grabber_area_highlight = SubResource( 3 )
 HSlider/styles/slider = ExtResource( 17 )
 Label/colors/font_color = Color( 1, 1, 1, 1 )
 Label/colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -91,7 +114,7 @@ Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 Label/constants/line_spacing = 3
 Label/constants/shadow_as_outline = 0
 Label/constants/shadow_offset_x = 0
-Label/constants/shadow_offset_y = 1
+Label/constants/shadow_offset_y = 0
 Label/fonts/font = ExtResource( 3 )
 Label/styles/normal = null
 VScrollBar/icons/decrement = null
@@ -109,6 +132,6 @@ WindowDialog/constants/close_v_ofs = 15
 WindowDialog/constants/scaleborder_size = 0
 WindowDialog/constants/title_height = 16
 WindowDialog/fonts/title_font = ExtResource( 3 )
-WindowDialog/icons/close = SubResource( 3 )
-WindowDialog/icons/close_highlight = SubResource( 4 )
-WindowDialog/styles/panel = SubResource( 5 )
+WindowDialog/icons/close = SubResource( 4 )
+WindowDialog/icons/close_highlight = SubResource( 5 )
+WindowDialog/styles/panel = SubResource( 6 )

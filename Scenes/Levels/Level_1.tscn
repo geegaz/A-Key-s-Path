@@ -20,13 +20,11 @@
 script/source = "extends Node
 
 func _ready() -> void:
-	Global.current_checkpoint = $Player.global_position
-	if Global._Music.queue != \"Part1_loop\":
-		Global._Music.change_music(\"Part1_loop\", 1.0)
+	Global._Music.change_music(\"Part1_loop\", 1.0)
 
 func _on_EndTrigger_body_entered(body: Node) -> void:
 	if body.is_in_group(\"Player\"):
-		Global._Music.change_music(\"Part1-2_transition\", 0.2)
+		Global._Music.change_music(\"Part2_intro\", 1.0)
 		Global._Music.queue_music(\"Part2_loop\")
 
 func _on_End_body_entered(body: Node) -> void:
@@ -34,7 +32,7 @@ func _on_End_body_entered(body: Node) -> void:
 "
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 8, 80 )
+extents = Vector2( 24, 8 )
 
 [node name="Level" type="Node"]
 script = SubResource( 1 )
@@ -258,7 +256,7 @@ __meta__ = {
 }
 
 [node name="EndTrigger" type="Area2D" parent="Others"]
-position = Vector2( 1000, 16 )
+position = Vector2( 1112, 248 )
 monitorable = false
 collision_layer = 0
 collision_mask = 4

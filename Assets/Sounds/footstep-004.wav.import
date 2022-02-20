@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/footstep-004.wav-59497b22b7d31dbeec76a8770de49944.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/footstep-004.wav"
+dest_files=[ "res://.import/footstep-004.wav-59497b22b7d31dbeec76a8770de49944.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
