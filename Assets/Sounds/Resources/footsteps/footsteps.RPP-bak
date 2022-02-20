@@ -1,4 +1,4 @@
-<REAPER_PROJECT 0.1 "6.47/linux-x86_64" 1645372913
+<REAPER_PROJECT 0.1 "6.47/win64" 1645388111
   <NOTES 0 2
   >
   RIPPLE 0
@@ -12,13 +12,13 @@
   PANLAW 1
   PROJOFFS 0 0 0
   MAXPROJLEN 0 600
-  GRID 3199 8 1 8 1 0 0 0
+  GRID 3199 8 0.125 8 1 0 0 0
   TIMEMODE 1 5 -1 30 0 0 -1
   VIDEO_CONFIG 0 0 256
   PANMODE 3
-  CURSOR 0
-  ZOOM 198.12061739149746 0 0
-  VZOOMEX 6 0
+  CURSOR 0.5625
+  ZOOM 198.12061739149772 0 0
+  VZOOMEX 37 0
   USE_REC_CFG 0
   RECMODE 1
   SMPTESYNC 0 30 100 40 1000 300 0 0 1 0 0
@@ -30,7 +30,7 @@
   >
   <APPLYFX_CFG
   >
-  RENDER_FILE "/home/tanguy/Documents/Projets Godot/Projects/A-Key-s-Path/Assets/Sounds/footstep.wav"
+  RENDER_FILE "D:\Documents\Projets Godot\Projects\A Key(s) Path\Assets\Sounds\footstep.wav"
   RENDER_FMT 0 2 44100
   RENDER_1X 0
   RENDER_RANGE 3 0 0 18 1000
@@ -59,8 +59,8 @@
   GLOBAL_AUTO -1
   TEMPO 120 4 4
   PLAYRATE 1 0 0.25 4
-  SELECTION 4 4.5
-  SELECTION2 4 4.5
+  SELECTION 0 4.5625
+  SELECTION2 0 4.5625
   MASTERAUTOMODE 0
   MASTERTRACKHEIGHT 0 0
   MASTERPEAKCOL 16576
@@ -87,16 +87,16 @@
     ARM 0
     DEFSHAPE 1 -1 -1
   >
-  MARKER 1 0 "" 1 0 1 B {03B0C523-6685-110A-85CA-5BE3F869649F}
-  MARKER 1 0.5 "" 1 0 1 B
-  MARKER 2 1 "" 1 0 1 B {E0C336F5-C7F6-5036-6B44-1A04C3D7D0AB}
-  MARKER 2 1.5 "" 1 0 1 B
-  MARKER 3 2 "" 1 0 1 B {00CE1BDA-ABFE-83E7-AC49-03AA7A92585B}
-  MARKER 3 2.5 "" 1 0 1 B
-  MARKER 4 3 "" 1 0 1 B {F16408FF-24C1-758B-56CC-8BB7151428AF}
-  MARKER 4 3.5 "" 1 0 1 B
-  MARKER 5 4 "" 1 0 1 B {5F360CC1-D377-85E9-DBA4-3E229B67B2D4}
-  MARKER 5 4.5 "" 1 0 1 B
+  MARKER 1 0 "" 1 0 1 R {03B0C523-6685-110A-85CA-5BE3F869649F}
+  MARKER 1 0.25 "" 1 0 1 R
+  MARKER 2 1 "" 1 0 1 R {E0C336F5-C7F6-5036-6B44-1A04C3D7D0AB}
+  MARKER 2 1.25 "" 1 0 1 R
+  MARKER 3 2 "" 1 0 1 R {00CE1BDA-ABFE-83E7-AC49-03AA7A92585B}
+  MARKER 3 2.25 "" 1 0 1 R
+  MARKER 4 3 "" 1 0 1 R {F16408FF-24C1-758B-56CC-8BB7151428AF}
+  MARKER 4 3.25 "" 1 0 1 R
+  MARKER 5 4 "" 1 0 1 R {5F360CC1-D377-85E9-DBA4-3E229B67B2D4}
+  MARKER 5 4.25 "" 1 0 1 R
   <PROJBAY
   >
   <TRACK {A2BB1716-94EE-67C0-B90C-10B53C9CCB8D}
@@ -104,7 +104,7 @@
     PEAKCOL 16576
     BEAT -1
     AUTOMODE 0
-    VOLPAN 1 0 -1 -1 1
+    VOLPAN 0.56234132519035 0 -1 -1 1
     MUTESOLO 0 0 0
     IPHASE 0
     PLAYOFFS 0 1
@@ -132,17 +132,17 @@
       FADEIN 1 0.01 0 1 0 0 0
       FADEOUT 1 0.01 0 1 0 0 0
       MUTE 0 0
-      SEL 0
+      SEL 1
       IGUID {1563A079-D3F0-0EB1-C4AF-000DACE2AA6C}
       IID 2
       NAME footstep_grass_000.ogg
       VOLPAN 1 0 1 -1
       SOFFS 0
       PLAYRATE 1 1 0 -1 0 0.0025
-      CHANMODE 0
+      CHANMODE 2
       GUID {1784B036-FB63-456B-4C5C-1CBB2B54AF98}
       <SOURCE VORBIS
-        FILE "/home/tanguy/Documents/Projets Godot/Projects/A-Key-s-Path/Assets/Sounds/Resources/footstep_grass_000.ogg"
+        FILE "footstep_grass_000.ogg"
       >
     >
     <ITEM
@@ -154,17 +154,17 @@
       FADEIN 1 0.01 0 1 0 0 0
       FADEOUT 1 0.01 0 1 0 0 0
       MUTE 0 0
-      SEL 0
+      SEL 1
       IGUID {D78E1102-1B1C-20DB-1877-A1DDEB995A04}
       IID 3
       NAME footstep_grass_001.ogg
       VOLPAN 1 0 1 -1
       SOFFS 0
       PLAYRATE 1 1 0 -1 0 0.0025
-      CHANMODE 0
+      CHANMODE 2
       GUID {15BC8F5E-BCF0-B40C-2418-3408E4FF1D2A}
       <SOURCE VORBIS
-        FILE "/home/tanguy/Documents/Projets Godot/Projects/A-Key-s-Path/Assets/Sounds/Resources/footstep_grass_001.ogg"
+        FILE "footstep_grass_001.ogg"
       >
     >
     <ITEM
@@ -176,17 +176,17 @@
       FADEIN 1 0.01 0 1 0 0 0
       FADEOUT 1 0.01 0 1 0 0 0
       MUTE 0 0
-      SEL 0
+      SEL 1
       IGUID {53742F4B-597D-C3B9-E0CC-CA7E97C6A8C5}
       IID 4
       NAME footstep_grass_002.ogg
       VOLPAN 1 0 1 -1
       SOFFS 0
       PLAYRATE 1 1 0 -1 0 0.0025
-      CHANMODE 0
+      CHANMODE 2
       GUID {EF3D636B-AD6A-8588-9B45-DC5C55A12623}
       <SOURCE VORBIS
-        FILE "/home/tanguy/Documents/Projets Godot/Projects/A-Key-s-Path/Assets/Sounds/Resources/footstep_grass_002.ogg"
+        FILE "footstep_grass_002.ogg"
       >
     >
     <ITEM
@@ -198,17 +198,17 @@
       FADEIN 1 0.01 0 1 0 0 0
       FADEOUT 1 0.01 0 1 0 0 0
       MUTE 0 0
-      SEL 0
+      SEL 1
       IGUID {D5477F83-91F6-69D1-7F0B-978EE4A408E4}
       IID 5
       NAME footstep_grass_003.ogg
       VOLPAN 1 0 1 -1
       SOFFS 0
       PLAYRATE 1 1 0 -1 0 0.0025
-      CHANMODE 0
+      CHANMODE 2
       GUID {F0F356CC-CE44-6FD5-A7CF-89365D19C3AA}
       <SOURCE VORBIS
-        FILE "/home/tanguy/Documents/Projets Godot/Projects/A-Key-s-Path/Assets/Sounds/Resources/footstep_grass_003.ogg"
+        FILE "footstep_grass_003.ogg"
       >
     >
     <ITEM
@@ -227,10 +227,10 @@
       VOLPAN 1 0 1 -1
       SOFFS 0
       PLAYRATE 1 1 0 -1 0 0.0025
-      CHANMODE 0
+      CHANMODE 2
       GUID {57E8F63E-4134-83C0-53BF-9364EBF1195A}
       <SOURCE VORBIS
-        FILE "/home/tanguy/Documents/Projets Godot/Projects/A-Key-s-Path/Assets/Sounds/Resources/footstep_grass_004.ogg"
+        FILE "footstep_grass_004.ogg"
       >
     >
   >

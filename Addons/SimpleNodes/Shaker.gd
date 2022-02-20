@@ -48,7 +48,7 @@ func _ready()-> void:
 
 func _process(delta: float)-> void:
 	for process in processes:
-		if not process or process.shake <= 0:
+		if not process or not process.node or process.shake <= 0:
 			processes.erase(process)
 		else:
 			process._process(delta)
@@ -77,5 +77,8 @@ func add_shake(node: Node, property: String, offset: Vector2, value: float, spee
 
 func set_active(value: bool) -> void:
 	for process in processes:
-		process._reset()
+		if not process or not process.node:
+			processes.remove(process)
+		else:
+			process._reset()
 	set_process(value)

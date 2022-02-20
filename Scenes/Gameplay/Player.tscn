@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scripts/Gameplay/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Animations/cutscene_tips.tres" type="Animation" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/Sounds/footstep-001.wav" type="AudioStream" id=9]
 [ext_resource path="res://Assets/Sprites/player/player_animations-Sheet.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sounds/jump.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Sounds/death.wav" type="AudioStream" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 7 )
@@ -58,6 +59,20 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("DeathSound")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -214,7 +229,7 @@ z_index = 1
 texture = ExtResource( 10 )
 hframes = 10
 vframes = 9
-frame = 5
+frame = 4
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1 )
@@ -261,6 +276,9 @@ min_pitch = 0.8
 max_pitch = 1.2
 min_volume = -1.0
 max_volume = 1.0
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = -19.6889

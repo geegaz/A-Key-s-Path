@@ -3,7 +3,7 @@ extends Area2D
 export(PackedScene) var activate_effect: PackedScene
 
 onready var _Collision: CollisionShape2D = $Collision
-onready var _Audio: AudioStreamPlayer = $AudioStreamPlayer
+onready var _Audio: AudioStreamPlayer = $CheckpointSound
 
 onready var _SpriteActive: Sprite = $SpriteActive
 onready var _Sprite: Sprite = $Sprite
